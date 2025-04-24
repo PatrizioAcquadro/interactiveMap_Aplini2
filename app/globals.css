@@ -1,0 +1,58 @@
+/* Import Font via @import (Alternative if not using next/font in layout) */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+
+/* Import Leaflet CSS FIRST */
+@import "leaflet/dist/leaflet.css";
+@import "leaflet.markercluster/dist/MarkerCluster.css";
+@import "leaflet.markercluster/dist/MarkerCluster.Default.css";
+
+/* THEN import Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add custom base styles or overrides AFTER Tailwind directives */
+body {
+  @apply p-0 m-0 overflow-hidden antialiased text-gray-800; /* Removed default margin/padding, hide body scrollbars, smooth fonts, base text color */
+  /* font-family: 'Inter', sans-serif; */ /* Apply font here if not using next/font */
+}
+
+/* Ensure map container takes up space */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  min-height: 300px; /* Minimum height */
+  background-color: #f3f4f6; /* Light gray background while tiles load */
+}
+
+/* Style Marker Cluster plugin */
+.marker-cluster-small {
+    background-color: rgba(180, 200, 220, 0.6);
+}
+.marker-cluster-small div {
+    background-color: rgba(80, 120, 160, 0.6);
+}
+/* Add medium/large styles if desired */
+
+/* Custom Leaflet popup styling */
+.leaflet-popup-content-wrapper {
+    @apply rounded-lg shadow-lg border border-gray-100;
+}
+.leaflet-popup-content {
+    @apply text-sm font-sans; /* Ensure popup uses the theme font */
+     margin: 10px 15px !important; /* Adjust Leaflet default padding */
+}
+.leaflet-popup-tip-container {
+   visibility: hidden; /* Hide the default triangle */
+}
+
+/* Style for user location marker */
+.user-location-marker div {
+   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8); /* White ring */
+}
+
+/* Keyframes for modal animation if not defined in tailwind.config.js */
+/* @layer utilities {
+    @keyframes fade-scale-in { ... }
+    .animate-fade-scale-in { ... }
+} */
