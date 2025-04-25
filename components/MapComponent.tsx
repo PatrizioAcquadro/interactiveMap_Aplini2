@@ -12,7 +12,6 @@ import { MapPinIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid';
 import { useLanguage } from '../context/LanguageContext'; // Import language hook
 
 // --- Leaflet Icon Fix ---
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: '/leaflet/marker-icon-2x.png', // Path within public/
@@ -34,12 +33,12 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
             // Open popup after flying (with delay)
              setTimeout(() => {
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                 map.eachLayer((layer) => {
-                     if (layer instanceof L.Marker) {
-                         const markerLatLng = layer.getLatLng();
+                 map.eachLayer((_layer) => {
+                     if (_layer instanceof L.Marker) {
+                         const markerLatLng = _layer.getLatLng();
                          // Check if coordinates match (handle potential floating point issues if necessary)
                          if (markerLatLng.equals(L.latLng(targetPoi.coordinates as L.LatLngTuple), 0.00001)) {
-                              layer.openPopup();
+                              _layer.openPopup();
                          }
                      }
                  });
@@ -211,7 +210,7 @@ const MapComponent: React.FC = () => {
                   icon={currentIcon} // Use the potentially modified icon
                   eventHandlers={{
                     click: () => handleMarkerClick(poi), // You might want click to open details directly: handleShowDetails(poi)
-                    mouseover: (_e) => {
+                    mouseover: () => {
                         setHoveredPoiId(poi.id);
                         // Optional: Bring marker to front on hover
                         // e.target.bringToFront();
