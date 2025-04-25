@@ -37,7 +37,7 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
             // Open popup after flying (with delay)
              setTimeout(() => {
                  // Use 'layer' as the parameter name since it IS used.
-                 // No disable comment needed here if 'layer' is used correctly inside.
+                 // NO disable comment needed here as 'layer' is used correctly inside.
                  map.eachLayer((layer) => {
                      if (layer instanceof L.Marker) {
                          const markerLatLng = layer.getLatLng();
@@ -120,7 +120,7 @@ const MapComponent: React.FC = () => {
   const [selectedPoiId, setSelectedPoiId] = useState<number | null>(null);
 
   // --- Event Handlers ---
-  const handleMarkerClick = (poi: POI) => {}; // Kept 'poi' parameter here as it's conventional for the handler type
+  const handleMarkerClick = (poi: POI) => {};
   const handleShowDetails = (poi: POI) => {
     setSelectedPoi(poi);
     setSelectedPoiId(poi.id);
@@ -170,9 +170,9 @@ const MapComponent: React.FC = () => {
         <MapEvents targetPoi={searchTargetPoi} />
 
         <MarkerClusterGroup chunkedLoading>
-          {/* --- ADDED disable comment here for the false positive error --- */}
+          {/* --- ADDED disable comment here for the persistent false positive error --- */}
           {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
-          {filteredPois.map(poi => { // ESLint incorrectly flags 'poi' as unused here
+          {filteredPois.map(poi => { // ESLint incorrectly flags 'poi' as unused on this line (~123)
               const isSelected = poi.id === selectedPoiId;
               const isHovered = poi.id === hoveredPoiId;
               let currentIcon = getPoiIcon(poi.type, poi.iconUrl);
@@ -191,9 +191,10 @@ const MapComponent: React.FC = () => {
                   key={poi.id}
                   position={poi.coordinates}
                   icon={currentIcon}
-                  eventHandlers={{
+                  eventHandlers={{ // Check line numbers here for the unused disable warning (~174)
                     click: () => handleMarkerClick(poi),
-                    mouseover: () => { // Parameter removed here correctly
+                    // Parameter removed from mouseover, so NO disable comment needed here
+                    mouseover: () => {
                         setHoveredPoiId(poi.id);
                     },
                     mouseout: () => {
