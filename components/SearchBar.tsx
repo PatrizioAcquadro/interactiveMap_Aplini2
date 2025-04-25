@@ -1,7 +1,7 @@
 // components/SearchBar.tsx
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react'; // 1. Importa useMemo
 import { MagnifyingGlassIcon, XCircleIcon } from '@heroicons/react/24/outline';
-import { POI, PoiType } from '../data/pois';
+import { POI } from '../data/pois';
 import { useLanguage } from '../context/LanguageContext';
 
 interface SearchBarProps {
