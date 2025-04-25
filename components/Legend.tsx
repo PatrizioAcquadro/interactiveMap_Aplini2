@@ -1,5 +1,6 @@
 // components/Legend.tsx
 import React, { useMemo } from 'react';
+import Image from 'next/image'; // <--- ADD THIS IMPORT LINE
 import { legendItems, PoiType, POI } from '../data/pois';
 import { CheckIcon, MapIcon as MapOutlineIcon, XMarkIcon } from '@heroicons/react/24/outline'; // Use outline icons appropriately
 import { useLanguage } from '../context/LanguageContext'; // Assuming context setup
@@ -104,7 +105,13 @@ const Legend: React.FC<LegendProps> = ({
              >
                {/* Icon, Label, and Count */}
                <div className="flex items-center space-x-2 flex-grow mr-2 cursor-default">
-                 <img src={item.iconUrl} alt="" className="h-5 w-5 flex-shrink-0" />
+                 <Image
+                  src={item.iconUrl}
+                  alt="" // Add proper alt text if possible, like item.label
+                  width={20} // Corresponds to h-5/w-5 (1.25rem * 16px/rem)
+                  height={20}
+                  className="flex-shrink-0" // Remove h-5 w-5 if using width/height props
+                />
                  <span className="text-sm text-gray-700 flex-grow">
                     {labelText} {/* Display the correct label */}
                     <span className="text-xs text-gray-500"> ({count})</span>

@@ -1,6 +1,6 @@
 'use client'; // Needed for hooks and Leaflet interaction
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react'; // 
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import L from 'leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
@@ -12,12 +12,12 @@ import { MapPinIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid';
 import { useLanguage } from '../context/LanguageContext'; // Import language hook
 
 // --- Leaflet Icon Fix ---
-// (Include the Leaflet default icon fix here if you haven't already)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'), // Use require if in Node env
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  iconRetinaUrl: '/leaflet/marker-icon-2x.png', // Path within public/
+  iconUrl: '/leaflet/marker-icon.png',         // Path within public/
+  shadowUrl: '/leaflet/marker-shadow.png',        // Path within public/
 });
 // --- End Fix ---
 
@@ -33,6 +33,7 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
             });
             // Open popup after flying (with delay)
              setTimeout(() => {
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                  map.eachLayer((layer) => {
                      if (layer instanceof L.Marker) {
                          const markerLatLng = layer.getLatLng();
@@ -210,7 +211,7 @@ const MapComponent: React.FC = () => {
                   icon={currentIcon} // Use the potentially modified icon
                   eventHandlers={{
                     click: () => handleMarkerClick(poi), // You might want click to open details directly: handleShowDetails(poi)
-                    mouseover: (e) => {
+                    mouseover: (_e) => {
                         setHoveredPoiId(poi.id);
                         // Optional: Bring marker to front on hover
                         // e.target.bringToFront();
