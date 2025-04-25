@@ -37,7 +37,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ pois, onSearchResultSelect }) => 
       } else {
           setResults([]);
       }
-  }, [pois, language, t, categoryLabels]); // Add dependencies
+  }, [pois, language, categoryLabels]); // Add dependencies
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
