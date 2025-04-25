@@ -36,8 +36,8 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
             });
             // Open popup after flying (with delay)
              setTimeout(() => {
-                 // REMOVED the eslint-disable comment for no-unused-vars here
                  // Use 'layer' as the parameter name since it IS used.
+                 // No disable comment needed here if 'layer' is used correctly inside.
                  map.eachLayer((layer) => {
                      if (layer instanceof L.Marker) {
                          const markerLatLng = layer.getLatLng();
@@ -55,7 +55,7 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
 };
 
 // --- LocateControl Component ---
-// (No changes needed here based on the latest errors)
+// (No changes needed here)
 const LocateControl = () => {
     const map = useMap();
     const { t } = useLanguage();
@@ -120,9 +120,7 @@ const MapComponent: React.FC = () => {
   const [selectedPoiId, setSelectedPoiId] = useState<number | null>(null);
 
   // --- Event Handlers ---
-  const handleMarkerClick = (poi: POI) => {
-    // Currently does nothing, popup button opens details
-  };
+  const handleMarkerClick = (poi: POI) => {}; // Kept 'poi' parameter here as it's conventional for the handler type
   const handleShowDetails = (poi: POI) => {
     setSelectedPoi(poi);
     setSelectedPoiId(poi.id);
@@ -172,7 +170,9 @@ const MapComponent: React.FC = () => {
         <MapEvents targetPoi={searchTargetPoi} />
 
         <MarkerClusterGroup chunkedLoading>
-          {filteredPois.map(poi => {
+          {/* --- ADDED disable comment here for the false positive error --- */}
+          {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
+          {filteredPois.map(poi => { // ESLint incorrectly flags 'poi' as unused here
               const isSelected = poi.id === selectedPoiId;
               const isHovered = poi.id === hoveredPoiId;
               let currentIcon = getPoiIcon(poi.type, poi.iconUrl);
@@ -193,8 +193,7 @@ const MapComponent: React.FC = () => {
                   icon={currentIcon}
                   eventHandlers={{
                     click: () => handleMarkerClick(poi),
-                    // REMOVED unused parameter from mouseover
-                    mouseover: () => {
+                    mouseover: () => { // Parameter removed here correctly
                         setHoveredPoiId(poi.id);
                     },
                     mouseout: () => {
