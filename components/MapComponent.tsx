@@ -12,7 +12,7 @@ import { MapPinIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid';
 import { useLanguage } from '../context/LanguageContext';
 
 /* ------------------------------------------------------------------ */
-/* Leaflet icon path fix (so images load correctly from /public)       */
+/* Leaflet icon path fix                                              */
 /* ------------------------------------------------------------------ */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -24,7 +24,7 @@ L.Icon.Default.mergeOptions({
 });
 
 /* ------------------------------------------------------------------ */
-/* Map-events: fly to POI selected from the search bar                 */
+/* Fly-to behaviour when a POI is selected from search                */
 /* ------------------------------------------------------------------ */
 const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
   const map = useMap();
@@ -32,7 +32,6 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
   useEffect(() => {
     if (targetPoi) {
       map.flyTo(targetPoi.coordinates, 16, { animate: true, duration: 1 });
-      // open the popup after the move completes
       setTimeout(() => {
         map.eachLayer((layer) => {
           if (layer instanceof L.Marker) {
@@ -50,7 +49,7 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
 };
 
 /* ------------------------------------------------------------------ */
-/* Locate-me control                                                   */
+/* Locate-me control                                                  */
 /* ------------------------------------------------------------------ */
 const LocateControl = () => {
   const map = useMap();
@@ -125,7 +124,6 @@ const MapComponent: React.FC = () => {
   const [selectedPoiId, setSelectedPoiId] = useState<number | null>(null);
 
   /* --------------------------- Handlers --------------------------- */
-  // FIX: use the `poi` argument so ESLint doesn't flag it
   const handleMarkerClick = (poi: POI) => {
     setSelectedPoi(poi);
     setSelectedPoiId(poi.id);
@@ -141,10 +139,15 @@ const MapComponent: React.FC = () => {
     setSelectedPoiId(null);
   };
 
+  // FIX — replaced side-effect ternary with if/else
   const handleFilterChange = (type: PoiType, isActive: boolean) => {
     setActiveFilters((prev) => {
       const next = new Set(prev);
-      isActive ? next.add(type) : next.delete(type);
+      if (isActive) {
+        next.add(type);
+      } else {
+        next.delete(type);
+      }
       return next;
     });
   };
