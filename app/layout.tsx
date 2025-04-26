@@ -1,6 +1,7 @@
 // app/layout.tsx
 import { Inter } from "next/font/google";
 import { LanguageProvider } from "../context/LanguageContext";
+import Header from "../components/Header";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Adunata Map Biella 2025",
+  title: "Mappa Adunata Alpini - Biella 2025",
   description:
     "Mappa interattiva per l'Adunata Nazionale degli Alpini 2025 a Biella",
   viewport:
@@ -23,10 +24,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="it" className={`${inter.variable} font-sans h-full`}>
-      {/* Add h-full and a background color to the body */}
-      <body className="h-full bg-gray-100">
-        <LanguageProvider>{children}</LanguageProvider>
+    <html
+      lang="it"
+      className={`${inter.variable} font-sans h-full bg-brand-white`}
+    >
+      {/* Apply h-full to body and use flex column layout */}
+      <body className="h-full flex flex-col">
+        <LanguageProvider>
+          <Header /> {/* Add the Header component here */}
+          {/* Make the main content area grow to fill remaining space */}
+          <div className="flex-grow">
+            {children} {/* Page content will go here */}
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );
