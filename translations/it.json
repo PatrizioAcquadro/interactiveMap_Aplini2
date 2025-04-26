@@ -20,5 +20,7 @@
     "poiCategory_bar": "Bar",
     "poiCategory_hotel": "Hotel",
     "poiCategory_private_accommodation": "Accoglienza",
-    "poiCategory_clothing": "Negozio/Gadget"
+    "poiCategory_clothing": "Negozio/Gadget",
+    "youAreHere": "Tu sei qui!",
+    "locationErrorPrefix": "Errore Posizione:"
 }

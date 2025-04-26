@@ -1,15 +1,23 @@
-'use client'; // Needed for hooks and Leaflet interaction
+"use client"; // Needed for hooks and Leaflet interaction
 
-import React, { useState, useEffect, useCallback } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
-import L from 'leaflet';
-import MarkerClusterGroup from 'react-leaflet-markercluster';
-import { poiData, POI, PoiType, getPoiIcon, legendItems } from '../data/pois';
-import Legend from './Legend';
-import PoiDetailModal from './PoiDetailModal';
-import SearchBar from './SearchBar';
-import { MapPinIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid';
-import { useLanguage } from '../context/LanguageContext';
+import React, { useState, useEffect, useCallback, useMemo } from "react"; // Added useMemo import just in case, though not strictly needed here now
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  useMap,
+  ZoomControl,
+} from "react-leaflet";
+import L from "leaflet";
+import MarkerClusterGroup from "react-leaflet-markercluster";
+import { poiData, POI, PoiType, getPoiIcon, legendItems } from "../data/pois";
+import Legend from "./Legend";
+import PoiDetailModal from "./PoiDetailModal";
+import SearchBar from "./SearchBar";
+import { MapPinIcon as MapPinOutlineIcon } from "@heroicons/react/24/outline"; // *** CHANGE: Import Outline version ***
+import { PaperAirplaneIcon } from "@heroicons/react/24/solid"; // Keep solid for popup button if desired
+import { useLanguage } from "../context/LanguageContext";
 
 /* ------------------------------------------------------------------ */
 /* Leaflet icon path fix                                              */
@@ -18,9 +26,9 @@ import { useLanguage } from '../context/LanguageContext';
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: '/leaflet/marker-icon-2x.png',
-  iconUrl: '/leaflet/marker-icon.png',
-  shadowUrl: '/leaflet/marker-shadow.png',
+  iconRetinaUrl: "/leaflet/marker-icon-2x.png",
+  iconUrl: "/leaflet/marker-icon.png",
+  shadowUrl: "/leaflet/marker-shadow.png",
 });
 
 /* ------------------------------------------------------------------ */
@@ -36,7 +44,12 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
         map.eachLayer((layer) => {
           if (layer instanceof L.Marker) {
             const markerLatLng = layer.getLatLng();
-            if (markerLatLng.equals(L.latLng(targetPoi.coordinates as L.LatLngTuple), 1e-5)) {
+            if (
+              markerLatLng.equals(
+                L.latLng(targetPoi.coordinates as L.LatLngTuple),
+                1e-5
+              )
+            ) {
               layer.openPopup();
             }
           }
@@ -49,11 +62,11 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
 };
 
 /* ------------------------------------------------------------------ */
-/* Locate-me control                                                  */
+/* Locate-me control - WITH TRANSLATIONS                              */
 /* ------------------------------------------------------------------ */
 const LocateControl = () => {
   const map = useMap();
-  const { t } = useLanguage();
+  const { t } = useLanguage(); // t function is already available
 
   const handleLocate = () => {
     map.locate({ setView: true, maxZoom: 16, enableHighAccuracy: true });
@@ -66,41 +79,42 @@ const LocateControl = () => {
       if (userMarker) map.removeLayer(userMarker);
       userMarker = L.marker(e.latlng, {
         icon: L.divIcon({
-          className: 'user-location-marker',
+          className: "user-location-marker",
           html: '<div class="h-3 w-3 bg-blue-500 rounded-full ring-2 ring-white shadow-md"></div>',
           iconSize: [12, 12],
         }),
       })
         .addTo(map)
-        .bindPopup('You are here!')
+        // *** CHANGE: Use translation key for popup ***
+        .bindPopup(t("youAreHere"))
         .openPopup();
     };
 
     const handleLocationError = (e: L.ErrorEvent) =>
-      alert(`Location Error: ${e.message}`);
+      // *** CHANGE: Use translation key for alert prefix ***
+      alert(`${t("locationErrorPrefix")} ${e.message}`);
 
-    map.on('locationfound', handleLocationFound);
-    map.on('locationerror', handleLocationError);
+    map.on("locationfound", handleLocationFound);
+    map.on("locationerror", handleLocationError);
 
     return () => {
-      map.off('locationfound', handleLocationFound);
-      map.off('locationerror', handleLocationError);
+      map.off("locationfound", handleLocationFound);
+      map.off("locationerror", handleLocationError);
       if (userMarker) map.removeLayer(userMarker);
     };
-  }, [map]);
+    // *** CHANGE: Add 't' to the dependency array ***
+  }, [map, t]); // Dependencies now include 't'
 
   return (
-    <div className="leaflet-top leaflet-right">
-      <div className="leaflet-control leaflet-bar mt-[60px] mr-[10px] mb-20">
-        <button
-          onClick={handleLocate}
-          className="bg-white p-2 rounded shadow hover:bg-gray-100 cursor-pointer transition-colors duration-150 ease-in-out"
-          title={t('findMyLocation')}
-          aria-label={t('findMyLocation')}
-        >
-          <MapPinIcon className="h-5 w-5 text-blue-600" />
-        </button>
-      </div>
+    <div className="absolute top-16 right-4 z-[1000] sm:top-4">
+      <button
+        onClick={handleLocate}
+        className="p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-200 ease-in-out"
+        title={t("findMyLocation")} // This was already using t
+        aria-label={t("findMyLocation")} // This was already using t
+      >
+        <MapPinOutlineIcon className="h-6 w-6 text-gray-700" />
+      </button>
     </div>
   );
 };
@@ -116,9 +130,9 @@ const MapComponent: React.FC = () => {
   /* ----------------------------- State ----------------------------- */
   const [selectedPoi, setSelectedPoi] = useState<POI | null>(null);
   const [activeFilters, setActiveFilters] = useState<Set<PoiType>>(
-    new Set(legendItems.map((item) => item.type)),
+    new Set(legendItems.map((item) => item.type))
   );
-  const [isLegendOpen, setIsLegendOpen] = useState(false);
+  const [isLegendOpen, setIsLegendOpen] = useState(false); // Default to closed maybe?
   const [searchTargetPoi, setSearchTargetPoi] = useState<POI | null>(null);
   const [hoveredPoiId, setHoveredPoiId] = useState<number | null>(null);
   const [selectedPoiId, setSelectedPoiId] = useState<number | null>(null);
@@ -139,7 +153,6 @@ const MapComponent: React.FC = () => {
     setSelectedPoiId(null);
   };
 
-  // FIX — replaced side-effect ternary with if/else
   const handleFilterChange = (type: PoiType, isActive: boolean) => {
     setActiveFilters((prev) => {
       const next = new Set(prev);
@@ -158,31 +171,47 @@ const MapComponent: React.FC = () => {
     setActiveFilters(new Set(legendItems.map((item) => item.type)));
 
   const handleSearchResultSelect = useCallback((poi: POI) => {
-    setSearchTargetPoi(poi);
+    // Fly to the POI and open its popup
+    setSearchTargetPoi(poi); // Trigger MapEvents
+    // Maybe close legend/search results if open? Optional UX enhancement
+    // setIsLegendOpen(false);
+    // Close search results is handled within SearchBar on selection
+
+    // Clear target after a short delay to allow re-selection
     setTimeout(() => setSearchTargetPoi(null), 100);
   }, []);
 
   /* --------------------------- Derived ---------------------------- */
-  const filteredPois = poiData.filter((poi) => activeFilters.has(poi.type));
+  const filteredPois = useMemo(() => {
+    return poiData.filter((poi) => activeFilters.has(poi.type));
+  }, [activeFilters]); // Memoize filtered POIs
 
   /* --------------------------- Render ----------------------------- */
   return (
+    // This div is the positioning context (relative) for absolute children
     <div className="h-full w-full relative">
-      <SearchBar pois={poiData} onSearchResultSelect={handleSearchResultSelect} />
+      {/* SearchBar component - Uses absolute positioning internally */}
+      <SearchBar
+        pois={poiData}
+        onSearchResultSelect={handleSearchResultSelect}
+      />
 
       <MapContainer
         center={biellaCoords}
         zoom={initialZoom}
         scrollWheelZoom
-        className="h-full w-full z-0"
-        zoomControl={false}
+        className="h-full w-full z-0" // z-0 keeps it below controls
+        zoomControl={false} // Disable default zoom to use the component below
       >
         <TileLayer
           attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        {/* Use default ZoomControl component, positioned by Leaflet */}
         <ZoomControl position="bottomright" />
+        {/* Use our custom LocateControl, positioned via Tailwind */}
         <LocateControl />
+        {/* Helper component for map events like flyTo */}
         <MapEvents targetPoi={searchTargetPoi} />
 
         <MarkerClusterGroup chunkedLoading>
@@ -191,12 +220,13 @@ const MapComponent: React.FC = () => {
             const isHovered = poi.id === hoveredPoiId;
             let currentIcon = getPoiIcon(poi.type, poi.iconUrl);
 
+            // Increase icon size on hover/select
             if (isSelected || isHovered) {
               currentIcon = L.icon({
                 ...currentIcon.options,
-                iconSize: [42, 42],
-                iconAnchor: [21, 42],
-                popupAnchor: [0, -42],
+                iconSize: [42, 42], // Larger size
+                iconAnchor: [21, 42], // Adjusted anchor
+                popupAnchor: [0, -42], // Adjusted popup anchor
               });
             }
 
@@ -214,21 +244,25 @@ const MapComponent: React.FC = () => {
                 <Popup minWidth={200}>
                   <div className="font-sans text-sm">
                     <h4 className="font-semibold text-base mb-1 text-gray-800">
-                      {language === 'en' && poi.name_en ? poi.name_en : poi.name}
+                      {language === "en" && poi.name_en
+                        ? poi.name_en
+                        : poi.name}
                     </h4>
                     <p className="text-gray-600 mb-2">
-                      {language === 'en' && poi.shortDescription_en
+                      {language === "en" && poi.shortDescription_en
                         ? poi.shortDescription_en
                         : poi.shortDescription}
                     </p>
                     {poi.address && (
-                      <p className="text-xs text-gray-500 mb-1">{poi.address}</p>
+                      <p className="text-xs text-gray-500 mb-1">
+                        {poi.address}
+                      </p>
                     )}
                     <button
                       onClick={() => handleShowDetails(poi)}
                       className="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium transition-colors duration-150 ease-in-out mt-1 inline-flex items-center"
                     >
-                      {t('moreDetails')}
+                      {t("moreDetails")}
                       <PaperAirplaneIcon className="h-4 w-4 ml-1 transform rotate-45" />
                     </button>
                   </div>
@@ -239,24 +273,28 @@ const MapComponent: React.FC = () => {
         </MarkerClusterGroup>
       </MapContainer>
 
+      {/* Legend component - Uses absolute positioning internally */}
       <Legend
         activeFilters={activeFilters}
         onFilterChange={handleFilterChange}
         isLegendOpen={isLegendOpen}
         onToggleVisibility={toggleLegend}
-        allPois={poiData}
+        allPois={poiData} // Pass all POIs for counts
       />
 
+      {/* Reset Filters Button */}
       {isLegendOpen && activeFilters.size !== legendItems.length && (
         <button
           onClick={resetFilters}
-          className="fixed bottom-20 left-4 z-[1000] px-3 py-1.5 bg-red-100 text-red-700 text-xs font-medium rounded-full shadow hover:bg-red-200 transition-colors duration-150 ease-in-out"
-          aria-label={t('clearFilters')}
+          // *** CHANGE: Changed 'fixed' to 'absolute' ***
+          className="absolute bottom-20 left-4 z-[1000] px-3 py-1.5 bg-red-100 text-red-700 text-xs font-medium rounded-full shadow hover:bg-red-200 transition-colors duration-150 ease-in-out"
+          aria-label={t("clearFilters")}
         >
-          {t('clearFilters')}
+          {t("clearFilters")}
         </button>
       )}
 
+      {/* Modal component - Remains fixed to viewport */}
       <PoiDetailModal poi={selectedPoi} onClose={handleCloseModal} />
     </div>
   );
