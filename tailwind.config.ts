@@ -17,15 +17,22 @@ const config: Config = {
         // Keep your existing font family configuration
         sans: ["var(--font-inter)", ...fontFamily.sans],
       },
-      // --- Add the custom colors here ---
+      // --- Custom colors ---
       colors: {
         "brand-light-green": "#D0D4C8", // Background from image
         "brand-dark-green": "#334C3F", // Text/Dot from image
         "brand-olive": "#8A8D7B", // Dot from image
         "brand-red": "#B42025", // Dot from image
         "brand-white": "#FFFFFF", // Pure white
+        "poi-camper": "#3B82F6", // Blue
+        "poi-taxi": "#F59E0B", // Amber/Yellow
+        "poi-restaurant": "#F97316", // Orange
+        "poi-bar": "#A855F7", // Purple
+        "poi-hotel": "#14B8A6", // Teal
+        "poi-private_accommodation": "#EC4899", // Pink
+        "poi-clothing": "#8B5CF6", // Violet/Indigo
+        "poi-default": "#6B7280", // Gray (Fallback)
       },
-      // --- End of custom colors ---
 
       // Keep your existing keyframes configuration
       keyframes: {

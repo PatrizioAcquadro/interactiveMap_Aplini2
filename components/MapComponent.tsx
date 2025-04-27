@@ -12,7 +12,7 @@ import {
 import L from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { poiData, POI, PoiType, getPoiIcon, legendItems } from "../data/pois";
-import Legend from "./Legend";
+import LegendSlideout from "./LegendSlideout";
 import PoiDetailModal from "./PoiDetailModal";
 import SearchBar from "./SearchBar";
 import { MapPinIcon as MapPinOutlineIcon } from "@heroicons/react/24/outline"; // *** CHANGE: Import Outline version ***
@@ -62,7 +62,7 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
 };
 
 /* ------------------------------------------------------------------ */
-/* Locate-me control - WITH TRANSLATIONS                              */
+/* Locate-me control                             */
 /* ------------------------------------------------------------------ */
 const LocateControl = () => {
   const map = useMap();
@@ -85,13 +85,11 @@ const LocateControl = () => {
         }),
       })
         .addTo(map)
-        // *** CHANGE: Use translation key for popup ***
         .bindPopup(t("youAreHere"))
         .openPopup();
     };
 
     const handleLocationError = (e: L.ErrorEvent) =>
-      // *** CHANGE: Use translation key for alert prefix ***
       alert(`${t("locationErrorPrefix")} ${e.message}`);
 
     map.on("locationfound", handleLocationFound);
@@ -102,7 +100,6 @@ const LocateControl = () => {
       map.off("locationerror", handleLocationError);
       if (userMarker) map.removeLayer(userMarker);
     };
-    // *** CHANGE: Add 't' to the dependency array ***
   }, [map, t]); // Dependencies now include 't'
 
   return (
@@ -132,7 +129,7 @@ const MapComponent: React.FC = () => {
   const [activeFilters, setActiveFilters] = useState<Set<PoiType>>(
     new Set(legendItems.map((item) => item.type))
   );
-  const [isLegendOpen, setIsLegendOpen] = useState(false); // Default to closed maybe?
+  const [isLegendOpen, setIsLegendOpen] = useState(false);
   const [searchTargetPoi, setSearchTargetPoi] = useState<POI | null>(null);
   const [hoveredPoiId, setHoveredPoiId] = useState<number | null>(null);
   const [selectedPoiId, setSelectedPoiId] = useState<number | null>(null);
@@ -185,6 +182,11 @@ const MapComponent: React.FC = () => {
   const filteredPois = useMemo(() => {
     return poiData.filter((poi) => activeFilters.has(poi.type));
   }, [activeFilters]); // Memoize filtered POIs
+
+  // Condition for showing reset button
+  const showResetButton = useMemo(() => {
+    return activeFilters.size !== legendItems.length;
+  }, [activeFilters]);
 
   /* --------------------------- Render ----------------------------- */
   return (
@@ -280,19 +282,21 @@ const MapComponent: React.FC = () => {
       </MapContainer>
 
       {/* Legend component - Uses absolute positioning internally */}
-      <Legend
+      <LegendSlideout
+        isOpen={isLegendOpen} // Pass state as 'isOpen'
+        setIsOpen={setIsLegendOpen} // Pass state setter as 'setIsOpen'
         activeFilters={activeFilters}
         onFilterChange={handleFilterChange}
-        isLegendOpen={isLegendOpen}
-        onToggleVisibility={toggleLegend}
-        allPois={poiData} // Pass all POIs for counts
+        allPois={poiData}
+        resetFilters={resetFilters}
+        showResetButton={showResetButton}
+        // Remove isLegendOpen={...} and onToggleVisibility={...} if they were still here
       />
 
       {/* Reset Filters Button */}
       {isLegendOpen && activeFilters.size !== legendItems.length && (
         <button
           onClick={resetFilters}
-          // *** CHANGE: Changed 'fixed' to 'absolute' ***
           className="absolute bottom-20 left-4 z-[1000] px-3 py-1.5 bg-red-100 text-red-700 text-xs font-medium rounded-full shadow hover:bg-red-200 transition-colors duration-150 ease-in-out"
           aria-label={t("clearFilters")}
         >
