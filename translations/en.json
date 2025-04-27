@@ -23,7 +23,7 @@
     "poiCategory_clothing": "Shop/Gadget",
     "youAreHere": "You are here!",
     "locationErrorPrefix": "Location Error:",
-    "header_title": "Adunata Nazionale Alpini - Biella 2025",
+    "header_title": "Adunata Nazionale Alpini - Biella",
     "nav_home": "Home",
     "nav_map": "Map",
     "nav_programs": "Programs",
@@ -31,5 +31,13 @@
     "sr_open_menu": "Open main menu",
     "sr_close_menu": "Close menu",
     "sr_logo_alt": "BiellaInFesta Logo",
-    "sr_main_title": "Adunata Alpini Biella 2025 Home"
+    "sr_main_title": "Adunata Alpini Biella 2025 Home",
+    "utility_links_title": "Useful Links",
+    "link_official_adunata": "Official Adunata Website",
+    "link_biella_tourism": "Biella Tourism",
+    "link_privacy": "Privacy Policy",
+    "link_credits": "Credits",
+    "language_switch_label": "Language:",
+    "current_year": "2024",
+    "link_instagram_bif": "BiellaInFesta Instagram"
 }

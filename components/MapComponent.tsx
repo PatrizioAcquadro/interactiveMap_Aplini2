@@ -189,7 +189,7 @@ const MapComponent: React.FC = () => {
   /* --------------------------- Render ----------------------------- */
   return (
     // This div is the positioning context (relative) for absolute children
-    <div className="h-full w-full relative">
+    <div className="h-full w-full relative z-10">
       {/* SearchBar component - Uses absolute positioning internally */}
       <SearchBar
         pois={poiData}
