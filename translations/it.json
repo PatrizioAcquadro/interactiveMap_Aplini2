@@ -39,5 +39,12 @@
     "link_credits": "Crediti",
     "language_switch_label": "Lingua:",
     "current_year": "2024",
-    "link_instagram_bif": "Instagram BiellaInFesta"
+    "link_instagram_bif": "Instagram BiellaInFesta",
+    "lang_switcher_title": "Seleziona Lingua",
+    "lang_en": "English",
+    "lang_it": "Italiano",
+    "showLangMenu": "Cambia Lingua",
+    "legend_guidance_text": "Seleziona le categorie per mostrarle/nasconderle sulla mappa.",
+    "selectAll" : "Seleziona Tutto",
+    "deselectAll" : "Deselezionza Tutto"
 }

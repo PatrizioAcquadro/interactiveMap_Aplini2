@@ -39,5 +39,12 @@
     "link_credits": "Credits",
     "language_switch_label": "Language:",
     "current_year": "2024",
-    "link_instagram_bif": "BiellaInFesta Instagram"
+    "link_instagram_bif": "BiellaInFesta Instagram",
+    "lang_switcher_title": "Select Language",
+    "lang_en": "English",
+    "lang_it": "Italiano",
+    "showLangMenu": "Change Language",
+    "legend_guidance_text": "Select categories to show/hide them on the map.",
+    "selectAll" : "Select All",
+    "deselectAll" : "Deselect All"
 }

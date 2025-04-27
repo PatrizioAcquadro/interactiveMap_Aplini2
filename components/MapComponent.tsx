@@ -1,6 +1,7 @@
-"use client"; // Needed for hooks and Leaflet interaction
+// components/MapComponent.tsx
+"use client";
 
-import React, { useState, useEffect, useCallback, useMemo } from "react"; // Added useMemo import just in case, though not strictly needed here now
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -11,76 +12,75 @@ import {
 } from "react-leaflet";
 import L from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import { poiData, POI, PoiType, getPoiIcon, legendItems } from "../data/pois";
-import LegendSlideout from "./LegendSlideout";
-import PoiDetailModal from "./PoiDetailModal";
-import SearchBar from "./SearchBar";
-import { MapPinIcon as MapPinOutlineIcon } from "@heroicons/react/24/outline"; // *** CHANGE: Import Outline version ***
-import { PaperAirplaneIcon } from "@heroicons/react/24/solid"; // Keep solid for popup button if desired
-import { useLanguage } from "../context/LanguageContext";
 
-/* ------------------------------------------------------------------ */
-/* Leaflet icon path fix                                              */
-/* ------------------------------------------------------------------ */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-
+// --- Leaflet CSS and Icon Fix ---
+import "leaflet/dist/leaflet.css";
+// Explicitly set default icon options (using absolute paths to public folder)
+delete (L.Icon.Default.prototype as any)._getIconUrl; // Ensure clean slate
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "/leaflet/marker-icon-2x.png",
-  iconUrl: "/leaflet/marker-icon.png",
-  shadowUrl: "/leaflet/marker-shadow.png",
+  iconRetinaUrl: "/images/marker-icon-2x.png",
+  iconUrl: "/images/marker-icon.png",
+  shadowUrl: "/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
 });
 
-/* ------------------------------------------------------------------ */
-/* Fly-to behaviour when a POI is selected from search                */
-/* ------------------------------------------------------------------ */
+// --- Project Imports ---
+import { poiData, POI, PoiType, getPoiIcon } from "../data/pois"; // getPoiIcon uses L.DivIcon now
+import LegendSlideout from "./LegendSlideout";
+import LanguageSwitcher from "./LanguageSwitcher";
+import PoiDetailModal from "./PoiDetailModal";
+import SearchBar from "./SearchBar";
+import {
+  MapPinIcon as MapPinOutlineIcon,
+  GlobeAltIcon,
+  AdjustmentsHorizontalIcon, // Import icon for Legend trigger
+} from "@heroicons/react/24/outline";
+import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
+import { useLanguage } from "../context/LanguageContext";
+
+/* ========================================================================== */
+/*                            Helper Components                             */
+/* ========================================================================== */
+
 const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
   const map = useMap();
-
   useEffect(() => {
     if (targetPoi) {
       map.flyTo(targetPoi.coordinates, 16, { animate: true, duration: 1 });
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         map.eachLayer((layer) => {
-          if (layer instanceof L.Marker) {
-            const markerLatLng = layer.getLatLng();
-            if (
-              markerLatLng.equals(
-                L.latLng(targetPoi.coordinates as L.LatLngTuple),
-                1e-5
-              )
-            ) {
-              layer.openPopup();
-            }
+          if (
+            layer instanceof L.Marker &&
+            layer
+              .getLatLng()
+              .equals(L.latLng(targetPoi.coordinates as L.LatLngTuple), 1e-5)
+          ) {
+            layer.openPopup();
           }
         });
       }, 1100);
+      return () => clearTimeout(timer);
     }
   }, [targetPoi, map]);
-
   return null;
 };
 
-/* ------------------------------------------------------------------ */
-/* Locate-me control                             */
-/* ------------------------------------------------------------------ */
 const LocateControl = () => {
   const map = useMap();
-  const { t } = useLanguage(); // t function is already available
-
-  const handleLocate = () => {
+  const { t } = useLanguage();
+  const handleLocate = () =>
     map.locate({ setView: true, maxZoom: 16, enableHighAccuracy: true });
-  };
-
   useEffect(() => {
     let userMarker: L.Marker | null = null;
-
-    const handleLocationFound = (e: L.LocationEvent) => {
+    const onLocationFound = (e: L.LocationEvent) => {
       if (userMarker) map.removeLayer(userMarker);
       userMarker = L.marker(e.latlng, {
         icon: L.divIcon({
           className: "user-location-marker",
-          html: '<div class="h-3 w-3 bg-blue-500 rounded-full ring-2 ring-white shadow-md"></div>',
+          html: `<div class="h-3 w-3 bg-blue-500 rounded-full ring-2 ring-white shadow-md"></div>`,
           iconSize: [12, 12],
         }),
       })
@@ -88,161 +88,187 @@ const LocateControl = () => {
         .bindPopup(t("youAreHere"))
         .openPopup();
     };
-
-    const handleLocationError = (e: L.ErrorEvent) =>
+    const onLocationError = (e: L.ErrorEvent) =>
       alert(`${t("locationErrorPrefix")} ${e.message}`);
-
-    map.on("locationfound", handleLocationFound);
-    map.on("locationerror", handleLocationError);
-
+    map.on("locationfound", onLocationFound);
+    map.on("locationerror", onLocationError);
     return () => {
-      map.off("locationfound", handleLocationFound);
-      map.off("locationerror", handleLocationError);
+      map.off("locationfound", onLocationFound);
+      map.off("locationerror", onLocationError);
       if (userMarker) map.removeLayer(userMarker);
     };
-  }, [map, t]); // Dependencies now include 't'
-
+  }, [map, t]);
   return (
     <div className="absolute top-16 right-4 z-[1000] sm:top-4">
       <button
         onClick={handleLocate}
         className="p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-200 ease-in-out"
-        title={t("findMyLocation")} // This was already using t
-        aria-label={t("findMyLocation")} // This was already using t
+        title={t("findMyLocation")}
+        aria-label={t("findMyLocation")}
       >
-        <MapPinOutlineIcon className="h-6 w-6 text-gray-700" />
+        <MapPinOutlineIcon className="h-6 w-6 text-blue-600" />
       </button>
     </div>
   );
 };
 
-/* ------------------------------------------------------------------ */
-/* Main map component                                                 */
-/* ------------------------------------------------------------------ */
+/* ========================================================================== */
+/*                            Main Map Component                            */
+/* ========================================================================== */
 const MapComponent: React.FC = () => {
   const { t, language } = useLanguage();
   const biellaCoords: L.LatLngExpression = [45.5667, 8.05];
   const initialZoom = 13;
 
   /* ----------------------------- State ----------------------------- */
-  const [selectedPoi, setSelectedPoi] = useState<POI | null>(null);
+  const allPoiTypes = useMemo(() => new Set(poiData.map((p) => p.type)), []);
   const [activeFilters, setActiveFilters] = useState<Set<PoiType>>(
-    new Set(legendItems.map((item) => item.type))
+    () => new Set(allPoiTypes)
   );
-  const [isLegendOpen, setIsLegendOpen] = useState(false);
+  const [isLegendOpen, setIsLegendOpen] = useState(false); // Start legend open
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const [selectedPoi, setSelectedPoi] = useState<POI | null>(null);
   const [searchTargetPoi, setSearchTargetPoi] = useState<POI | null>(null);
   const [hoveredPoiId, setHoveredPoiId] = useState<number | null>(null);
   const [selectedPoiId, setSelectedPoiId] = useState<number | null>(null);
+  const [hoveredLegendType, setHoveredLegendType] = useState<PoiType | null>(
+    null
+  ); // State for legend hover effect
+  const [showPulse, setShowPulse] = useState(true); // State for initial legend button pulse
 
   /* --------------------------- Handlers --------------------------- */
-  const handleMarkerClick = (poi: POI) => {
+  const handleMarkerClick = useCallback((poi: POI) => {
     setSelectedPoi(poi);
     setSelectedPoiId(poi.id);
-  };
-
-  const handleShowDetails = (poi: POI) => {
+  }, []);
+  const handleShowDetails = useCallback((poi: POI) => {
     setSelectedPoi(poi);
     setSelectedPoiId(poi.id);
-  };
-
-  const handleCloseModal = () => {
+  }, []);
+  const handleCloseModal = useCallback(() => {
     setSelectedPoi(null);
     setSelectedPoiId(null);
-  };
-
-  const handleFilterChange = (type: PoiType, isActive: boolean) => {
+  }, []);
+  const handleFilterChange = useCallback((type: PoiType, isActive: boolean) => {
     setActiveFilters((prev) => {
       const next = new Set(prev);
-      if (isActive) {
-        next.add(type);
-      } else {
-        next.delete(type);
-      }
+      if (isActive) next.add(type);
+      else next.delete(type);
       return next;
     });
-  };
-
-  const toggleLegend = () => setIsLegendOpen((o) => !o);
-
-  const resetFilters = () =>
-    setActiveFilters(new Set(legendItems.map((item) => item.type)));
-
+  }, []);
+  const resetFilters = useCallback(() => {
+    setActiveFilters(new Set(allPoiTypes));
+  }, [allPoiTypes]);
+  const handleSelectAllFilters = useCallback(() => {
+    setActiveFilters(new Set(allPoiTypes));
+  }, [allPoiTypes]);
+  const handleDeselectAllFilters = useCallback(() => {
+    setActiveFilters(new Set<PoiType>());
+  }, []);
   const handleSearchResultSelect = useCallback((poi: POI) => {
-    // Fly to the POI and open its popup
-    setSearchTargetPoi(poi); // Trigger MapEvents
-    // Maybe close legend/search results if open? Optional UX enhancement
-    // setIsLegendOpen(false);
-    // Close search results is handled within SearchBar on selection
-
-    // Clear target after a short delay to allow re-selection
+    setSearchTargetPoi(poi);
     setTimeout(() => setSearchTargetPoi(null), 100);
   }, []);
 
-  /* --------------------------- Derived ---------------------------- */
-  const filteredPois = useMemo(() => {
-    return poiData.filter((poi) => activeFilters.has(poi.type));
-  }, [activeFilters]); // Memoize filtered POIs
+  /* --------------------------- Derived State ------------------------ */
+  const filteredPois = useMemo(
+    () => poiData.filter((poi) => activeFilters.has(poi.type)),
+    [activeFilters]
+  );
+  const showResetButton = useMemo(
+    () => activeFilters.size !== allPoiTypes.size && activeFilters.size > 0,
+    [activeFilters, allPoiTypes]
+  );
 
-  // Condition for showing reset button
-  const showResetButton = useMemo(() => {
-    return activeFilters.size !== legendItems.length;
-  }, [activeFilters]);
+  /* --------------------------- Effects --------------------------- */
+  useEffect(() => {
+    // For initial pulse effect
+    const timer = setTimeout(() => setShowPulse(false), 2500); // Pulse duration
+    return () => clearTimeout(timer);
+  }, []);
 
-  /* --------------------------- Render ----------------------------- */
   return (
-    // This div is the positioning context (relative) for absolute children
     <div className="h-full w-full relative z-10">
-      {/* SearchBar component - Uses absolute positioning internally */}
+      {/* --- Fixed/Absolute UI Elements --- */}
       <SearchBar
         pois={poiData}
         onSearchResultSelect={handleSearchResultSelect}
       />
 
+      {/* Language Switcher Trigger Button */}
+      <button
+        onClick={() => setIsLangMenuOpen(true)}
+        // *** UPDATE: Ensure consistent styling + apply pulse ***
+        className={`absolute top-16 left-4 sm:top-4 z-20 p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 ease-in-out hover:scale-105 ${
+          showPulse ? "animate-pulse" : ""
+        }`}
+        aria-label={t("showLangMenu")}
+        title={t("showLangMenu")}
+      >
+        <GlobeAltIcon className="h-6 w-6 text-brand-dark-green" />
+      </button>
+
+      {/* Legend Trigger Button (shown only when legend closed) */}
+      {!isLegendOpen && (
+        <button
+          onClick={() => setIsLegendOpen(true)}
+          // *** UPDATE: Ensure consistent styling + apply pulse ***
+          className={`fixed bottom-4 left-4 z-20 p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 ease-in-out hover:scale-105 ${
+            showPulse ? "animate-pulse" : ""
+          }`}
+          aria-label={t("showLegend")}
+          title={t("showLegend")}
+        >
+          <AdjustmentsHorizontalIcon className="h-6 w-6 text-brand-dark-green" />
+        </button>
+      )}
+      {/* Legend Trigger Button (shown only when legend closed) */}
+      {!isLegendOpen && (
+        <button
+          onClick={() => setIsLegendOpen(true)}
+          className={`fixed bottom-4 left-4 z-20 p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 ease-in-out hover:scale-105 ${
+            showPulse ? "animate-pulse" : ""
+          }`}
+          aria-label={t("showLegend")}
+          title={t("showLegend")}
+        >
+          <AdjustmentsHorizontalIcon className="h-6 w-6 text-brand-dark-green" />
+        </button>
+      )}
+
+      {/* --- The Map --- */}
       <MapContainer
         center={biellaCoords}
         zoom={initialZoom}
         scrollWheelZoom
-        className="h-full w-full z-0" // z-0 keeps it below controls
-        zoomControl={false} // Disable default zoom to use the component below
+        className="h-full w-full z-0"
+        zoomControl={false}
       >
         <TileLayer
-          // Attribution for CARTO Positron
           attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
-          // URL for CARTO Voyager style
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-          // Optional: Define subdomains if not inferred automatically by Leaflet/React-Leaflet
-          // subdomains={['a', 'b', 'c', 'd']}
-          // Optional: Set maxZoom if needed (Positron typically goes high)
-          // maxZoom={20}
+          maxZoom={20}
         />
-        {/* Use default ZoomControl component, positioned by Leaflet */}
         <ZoomControl position="bottomright" />
-        {/* Use our custom LocateControl, positioned via Tailwind */}
         <LocateControl />
-        {/* Helper component for map events like flyTo */}
         <MapEvents targetPoi={searchTargetPoi} />
-
         <MarkerClusterGroup chunkedLoading>
           {filteredPois.map((poi) => {
             const isSelected = poi.id === selectedPoiId;
-            const isHovered = poi.id === hoveredPoiId;
-            let currentIcon = getPoiIcon(poi.type, poi.iconUrl);
-
-            // Increase icon size on hover/select
-            if (isSelected || isHovered) {
-              currentIcon = L.icon({
-                ...currentIcon.options,
-                iconSize: [42, 42], // Larger size
-                iconAnchor: [21, 42], // Adjusted anchor
-                popupAnchor: [0, -42], // Adjusted popup anchor
-              });
-            }
+            const isHoveredMarker = poi.id === hoveredPoiId;
+            const isHoveredLegend = poi.type === hoveredLegendType; // Check against legend hover state
+            const currentIcon = getPoiIcon(
+              poi.type,
+              isSelected || isHoveredMarker || isHoveredLegend
+            ); // Pass combined active state
 
             return (
               <Marker
                 key={poi.id}
                 position={poi.coordinates}
                 icon={currentIcon}
+                zIndexOffset={isHoveredMarker || isHoveredLegend ? 1000 : 0} // Bring hovered markers to front
                 eventHandlers={{
                   click: () => handleMarkerClick(poi),
                   mouseover: () => setHoveredPoiId(poi.id),
@@ -281,30 +307,21 @@ const MapComponent: React.FC = () => {
         </MarkerClusterGroup>
       </MapContainer>
 
-      {/* Legend component - Uses absolute positioning internally */}
+      {/* --- Slideouts & Modals --- */}
       <LegendSlideout
-        isOpen={isLegendOpen} // Pass state as 'isOpen'
-        setIsOpen={setIsLegendOpen} // Pass state setter as 'setIsOpen'
+        isOpen={isLegendOpen}
+        setIsOpen={setIsLegendOpen}
         activeFilters={activeFilters}
         onFilterChange={handleFilterChange}
         allPois={poiData}
         resetFilters={resetFilters}
         showResetButton={showResetButton}
-        // Remove isLegendOpen={...} and onToggleVisibility={...} if they were still here
+        // Pass new props
+        onSelectAll={handleSelectAllFilters}
+        onDeselectAll={handleDeselectAllFilters}
+        setHoveredLegendType={setHoveredLegendType}
       />
-
-      {/* Reset Filters Button */}
-      {isLegendOpen && activeFilters.size !== legendItems.length && (
-        <button
-          onClick={resetFilters}
-          className="absolute bottom-20 left-4 z-[1000] px-3 py-1.5 bg-red-100 text-red-700 text-xs font-medium rounded-full shadow hover:bg-red-200 transition-colors duration-150 ease-in-out"
-          aria-label={t("clearFilters")}
-        >
-          {t("clearFilters")}
-        </button>
-      )}
-
-      {/* Modal component - Remains fixed to viewport */}
+      <LanguageSwitcher isOpen={isLangMenuOpen} setIsOpen={setIsLangMenuOpen} />
       <PoiDetailModal poi={selectedPoi} onClose={handleCloseModal} />
     </div>
   );
