@@ -54,5 +54,6 @@
     "locationErrorPrefix": "Errore Posizione:",
     "locationErrorGeneric": "Impossibile trovare la tua posizione.",
     "locationErrorPermission": "Permesso di localizzazione negato. Controlla le impostazioni del browser.",
-    "locationErrorUnavailable": "Posizione attualmente non disponibile."
+    "locationErrorUnavailable": "Posizione attualmente non disponibile.",
+    "noResultsFound" : "Nessun risultato trovato"
 }

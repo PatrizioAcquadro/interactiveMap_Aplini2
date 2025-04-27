@@ -1,4 +1,5 @@
-// components/SearchBar.tsx
+"use client"; // Ensure client component directive
+
 import React, {
   useState,
   useRef,
@@ -7,13 +8,47 @@ import React, {
   useMemo,
 } from "react";
 import { MagnifyingGlassIcon, XCircleIcon } from "@heroicons/react/24/outline";
-import { POI, PoiType } from "../data/pois"; // Ensure PoiType is imported if used implicitly by categoryLabels key type
-import { useLanguage } from "../context/LanguageContext";
+// *** ADD: Import POI type styles and POI type itself ***
+import { POI, PoiType, poiTypeStyles } from "../data/pois";
+import { useLanguage, TranslationKey } from "../context/LanguageContext"; // Import TranslationKey
 
 interface SearchBarProps {
   pois: POI[];
   onSearchResultSelect: (poi: POI) => void;
 }
+
+// --- Helper Function for Highlighting Text ---
+// Wraps matching parts of a string with <strong>
+const HighlightedText: React.FC<{ text: string; highlight: string }> = ({
+  text,
+  highlight,
+}) => {
+  if (!highlight.trim()) {
+    return <span>{text}</span>;
+  }
+  // Case-insensitive regex, global search
+  const regex = new RegExp(
+    `(${highlight.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
+    "gi"
+  );
+  const parts = text.split(regex);
+
+  return (
+    <span>
+      {parts.map((part, index) =>
+        regex.test(part) ? (
+          // Use Tailwind class for highlighted part
+          <strong key={index} className="font-bold text-[#009246]">
+            {part}
+          </strong>
+        ) : (
+          <span key={index}>{part}</span>
+        )
+      )}
+    </span>
+  );
+};
+// --- End Helper Function ---
 
 const SearchBar: React.FC<SearchBarProps> = ({
   pois,
@@ -121,13 +156,16 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   return (
-    // *** CHANGE: Changed 'fixed' to 'absolute' ***
+    // Positioning remains absolute top-center
     <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-[1000] w-full max-w-md px-4">
       <div className="relative">
         {/* Search Icon */}
         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          {/* Optional: Change icon color on focus - requires more state or CSS sibling selectors */}
           <MagnifyingGlassIcon
-            className="h-5 w-5 text-gray-400"
+            className={`h-5 w-5 ${
+              isFocused ? "text-[#009246]" : "text-gray-400"
+            } transition-colors`}
             aria-hidden="true"
           />
         </div>
@@ -141,7 +179,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder={t("searchPlaceholder")}
-          className="block w-full pl-11 pr-10 py-2 border border-gray-300 rounded-full leading-5 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm shadow-md transition-shadow duration-150 ease-in-out"
+          // *** CHANGE: Update focus ring and border colors ***
+          className={`block w-full pl-11 pr-10 py-2 border border-gray-300 rounded-full leading-5 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#009246] focus:border-[#009246] sm:text-sm shadow-md transition-shadow duration-150 ease-in-out`}
         />
 
         {/* Clear Button (visible when searchTerm is not empty) */}
@@ -158,38 +197,77 @@ const SearchBar: React.FC<SearchBarProps> = ({
           </div>
         )}
 
-        {/* Results Dropdown (visible when focused and results exist) */}
+        {/* Results Dropdown */}
+        {/* Use conditional rendering AND check results length */}
         {isFocused && results.length > 0 && (
-          <ul className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
-            {results.map((poi) => (
-              <li
-                key={poi.id}
-                // Use onMouseDown to trigger before onBlur hides the list
-                onMouseDown={(e) => {
-                  e.preventDefault();
-                  handleSelectResult(poi);
-                }}
-                className="text-gray-900 cursor-pointer select-none relative py-2 px-3 hover:bg-blue-50 transition-colors duration-100 ease-in-out"
-              >
-                <div className="flex justify-between items-center gap-2">
-                  <span className="block font-medium truncate flex-grow">
-                    {language === "en" && poi.name_en ? poi.name_en : poi.name}
-                  </span>
-                  {/* Display translated category label */}
-                  <span className="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded flex-shrink-0">
-                    {categoryLabels[poi.type] || poi.type}{" "}
-                    {/* Fallback to raw type if label missing */}
-                  </span>
-                </div>
-                {/* Optionally show address */}
-                {poi.address && (
-                  <span className="text-xs text-gray-500 block truncate mt-0.5">
-                    {poi.address}
-                  </span>
-                )}
-              </li>
-            ))}
+          // Improved dropdown styling
+          <ul className="absolute z-10 mt-1.5 w-full bg-white shadow-xl max-h-60 rounded-lg py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm divide-y divide-gray-100">
+            {results.map((poi) => {
+              // Get icon style for this POI type
+              const style = poiTypeStyles[poi.type] || poiTypeStyles.default;
+              const IconComponent = style.icon;
+              const poiName =
+                language === "en" && poi.name_en ? poi.name_en : poi.name;
+              const poiAddress = poi.address;
+
+              return (
+                <li
+                  key={poi.id}
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    handleSelectResult(poi);
+                  }} // Use onMouseDown to fire before blur
+                  className="group text-gray-900 cursor-pointer select-none relative px-3 py-2.5 hover:bg-brand-light-green/30 transition-colors duration-100 ease-in-out" // Adjusted padding/hover
+                >
+                  <div className="flex items-center space-x-3">
+                    {" "}
+                    {/* Main flex container */}
+                    {/* POI Icon */}
+                    <div
+                      className="flex-shrink-0 h-7 w-7 rounded-md flex items-center justify-center"
+                      style={{ backgroundColor: style.color }}
+                    >
+                      <IconComponent
+                        className="h-4 w-4 text-white"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    {/* Text Content */}
+                    <div className="flex-1 min-w-0">
+                      {" "}
+                      {/* Allow text to truncate */}
+                      {/* Name with Highlighting */}
+                      <p className="text-sm font-medium text-gray-900 truncate group-hover:text-[#009246]">
+                        <HighlightedText
+                          text={poiName}
+                          highlight={searchTerm}
+                        />
+                      </p>
+                      {/* Address with Highlighting (Optional) */}
+                      {poiAddress && (
+                        <p className="text-xs text-gray-500 truncate mt-0.5">
+                          <HighlightedText
+                            text={poiAddress}
+                            highlight={searchTerm}
+                          />
+                        </p>
+                      )}
+                    </div>
+                    {/* Category Label (Optional - might be redundant with icon) */}
+                    {/* <span className="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded flex-shrink-0">
+                          {categoryLabels[poi.type] || poi.type}
+                        </span> */}
+                  </div>
+                </li>
+              );
+            })}
           </ul>
+        )}
+        {/* Optional: Display 'No results' message */}
+        {isFocused && searchTerm.length > 1 && results.length === 0 && (
+          <div className="absolute z-10 mt-1.5 w-full bg-white shadow-lg rounded-md py-2 px-3 text-sm text-gray-500">
+            {t("noResultsFound")}
+          </div>
         )}
       </div>
     </div>

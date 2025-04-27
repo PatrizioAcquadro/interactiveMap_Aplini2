@@ -146,15 +146,13 @@ const Header: React.FC = () => {
         {/* This div sits below the nav, spanning the full width of the header */}
         <div className="flex h-0.5 w-full">
           {" "}
-          {/* Container: 1px height, full width, flex row */}
+          {/* Container: 2px height, full width, flex row */}
           {/* Green part: Takes 1/3 width, fills height, sets bg color */}
           <div className="flex-1 h-full bg-[#009246]"></div>{" "}
-          {/* Official Flag Green */}
           {/* White part: Takes 1/3 width, fills height, sets bg color */}
           <div className="flex-1 h-full bg-white"></div>
           {/* Red part: Takes 1/3 width, fills height, sets bg color */}
           <div className="flex-1 h-full bg-[#CE2B37]"></div>{" "}
-          {/* Official Flag Red */}
         </div>
         {/* --- End Flag Stripe --- */}
       </header>
