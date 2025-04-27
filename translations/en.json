@@ -48,5 +48,11 @@
     "selectAll" : "Select All",
     "deselectAll" : "Deselect All",
     "zoomIn": "Zoom in",
-    "zoomOut": "Zoom out"
+    "zoomOut": "Zoom out",
+    "youAreHere": "You are here!",
+    "accuracy": "Accuracy",
+    "locationErrorPrefix": "Location Error:",
+    "locationErrorGeneric": "Could not find your location.",
+    "locationErrorPermission": "Location permission denied. Please check browser settings.",
+    "locationErrorUnavailable": "Location currently unavailable."
 }

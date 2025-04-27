@@ -78,23 +78,68 @@ const LocateControl = () => {
   const { t } = useLanguage();
   const handleLocate = () =>
     map.locate({ setView: true, maxZoom: 16, enableHighAccuracy: true });
+
   useEffect(() => {
     let userMarker: L.Marker | null = null;
+
     const onLocationFound = (e: L.LocationEvent) => {
       if (userMarker) map.removeLayer(userMarker);
+
+      // User Location Dot (Keep it blue for clarity/convention)
+      const dotHtml = `<div class="h-3.5 w-3.5 bg-blue-500 rounded-full ring-2 ring-white shadow-lg animate-pulse"></div>`;
+
       userMarker = L.marker(e.latlng, {
         icon: L.divIcon({
-          className: "user-location-marker",
-          html: `<div class="h-3 w-3 bg-blue-500 rounded-full ring-2 ring-white shadow-md"></div>`,
-          iconSize: [12, 12],
+          className: "user-location-marker", // Can add specific styles if needed
+          html: dotHtml,
+          iconSize: [14, 14], // Match dot size
+          iconAnchor: [7, 7], // Center anchor
         }),
-      })
-        .addTo(map)
-        .bindPopup(t("youAreHere"))
+        // Make marker non-interactive if desired (popup is enough)
+        // interactive: false,
+      }).addTo(map);
+
+      // *** ENHANCED POPUP ***
+      const accuracy = e.accuracy.toFixed(0); // Get accuracy in meters
+      const popupHtmlContent = `
+              <div class="font-sans text-center p-1 -m-1">
+                  <span class="block font-semibold text-sm text-brand-dark-green mb-0.5">
+                      ${t("youAreHere")}
+                  </span>
+                  <span class="block text-xs text-gray-500">
+                      ${t("accuracy")}: ~${accuracy} m
+                  </span>
+              </div>
+          `;
+
+      userMarker
+        .bindPopup(popupHtmlContent, {
+          closeButton: false, // Cleaner look without default close button
+          offset: L.point(0, -10), // Adjust offset to sit nicely above dot
+        })
         .openPopup();
+
+      // Optional: Auto-close popup after a few seconds
+      // setTimeout(() => {
+      //     if (map && userMarker) {
+      //         userMarker.closePopup();
+      //     }
+      // }, 4000); // Close after 4 seconds
+    }; // End onLocationFound
+
+    const onLocationError = (e: L.ErrorEvent) => {
+      // Provide more user-friendly errors potentially
+      let message = t("locationErrorGeneric");
+      if (e.code === 1) {
+        // PERMISSION_DENIED
+        message = t("locationErrorPermission");
+      } else if (e.code === 2) {
+        // POSITION_UNAVAILABLE
+        message = t("locationErrorUnavailable");
+      } // else code 3: TIMEOUT
+      alert(`${t("locationErrorPrefix")} ${message}`);
     };
-    const onLocationError = (e: L.ErrorEvent) =>
-      alert(`${t("locationErrorPrefix")} ${e.message}`);
+
     map.on("locationfound", onLocationFound);
     map.on("locationerror", onLocationError);
     return () => {
@@ -102,9 +147,10 @@ const LocateControl = () => {
       map.off("locationerror", onLocationError);
       if (userMarker) map.removeLayer(userMarker);
     };
-  }, [map, t]);
+  }, [map, t]); // Add t as dependency
+
   return (
-    // Position absolutely relative to MapComponent container
+    // Positioning stays the same (absolute relative to MapComponent)
     <div className="absolute top-16 right-4 z-[1000] sm:top-4">
       <button
         onClick={handleLocate}
@@ -112,7 +158,8 @@ const LocateControl = () => {
         title={t("findMyLocation")}
         aria-label={t("findMyLocation")}
       >
-        <MapPinOutlineIcon className="h-6 w-6 text-blue-600" />
+        {/* *** CHANGE: Icon color to theme dark green *** */}
+        <MapPinOutlineIcon className="h-6 w-6 text-brand-dark-green" />
       </button>
     </div>
   );

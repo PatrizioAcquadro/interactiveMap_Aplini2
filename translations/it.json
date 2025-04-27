@@ -48,5 +48,11 @@
     "selectAll" : "Seleziona Tutto",
     "deselectAll" : "Deselezionza Tutto",
     "zoomIn": "Ingrandisci",
-    "zoomOut": "Riduci"
+    "zoomOut": "Riduci",
+    "youAreHere": "Sei qui!",
+    "accuracy": "Precisione",
+    "locationErrorPrefix": "Errore Posizione:",
+    "locationErrorGeneric": "Impossibile trovare la tua posizione.",
+    "locationErrorPermission": "Permesso di localizzazione negato. Controlla le impostazioni del browser.",
+    "locationErrorUnavailable": "Posizione attualmente non disponibile."
 }
