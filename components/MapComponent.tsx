@@ -204,8 +204,14 @@ const MapComponent: React.FC = () => {
         zoomControl={false} // Disable default zoom to use the component below
       >
         <TileLayer
-          attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          // Attribution for CARTO Positron
+          attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
+          // URL for CARTO Voyager style
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+          // Optional: Define subdomains if not inferred automatically by Leaflet/React-Leaflet
+          // subdomains={['a', 'b', 'c', 'd']}
+          // Optional: Set maxZoom if needed (Positron typically goes high)
+          // maxZoom={20}
         />
         {/* Use default ZoomControl component, positioned by Leaflet */}
         <ZoomControl position="bottomright" />
