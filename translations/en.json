@@ -46,5 +46,7 @@
     "showLangMenu": "Change Language",
     "legend_guidance_text": "Select categories to show/hide them on the map.",
     "selectAll" : "Select All",
-    "deselectAll" : "Deselect All"
+    "deselectAll" : "Deselect All",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out"
 }

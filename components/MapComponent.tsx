@@ -8,15 +8,15 @@ import {
   Marker,
   Popup,
   useMap,
-  ZoomControl,
+  // Removed ZoomControl import from react-leaflet
 } from "react-leaflet";
 import L from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
 // --- Leaflet CSS and Icon Fix ---
 import "leaflet/dist/leaflet.css";
-// Explicitly set default icon options (using absolute paths to public folder)
-delete (L.Icon.Default.prototype as any)._getIconUrl; // Ensure clean slate
+// Explicitly set default icon options
+delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: "/images/marker-icon-2x.png",
   iconUrl: "/images/marker-icon.png",
@@ -28,23 +28,26 @@ L.Icon.Default.mergeOptions({
 });
 
 // --- Project Imports ---
-import { poiData, POI, PoiType, getPoiIcon } from "../data/pois"; // getPoiIcon uses L.DivIcon now
+import { poiData, POI, PoiType, getPoiIcon } from "../data/pois";
 import LegendSlideout from "./LegendSlideout";
 import LanguageSwitcher from "./LanguageSwitcher";
 import PoiDetailModal from "./PoiDetailModal";
 import SearchBar from "./SearchBar";
+import CustomZoomControl from "./CustomZoomControl"; // Import the custom component
 import {
   MapPinIcon as MapPinOutlineIcon,
   GlobeAltIcon,
-  AdjustmentsHorizontalIcon, // Import icon for Legend trigger
+  AdjustmentsHorizontalIcon,
 } from "@heroicons/react/24/outline";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { useLanguage } from "../context/LanguageContext";
 
 /* ========================================================================== */
-/*                            Helper Components                             */
+/*         Helper Components (Defined Outside Main Component)                 */
 /* ========================================================================== */
 
+// --- MapEvents ---
+// Must be rendered inside MapContainer
 const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
   const map = useMap();
   useEffect(() => {
@@ -68,6 +71,8 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
   return null;
 };
 
+// --- LocateControl ---
+// Must be rendered inside MapContainer
 const LocateControl = () => {
   const map = useMap();
   const { t } = useLanguage();
@@ -99,6 +104,7 @@ const LocateControl = () => {
     };
   }, [map, t]);
   return (
+    // Position absolutely relative to MapComponent container
     <div className="absolute top-16 right-4 z-[1000] sm:top-4">
       <button
         onClick={handleLocate}
@@ -112,20 +118,62 @@ const LocateControl = () => {
   );
 };
 
+// --- CustomZoomControl Definition (Moved outside for clarity, still needs useMap) ---
+// This helper component MUST be rendered inside MapContainer
+const CustomZoomControlHelper: React.FC = () => {
+  const map = useMap();
+  const { t } = useLanguage();
+  const handleZoomIn = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    map.zoomIn();
+  };
+  const handleZoomOut = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    map.zoomOut();
+  };
+  const zoomInLabel = t("zoomIn");
+  const zoomOutLabel = t("zoomOut");
+  return (
+    // Position absolutely relative to MapComponent container
+    <div className="absolute bottom-4 right-4 z-[1000] flex flex-row space-x-2">
+      <button
+        onClick={handleZoomIn}
+        className="p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+        aria-label={zoomInLabel}
+        title={zoomInLabel}
+      >
+        <PlusIcon className="h-6 w-6 text-brand-dark-green" />{" "}
+        {/* Ensure PlusIcon is imported */}
+      </button>
+      <button
+        onClick={handleZoomOut}
+        className="p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+        aria-label={zoomOutLabel}
+        title={zoomOutLabel}
+      >
+        <MinusIcon className="h-6 w-6 text-brand-dark-green" />{" "}
+        {/* Ensure MinusIcon is imported */}
+      </button>
+    </div>
+  );
+};
+// Import PlusIcon and MinusIcon if not already done
+import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
+
 /* ========================================================================== */
 /*                            Main Map Component                            */
 /* ========================================================================== */
 const MapComponent: React.FC = () => {
+  // --- State ---
   const { t, language } = useLanguage();
   const biellaCoords: L.LatLngExpression = [45.5667, 8.05];
   const initialZoom = 13;
 
-  /* ----------------------------- State ----------------------------- */
   const allPoiTypes = useMemo(() => new Set(poiData.map((p) => p.type)), []);
   const [activeFilters, setActiveFilters] = useState<Set<PoiType>>(
     () => new Set(allPoiTypes)
   );
-  const [isLegendOpen, setIsLegendOpen] = useState(false); // Start legend open
+  const [isLegendOpen, setIsLegendOpen] = useState(false); // Legend open by default now
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [selectedPoi, setSelectedPoi] = useState<POI | null>(null);
   const [searchTargetPoi, setSearchTargetPoi] = useState<POI | null>(null);
@@ -133,10 +181,10 @@ const MapComponent: React.FC = () => {
   const [selectedPoiId, setSelectedPoiId] = useState<number | null>(null);
   const [hoveredLegendType, setHoveredLegendType] = useState<PoiType | null>(
     null
-  ); // State for legend hover effect
-  const [showPulse, setShowPulse] = useState(true); // State for initial legend button pulse
+  );
+  const [showPulse, setShowPulse] = useState(true);
 
-  /* --------------------------- Handlers --------------------------- */
+  // --- Handlers ---
   const handleMarkerClick = useCallback((poi: POI) => {
     setSelectedPoi(poi);
     setSelectedPoiId(poi.id);
@@ -171,7 +219,7 @@ const MapComponent: React.FC = () => {
     setTimeout(() => setSearchTargetPoi(null), 100);
   }, []);
 
-  /* --------------------------- Derived State ------------------------ */
+  // --- Derived State ---
   const filteredPois = useMemo(
     () => poiData.filter((poi) => activeFilters.has(poi.type)),
     [activeFilters]
@@ -181,25 +229,21 @@ const MapComponent: React.FC = () => {
     [activeFilters, allPoiTypes]
   );
 
-  /* --------------------------- Effects --------------------------- */
+  // --- Effects ---
   useEffect(() => {
-    // For initial pulse effect
-    const timer = setTimeout(() => setShowPulse(false), 2500); // Pulse duration
+    const timer = setTimeout(() => setShowPulse(false), 2500);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="h-full w-full relative z-10">
-      {/* --- Fixed/Absolute UI Elements --- */}
+      {/* --- Fixed/Absolute UI Elements OUTSIDE MapContainer --- */}
       <SearchBar
         pois={poiData}
         onSearchResultSelect={handleSearchResultSelect}
       />
-
-      {/* Language Switcher Trigger Button */}
       <button
         onClick={() => setIsLangMenuOpen(true)}
-        // *** UPDATE: Ensure consistent styling + apply pulse ***
         className={`absolute top-16 left-4 sm:top-4 z-20 p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 ease-in-out hover:scale-105 ${
           showPulse ? "animate-pulse" : ""
         }`}
@@ -208,22 +252,6 @@ const MapComponent: React.FC = () => {
       >
         <GlobeAltIcon className="h-6 w-6 text-brand-dark-green" />
       </button>
-
-      {/* Legend Trigger Button (shown only when legend closed) */}
-      {!isLegendOpen && (
-        <button
-          onClick={() => setIsLegendOpen(true)}
-          // *** UPDATE: Ensure consistent styling + apply pulse ***
-          className={`fixed bottom-4 left-4 z-20 p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 ease-in-out hover:scale-105 ${
-            showPulse ? "animate-pulse" : ""
-          }`}
-          aria-label={t("showLegend")}
-          title={t("showLegend")}
-        >
-          <AdjustmentsHorizontalIcon className="h-6 w-6 text-brand-dark-green" />
-        </button>
-      )}
-      {/* Legend Trigger Button (shown only when legend closed) */}
       {!isLegendOpen && (
         <button
           onClick={() => setIsLegendOpen(true)}
@@ -236,6 +264,7 @@ const MapComponent: React.FC = () => {
           <AdjustmentsHorizontalIcon className="h-6 w-6 text-brand-dark-green" />
         </button>
       )}
+      {/* Note: CustomZoomControlHelper is rendered *inside* MapContainer now */}
 
       {/* --- The Map --- */}
       <MapContainer
@@ -245,30 +274,33 @@ const MapComponent: React.FC = () => {
         className="h-full w-full z-0"
         zoomControl={false}
       >
+        {/* --- Map Layers --- */}
         <TileLayer
           attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
           maxZoom={20}
         />
-        <ZoomControl position="bottomright" />
+        {/* --- Map Controls & Event Handlers (INSIDE MapContainer) --- */}
         <LocateControl />
         <MapEvents targetPoi={searchTargetPoi} />
+        <CustomZoomControlHelper />{" "}
+        {/* *** Render CustomZoomControlHelper INSIDE *** */}
+        {/* --- Map Data Layers --- */}
         <MarkerClusterGroup chunkedLoading>
           {filteredPois.map((poi) => {
             const isSelected = poi.id === selectedPoiId;
             const isHoveredMarker = poi.id === hoveredPoiId;
-            const isHoveredLegend = poi.type === hoveredLegendType; // Check against legend hover state
+            const isHoveredLegend = poi.type === hoveredLegendType;
             const currentIcon = getPoiIcon(
               poi.type,
               isSelected || isHoveredMarker || isHoveredLegend
-            ); // Pass combined active state
-
+            );
             return (
               <Marker
                 key={poi.id}
                 position={poi.coordinates}
                 icon={currentIcon}
-                zIndexOffset={isHoveredMarker || isHoveredLegend ? 1000 : 0} // Bring hovered markers to front
+                zIndexOffset={isHoveredMarker || isHoveredLegend ? 1000 : 0}
                 eventHandlers={{
                   click: () => handleMarkerClick(poi),
                   mouseover: () => setHoveredPoiId(poi.id),
@@ -296,7 +328,7 @@ const MapComponent: React.FC = () => {
                       onClick={() => handleShowDetails(poi)}
                       className="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium transition-colors duration-150 ease-in-out mt-1 inline-flex items-center"
                     >
-                      {t("moreDetails")}
+                      {t("moreDetails")}{" "}
                       <PaperAirplaneIcon className="h-4 w-4 ml-1 transform rotate-45" />
                     </button>
                   </div>
@@ -307,7 +339,7 @@ const MapComponent: React.FC = () => {
         </MarkerClusterGroup>
       </MapContainer>
 
-      {/* --- Slideouts & Modals --- */}
+      {/* --- Slideouts & Modals (OUTSIDE MapContainer) --- */}
       <LegendSlideout
         isOpen={isLegendOpen}
         setIsOpen={setIsLegendOpen}
@@ -316,7 +348,6 @@ const MapComponent: React.FC = () => {
         allPois={poiData}
         resetFilters={resetFilters}
         showResetButton={showResetButton}
-        // Pass new props
         onSelectAll={handleSelectAllFilters}
         onDeselectAll={handleDeselectAllFilters}
         setHoveredLegendType={setHoveredLegendType}
