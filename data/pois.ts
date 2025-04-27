@@ -191,7 +191,7 @@ export const legendItems: {
 // --- Updated Function to get custom Leaflet Icon using L.DivIcon ---
 export const getPoiIcon = (type: PoiType, isActive = false): L.DivIcon => {
   const style = poiTypeStyles[type] || poiTypeStyles.default;
-  const baseSize = 30;
+  const baseSize = 43;
   const scale = isActive ? 1.15 : 1.0; // Define scale factor
   const IconComponent = style.icon;
 
@@ -200,7 +200,7 @@ export const getPoiIcon = (type: PoiType, isActive = false): L.DivIcon => {
     // We need to manually apply size/color here because it's going into HTML
     // Tailwind classes won't work directly in DivIcon HTML unless Leaflet renders within React tree (not default)
     React.createElement(IconComponent, {
-      size: baseSize * 0.55,
+      size: baseSize * 0.6,
       color: "white",
     }) // Icon size relative to container
   );
@@ -226,10 +226,10 @@ export const getPoiIcon = (type: PoiType, isActive = false): L.DivIcon => {
 
   return L.divIcon({
     html: iconHtml,
-    className: '',
+    className: "",
     // Use baseSize for calculations, scaling is visual only
     iconSize: [baseSize, baseSize],
     iconAnchor: [baseSize / 2, baseSize],
-    popupAnchor: [0, -baseSize + 5]
+    popupAnchor: [0, -baseSize + 5],
   });
 };

@@ -64,6 +64,8 @@ const Header: React.FC = () => {
 
   const toggleLang = () => setLanguage(language === "it" ? "en" : "it");
 
+  const fullTitle = t("header_title"); // Assuming this key exists
+
   return (
     <>
       {" "}
@@ -78,7 +80,7 @@ const Header: React.FC = () => {
           aria-label="Global"
         >
           {/* Logo */}
-          <div className="flex flex-shrink-0">
+          <div className="flex flex-1 justify-start items-center">
             {/* *** ADDED Hover Effect *** */}
             <Link
               href="/"
@@ -86,7 +88,7 @@ const Header: React.FC = () => {
             >
               <span className="sr-only">{t("sr_main_title")}</span>
               <Image
-                className="h-8 md:h-10 w-auto"
+                className="h-12 md:h-14 w-auto"
                 src="/logo-biellainfesta.svg"
                 alt={t("sr_logo_alt")}
                 width={150}
@@ -97,21 +99,46 @@ const Header: React.FC = () => {
           </div>
 
           {/* Title */}
-          <div className="flex flex-grow justify-center items-center min-w-0 px-2 md:px-4">
-            <h1 className="text-base md:text-lg font-semibold text-brand-dark-green truncate">
-              {t("header_title")}
-            </h1>
+          <div className="min-w-0 px-2 md:px-4 text-center">
+            {" "}
+            {/* Added text-center */}
+            <div>
+              {" "}
+              {/* Container for the two lines */}
+              <h1 className="text-lg md:text-xl font-semibold text-brand-dark-green leading-tight">
+                {" "}
+                {/* Adjusted leading */}
+                {/* Option 1: Using one translation key (simpler setup) */}
+                {/* Adunata Nazionale Alpini */}{" "}
+                {/* Extract this part if using separate keys */}
+                {/* Check if fullTitle contains a known separator like '|' or '\n' or split based on expected words */}
+                {fullTitle.split("-")[0].trim()}{" "}
+                {/* Example split if title is "Adunata... - Biella..." */}
+              </h1>
+              <p className="text-sm md:text-lg font-medium text-brand-dark-green/80 leading-tight">
+                {" "}
+                {/* Adjusted leading */}
+                {/* Option 1: Using one translation key */}
+                {/* Biella - 2025 */} {/* Extract this part */}
+                {fullTitle.includes("-")
+                  ? fullTitle.split("-").slice(1).join("-").trim()
+                  : "Biella - 2025"}{" "}
+                {/* Example split */}
+                {/* Option 2: Using separate keys */}
+                {/* {subTitle} */}
+              </p>
+            </div>
           </div>
 
           {/* Burger Button */}
-          <div className="flex flex-shrink-0 justify-end">
+          <div className="flex flex-1 justify-end items-center">
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-brand-dark-green hover:bg-white/30 transition-colors duration-150"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">{t("sr_open_menu")}</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon className="h-8 w-8" aria-hidden="true" />
             </button>
           </div>
         </nav>
