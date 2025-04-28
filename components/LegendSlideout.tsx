@@ -6,7 +6,6 @@ import { Dialog, Transition } from "@headlessui/react";
 import {
   XMarkIcon,
   CheckIcon,
-  // Legend trigger icon is now rendered in MapComponent
   CheckCircleIcon as CheckCircleSolid, // For Select All
   XCircleIcon as XCircleSolid, // For Deselect All
 } from "@heroicons/react/24/outline";
@@ -45,7 +44,10 @@ const LegendSlideout: React.FC<LegendSlideoutProps> = ({
   // Calculate POI counts
   const poiCounts = useMemo(() => {
     const counts: { [key in PoiType]?: number } = {};
-    legendItems.forEach((item) => (counts[item.type] = 0));
+    legendItems.forEach((item) => {
+      // Don't initialize count for ZTL if it's not a POI type in poiData
+      if (item.type !== "ztl") counts[item.type] = 0;
+    });
     allPois.forEach((poi) => {
       if (counts[poi.type] !== undefined) counts[poi.type]!++;
     });
@@ -106,7 +108,7 @@ const LegendSlideout: React.FC<LegendSlideoutProps> = ({
 
                 {/* Guidance Text */}
                 <div className="px-4 pt-3 pb-2">
-                  <p className="text-xs text-brand-dark-green/80">
+                  <p className="text-sm text-brand-dark-green/80">
                     {t("legend_guidance_text")}
                   </p>
                 </div>
@@ -115,7 +117,7 @@ const LegendSlideout: React.FC<LegendSlideoutProps> = ({
                 <div className="px-4 pb-2 flex items-center justify-between border-b border-brand-dark-green/5 pb-2 mb-2">
                   <button
                     onClick={onSelectAll}
-                    className="flex items-center text-xs font-medium text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                     disabled={activeFilters.size === legendItems.length}
                   >
                     <CheckCircleSolid className="h-4 w-4 mr-1" />{" "}
@@ -123,11 +125,10 @@ const LegendSlideout: React.FC<LegendSlideoutProps> = ({
                   </button>
                   <button
                     onClick={onDeselectAll}
-                    className="flex items-center text-xs font-medium text-red-600 hover:text-red-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="flex items-center text-sm font-medium text-red-600 hover:text-red-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                     disabled={activeFilters.size === 0}
                   >
-                    <XCircleSolid className="h-4 w-4 mr-1" />{" "}
-                    {t("deselectAll")}
+                    <XCircleSolid className="h-4 w-4 mr-1" /> {t("deselectAll")}
                   </button>
                 </div>
 
@@ -141,6 +142,72 @@ const LegendSlideout: React.FC<LegendSlideoutProps> = ({
                       `poiCategory_${item.type}` as TranslationKey;
                     const labelText = t(translationKey);
                     const IconComponent = item.icon;
+                    // *** Special Rendering for ZTL Item ***
+                    if (item.type === "ztl") {
+                      return (
+                        <div
+                          key={item.type}
+                          className={`group block p-2 rounded-lg transition-all duration-200 ease-in-out ${
+                            isActive
+                              ? "bg-white/50 shadow-sm ring-1 ring-inset ring-brand-dark-green/10"
+                              : "opacity-70 hover:opacity-100 hover:bg-white/20"
+                          }`}
+                          // No hover effect needed for ZTL details
+                          // onMouseEnter={() => setHoveredLegendType(item.type)}
+                          // onMouseLeave={() => setHoveredLegendType(null)}
+                        >
+                          <div
+                            className="flex items-center justify-between cursor-pointer"
+                            onClick={() => onFilterChange(item.type, !isActive)} // Toggle on click
+                          >
+                            {/* Icon, Label */}
+                            <div className="flex items-center space-x-2.5 flex-grow mr-2">
+                              {/* Simple Colored Rectangle for ZTL Icon */}
+                              <div
+                                className={`flex-shrink-0 h-7 w-7 rounded-md shadow-sm border border-black/10`}
+                                style={{
+                                  backgroundColor: item.color,
+                                  opacity: isActive ? 1 : 0.6,
+                                }} // Use color, dim if inactive
+                              ></div>
+                              <span className="text-sm font-medium text-brand-dark-green flex-grow">
+                                {labelText}
+                              </span>
+                            </div>
+                            {/* Checkbox */}
+                            <div
+                              className={`flex-shrink-0 h-6 w-6 rounded-md border border-brand-dark-green/30 flex items-center justify-center transition-all duration-150 ease-in-out ${
+                                isActive
+                                  ? "bg-brand-dark-green border-brand-dark-green"
+                                  : "bg-white/30 group-hover:border-brand-dark-green/50"
+                              }`}
+                            >
+                              <CheckIcon
+                                className={`h-4 w-4 text-brand-light-green transition-opacity duration-150 ease-in-out ${
+                                  isActive ? "opacity-100" : "opacity-0"
+                                }`}
+                              />
+                            </div>
+                          </div>
+                          {/* Details shown below if active */}
+                          {isActive && (
+                            <div className="mt-2 pl-[38px] text-xs space-y-1">
+                              {" "}
+                              {/* Indent details */}
+                              <p className="text-brand-dark-green/90">
+                                {t("ztl_description")}
+                              </p>
+                              <p className="text-brand-dark-green/70">
+                                {t("ztl_times")}
+                              </p>
+                              <p className="font-semibold text-brand-red/80">
+                                {t("ztl_note")}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    }
                     return (
                       <div
                         key={item.type}

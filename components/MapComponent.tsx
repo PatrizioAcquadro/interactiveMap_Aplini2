@@ -2,7 +2,14 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useMemo } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  useMap,
+  Polygon,
+} from "react-leaflet";
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
 
 import L, { LeafletEvent, PopupEvent } from "leaflet";
@@ -23,7 +30,7 @@ L.Icon.Default.mergeOptions({
 });
 
 // --- Project Imports ---
-import { poiData, POI, PoiType, getPoiIcon } from "../data/pois";
+import { poiData, POI, PoiType, getPoiIcon, legendItems } from "../data/pois";
 import LegendSlideout from "./LegendSlideout";
 import LanguageSwitcher from "./LanguageSwitcher";
 import PoiDetailModal from "./PoiDetailModal";
@@ -249,10 +256,60 @@ const MapComponent: React.FC = () => {
   const biellaCoords: L.LatLngExpression = [45.5667, 8.05];
   const initialZoom = 13;
 
-  const allPoiTypes = useMemo(() => new Set(poiData.map((p) => p.type)), []);
+  const restrictedAreaCoords: L.LatLngExpression[] = [
+    [45.57059, 8.055551],
+    [45.570862, 8.054496],
+    [45.571, 8.053506],
+    [45.570654, 8.052358],
+    [45.570502, 8.051874],
+    [45.56984, 8.050318],
+    [45.568995, 8.048363],
+    [45.568529, 8.048534],
+    [45.568131, 8.048695],
+    [45.567891, 8.049039],
+    [45.567714, 8.049495],
+    [45.567643, 8.050058],
+    [45.567729, 8.0504],
+    [45.566962, 8.050572],
+    [45.566992, 8.04922],
+    [45.56561, 8.049434],
+    [45.565596, 8.049885],
+    [45.563658, 8.049392],
+    [45.562681, 8.049434],
+    [45.561915, 8.049198],
+    [45.560788, 8.048126],
+    [45.560412, 8.04746],
+    [45.557197, 8.048576],
+    [45.559782, 8.056837],
+    [45.5598337, 8.0569988],
+    [45.5601813, 8.0581358],
+    [45.560277, 8.058468],
+    [45.561234, 8.061349],
+    [45.563556, 8.059868],
+    [45.565901, 8.058418],
+    [45.57059, 8.055551],
+  ];
+  // Define the styling for the restricted area polygon
+  const restrictedAreaOptions = {
+    // Border style (optional, can set weight to 0 if no border)
+    color: "#4d7c0f", // A darker green for the border
+    weight: 1, // Thin border
+    opacity: 0.4, // Semi-transparent border
+
+    // Fill style
+    fillColor: "#84CC16", // Lime green color (as used for 'activity' icon) - adjust if needed
+    fillOpacity: 0.2, // Semi-transparent fill (adjust 0.1 to 0.4 for desired visibility)
+  };
+
+  // *** UPDATE: Initialize filters with ZTL included ***
+  const allPoiTypesAndZTL = useMemo(
+    () => new Set(legendItems.map((p) => p.type)),
+    []
+  ); // Use legendItems to include 'ztl' type
   const [activeFilters, setActiveFilters] = useState<Set<PoiType>>(
-    () => new Set(allPoiTypes)
+    () => new Set(allPoiTypesAndZTL)
   );
+
   const [isLegendOpen, setIsLegendOpen] = useState(false); // Legend open by default now
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [selectedPoi, setSelectedPoi] = useState<POI | null>(null);
@@ -290,13 +347,13 @@ const MapComponent: React.FC = () => {
     });
   }, []);
   const resetFilters = useCallback(() => {
-    setActiveFilters(new Set(allPoiTypes));
-  }, [allPoiTypes]);
+    setActiveFilters(new Set(allPoiTypesAndZTL));
+  }, [allPoiTypesAndZTL]);
   const handleSelectAllFilters = useCallback(() => {
-    setActiveFilters(new Set(allPoiTypes));
-  }, [allPoiTypes]);
+    setActiveFilters(new Set(allPoiTypesAndZTL));
+  }, [allPoiTypesAndZTL]);
   const handleDeselectAllFilters = useCallback(() => {
-    setActiveFilters(new Set<PoiType>());
+    setActiveFilters(new Set<PoiType>()); // Still deselects all
   }, []);
   const handleSearchResultSelect = useCallback((poi: POI) => {
     setSearchTargetPoi(poi);
@@ -309,9 +366,12 @@ const MapComponent: React.FC = () => {
     [activeFilters]
   );
   const showResetButton = useMemo(
-    () => activeFilters.size !== allPoiTypes.size && activeFilters.size > 0,
-    [activeFilters, allPoiTypes]
+    () =>
+      activeFilters.size !== allPoiTypesAndZTL.size && activeFilters.size > 0,
+    [activeFilters, allPoiTypesAndZTL]
   );
+  // *** ADD: Check if ZTL should be visible ***
+  const showZTL = useMemo(() => activeFilters.has("ztl"), [activeFilters]);
 
   // --- Effects ---
   useEffect(() => {
@@ -364,6 +424,14 @@ const MapComponent: React.FC = () => {
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
           maxZoom={20}
         />
+        {/* *** Polygon Layer for Restricted Area *** */}
+        {showZTL && (
+          <Polygon
+            pathOptions={restrictedAreaOptions} // Keep options defined above
+            positions={restrictedAreaCoords} // Keep coords defined above
+            interactive={false}
+          />
+        )}
         {/* --- Map Controls & Event Handlers (INSIDE MapContainer) --- */}
         <LocateControl />
         <MapEvents targetPoi={searchTargetPoi} />

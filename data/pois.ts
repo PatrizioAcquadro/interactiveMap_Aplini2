@@ -13,6 +13,7 @@ import {
   FaLandmark, // *** ADDED for Bank ***
   FaStar, // *** ADDED for Activity ***
 } from "react-icons/fa"; // Example icons from react-icons
+import { StopIcon } from "@heroicons/react/24/outline"; // Example: Stop sign outline
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid"; // Fallback Heroicon
 
 // Define POI Types (ensure consistency)
@@ -25,7 +26,8 @@ export type PoiType =
   | "private_accommodation"
   | "clothing"
   | "bank"
-  | "activity";
+  | "activity"
+  | "ztl";
 
 // Define the structure for each POI
 export interface POI {
@@ -180,6 +182,7 @@ export const poiTypeStyles: Record<PoiType | "default", PoiTypeStyle> = {
   clothing: { color: "#8B5CF6", icon: FaTshirt }, // Violet
   bank: { color: "#0891B2", icon: FaLandmark }, // Added (Teal/Cyan)
   activity: { color: "#84CC16", icon: FaStar }, // Added (Lime Green)
+  ztl: { color: "#84CC16", icon: StopIcon }, // Using lime green & StopIcon
   default: { color: "#6B7280", icon: QuestionMarkCircleIcon }, // Gray fallback
 };
 
@@ -245,6 +248,12 @@ export const legendItems: {
     icon: poiTypeStyles.activity.icon,
     color: poiTypeStyles.activity.color,
   }, // Added
+  {
+    type: "ztl",
+    label: "ZTL Adunata",
+    icon: poiTypeStyles.ztl.icon,
+    color: poiTypeStyles.ztl.color,
+  },
 ];
 
 // --- Updated Function to get custom Leaflet Icon using L.DivIcon ---

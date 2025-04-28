@@ -19,7 +19,7 @@
     "poiCategory_restaurant": "Ristorante",
     "poiCategory_bar": "Bar",
     "poiCategory_hotel": "Hotel",
-    "poiCategory_private_accommodation": "Accoglienza",
+    "poiCategory_private_accommodation": "Attendamento",
     "poiCategory_clothing": "Negozio/Gadget",
     "header_title": "Adunata Nazionale Alpini - Biella 2025",
     "nav_home": "Home",
@@ -58,5 +58,9 @@
     "partyHoursLabel": "Orari",
     "getDirections": "Ottieni Indicazioni",
     "poiCategory_bank": "Banca/ATM",
-    "poiCategory_activity": "Attività"
+    "poiCategory_activity": "Attività",
+    "poiCategory_ztl": "ZTL Adunata", 
+    "ztl_description": "Area chiusa a traffico/sosta", 
+    "ztl_times": "Ven 00:00 - Dom 23:00",
+    "ztl_note": "Nota: L'area si allarga la Domenica."
 }

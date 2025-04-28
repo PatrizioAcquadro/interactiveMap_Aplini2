@@ -19,7 +19,7 @@
     "poiCategory_restaurant": "Restaurant",
     "poiCategory_bar": "Bar",
     "poiCategory_hotel": "Hotel",
-    "poiCategory_private_accommodation": "Accomodation",
+    "poiCategory_private_accommodation": "Campsite",
     "poiCategory_clothing": "Shop/Gadget",
     "header_title": "Adunata Nazionale Alpini - Biella 2025",
     "nav_home": "Home",
@@ -58,5 +58,9 @@
     "partyHoursLabel": "Hours",
     "getDirections": "Get Directions",
     "poiCategory_bank": "Bank/ATM",
-    "poiCategory_activity": "Activity"
+    "poiCategory_activity": "Activity",
+    "poiCategory_ztl": "Restricted Traffic Zone",
+    "ztl_description": "Area closed to traffic/parking",
+    "ztl_times": "Fri 00:00 - Sun 23:00",
+    "ztl_note": "Note: Area expands on Sunday."
 }
