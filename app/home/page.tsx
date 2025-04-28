@@ -60,7 +60,8 @@ export default function HomePage() {
         >
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
             <h2 className="text-3xl font-semibold text-brand-dark-green mb-4 flex items-center">
-              <SparklesIcon className="h-6 w-6 mr-2 text-brand-olive" /> L'Idea
+              <SparklesIcon className="h-6 w-6 mr-2 text-brand-olive" />{" "}
+              L&aposIdea
             </h2>
             <p>{t("home_p1")}</p>
             <p>{t("home_p2")}</p>
@@ -98,7 +99,7 @@ export default function HomePage() {
           </div>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed md:order-first">
             <h2 className="text-3xl font-semibold text-brand-dark-green mb-4">
-              La Missione per l'Adunata
+              La Missione per l&aposAdunata
             </h2>
             <p>{t("home_p3")}</p>
             <blockquote className="border-l-4 border-brand-olive pl-4 italic text-gray-600 my-6 py-2">

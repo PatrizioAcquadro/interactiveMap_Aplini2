@@ -14,7 +14,6 @@ import {
   MusicalNoteIcon, // Added
   // Choose one for directions:
   MapIcon as DirectionsMapIcon, // Option 1: Map icon
-  ArrowTopRightOnSquareIcon, // Option 2: External link icon
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "../context/LanguageContext"; // Corrected path assumption
 
@@ -32,7 +31,6 @@ const getMapLink = (poi: POI): string => {
   const lat = latLng.lat; // Access latitude via .lat
   const lng = latLng.lng; // Access longitude via .lng
 
-  const encodedName = encodeURIComponent(poi.name);
   const isIOS =
     typeof window !== "undefined" &&
     /iPad|iPhone|iPod/.test(navigator.userAgent);

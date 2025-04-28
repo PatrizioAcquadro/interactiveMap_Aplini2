@@ -12,8 +12,6 @@ import {
   InformationCircleIcon,
   CurrencyDollarIcon,
   ArrowDownTrayIcon,
-  MagnifyingGlassPlusIcon,
-  MagnifyingGlassMinusIcon,
   AdjustmentsHorizontalIcon,
   GlobeAltIcon,
   CursorArrowRaysIcon, // For Navigate
@@ -21,14 +19,20 @@ import {
   WrenchScrewdriverIcon, // For Optional Tools
 } from "@heroicons/react/24/outline";
 // Import POI icons needed for examples
-import { FaGlassMartiniAlt, FaCaravan, FaStar } from "react-icons/fa"; // Example POI icons
-import { useLanguage } from "../context/LanguageContext"; // Adjust path if needed
+import { useLanguage, TranslationKey } from "../context/LanguageContext"; // Adjust path if needed
 // Import POI styles to get colors/icons for examples
 import { poiTypeStyles, PoiType } from "../data/pois"; // Adjust path if needed
 
+// --- Define Interface for Feature items ---
+interface FeatureItem {
+  icon: React.ElementType | null; // Use ElementType for component types
+  titleKey: TranslationKey;
+  descKey: TranslationKey;
+}
+
 interface IntroModalProps {
   isOpen: boolean;
-  onClose: () => void; // Function to close the modal (passed from parent)
+  onClose: () => void;
 }
 
 // Helper for simple staggered delays
@@ -156,8 +160,7 @@ const IntroModal: React.FC<IntroModalProps> = ({ isOpen, onClose }) => {
         {t("loader_screen2_title")}
       </h2>
       <div className="space-y-5 text-left max-w-md mx-auto w-full">
-        {[
-          // Define features data
+        {((): FeatureItem[] => [
           {
             icon: MapPinIcon,
             titleKey: "loader_screen2_point1_title",
@@ -173,7 +176,7 @@ const IntroModal: React.FC<IntroModalProps> = ({ isOpen, onClose }) => {
             titleKey: "loader_screen2_point3_title",
             descKey: "loader_screen2_point3_desc",
           },
-        ].map((feature, index) => (
+        ])().map((feature, index) => (
           <div
             key={feature.titleKey}
             className={`flex items-start space-x-3 transition-all duration-300 ease-out ${
@@ -230,10 +233,10 @@ const IntroModal: React.FC<IntroModalProps> = ({ isOpen, onClose }) => {
             {/* Text content */}
             <div className={feature.icon === null ? "ml-1" : ""}>
               <h3 className="font-semibold text-base md:text-lg">
-                {t(feature.titleKey as any)}
+                {t(feature.titleKey)}
               </h3>
               <p className="text-sm text-brand-dark-green/80">
-                {t(feature.descKey as any)}
+                {t(feature.descKey)}
               </p>
             </div>
           </div>

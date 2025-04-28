@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useLanguage } from "../../context/LanguageContext"; // Go up two levels
 
 export default function PrivacyPolicyPage() {
-  const { t, language } = useLanguage(); // Get translation function
+  const { language } = useLanguage(); // Get translation function
 
   // Simple title translation - you might want more keys for sections
   const pageTitle =
@@ -53,18 +53,18 @@ export default function PrivacyPolicyPage() {
             collected automatically.
           </li>
           <li>
-            <strong>Location Data (Optional):</strong> If you use the "Find My
-            Location" feature, we request access to your device's geographical
-            location solely to display your position on the map. This data is
-            processed in your browser and is not stored by us unless explicitly
-            stated otherwise for a specific feature (which is not the case
-            currently). You can deny or revoke location permission through your
-            browser settings.
+            <strong>Location Data (Optional):</strong> If you use the &quotFind
+            My Location&quot feature, we request access to your device&aposs
+            geographical location solely to display your position on the map.
+            This data is processed in your browser and is not stored by us
+            unless explicitly stated otherwise for a specific feature (which is
+            not the case currently). You can deny or revoke location permission
+            through your browser settings.
           </li>
           <li>
             <strong>Language Preference:</strong> If you switch languages, your
-            preference might be stored locally in your browser's localStorage to
-            maintain your setting for future visits.
+            preference might be stored locally in your browser&aposs
+            localStorage to maintain your setting for future visits.
           </li>
           <li>
             <strong>Data You Provide:</strong> If contact forms or other

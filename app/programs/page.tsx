@@ -6,19 +6,24 @@ import { useLanguage } from "../../context/LanguageContext";
 import { CalendarDaysIcon } from "@heroicons/react/24/outline";
 
 // Shared Ad Placeholder
-const AdPlaceholder: React.FC<{ className?: string }> = ({ className = '' }) => {
-    const { t } = useLanguage();
-    // *** FIX: Add return statement ***
-    return (
-        <div className={`my-8 h-24 md:h-32 bg-gray-200/70 flex items-center justify-center rounded-md border border-gray-300/50 ${className}`}>
-            <span className="text-gray-500 text-sm opacity-75">{t('ad_placeholder')}</span>
-        </div>
-    );
+const AdPlaceholder: React.FC<{ className?: string }> = ({
+  className = "",
+}) => {
+  const { t } = useLanguage();
+  // *** FIX: Add return statement ***
+  return (
+    <div
+      className={`my-8 h-24 md:h-32 bg-gray-200/70 flex items-center justify-center rounded-md border border-gray-300/50 ${className}`}
+    >
+      <span className="text-gray-500 text-sm opacity-75">
+        {t("ad_placeholder")}
+      </span>
+    </div>
+  );
 };
 
 export default function ProgramsPage() {
   const { t } = useLanguage();
-  const fadeIn = "animate-fade-in";
   const fadeSlideUp = "animate-fade-slide-up";
 
   return (

@@ -1,13 +1,7 @@
 // components/MapComponent.tsx
 "use client";
 
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  useMemo,
-  useRef,
-} from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -18,12 +12,13 @@ import {
 } from "react-leaflet";
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
 
-import L, { LeafletEvent, PopupEvent } from "leaflet";
+import L from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
 // --- Leaflet CSS and Icon Fix ---
 import "leaflet/dist/leaflet.css";
 // Explicitly set default icon options
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: "/images/marker-icon-2x.png",
@@ -238,14 +233,14 @@ const PopupStateHandler = ({
   const map = useMap();
 
   useEffect(() => {
-    const handlePopupOpen = (e: PopupEvent) => {
+    const handlePopupOpen = (): void => {
       /* ... */
     };
 
-    const handlePopupClose = (e: PopupEvent) => {
+    const handlePopupClose = (): void => {
       // When *any* popup closes, reset selection AND hover
       setSelectedPoiId(null);
-      // *** ADD: Clear hover state on popup close ***
+      // *** Clear hover state on popup close ***
       setHoveredPoiId(null);
     };
 
@@ -569,6 +564,8 @@ const MapComponent: React.FC = () => {
                   mouseover: () => setHoveredPoiId(poi.id),
                   mouseout: () => setHoveredPoiId(null),
                 }}
+                alt={poiName}
+                title={poiName}
               >
                 <Popup minWidth={200}>
                   <div className="font-sans text-sm">
@@ -576,6 +573,7 @@ const MapComponent: React.FC = () => {
                       {language === "en" && poi.name_en
                         ? poi.name_en
                         : poi.name}
+                      {poiName}
                     </h4>
                     <p className="text-gray-600 mb-2">
                       {language === "en" && poi.shortDescription_en

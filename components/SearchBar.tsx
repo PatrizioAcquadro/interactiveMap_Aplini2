@@ -10,7 +10,7 @@ import React, {
 import { MagnifyingGlassIcon, XCircleIcon } from "@heroicons/react/24/outline";
 // *** ADD: Import POI type styles and POI type itself ***
 import { POI, PoiType, poiTypeStyles } from "../data/pois";
-import { useLanguage, TranslationKey } from "../context/LanguageContext"; // Import TranslationKey
+import { useLanguage } from "../context/LanguageContext"; // Import TranslationKey
 
 interface SearchBarProps {
   pois: POI[];

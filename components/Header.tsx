@@ -1,35 +1,65 @@
-// components/Header.tsx
 "use client";
 
-import React, { useState, Fragment } from "react"; // Import Fragment
+import React, { useState, Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Dialog, Transition } from "@headlessui/react"; // Import Dialog and Transition
+import { Dialog, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   XMarkIcon,
-  HomeIcon, // Example Icon
-  MapIcon, // Example Icon
-  CalendarDaysIcon, // Example Icon
-  IdentificationIcon, // Example Icon
-  LinkIcon, // Utility Link Icon
-  LockClosedIcon, // Privacy Icon
-  InformationCircleIcon, // Credits Icon
+  HomeIcon,
+  MapIcon,
+  CalendarDaysIcon,
+  IdentificationIcon,
+  LinkIcon,
+  LockClosedIcon,
+  InformationCircleIcon,
 } from "@heroicons/react/24/outline";
-import { useLanguage } from "../context/LanguageContext";
-import { FaInstagram } from "react-icons/fa"; // Import from react-icons
+// --- Import TranslationKey ---
+import { useLanguage, TranslationKey } from "../context/LanguageContext";
+import { FaInstagram } from "react-icons/fa";
 
-// Define navigation items with icons
-const navigation = [
+// --- Define Interface for Navigation Items ---
+interface NavItem {
+  nameKey: TranslationKey; // Use the imported type
+  href: string;
+  // Define a suitable type for Heroicons and React Icons
+  icon:
+    | React.ForwardRefExoticComponent<
+        Omit<React.SVGProps<SVGSVGElement>, "ref"> & {
+          title?: string;
+          titleId?: string;
+        } & React.RefAttributes<SVGSVGElement>
+      >
+    | React.FC<React.SVGProps<SVGSVGElement>>;
+}
+
+// Define navigation items with icons, applying the interface
+const navigation: NavItem[] = [
   { nameKey: "nav_home", href: "/home", icon: HomeIcon },
   { nameKey: "nav_map", href: "/", icon: MapIcon },
   { nameKey: "nav_programs", href: "/programs", icon: CalendarDaysIcon },
   { nameKey: "nav_contacts", href: "/contacts", icon: IdentificationIcon },
 ];
 
-// Define utility links
-const utilityLinks = [
+// --- Define Interface for Utility Links ---
+interface UtilityLinkItem {
+  nameKey: TranslationKey; // Use the imported type
+  href: string;
+  // Adjust icon type as above
+  icon:
+    | React.ForwardRefExoticComponent<
+        Omit<React.SVGProps<SVGSVGElement>, "ref"> & {
+          title?: string;
+          titleId?: string;
+        } & React.RefAttributes<SVGSVGElement>
+      >
+    | React.FC<React.SVGProps<SVGSVGElement>>;
+}
+
+// Define utility links, applying the interface
+const utilityLinks: UtilityLinkItem[] = [
   {
     nameKey: "link_official_adunata",
     href: "https://www.adunatalpini.it/",
@@ -44,12 +74,8 @@ const utilityLinks = [
     nameKey: "link_instagram_bif",
     href: "https://www.instagram.com/biellainfesta/",
     icon: FaInstagram,
-  }, // Added Instagram
-  {
-    nameKey: "link_privacy",
-    href: "/privacy",
-    icon: LockClosedIcon,
-  }, // Internal link
+  },
+  { nameKey: "link_privacy", href: "/privacy", icon: LockClosedIcon },
   {
     nameKey: "link_credits",
     href: "https://www.linkedin.com/in/patrizio-acquadro/",
@@ -60,11 +86,11 @@ const utilityLinks = [
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const { t, language, setLanguage } = useLanguage(); // Get language and setter
+  // --- Ensure TranslationKey is imported for useLanguage hook context if needed ---
+  const { t, language, setLanguage } = useLanguage();
 
   const toggleLang = () => setLanguage(language === "it" ? "en" : "it");
-
-  const fullTitle = t("header_title"); // Assuming this key exists
+  const fullTitle = t("header_title");
 
   return (
     <>
@@ -237,7 +263,7 @@ const Header: React.FC = () => {
                           }`}
                           aria-hidden="true"
                         />
-                        {t(item.nameKey as any)}
+                        {t(item.nameKey)}
                       </Link>
                     );
                   })}
@@ -266,7 +292,7 @@ const Header: React.FC = () => {
                           className="h-5 w-5 mr-3 flex-shrink-0 text-brand-dark-green/70 group-hover:text-brand-dark-green"
                           aria-hidden="true"
                         />
-                        {t(item.nameKey as any)}
+                        {t(item.nameKey)}
                       </a>
                     ))}
                   </div>
