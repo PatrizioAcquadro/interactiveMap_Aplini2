@@ -84,5 +84,27 @@
     "loader_screen3_point2_title": "View Point Details",
     "loader_screen3_point2_desc": "Tap a marker icon to see quick info, then 'More Details' for full info & directions.",
     "loader_screen3_point3_title": "Optional Tools",
-    "loader_screen3_point3_desc": "Use the buttons to find your location, change language, or filter categories."
+    "loader_screen3_point3_desc": "Use the buttons to find your location, change language, or filter categories.",
+
+    "home_title": "About BiellaInFesta",
+    "home_intro": "We connect people with events in Biella. Discover our story and the mission behind the Adunata Map.",
+    "home_p1": "BiellaInFesta was born on Instagram on July 1st, 2022, from a simple observation: many felt 'there's nothing to do in Biella', yet numerous events were happening unnoticed. Our goal is to bridge this gap, shining a light on local happenings, big and small.",
+    "home_p2": "We provide a free, easily accessible platform for young people (and everyone!) to discover what's going on nearby – whether it's meeting friends, a date night, or finding new experiences. It's our gift to the city we love and believe in.",
+    "home_p3": "In a short time, both residents and local businesses embraced the idea, making BiellaInFesta a central point for event information in the area.",
+    "home_p4": "For the Adunata Nazionale degli Alpini 2025, we're expanding this mission. This interactive map brings all our strengths – centralized, reliable, event-specific information – beyond Instagram to reach everyone attending this major event.",
+    "home_p5": "Unlike generic maps, everything here is tailored for the Adunata. No more guessing about outdated info, road closures ('ZTL'), or event details. Everything you need, specific to your Adunata experience, in one place, no app required.",
+
+    "programs_title": "Event Programs",
+    "programs_coming_soon": "Full program details coming soon. Stay tuned!",
+
+    "contacts_title": "Contacts",
+    "contacts_intro": "Follow us on Instagram for the latest updates or contact us via email if you believe an activity or point of interest is missing.",
+    "contacts_insta_title": "Instagram",
+    "contacts_insta_desc": "Fastest way for general questions and updates.",
+    "visit_instagram": "Visit Profile",
+    "contacts_email_title": "Email",
+    "contacts_email_desc": "Best for reporting missing activities or specific map data issues.",
+    "send_email": "Send Email",
+
+    "ad_placeholder": "Advertisement Area"
 }
