@@ -10,6 +10,8 @@ import {
   FaBed, // Hotel
   FaCampground, // Private Accommodation (Tent/Rooms)
   FaTshirt, // Clothing
+  FaLandmark, // *** ADDED for Bank ***
+  FaStar, // *** ADDED for Activity ***
 } from "react-icons/fa"; // Example icons from react-icons
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid"; // Fallback Heroicon
 
@@ -21,7 +23,9 @@ export type PoiType =
   | "bar"
   | "hotel"
   | "private_accommodation"
-  | "clothing";
+  | "clothing"
+  | "bank"
+  | "activity";
 
 // Define the structure for each POI
 export interface POI {
@@ -100,13 +104,13 @@ export const poiData: POI[] = [
     address: "Via Umberto I, 20, Biella", // Example address
     phone: "015 987654",
     website: "https://glamourbiella.example.com",
-    images: ['/images/glamour1.jpg'],
+    images: ["/images/glamour1.jpg"],
     openingHours:
       "Mar-Gio: 18:00-01:00\nVen-Sab: 18:00-02:30\nDom: 18:00-00:00\nLun: Chiuso",
     discountInfo:
       "Sconto 10% per tesserati ANA (esclusi eventi speciali e Sabato sera).",
-    partyInfo: 'DJ Set Elettronica/House',
-    partyHours: 'Ven/Sab: 22:30 - 02:30',
+    partyInfo: "DJ Set Elettronica/House",
+    partyHours: "Ven/Sab: 22:30 - 02:30",
     tags: ["Cocktail", "Aperitivo", "Cena", "Moderno", "Musica", "Vegetariano"],
     // --- EN Fields Added ---
     name_en: "Glamour Biella",
@@ -117,8 +121,45 @@ export const poiData: POI[] = [
       "Tue-Thu: 18:00-01:00\nFri-Sat: 18:00-02:30\nSun: 18:00-00:00\nMon: Closed",
     discountInfo_en:
       "10% discount for ANA members (excluding special events and Saturday nights).",
-    partyInfo_en: 'DJ Set Electronic/House',
-    partyHours_en: 'Fri/Sat: 22:30 - 02:30',
+    partyInfo_en: "DJ Set Electronic/House",
+    partyHours_en: "Fri/Sat: 22:30 - 02:30",
+  },
+  {
+    id: 30, // Example ID for Bank
+    name: "Banca Sella Biella Centro",
+    type: "bank", // Use the new type
+    coordinates: [45.566, 8.053], // Adjust coordinates
+    shortDescription: "Sportello Bancomat e filiale.",
+    details:
+      "Filiale Banca Sella con sportello ATM accessibile H24. Consulenza su appuntamento.",
+    address: "Via Pietro Micca, 10, Biella",
+    phone: "015 35011",
+    website: "https://www.sella.it",
+    openingHours: "Lun-Ven: 08:30-13:30, 14:45-16:15\nATM: H24",
+    tags: ["Banca", "Bancomat", "ATM", "Servizi Finanziari"],
+    name_en: "Banca Sella Biella Center",
+    shortDescription_en: "ATM and branch.",
+    details_en:
+      "Banca Sella branch with 24/7 accessible ATM. Consultation by appointment.",
+    openingHours_en: "Mon-Fri: 08:30-13:30, 14:45-16:15\nATM: 24/7",
+  },
+  {
+    id: 31, // Example ID for Activity
+    name: "Parco Avventura Veglio",
+    type: "activity", // Use the new type
+    coordinates: [45.628, 8.123], // Example coordinates outside Biella center
+    shortDescription: "Percorsi avventura sugli alberi.",
+    details:
+      "Parco divertimenti con percorsi acrobatici adatti a varie età e livelli di difficoltà. Area picnic disponibile.",
+    address: "Località Veglio, Biella", // Fictional address part
+    website: "https://parcoavventuraveglio.example.com",
+    openingHours: "Sab-Dom: 10:00-18:00 (Stagionale, verificare sito)",
+    tags: ["Avventura", "Famiglie", "Natura", "Sport", "Divertimento"],
+    name_en: "Veglio Adventure Park",
+    shortDescription_en: "Adventure courses in the trees.",
+    details_en:
+      "Amusement park with acrobatic courses suitable for various ages and difficulty levels. Picnic area available.",
+    openingHours_en: "Sat-Sun: 10:00-18:00 (Seasonal, check website)",
   },
   // ... Add many more points
 ];
@@ -137,6 +178,8 @@ export const poiTypeStyles: Record<PoiType | "default", PoiTypeStyle> = {
   hotel: { color: "#14B8A6", icon: FaBed }, // Teal
   private_accommodation: { color: "#EC4899", icon: FaCampground }, // Pink
   clothing: { color: "#8B5CF6", icon: FaTshirt }, // Violet
+  bank: { color: "#0891B2", icon: FaLandmark }, // Added (Teal/Cyan)
+  activity: { color: "#84CC16", icon: FaStar }, // Added (Lime Green)
   default: { color: "#6B7280", icon: QuestionMarkCircleIcon }, // Gray fallback
 };
 
@@ -190,6 +233,18 @@ export const legendItems: {
     icon: poiTypeStyles.clothing.icon,
     color: poiTypeStyles.clothing.color,
   },
+  {
+    type: "bank",
+    label: "Banca / ATM",
+    icon: poiTypeStyles.bank.icon,
+    color: poiTypeStyles.bank.color,
+  }, // Added
+  {
+    type: "activity",
+    label: "Attività / Eventi",
+    icon: poiTypeStyles.activity.icon,
+    color: poiTypeStyles.activity.color,
+  }, // Added
 ];
 
 // --- Updated Function to get custom Leaflet Icon using L.DivIcon ---

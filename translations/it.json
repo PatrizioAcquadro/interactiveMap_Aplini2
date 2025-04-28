@@ -21,8 +21,6 @@
     "poiCategory_hotel": "Hotel",
     "poiCategory_private_accommodation": "Accoglienza",
     "poiCategory_clothing": "Negozio/Gadget",
-    "youAreHere": "Tu sei qui!",
-    "locationErrorPrefix": "Errore Posizione:",
     "header_title": "Adunata Nazionale Alpini - Biella 2025",
     "nav_home": "Home",
     "nav_map": "Mappa",
@@ -58,5 +56,7 @@
     "noResultsFound" : "Nessun risultato trovato",
     "partyInfoLabel": "Musica / Serate",
     "partyHoursLabel": "Orari",
-    "getDirections": "Ottieni Indicazioni"
+    "getDirections": "Ottieni Indicazioni",
+    "poiCategory_bank": "Banca/ATM",
+    "poiCategory_activity": "Attività"
 }
