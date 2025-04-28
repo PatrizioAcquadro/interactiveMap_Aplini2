@@ -46,6 +46,11 @@ export interface POI {
   details_en?: string; // English details
   openingHours_en?: string;
   discountInfo_en?: string;
+  partyInfo_en?: string;
+  partyHours_en?: string;
+  // --- Party Info Fields ---
+  partyInfo?: string; // e.g., "DJ Set Electro / House"
+  partyHours?: string; // e.g., "Ven/Sab: 22:00 - 03:00"
 }
 
 // --- Updated POI Data ---
@@ -95,16 +100,13 @@ export const poiData: POI[] = [
     address: "Via Umberto I, 20, Biella", // Example address
     phone: "015 987654",
     website: "https://glamourbiella.example.com",
-    // --- New Fields Added ---
-    images: [
-      "/images/glamour/img1.jpg", // MAKE SURE THESE EXIST IN public/images/glamour/
-      "/images/glamour/img2.jpg",
-      "/images/glamour/img3.jpg",
-    ],
+    images: ['/images/glamour1.jpg'],
     openingHours:
-      "Mar-Gio: 18:00-01:00\nVen-Sab: 18:00-02:30\nDom: 18:00-00:00\nLun: Chiuso", // Use \n for new lines
+      "Mar-Gio: 18:00-01:00\nVen-Sab: 18:00-02:30\nDom: 18:00-00:00\nLun: Chiuso",
     discountInfo:
       "Sconto 10% per tesserati ANA (esclusi eventi speciali e Sabato sera).",
+    partyInfo: 'DJ Set Elettronica/House',
+    partyHours: 'Ven/Sab: 22:30 - 02:30',
     tags: ["Cocktail", "Aperitivo", "Cena", "Moderno", "Musica", "Vegetariano"],
     // --- EN Fields Added ---
     name_en: "Glamour Biella",
@@ -115,6 +117,8 @@ export const poiData: POI[] = [
       "Tue-Thu: 18:00-01:00\nFri-Sat: 18:00-02:30\nSun: 18:00-00:00\nMon: Closed",
     discountInfo_en:
       "10% discount for ANA members (excluding special events and Saturday nights).",
+    partyInfo_en: 'DJ Set Electronic/House',
+    partyHours_en: 'Fri/Sat: 22:30 - 02:30',
   },
   // ... Add many more points
 ];

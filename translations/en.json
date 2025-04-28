@@ -55,5 +55,8 @@
     "locationErrorGeneric": "Could not find your location.",
     "locationErrorPermission": "Location permission denied. Please check browser settings.",
     "locationErrorUnavailable": "Location currently unavailable.",
-    "noResultsFound" : "No result found"
+    "noResultsFound" : "No result found",
+    "partyInfoLabel": "Music / Party",
+    "partyHoursLabel": "Hours",
+    "getDirections": "Get Directions"
 }

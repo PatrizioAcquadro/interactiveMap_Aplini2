@@ -2,15 +2,10 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useMemo } from "react";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  useMap,
-  // Removed ZoomControl import from react-leaflet
-} from "react-leaflet";
-import L from "leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
+
+import L, { LeafletEvent, PopupEvent } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
 // --- Leaflet CSS and Icon Fix ---
@@ -33,7 +28,6 @@ import LegendSlideout from "./LegendSlideout";
 import LanguageSwitcher from "./LanguageSwitcher";
 import PoiDetailModal from "./PoiDetailModal";
 import SearchBar from "./SearchBar";
-import CustomZoomControl from "./CustomZoomControl"; // Import the custom component
 import {
   MapPinIcon as MapPinOutlineIcon,
   GlobeAltIcon,
@@ -118,13 +112,6 @@ const LocateControl = () => {
           offset: L.point(0, -10), // Adjust offset to sit nicely above dot
         })
         .openPopup();
-
-      // Optional: Auto-close popup after a few seconds
-      // setTimeout(() => {
-      //     if (map && userMarker) {
-      //         userMarker.closePopup();
-      //     }
-      // }, 4000); // Close after 4 seconds
     }; // End onLocationFound
 
     const onLocationError = (e: L.ErrorEvent) => {
@@ -204,8 +191,54 @@ const CustomZoomControlHelper: React.FC = () => {
     </div>
   );
 };
-// Import PlusIcon and MinusIcon if not already done
-import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
+
+const PopupCloser = ({ modalPoi }: { modalPoi: POI | null }) => {
+  const map = useMap();
+  useEffect(() => {
+    // If the modalPoi becomes null (meaning modal just closed)
+    // AND the map instance exists, close any open popups.
+    if (modalPoi === null) {
+      map.closePopup();
+    }
+    // Dependency array includes modalPoi to trigger when it changes
+  }, [modalPoi, map]);
+
+  return null; // This component doesn't render anything visually
+};
+
+const PopupStateHandler = ({
+  setSelectedPoiId,
+  setHoveredPoiId,
+}: {
+  setSelectedPoiId: React.Dispatch<React.SetStateAction<number | null>>;
+  setHoveredPoiId: React.Dispatch<React.SetStateAction<number | null>>; // Add prop type
+}) => {
+  const map = useMap();
+
+  useEffect(() => {
+    const handlePopupOpen = (e: PopupEvent) => {
+      /* ... */
+    };
+
+    const handlePopupClose = (e: PopupEvent) => {
+      // When *any* popup closes, reset selection AND hover
+      setSelectedPoiId(null);
+      // *** ADD: Clear hover state on popup close ***
+      setHoveredPoiId(null);
+    };
+
+    map.on("popupopen", handlePopupOpen);
+    map.on("popupclose", handlePopupClose);
+
+    return () => {
+      map.off("popupopen", handlePopupOpen);
+      map.off("popupclose", handlePopupClose);
+    };
+    // *** ADD setHoveredPoiId to dependency array ***
+  }, [map, setSelectedPoiId, setHoveredPoiId]);
+
+  return null;
+};
 
 /* ========================================================================== */
 /*                            Main Map Component                            */
@@ -233,12 +266,16 @@ const MapComponent: React.FC = () => {
 
   // --- Handlers ---
   const handleMarkerClick = useCallback((poi: POI) => {
-    setSelectedPoi(poi);
     setSelectedPoiId(poi.id);
+    setHoveredPoiId(null);
+    setIsLegendOpen(false);
+    setIsLangMenuOpen(false);
   }, []);
   const handleShowDetails = useCallback((poi: POI) => {
     setSelectedPoi(poi);
     setSelectedPoiId(poi.id);
+    setIsLegendOpen(false);
+    setIsLangMenuOpen(false);
   }, []);
   const handleCloseModal = useCallback(() => {
     setSelectedPoi(null);
@@ -330,7 +367,12 @@ const MapComponent: React.FC = () => {
         {/* --- Map Controls & Event Handlers (INSIDE MapContainer) --- */}
         <LocateControl />
         <MapEvents targetPoi={searchTargetPoi} />
-        <CustomZoomControlHelper />{" "}
+        <CustomZoomControlHelper />
+        <PopupCloser modalPoi={selectedPoi} />
+        <PopupStateHandler
+          setSelectedPoiId={setSelectedPoiId}
+          setHoveredPoiId={setHoveredPoiId} // Pass the setter function
+        />
         {/* *** Render CustomZoomControlHelper INSIDE *** */}
         {/* --- Map Data Layers --- */}
         <MarkerClusterGroup chunkedLoading>
