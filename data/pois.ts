@@ -12,6 +12,7 @@ import {
   FaTshirt, // Clothing
   FaLandmark, // *** ADDED for Bank ***
   FaStar, // *** ADDED for Activity ***
+  FaRestroom,
 } from "react-icons/fa"; // Example icons from react-icons
 import { StopIcon } from "@heroicons/react/24/outline"; // Example: Stop sign outline
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid"; // Fallback Heroicon
@@ -27,7 +28,8 @@ export type PoiType =
   | "clothing"
   | "bank"
   | "activity"
-  | "ztl";
+  | "ztl"
+  | "wc";
 
 // Define the structure for each POI
 export interface POI {
@@ -302,6 +304,23 @@ export const poiData: POI[] = [
       "Amusement park with acrobatic courses suitable for various ages and difficulty levels. Picnic area available.",
     openingHours_en: "Sat-Sun: 10:00-18:00 (Seasonal, check website)",
   },
+  {
+    id: 32, // Next available ID
+    name: "WC Pubblico Via Roccavilla",
+    type: "wc", // Use the new type
+    coordinates: [45.568488, 8.049653], // Coordinates provided
+    shortDescription: "Servizi igienici pubblici.",
+    details:
+      "Bagni pubblici accessibili durante le ore diurne. Manutenzione regolare.",
+    address: "Via Alessandro Roccavilla, Biella", // Based on coordinates/info
+    // openingHours: '08:00 - 20:00', // Example opening hours if known
+    tags: ["WC", "Bagno", "Servizi Igienici", "Pubblico"],
+    name_en: "Public WC Via Roccavilla",
+    shortDescription_en: "Public restroom facilities.",
+    details_en:
+      "Public toilets accessible during daylight hours. Regularly maintained.",
+    // openingHours_en: '08:00 AM - 08:00 PM',
+  },
   // ... Add many more points
 ];
 
@@ -322,6 +341,7 @@ export const poiTypeStyles: Record<PoiType | "default", PoiTypeStyle> = {
   bank: { color: "#0891B2", icon: FaLandmark }, // Added (Teal/Cyan)
   activity: { color: "#84CC16", icon: FaStar }, // Added (Lime Green)
   ztl: { color: "#84CC16", icon: StopIcon }, // Using lime green & StopIcon
+  wc: { color: "#A16207", icon: FaRestroom }, // Added (Light Brown/Tan)
   default: { color: "#6B7280", icon: QuestionMarkCircleIcon }, // Gray fallback
 };
 
@@ -387,6 +407,12 @@ export const legendItems: {
     icon: poiTypeStyles.activity.icon,
     color: poiTypeStyles.activity.color,
   }, // Added
+  {
+    type: "wc",
+    label: "WC Pubblici",
+    icon: poiTypeStyles.wc.icon,
+    color: poiTypeStyles.wc.color,
+  },
   {
     type: "ztl",
     label: "ZTL Adunata",

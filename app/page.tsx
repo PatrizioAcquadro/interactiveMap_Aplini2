@@ -1,14 +1,13 @@
-// app/page.tsx
 "use client";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+// *** Use MapLoader again ***
 import MapLoader from "../components/MapLoader";
 import { useLanguage } from "../context/LanguageContext";
 
-// Dynamically import the MapComponent with SSR turned off
 const MapWithNoSSR = dynamic(() => import("../components/MapComponent"), {
   ssr: false,
-  // Use a loader specific to map loading, or keep the general one
+  // *** Change back to MapLoader ***
   loading: () => <MapLoader />,
 });
 

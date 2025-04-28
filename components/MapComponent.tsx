@@ -31,6 +31,7 @@ L.Icon.Default.mergeOptions({
 
 // --- Project Imports ---
 import { poiData, POI, PoiType, getPoiIcon, legendItems } from "../data/pois";
+import IntroModal from "./IntroModal";
 import LegendSlideout from "./LegendSlideout";
 import LanguageSwitcher from "./LanguageSwitcher";
 import PoiDetailModal from "./PoiDetailModal";
@@ -39,6 +40,7 @@ import {
   MapPinIcon as MapPinOutlineIcon,
   GlobeAltIcon,
   AdjustmentsHorizontalIcon,
+  InformationCircleIcon,
 } from "@heroicons/react/24/outline";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { useLanguage } from "../context/LanguageContext";
@@ -320,6 +322,7 @@ const MapComponent: React.FC = () => {
     null
   );
   const [showPulse, setShowPulse] = useState(true);
+  const [isIntroOpen, setIsIntroOpen] = useState(true);
 
   // --- Handlers ---
   const handleMarkerClick = useCallback((poi: POI) => {
@@ -359,6 +362,13 @@ const MapComponent: React.FC = () => {
     setSearchTargetPoi(poi);
     setTimeout(() => setSearchTargetPoi(null), 100);
   }, []);
+  const handleCloseIntro = useCallback(() => {
+    setIsIntroOpen(false);
+    // Mark as shown for the session *after* it's closed
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("adunataMapIntroShown", "true");
+    }
+  }, []);
 
   // --- Derived State ---
   const filteredPois = useMemo(
@@ -379,6 +389,19 @@ const MapComponent: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const introShown = sessionStorage.getItem("adunataMapIntroShown");
+      if (!introShown) {
+        // Show intro after a very short delay to allow map to render initially
+        const timer = setTimeout(() => {
+          setIsIntroOpen(true);
+        }, 500); // 0.5 second delay
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []); // Empty dependency array ensures this runs only once on mount
+
   return (
     <div className="h-full w-full relative z-10">
       {/* --- Fixed/Absolute UI Elements OUTSIDE MapContainer --- */}
@@ -396,6 +419,19 @@ const MapComponent: React.FC = () => {
       >
         <GlobeAltIcon className="h-6 w-6 text-brand-dark-green" />
       </button>
+
+      {/* *** ADD Guide Trigger Button *** */}
+      <button
+        onClick={() => setIsIntroOpen(true)}
+        className={`absolute top-16 right-[72px] sm:top-4 sm:right-[72px] z-20 p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 ease-in-out hover:scale-105 ${
+          showPulse ? "animate-pulse" : ""
+        }`}
+        aria-label={t("show_guide_button")}
+        title={t("show_guide_button")}
+      >
+        <InformationCircleIcon className="h-6 w-6 text-brand-dark-green" />
+      </button>
+
       {!isLegendOpen && (
         <button
           onClick={() => setIsLegendOpen(true)}
@@ -511,6 +547,7 @@ const MapComponent: React.FC = () => {
       />
       <LanguageSwitcher isOpen={isLangMenuOpen} setIsOpen={setIsLangMenuOpen} />
       <PoiDetailModal poi={selectedPoi} onClose={handleCloseModal} />
+      <IntroModal isOpen={isIntroOpen} onClose={handleCloseIntro} />
     </div>
   );
 };
