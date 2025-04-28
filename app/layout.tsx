@@ -1,19 +1,32 @@
-import { Inter } from 'next/font/google';
-import { LanguageProvider } from '../context/LanguageContext'; // Import Language Provider
-import './globals.css';
+// app/layout.tsx
+import { Inter } from "next/font/google";
+import { LanguageProvider } from "../context/LanguageContext";
+import Header from "../components/Header";
+import ErrorBoundary from "../components/ErrorBoundary";
+import "./globals.css";
+import type { Metadata, Viewport } from "next";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter', // Define CSS variable
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
-// Metadata can be generated dynamically later if needed
-export const metadata = {
-  title: 'Adunata Map Biella 2025',
-  description: 'Mappa interattiva per l\'Adunata Nazionale degli Alpini 2025 a Biella',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' // Prevent zoom for web-app feel
+export const metadata: Metadata = {
+  title: "Adunata Map Biella 2025",
+  description:
+    "Mappa interattiva per l'Adunata Nazionale degli Alpini 2025 a Biella",
 };
+
+export const viewport: Viewport = {
+  // Define viewport separately
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1, // Keep maximumScale: 1 to prevent user zoom
+  userScalable: false, // Explicitly disable user scaling
+  // themeColor: '#D0D4C8', // Optional: Set theme color to match brand
+};
+// *** END FIX ***
 
 export default function RootLayout({
   children,
@@ -21,13 +34,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // Apply font variable and base font-sans class to html tag
-    // The language is set dynamically by the LanguageProvider context
-    <html lang="it" className={`${inter.variable} font-sans`}>
-      <body>
-        {/* Wrap the entire application with the LanguageProvider */}
+    <html
+      lang="it"
+      className={`${inter.variable} font-sans h-full bg-brand-white`}
+    >
+      <body className="h-full flex flex-col">
         <LanguageProvider>
-          {children}
+          <Header />
+          {/* Wrap main content area */}
+          <ErrorBoundary>
+            <div className="flex-grow">{children}</div>
+          </ErrorBoundary>
         </LanguageProvider>
       </body>
     </html>

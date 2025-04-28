@@ -13,42 +13,41 @@
 
 /* Add custom base styles or overrides AFTER Tailwind directives */
 body {
-  @apply p-0 m-0 overflow-hidden antialiased text-gray-800; /* Removed default margin/padding, hide body scrollbars, smooth fonts, base text color */
+  @apply p-0 m-0 antialiased text-gray-800 bg-gray-100; /* Removed default margin/padding, hide body scrollbars, smooth fonts, base text color */
   /* font-family: 'Inter', sans-serif; */ /* Apply font here if not using next/font */
 }
 
-/* Ensure map container takes up space */
+/* Ensure map container takes up space WITHIN ITS PARENT */
 .leaflet-container {
   height: 100%;
   width: 100%;
-  min-height: 300px; /* Minimum height */
   background-color: #f3f4f6; /* Light gray background while tiles load */
 }
 
 /* Style Marker Cluster plugin */
 .marker-cluster-small {
-    background-color: rgba(180, 200, 220, 0.6);
+  background-color: rgba(180, 200, 220, 0.6);
 }
 .marker-cluster-small div {
-    background-color: rgba(80, 120, 160, 0.6);
+  background-color: rgba(80, 120, 160, 0.6);
 }
 /* Add medium/large styles if desired */
 
 /* Custom Leaflet popup styling */
 .leaflet-popup-content-wrapper {
-    @apply rounded-lg shadow-lg border border-gray-100;
+  @apply rounded-lg shadow-lg border border-gray-100;
 }
 .leaflet-popup-content {
-    @apply text-sm font-sans; /* Ensure popup uses the theme font */
-     margin: 10px 15px !important; /* Adjust Leaflet default padding */
+  @apply text-sm font-sans; /* Ensure popup uses the theme font */
+  margin: 10px 15px !important; /* Adjust Leaflet default padding */
 }
 .leaflet-popup-tip-container {
-   visibility: hidden; /* Hide the default triangle */
+  visibility: hidden; /* Hide the default triangle */
 }
 
 /* Style for user location marker */
 .user-location-marker div {
-   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8); /* White ring */
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8); /* White ring */
 }
 
 /* Keyframes for modal animation if not defined in tailwind.config.js */
@@ -56,3 +55,54 @@ body {
     @keyframes fade-scale-in { ... }
     .animate-fade-scale-in { ... }
 } */
+
+/* --- Custom Marker Cluster Styling --- */
+/* Increase the size of ALL cluster icons */
+.marker-cluster {
+  /* Increase width and height (default is often 40px) */
+  width: 48px !important; /* Use !important to override library defaults if needed */
+  height: 48px !important;
+  /* Ensure margin adjusts if needed (might not be necessary) */
+  /* margin-left: -24px !important; */
+  /* margin-top: -24px !important; */
+  border-radius: 50% !important; /* Ensure it stays circular */
+  /* Optional: Adjust background color/opacity if desired */
+  /* background-color: rgba(180, 200, 220, 0.7); */
+}
+
+/* Increase the size and center the number inside */
+.marker-cluster div {
+  /* Increase width/height to match parent */
+  width: 44px !important; /* Slightly smaller for the inner ring effect */
+  height: 44px !important;
+  /* Adjust margin to center (depends on parent size) */
+  margin-left: 2px !important;
+  margin-top: 2px !important;
+  /* Increase font size */
+  font-size: 16px !important; /* Adjust as needed */
+  font-weight: 600 !important; /* Make number bolder */
+  /* Adjust line-height to vertically center text in the new height */
+  line-height: 44px !important; /* Match inner div height */
+  border-radius: 50% !important; /* Ensure it stays circular */
+  /* Optional: Adjust inner background/text color */
+  /* background-color: rgba(80, 120, 160, 0.8); */
+  /* color: #ffffff !important; */
+}
+
+/* Optional: Fine-tune specific sizes if needed */
+/* .marker-cluster-small { width: 44px !important; height: 44px !important; } */
+/* .marker-cluster-small div { width: 40px !important; height: 40px !important; line-height: 40px !important; font-size: 15px !important; } */
+
+/* .marker-cluster-medium { width: 52px !important; height: 52px !important; } */
+/* .marker-cluster-medium div { width: 48px !important; height: 48px !important; line-height: 48px !important; font-size: 17px !important; } */
+
+/* .marker-cluster-large { width: 60px !important; height: 60px !important; } */
+/* .marker-cluster-large div { width: 56px !important; height: 56px !important; line-height: 56px !important; font-size: 18px !important; } */
+
+/* ... potentially other custom styles ... */
+
+/* --- FIX for Leaflet CSS image path error --- */
+.leaflet-default-icon-path {
+  background-image: none !important; /* Keep this if using the CSS override strategy */
+}
+/* --- End of FIX --- */

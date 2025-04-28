@@ -1,37 +1,33 @@
-'use client'; // Required for dynamic import and hooks
+"use client";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+// *** Use MapLoader again ***
+import MapLoader from "../components/MapLoader";
+import { useLanguage } from "../context/LanguageContext";
 
-import dynamic from 'next/dynamic';
-import Head from 'next/head';
-// Import the custom loader - IT NEEDS the LanguageProvider wrapping it in layout.tsx
-import MapLoader from '../components/MapLoader';
-import { useLanguage } from '../context/LanguageContext'; // To set initial head lang if needed
-
-
-// Dynamically import the MapComponent with SSR turned off
-const MapWithNoSSR = dynamic(() => import('../components/MapComponent'), {
+const MapWithNoSSR = dynamic(() => import("../components/MapComponent"), {
   ssr: false,
-  loading: () => <MapLoader />, // Use the custom loader component
+  // *** Change back to MapLoader ***
+  loading: () => <MapLoader />,
 });
 
 export default function HomePage() {
-  const { language } = useLanguage(); // Get current language for Head
+  const { language } = useLanguage(); // Get language if needed for Head
 
   return (
     <>
-      {/* Using Head from next/head is still okay in App Router client components for basic tags */}
       <Head>
-        {/* Title is better handled by metadata in layout.tsx, but can override */}
-        {/* <title>Adunata Alpini 2025 - Mappa Biella</title> */}
-        {/* Description is better handled by metadata in layout.tsx */}
-        {/* <meta name="description" content="Mappa interattiva per l'Adunata Nazionale degli Alpini 2025 a Biella" /> */}
-        {/* Ensure html lang is updated if needed, though context does it */}
+        {/* Title/Desc are in layout.tsx metadata */}
         <meta httpEquiv="Content-Language" content={language} />
+        {/* Add other specific meta tags for this page if needed */}
       </Head>
-
-      {/* Main container for the map. Ensure it takes up screen space */}
-      <main className="h-screen w-screen overflow-hidden"> {/* Prevent potential scrollbars */}
+      {/* The MapComponent will fill the 'flex-grow' div from layout.tsx */}
+      {/* Ensure MapComponent's root element has h-full */}
+      <div className="h-full w-full">
+        {" "}
+        {/* This div takes full height of parent */}
         <MapWithNoSSR />
-      </main>
+      </div>
     </>
   );
 }
