@@ -422,7 +422,10 @@ export const legendItems: {
 ];
 
 // --- Updated Function to get custom Leaflet Icon using L.DivIcon ---
-export const getPoiIcon = (type: PoiType, isActive = false): L.DivIcon => {
+export const generateIconWithType = (
+  type: PoiType,
+  isActive = false
+): L.DivIcon => {
   const style = poiTypeStyles[type] || poiTypeStyles.default;
   const baseSize = 43;
   const scale = isActive ? 1.15 : 1.0; // Define scale factor
@@ -430,37 +433,34 @@ export const getPoiIcon = (type: PoiType, isActive = false): L.DivIcon => {
 
   // Render the React icon component to an HTML string
   const iconHtmlString = ReactDOMServer.renderToString(
-    // We need to manually apply size/color here because it's going into HTML
-    // Tailwind classes won't work directly in DivIcon HTML unless Leaflet renders within React tree (not default)
     React.createElement(IconComponent, {
       size: baseSize * 0.6,
       color: "white",
-    }) // Icon size relative to container
+    })
   );
 
   // Create the HTML for the DivIcon
   const iconHtml = `
   <div style="
-    background-color: ${style.color};
-    width: ${baseSize}px;
-    height: ${baseSize}px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    border: 2px solid white; /* Add white border for contrast */
-    transform: scale(${scale});
-    transition: transform 0.1s ease-out;
+      background-color: ${style.color};
+      width: ${baseSize}px;
+      height: ${baseSize}px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      border: 2px solid white; /* Add white border for contrast */
+      transform: scale(${scale});
+      transition: transform 0.1s ease-out;
   ">
-    ${iconHtmlString}
+      ${iconHtmlString}
   </div>
-`;
+  `;
 
   return L.divIcon({
     html: iconHtml,
     className: "",
-    // Use baseSize for calculations, scaling is visual only
     iconSize: [baseSize, baseSize],
     iconAnchor: [baseSize / 2, baseSize],
     popupAnchor: [0, -baseSize + 5],

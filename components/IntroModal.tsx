@@ -87,10 +87,10 @@ const IntroModal: React.FC<IntroModalProps> = ({ isOpen, onClose }) => {
           <Image
             src="/images/alpini_hero.png"
             alt={t("loader_title")}
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-center object-cover"
             priority
-            className="object-center"
+            sizes="(max-width: 768px) 10rem, 13rem"
           />
         </div>
         <h1

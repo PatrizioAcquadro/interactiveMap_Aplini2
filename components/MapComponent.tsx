@@ -1,7 +1,13 @@
 // components/MapComponent.tsx
 "use client";
 
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  useRef,
+} from "react";
 import {
   MapContainer,
   TileLayer,
@@ -30,7 +36,14 @@ L.Icon.Default.mergeOptions({
 });
 
 // --- Project Imports ---
-import { poiData, POI, PoiType, getPoiIcon, legendItems } from "../data/pois";
+import {
+  poiData,
+  POI,
+  PoiType,
+  generateIconWithType,
+  legendItems,
+  poiTypeStyles,
+} from "../data/pois";
 import IntroModal from "./IntroModal";
 import LegendSlideout from "./LegendSlideout";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -324,6 +337,46 @@ const MapComponent: React.FC = () => {
   const [showPulse, setShowPulse] = useState(true);
   const [isIntroOpen, setIsIntroOpen] = useState(true);
 
+  const poiIcons = useMemo(() => {
+    // This block runs only once on mount or if dependencies change (empty array = only mount)
+    console.log("Generating POI icons..."); // Log for debugging generation frequency
+    const icons: Record<string, { standard: L.DivIcon; active: L.DivIcon }> =
+      {};
+
+    // Generate icons for each type defined in legendItems
+    legendItems.forEach((item) => {
+      if (!icons[item.type]) {
+        // CALL the imported generation function here
+        icons[item.type] = {
+          standard: generateIconWithType(item.type, false),
+          active: generateIconWithType(item.type, true),
+        };
+      }
+    });
+
+    // Ensure a default icon exists for robustness
+    // It uses poiTypeStyles, make sure that's imported
+    if (poiTypeStyles.default && !icons.default) {
+      // Assuming 'default' might not be in PoiType, cast if needed, or add 'default' to PoiType
+      const defaultType = "default" as PoiType;
+      icons.default = {
+        standard: generateIconWithType(defaultType, false),
+        active: generateIconWithType(defaultType, true),
+      };
+    } else if (!icons.default) {
+      // Fallback if poiTypeStyles.default doesn't exist - use a placeholder or first type
+      console.warn("Default POI icon style not found, using fallback.");
+      // Use a known type like 'bar' or the first item in legendItems as a fallback
+      const fallbackType = legendItems[0]?.type || ("bar" as PoiType);
+      icons.default = {
+        standard: generateIconWithType(fallbackType, false),
+        active: generateIconWithType(fallbackType, true),
+      };
+    }
+
+    return icons;
+  }, []);
+
   // --- Handlers ---
   const handleMarkerClick = useCallback((poi: POI) => {
     setSelectedPoiId(poi.id);
@@ -484,10 +537,27 @@ const MapComponent: React.FC = () => {
             const isSelected = poi.id === selectedPoiId;
             const isHoveredMarker = poi.id === hoveredPoiId;
             const isHoveredLegend = poi.type === hoveredLegendType;
-            const currentIcon = getPoiIcon(
-              poi.type,
+            // 1. Look up the icon set (standard/active) from the pre-generated object
+            const iconSet = poiIcons[poi.type] || poiIcons.default; // Fallback to default
+
+            // 2. Handle potential error if icon set is missing (shouldn't happen with fallback)
+            if (!iconSet) {
+              console.warn(
+                `Icon set not found for POI type: ${poi.type}, ID: ${poi.id}`
+              );
+              return null; // Don't render marker if icon is missing
+            }
+
+            // 3. Choose between the standard or active icon from the set
+            const currentIcon =
               isSelected || isHoveredMarker || isHoveredLegend
-            );
+                ? iconSet.active
+                : iconSet.standard;
+
+            // Get POI name based on current language (keep this if you have it)
+            const poiName =
+              language === "en" && poi.name_en ? poi.name_en : poi.name;
+
             return (
               <Marker
                 key={poi.id}
