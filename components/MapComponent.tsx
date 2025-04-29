@@ -570,9 +570,6 @@ const MapComponent: React.FC = () => {
                 <Popup minWidth={200}>
                   <div className="font-sans text-sm">
                     <h4 className="font-semibold text-base mb-1 text-gray-800">
-                      {language === "en" && poi.name_en
-                        ? poi.name_en
-                        : poi.name}
                       {poiName}
                     </h4>
                     <p className="text-gray-600 mb-2">
