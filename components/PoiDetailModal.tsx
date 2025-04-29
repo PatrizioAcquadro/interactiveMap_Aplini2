@@ -1,6 +1,5 @@
 // components/PoiDetailModal.tsx
 import React from "react";
-import AdsenseAd from "./AdsenseAd";
 import Image from "next/image";
 import L from "leaflet";
 import { POI } from "../data/pois";

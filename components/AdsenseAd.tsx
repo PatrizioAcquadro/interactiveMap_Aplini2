@@ -1,7 +1,6 @@
 "use client"; // AdSense interaction happens client-side
 
 import React, { useEffect } from "react";
-import Script from "next/script"; // Can potentially reuse next/script if needed, but inline script is common
 
 interface AdsenseAdProps {
   adSlot: string; // Pass the specific ad slot ID
@@ -18,7 +17,7 @@ const AdsenseAd: React.FC<AdsenseAdProps> = ({
 }) => {
   useEffect(() => {
     try {
-      // Push ad request once component mounts client-side
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
         {}
       );
