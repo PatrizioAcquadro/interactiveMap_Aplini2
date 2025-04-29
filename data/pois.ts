@@ -13,6 +13,7 @@ import {
   FaLandmark, // *** ADDED for Bank ***
   FaStar, // *** ADDED for Activity ***
   FaRestroom,
+  FaBriefcaseMedical,
 } from "react-icons/fa"; // Example icons from react-icons
 import { StopIcon } from "@heroicons/react/24/outline"; // Example: Stop sign outline
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid"; // Fallback Heroicon
@@ -29,7 +30,8 @@ export type PoiType =
   | "bank"
   | "activity"
   | "ztl"
-  | "wc";
+  | "wc"
+  | "pharmacy";
 
 // Define the structure for each POI
 export interface POI {
@@ -321,6 +323,33 @@ export const poiData: POI[] = [
       "Public toilets accessible during daylight hours. Regularly maintained.",
     // openingHours_en: '08:00 AM - 08:00 PM',
   },
+  {
+    id: 300, // Ensure this ID is unique
+    name: "Farmacia Balestrini",
+    type: "pharmacy", // <-- Use the new type
+    coordinates: [45.56615, 8.05432], // Adjust coordinates if you have precise ones
+    shortDescription: "Farmacia centrale in Piazza V. Veneto.",
+    details:
+      "Farmacia storica situata nel centro di Biella, offre un'ampia gamma di farmaci, prodotti omeopatici, veterinari e cosmetici.",
+    address: "Piazza Vittorio Veneto 1, 13900 Biella BI",
+    phone: "015 23747", // Example phone - verify if needed
+    website: "https://www.farmaciabalestrini.it/", // Example website
+    // openingHours: "Lun-Sab: 08:30-13:00, 15:00-19:30", // Example hours - verify if needed
+    tags: [
+      "Farmacia",
+      "Salute",
+      "Centro",
+      "Cosmetica",
+      "Omeopatia",
+      "Veterinaria",
+    ],
+    // --- English Translations ---
+    name_en: "Balestrini Pharmacy",
+    shortDescription_en: "Central pharmacy in Piazza V. Veneto.",
+    details_en:
+      "Historic pharmacy located in the center of Biella, offering a wide range of medicines, homeopathic products, veterinary supplies, and cosmetics.",
+    // openingHours_en: "Mon-Sat: 08:30-13:00, 15:00-19:30",
+  },
   // ... Add many more points
 ];
 
@@ -342,6 +371,7 @@ export const poiTypeStyles: Record<PoiType | "default", PoiTypeStyle> = {
   activity: { color: "#84CC16", icon: FaStar }, // Added (Lime Green)
   ztl: { color: "#84CC16", icon: StopIcon }, // Using lime green & StopIcon
   wc: { color: "#A16207", icon: FaRestroom }, // Added (Light Brown/Tan)
+  pharmacy: { color: "#22C55E", icon: FaBriefcaseMedical },
   default: { color: "#6B7280", icon: QuestionMarkCircleIcon }, // Gray fallback
 };
 
@@ -412,6 +442,12 @@ export const legendItems: {
     label: "WC Pubblici",
     icon: poiTypeStyles.wc.icon,
     color: poiTypeStyles.wc.color,
+  },
+  {
+    type: "pharmacy",
+    label: "poiCategory_pharmacy",
+    icon: poiTypeStyles.pharmacy.icon,
+    color: poiTypeStyles.pharmacy.color,
   },
   {
     type: "ztl",
