@@ -3,6 +3,12 @@ import { Inter } from "next/font/google";
 import { LanguageProvider } from "../context/LanguageContext";
 import Header from "../components/Header";
 import ErrorBoundary from "../components/ErrorBoundary";
+
+// --- IMPORT LEAFLET CSS HERE ---
+import "leaflet/dist/leaflet.css";
+import "leaflet.markercluster/dist/MarkerCluster.css";
+import "leaflet.markercluster/dist/MarkerCluster.Default.css";
+
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
@@ -13,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Adunata Map Biella 2025",
+  title: "AduNet - WebMap",
   description:
     "Mappa interattiva per l'Adunata Nazionale degli Alpini 2025 a Biella",
 };
