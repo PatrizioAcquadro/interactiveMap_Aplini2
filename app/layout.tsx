@@ -1,8 +1,15 @@
 // app/layout.tsx
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { LanguageProvider } from "../context/LanguageContext";
 import Header from "../components/Header";
 import ErrorBoundary from "../components/ErrorBoundary";
+
+// --- IMPORT LEAFLET CSS HERE ---
+import "leaflet/dist/leaflet.css";
+import "leaflet.markercluster/dist/MarkerCluster.css";
+import "leaflet.markercluster/dist/MarkerCluster.Default.css";
+
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
@@ -13,7 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Adunata Map Biella 2025",
+  title: "AduNet - WebMap",
   description:
     "Mappa interattiva per l'Adunata Nazionale degli Alpini 2025 a Biella",
 };
@@ -38,6 +45,18 @@ export default function RootLayout({
       lang="it"
       className={`${inter.variable} font-sans h-full bg-brand-white`}
     >
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8600182876678262"
+          crossOrigin="anonymous"
+          strategy="afterInteractive" // Load after the page is interactive
+          // Optional: Add onError for debugging
+          // onError={(e) => {
+          //   console.error('AdSense Script failed to load', e)
+          // }}
+        />
+      </head>
       <body className="h-full flex flex-col">
         <LanguageProvider>
           <Header />
