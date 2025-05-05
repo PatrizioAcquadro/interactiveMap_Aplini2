@@ -51,7 +51,7 @@ import {
   InformationCircleIcon,
 } from "@heroicons/react/24/outline";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage, Language } from "../context/LanguageContext";
 
 /* ========================================================================== */
 /*         Helper Components (Defined Outside Main Component)                 */
@@ -532,26 +532,46 @@ const MapComponent: React.FC = () => {
             const isSelected = poi.id === selectedPoiId;
             const isHoveredMarker = poi.id === hoveredPoiId;
             const isHoveredLegend = poi.type === hoveredLegendType;
-            // 1. Look up the icon set (standard/active) from the pre-generated object
-            const iconSet = poiIcons[poi.type] || poiIcons.default; // Fallback to default
+            const iconSet = poiIcons[poi.type] || poiIcons.default;
 
-            // 2. Handle potential error if icon set is missing (shouldn't happen with fallback)
             if (!iconSet) {
-              console.warn(
-                `Icon set not found for POI type: ${poi.type}, ID: ${poi.id}`
-              );
-              return null; // Don't render marker if icon is missing
+              console.warn(/* ... */);
+              return null;
             }
 
-            // 3. Choose between the standard or active icon from the set
             const currentIcon =
               isSelected || isHoveredMarker || isHoveredLegend
                 ? iconSet.active
                 : iconSet.standard;
 
-            // Get POI name based on current language (keep this if you have it)
-            const poiName =
-              language === "en" && poi.name_en ? poi.name_en : poi.name;
+            // --- Define variables for popup text ---
+            const getName = (lang: Language): string | undefined => {
+              const key =
+                lang !== "it" ? (`name_${lang}` as keyof POI) : "name";
+              const value = poi[key];
+              return typeof value === "string" ? value : undefined; // Ensure it's a string
+            };
+            const getShortDesc = (lang: Language): string | undefined => {
+              const key =
+                lang !== "it"
+                  ? (`shortDescription_${lang}` as keyof POI)
+                  : "shortDescription";
+              const value = poi[key];
+              return typeof value === "string" ? value : undefined; // Ensure it's a string
+            };
+
+            // Prioritize: Current Lang -> English -> Italian -> Empty String
+            const popupName: string =
+              getName(language) ?? // Try current language
+              getName("en") ?? // Try English
+              getName("it") ?? // Try Italian (base)
+              ""; // Default to empty string
+
+            const popupShortDesc: string =
+              getShortDesc(language) ?? // Try current language
+              getShortDesc("en") ?? // Try English
+              getShortDesc("it") ?? // Try Italian (base)
+              ""; // Default to empty string
 
             return (
               <Marker
@@ -564,19 +584,17 @@ const MapComponent: React.FC = () => {
                   mouseover: () => setHoveredPoiId(poi.id),
                   mouseout: () => setHoveredPoiId(null),
                 }}
-                alt={poiName}
-                title={poiName}
+                alt={popupName} // Use derived name
+                title={popupName} // Use derived name
               >
                 <Popup minWidth={200}>
                   <div className="font-sans text-sm">
                     <h4 className="font-semibold text-base mb-1 text-gray-800">
-                      {poiName}
+                      {popupName} {/* Use derived name */}
                     </h4>
-                    <p className="text-gray-600 mb-2">
-                      {language === "en" && poi.shortDescription_en
-                        ? poi.shortDescription_en
-                        : poi.shortDescription}
-                    </p>
+                    {/* --- USE THE DERIVED SHORT DESCRIPTION --- */}
+                    <p className="text-gray-600 mb-2">{popupShortDesc}</p>
+                    {/* --- END USAGE --- */}
                     {poi.address && (
                       <p className="text-xs text-gray-500 mb-1">
                         {poi.address}

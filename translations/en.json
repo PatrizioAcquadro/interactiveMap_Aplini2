@@ -108,5 +108,9 @@
     "contacts_email_desc": "Best for reporting missing activities or specific map data issues. Reach us at biellainfesta.info@gmail.com",
     "send_email": "Send Email",
 
-    "ad_placeholder": "Advertisement Area"
+    "ad_placeholder": "Advertisement Area",
+
+    "lang_es": "Español",
+    "lang_fr": "Français",
+    "lang_de": "Deutsch"
 }

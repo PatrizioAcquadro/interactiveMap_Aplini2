@@ -23,7 +23,9 @@ const availableLanguages: {
 }[] = [
   { code: "en", nameKey: "lang_en", nativeName: "EN" },
   { code: "it", nameKey: "lang_it", nativeName: "IT" },
-  // Add more languages here if needed
+  { code: "es", nameKey: "lang_es", nativeName: "ES" }, // <-- Add ES
+  { code: "fr", nameKey: "lang_fr", nativeName: "FR" }, // <-- Add FR
+  { code: "de", nameKey: "lang_de", nativeName: "DE" }, // <-- Add DE
 ];
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({

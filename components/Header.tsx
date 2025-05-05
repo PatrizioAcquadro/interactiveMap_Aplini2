@@ -4,7 +4,7 @@ import React, { useState, Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, Transition, Menu } from "@headlessui/react";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -15,9 +15,14 @@ import {
   LinkIcon,
   LockClosedIcon,
   InformationCircleIcon,
+  ChevronDownIcon,
 } from "@heroicons/react/24/outline";
 // --- Import TranslationKey ---
-import { useLanguage, TranslationKey } from "../context/LanguageContext";
+import {
+  useLanguage,
+  Language,
+  TranslationKey,
+} from "../context/LanguageContext";
 import { FaInstagram } from "react-icons/fa";
 
 // --- Define Interface for Navigation Items ---
@@ -83,13 +88,40 @@ const utilityLinks: UtilityLinkItem[] = [
   },
 ];
 
+// --- DEFINE availableLanguages HERE (Ensure this matches LanguageSwitcher.tsx if you keep both) ---
+const availableLanguages: {
+  code: Language;
+  nameKey: TranslationKey;
+  nativeName: string; // Keep native short names
+}[] = [
+  { code: "en", nameKey: "lang_en", nativeName: "EN" },
+  { code: "it", nameKey: "lang_it", nativeName: "IT" },
+  { code: "es", nameKey: "lang_es", nativeName: "ES" },
+  { code: "fr", nameKey: "lang_fr", nativeName: "FR" },
+  { code: "de", nameKey: "lang_de", nativeName: "DE" },
+];
+
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   // --- Ensure TranslationKey is imported for useLanguage hook context if needed ---
   const { t, language, setLanguage } = useLanguage();
 
-  const toggleLang = () => setLanguage(language === "it" ? "en" : "it");
+  // Find the details of the currently selected language
+  const currentLanguageDetails =
+    availableLanguages.find((lang) => lang.code === language) ||
+    availableLanguages[0]; // Fallback just in case
+
+  const handleLanguageSelect = (langCode: Language) => {
+    // Wrap the state update in setTimeout to break potential update cycles
+    setTimeout(() => {
+      setLanguage(langCode);
+    }, 0); // Timeout of 0ms defers execution until the next event loop tick
+
+    // Close the main menu immediately (or keep it open if preferred)
+    //setMobileMenuOpen(false);
+  };
+
   const fullTitle = t("header_title");
 
   return (
@@ -298,19 +330,79 @@ const Header: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Language Switcher */}
-                <div className="border-t border-brand-dark-green/10 px-4 py-6">
-                  <span className="text-sm font-medium text-brand-dark-green/80 mr-2">
-                    {t("language_switch_label")}
-                  </span>
-                  <button
-                    onClick={() => {
-                      toggleLang(); /* Optionally close menu: setMobileMenuOpen(false) */
-                    }}
-                    className="text-sm font-semibold p-1 px-2 bg-white/10 rounded text-brand-dark-green hover:bg-white/20 transition-colors duration-150"
+                {/* --- Language Dropdown Section (REVISED) --- */}
+                <div className="border-t border-brand-dark-green/10 px-4 py-4">
+                  {" "}
+                  {/* Adjusted padding slightly */}
+                  {/* Use Headless UI Menu for the dropdown */}
+                  <Menu
+                    as="div"
+                    className="relative inline-block text-left w-full"
                   >
-                    {language === "it" ? "Passa a EN" : "Switch to IT"}
-                  </button>
+                    <div>
+                      <Menu.Button className="inline-flex w-full justify-between items-center rounded-md bg-white/10 px-3 py-2 text-sm font-medium text-brand-dark-green hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 transition-colors duration-150">
+                        <span>
+                          {/* Display current language name and native code */}
+                          {t(currentLanguageDetails.nameKey)}
+                          <span className="text-xs opacity-70">
+                            {" "}
+                            / {currentLanguageDetails.nativeName}
+                          </span>
+                        </span>
+                        <ChevronDownIcon
+                          className="ml-2 -mr-1 h-5 w-5 text-brand-dark-green/70"
+                          aria-hidden="true"
+                        />
+                      </Menu.Button>
+                    </div>
+
+                    {/* Dropdown Panel Transition */}
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95"
+                    >
+                      <Menu.Items className="absolute left-0 mt-2 w-full origin-top-right divide-y divide-gray-100/10 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                        {" "}
+                        {/* Added z-index */}
+                        <div className="px-1 py-1 ">
+                          {availableLanguages.map((lang) => (
+                            <Menu.Item key={lang.code}>
+                              {(
+                                { active } // 'active' indicates hover/focus state via keyboard/mouse
+                              ) => (
+                                <button
+                                  onClick={() =>
+                                    handleLanguageSelect(lang.code)
+                                  }
+                                  disabled={language === lang.code} // Disable current language
+                                  className={`${
+                                    active
+                                      ? "bg-brand-dark-green text-white"
+                                      : "text-gray-900" // Hover style
+                                  } group flex w-full items-center rounded-md px-2 py-2 text-sm ${
+                                    language === lang.code
+                                      ? "font-semibold cursor-default opacity-70"
+                                      : "" // Style for current/disabled item
+                                  }`}
+                                >
+                                  {t(lang.nameKey)}
+                                  <span className="ml-1 text-xs opacity-70">
+                                    {" "}
+                                    / {lang.nativeName}
+                                  </span>
+                                </button>
+                              )}
+                            </Menu.Item>
+                          ))}
+                        </div>
+                      </Menu.Items>
+                    </Transition>
+                  </Menu>
                 </div>
 
                 {/* Footer Text inside Menu */}

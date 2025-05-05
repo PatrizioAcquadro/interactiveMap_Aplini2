@@ -54,10 +54,19 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
   if (!poi) return null; // Early return if no POI
 
   const getText = (
-    itText: string | undefined,
-    enText: string | undefined
+    baseKey: keyof POI // e.g., 'name', 'details'
   ): string | undefined => {
-    return language === "en" && enText ? enText : itText;
+    const langKey = `${baseKey}_${language}` as keyof POI; // e.g., 'name_es', 'details_fr'
+    const enKey = `${baseKey}_en` as keyof POI; // e.g., 'name_en'
+    const itKey = baseKey; // Italian is the base key
+
+    // Prioritize current language, then English, then Italian (base)
+    return (
+      (poi[langKey] as string) ||
+      (poi[enKey] as string) ||
+      (poi[itKey] as string) ||
+      undefined
+    );
   };
 
   // *** Construct map link by CALLING the helper function ***
@@ -79,7 +88,7 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
           {poi.images && poi.images.length > 0 ? (
             <Image
               src={poi.images[0]}
-              alt={getText(poi.name, poi.name_en) || "POI Image"}
+              alt={getText("name") || "POI Image"}
               layout="fill"
               objectFit="cover"
               priority={true}
@@ -103,13 +112,12 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
         <div className="p-5 md:p-6 overflow-y-auto flex-grow">
           {/* Title */}
           <h2 className="text-xl md:text-2xl font-semibold mb-3 text-gray-900 pr-8">
-            {getText(poi.name, poi.name_en)}
+            {getText("name")}
           </h2>
 
           {/* Main Description */}
           <p className="text-base text-gray-700 mb-4">
-            {getText(poi.details, poi.details_en) ||
-              getText(poi.shortDescription, poi.shortDescription_en)}
+            {getText("details") || getText("shortDescription")}
           </p>
 
           {/* Information Grid */}
@@ -158,7 +166,7 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
                     {t("openingHoursLabel")}:
                   </span>{" "}
                   <p className="text-gray-600 whitespace-pre-line">
-                    {getText(poi.openingHours, poi.openingHours_en)}
+                    {getText("openingHours")}
                   </p>{" "}
                 </div>{" "}
               </div>
@@ -167,9 +175,7 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
               <div className="flex items-start text-green-700">
                 {" "}
                 <SparklesIcon className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />{" "}
-                <span className="font-medium">
-                  {getText(poi.discountInfo, poi.discountInfo_en)}
-                </span>{" "}
+                <span className="font-medium">{getText("discountInfo")}</span>{" "}
               </div>
             )}
 
@@ -180,14 +186,11 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
                 <div>
                   <span className="font-medium">{t("partyInfoLabel")}:</span>
                   {poi.partyInfo && (
-                    <p className="text-gray-600">
-                      {getText(poi.partyInfo, poi.partyInfo_en)}
-                    </p>
+                    <p className="text-gray-600">{getText("partyInfo")}</p>
                   )}
                   {poi.partyHours && (
                     <p className="text-xs text-gray-500">
-                      {t("partyHoursLabel")}:{" "}
-                      {getText(poi.partyHours, poi.partyHours_en)}
+                      {t("partyHoursLabel")}: {getText("partyHours")}
                     </p>
                   )}
                 </div>
