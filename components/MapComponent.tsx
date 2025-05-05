@@ -19,6 +19,7 @@ import {
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
 
 import L from "leaflet";
+import "leaflet.markercluster"; // Import the plugin's JS execution side-effect
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
 // --- Leaflet CSS and Icon Fix ---
@@ -327,7 +328,7 @@ const MapComponent: React.FC = () => {
   const [showPulse, setShowPulse] = useState(true);
   const [isIntroOpen, setIsIntroOpen] = useState(true);
 
-  const markerClusterRef = useRef<L.MarkerClusterGroup | any>(null); // Use any initially if type is tricky
+  const markerClusterRef = useRef<L.MarkerClusterGroup>(null); // Use any initially if type is tricky
 
   const poiIcons = useMemo(() => {
     // This block runs only once on mount or if dependencies change (empty array = only mount)
@@ -466,10 +467,12 @@ const MapComponent: React.FC = () => {
       // Attempt to find the marker within the cluster group's layers
       try {
         // Access layers - may need to check internal _featureGroup
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const featureGroup = (clusterGroup as any)._featureGroup; // Cast needed
         const layers = clusterGroup.getLayers
           ? clusterGroup.getLayers()
-          : clusterGroup._featureGroup
-          ? clusterGroup._featureGroup.getLayers()
+          : featureGroup
+          ? featureGroup.getLayers()
           : [];
         console.log(
           `useEffect[searchTargetPoi]: Found ${layers.length} layers in cluster group.`
