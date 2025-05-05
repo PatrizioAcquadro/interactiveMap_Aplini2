@@ -112,5 +112,8 @@
     "contacts_email_desc": "Ideale per segnalare attività mancanti o problemi specifici con i dati della mappa. Scrivici a biellainfesta.info@gmail.com",
     "send_email": "Invia Email",
 
-    "ad_placeholder": "Spazio Pubblicitario"
+    "ad_placeholder": "Spazio Pubblicitario",
+
+    "googleRatingLabel": "Valutazione Google",
+    "googleReviewsSuffix": "recensioni"
 }

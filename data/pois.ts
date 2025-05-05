@@ -39,6 +39,8 @@ export interface POI {
   name: string;
   type: PoiType;
   coordinates: L.LatLngExpression; // [latitude, longitude]
+  googleRating?: number; // e.g., 4.5
+  googleReviewCount?: number; // e.g., 150
   address?: string;
   phone?: string;
   website?: string;
@@ -417,6 +419,8 @@ export const poiData: POI[] = [
     details_en:
       "Offers special menus for the Adunata. Specialties include polenta concia and bagna cauda. Large dining room, booking recommended.",
     openingHours_en: "Tue-Sun: 12:00-14:30, 19:00-22:30; Mon: Closed",
+    googleRating: 4.3,
+    googleReviewCount: 215,
   },
   {
     id: 20,
@@ -640,6 +644,8 @@ export const poiData: POI[] = [
     shortDescription_en: "Central pharmacy in Piazza V. Veneto.",
     details_en:
       "Historic pharmacy located in the center of Biella, offering a wide range of medicines, homeopathic products, veterinary supplies, and cosmetics.",
+    googleRating: 4.8,
+    googleReviewCount: 98,
   },
   // ... Add many more points
 ];

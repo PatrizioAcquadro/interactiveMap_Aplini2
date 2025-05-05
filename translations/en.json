@@ -112,5 +112,8 @@
 
     "lang_es": "Español",
     "lang_fr": "Français",
-    "lang_de": "Deutsch"
+    "lang_de": "Deutsch",
+
+    "googleRatingLabel": "Google Rating",
+    "googleReviewsSuffix": "reviews"
 }

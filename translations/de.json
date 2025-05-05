@@ -106,6 +106,8 @@
     "contacts_email_title": "E-Mail",
     "contacts_email_desc": "Ideal, um fehlende Aktivitäten oder spezifische Probleme mit den Kartendaten zu melden. Schreiben Sie uns an biellainfesta.info@gmail.com",
     "send_email": "E-Mail senden",
-    "ad_placeholder": "Werbefläche"
+    "ad_placeholder": "Werbefläche",
+    "googleRatingLabel": "Google-Bewertung",
+    "googleReviewsSuffix": "Rezensionen"
   }
   

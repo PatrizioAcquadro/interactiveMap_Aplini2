@@ -15,6 +15,7 @@ import {
   // Choose one for directions:
   MapIcon as DirectionsMapIcon, // Option 1: Map icon
 } from "@heroicons/react/24/outline";
+import { FaStar, FaStarHalfAlt, FaRegStar, FaGoogle } from "react-icons/fa";
 import { useLanguage } from "../context/LanguageContext"; // Corrected path assumption
 
 interface PoiDetailModalProps {
@@ -46,6 +47,27 @@ const getMapLink = (poi: POI): string => {
     return `https://www.google.com/maps/search/?api=1&query=${lat}%2C${lng}`;
     // Alternative: return `https://www.google.com/maps/search/?api=1&query=${encodedName}`;
   }
+};
+
+const renderStars = (rating: number) => {
+  const stars = [];
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 >= 0.4; // Use 0.4 threshold for half star visually
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+  // Full stars
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(<FaStar key={`full-${i}`} className="text-yellow-400" />);
+  }
+  // Half star
+  if (hasHalfStar) {
+    stars.push(<FaStarHalfAlt key="half" className="text-yellow-400" />);
+  }
+  // Empty stars
+  for (let i = 0; i < emptyStars; i++) {
+    stars.push(<FaRegStar key={`empty-${i}`} className="text-yellow-400" />); // Or text-gray-300
+  }
+  return stars;
 };
 
 const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
@@ -150,6 +172,10 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
 
   // *** Construct map link by CALLING the helper function ***
   const mapLink = getMapLink(poi); // Call the function defined above
+
+  const rating = poi.googleRating;
+  const reviewCount = poi.googleReviewCount;
+  const showRating = typeof rating === "number" && rating > 0; // Check if valid rating exists
 
   // Now the return statement is valid
   return (
@@ -292,7 +318,26 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
             )}
           </div>
 
-          {/* Tags */}
+          {/*Google Rating Section*/}
+          {showRating && (
+            <div className="mb-3 flex items-center space-x-2 text-sm text-gray-600">
+              <FaGoogle
+                className="h-4 w-4 text-gray-500 flex-shrink-0"
+                aria-label="Google logo"
+              />
+              <span className="font-medium">{t("googleRatingLabel")}:</span>
+              <span className="font-bold text-gray-800">
+                {rating.toFixed(1)}
+              </span>
+              <span className="flex items-center">{renderStars(rating)}</span>
+              {typeof reviewCount === "number" && reviewCount > 0 && (
+                <span className="text-xs text-gray-500">
+                  ({reviewCount.toLocaleString(language)}{" "}
+                  {t("googleReviewsSuffix")})
+                </span>
+              )}
+            </div>
+          )}
         </div>{" "}
         {/* End Scrollable Content Area */}
         {/* Footer Action Area */}
