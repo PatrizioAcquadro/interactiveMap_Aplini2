@@ -1,7 +1,13 @@
 // components/MapComponent.tsx
 "use client";
 
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  useRef,
+} from "react";
 import {
   MapContainer,
   TileLayer,
@@ -63,20 +69,9 @@ const MapEvents = ({ targetPoi }: { targetPoi: POI | null }) => {
   const map = useMap();
   useEffect(() => {
     if (targetPoi) {
+      console.log("MapEvents: Flying to target POI:", targetPoi.name);
+      // Only fly to the location. Popup opening handled elsewhere.
       map.flyTo(targetPoi.coordinates, 16, { animate: true, duration: 1 });
-      const timer = setTimeout(() => {
-        map.eachLayer((layer) => {
-          if (
-            layer instanceof L.Marker &&
-            layer
-              .getLatLng()
-              .equals(L.latLng(targetPoi.coordinates as L.LatLngTuple), 1e-5)
-          ) {
-            layer.openPopup();
-          }
-        });
-      }, 1100);
-      return () => clearTimeout(timer);
     }
   }, [targetPoi, map]);
   return null;
@@ -332,6 +327,8 @@ const MapComponent: React.FC = () => {
   const [showPulse, setShowPulse] = useState(true);
   const [isIntroOpen, setIsIntroOpen] = useState(true);
 
+  const markerClusterRef = useRef<L.MarkerClusterGroup | any>(null); // Use any initially if type is tricky
+
   const poiIcons = useMemo(() => {
     // This block runs only once on mount or if dependencies change (empty array = only mount)
     console.log("Generating POI icons..."); // Log for debugging generation frequency
@@ -407,9 +404,15 @@ const MapComponent: React.FC = () => {
     setActiveFilters(new Set<PoiType>()); // Still deselects all
   }, []);
   const handleSearchResultSelect = useCallback((poi: POI) => {
+    console.log("handleSearchResultSelect: Target POI set:", poi.name);
+    // Set the target POI state for the useEffect to pick up
     setSearchTargetPoi(poi);
-    setTimeout(() => setSearchTargetPoi(null), 100);
-  }, []);
+    // Optionally set selected ID for styling effects
+    setSelectedPoiId(poi.id);
+    // Close side panels
+    setIsLegendOpen(false);
+    setIsLangMenuOpen(false);
+  }, []); // Dependencies: only setters are used, so empty array is likely okay
   const handleCloseIntro = useCallback(() => {
     setIsIntroOpen(false);
     // Mark as shown for the session *after* it's closed
@@ -449,6 +452,86 @@ const MapComponent: React.FC = () => {
       }
     }
   }, []); // Empty dependency array ensures this runs only once on mount
+
+  useEffect(() => {
+    // Run only when searchTargetPoi has a value and the cluster ref is ready
+    if (searchTargetPoi && markerClusterRef.current) {
+      console.log(
+        "useEffect[searchTargetPoi]: Processing target -",
+        searchTargetPoi.name
+      );
+      const clusterGroup = markerClusterRef.current; // The Leaflet MarkerClusterGroup instance
+      let targetMarker: L.Marker | null = null;
+
+      // Attempt to find the marker within the cluster group's layers
+      try {
+        // Access layers - may need to check internal _featureGroup
+        const layers = clusterGroup.getLayers
+          ? clusterGroup.getLayers()
+          : clusterGroup._featureGroup
+          ? clusterGroup._featureGroup.getLayers()
+          : [];
+        console.log(
+          `useEffect[searchTargetPoi]: Found ${layers.length} layers in cluster group.`
+        );
+
+        for (const layer of layers) {
+          if (layer instanceof L.Marker) {
+            const markerLatLng = layer.getLatLng();
+            const targetLatLng = L.latLng(
+              searchTargetPoi.coordinates as L.LatLngTuple
+            );
+            // Use precise comparison
+            if (markerLatLng.equals(targetLatLng)) {
+              targetMarker = layer;
+              console.log(
+                "useEffect[searchTargetPoi]: Found matching marker layer:",
+                targetMarker
+              );
+              break; // Found it
+            }
+          }
+        }
+      } catch (error) {
+        console.error(
+          "useEffect[searchTargetPoi]: Error accessing cluster layers:",
+          error
+        );
+      }
+
+      if (targetMarker) {
+        // Use zoomToShowLayer for reliable unclustering and visibility
+        console.log(
+          "useEffect[searchTargetPoi]: Calling zoomToShowLayer for marker."
+        );
+        clusterGroup.zoomToShowLayer(targetMarker, () => {
+          console.log(
+            "useEffect[searchTargetPoi]: zoomToShowLayer callback - opening popup."
+          );
+          // Open popup *after* zoom/uncluster animation is complete
+          targetMarker?.openPopup();
+        });
+      } else {
+        // Fallback if marker wasn't found in the layers (less ideal)
+        console.warn(
+          "useEffect[searchTargetPoi]: Could not find marker layer for POI ID:",
+          searchTargetPoi.id,
+          ". MapEvents flyTo will handle zoom."
+        );
+        // MapEvents should still handle the flyTo, no explicit fallback needed here usually.
+      }
+
+      // Reset searchTargetPoi after a short delay to prevent re-triggering immediately
+      // And allow animations/map interactions to potentially finish
+      const timer = setTimeout(() => {
+        console.log(
+          "useEffect[searchTargetPoi]: Resetting searchTargetPoi state."
+        );
+        setSearchTargetPoi(null);
+      }, 500); // Delay can be adjusted
+      return () => clearTimeout(timer); // Cleanup timeout on unmount or if effect re-runs
+    }
+  }, [searchTargetPoi]);
 
   return (
     <div className="h-full w-full relative z-10">
@@ -527,7 +610,7 @@ const MapComponent: React.FC = () => {
         />
         {/* *** Render CustomZoomControlHelper INSIDE *** */}
         {/* --- Map Data Layers --- */}
-        <MarkerClusterGroup chunkedLoading>
+        <MarkerClusterGroup ref={markerClusterRef} chunkedLoading>
           {filteredPois.map((poi) => {
             const isSelected = poi.id === selectedPoiId;
             const isHoveredMarker = poi.id === hoveredPoiId;
