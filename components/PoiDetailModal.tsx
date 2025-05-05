@@ -53,20 +53,41 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
 
   if (!poi) return null; // Early return if no POI
 
-  const getText = (
-    baseKey: keyof POI // e.g., 'name', 'details'
-  ): string | undefined => {
-    const langKey = `${baseKey}_${language}` as keyof POI; // e.g., 'name_es', 'details_fr'
-    const enKey = `${baseKey}_en` as keyof POI; // e.g., 'name_en'
-    const itKey = baseKey; // Italian is the base key
+  const getText = (baseKey: keyof POI): string | undefined => {
+    let value: string | undefined = undefined;
 
-    // Prioritize current language, then English, then Italian (base)
-    return (
-      (poi[langKey] as string) ||
-      (poi[enKey] as string) ||
-      (poi[itKey] as string) ||
-      undefined
-    );
+    // 1. Try the specific language key (e.g., 'name_es', 'details_fr')
+    //    (Only construct if language is NOT Italian)
+    if (language !== "it") {
+      const langKey = `${baseKey}_${language}` as keyof POI;
+      const langValue = poi[langKey];
+      if (typeof langValue === "string" && langValue.trim() !== "") {
+        value = langValue;
+        // console.log(`getText [${String(baseKey)}]: Found ${language} value: ${value}`); // Debugging
+        return value; // Found current language, return it
+      }
+    }
+
+    // 2. If current language wasn't found OR language is 'it', try Italian (base key) next
+    const baseValue = poi[baseKey];
+    if (typeof baseValue === "string" && baseValue.trim() !== "") {
+      value = baseValue;
+      // console.log(`getText [${String(baseKey)}]: Found Italian/Base value: ${value}`); // Debugging
+      return value; // Found Italian/base, return it
+    }
+
+    // 3. If Italian/base wasn't found, try English as the final fallback
+    const enKey = `${baseKey}_en` as keyof POI;
+    const enValue = poi[enKey];
+    if (typeof enValue === "string" && enValue.trim() !== "") {
+      value = enValue;
+      // console.log(`getText [${String(baseKey)}]: Found English value: ${value}`); // Debugging
+      return value; // Found English, return it
+    }
+
+    // 4. If nothing found, return undefined
+    // console.log(`getText [${String(baseKey)}]: No value found.`); // Debugging
+    return undefined;
   };
 
   // *** Construct map link by CALLING the helper function ***
