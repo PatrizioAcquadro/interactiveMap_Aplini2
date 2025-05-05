@@ -90,6 +90,64 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
     return undefined;
   };
 
+  const getDisplayTags = (): string[] | undefined => {
+    console.log(
+      `--- getDisplayTags --- Language: ${language}, POI ID: ${poi.id}`
+    ); // Log entry
+
+    const isValidTagArray = (arr: unknown): arr is string[] =>
+      Array.isArray(arr) &&
+      arr.length > 0 &&
+      arr.every((item) => typeof item === "string");
+
+    // 1. Check current language (if not Italian)
+    if (language !== "it") {
+      const langKey = `tags_${language}` as keyof POI;
+      console.log(`Checking key: ${langKey}`); // Log key
+      const langValue = poi[langKey];
+      console.log(`Value for ${langKey}:`, langValue); // Log value found
+      if (isValidTagArray(langValue)) {
+        console.log(`Using ${language} tags.`);
+        return langValue;
+      } else {
+        console.log(`${language} tags are not a valid array or are empty.`);
+      }
+    } else {
+      console.log("Language is 'it', skipping specific language check.");
+    }
+
+    // 2. Check Italian (Base) tags
+    const baseKey = "tags";
+    console.log(`Checking key: ${baseKey}`); // Log key
+    const baseValue = poi[baseKey];
+    console.log(`Value for ${baseKey}:`, baseValue); // Log value found
+    if (isValidTagArray(baseValue)) {
+      console.log("Using Italian (base) tags.");
+      return baseValue;
+    } else {
+      console.log("Italian (base) tags are not a valid array or are empty.");
+    }
+
+    // 3. Check English tags as final fallback
+    const enKey = "tags_en" as keyof POI;
+    console.log(`Checking key: ${enKey}`); // Log key
+    const enValue = poi[enKey];
+    console.log(`Value for ${enKey}:`, enValue); // Log value found
+    if (isValidTagArray(enValue)) {
+      console.log("Using English (fallback) tags.");
+      return enValue;
+    } else {
+      console.log(
+        "English (fallback) tags are not a valid array or are empty."
+      );
+    }
+
+    // 4. If none found
+    console.log("No valid tags found for any language.");
+    return undefined;
+  };
+  const displayTags = getDisplayTags();
+
   // *** Construct map link by CALLING the helper function ***
   const mapLink = getMapLink(poi); // Call the function defined above
 
@@ -217,22 +275,24 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
                 </div>
               </div>
             )}
+            {/* Tags Section - Use the selected displayTags array */}
+            {displayTags && ( // Check if displayTags is not undefined
+              <div className="mb-4 flex flex-wrap gap-2 items-center">
+                <TagIcon className="h-5 w-5 text-gray-400 mr-1" />
+                {displayTags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full font-medium"
+                  >
+                    {/* Display the tag string directly */}
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Tags */}
-          {poi.tags && poi.tags.length > 0 && (
-            <div className="mb-4 flex flex-wrap gap-2 items-center">
-              <TagIcon className="h-5 w-5 text-gray-400 mr-1" />
-              {poi.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full font-medium"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
         </div>{" "}
         {/* End Scrollable Content Area */}
         {/* Footer Action Area */}

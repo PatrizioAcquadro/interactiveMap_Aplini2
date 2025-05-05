@@ -60,6 +60,7 @@ export interface POI {
   details_en?: string; // English details
   openingHours_en?: string;
   discountInfo_en?: string;
+  tags_en?: string[];
   partyInfo_en?: string;
   partyHours_en?: string;
 
@@ -68,6 +69,7 @@ export interface POI {
   details_es?: string;
   openingHours_es?: string;
   discountInfo_es?: string;
+  tags_es?: string[];
   partyInfo_es?: string;
   partyHours_es?: string;
 
@@ -76,6 +78,7 @@ export interface POI {
   details_fr?: string;
   openingHours_fr?: string;
   discountInfo_fr?: string;
+  tags_fr?: string[];
   partyInfo_fr?: string;
   partyHours_fr?: string;
 
@@ -84,6 +87,7 @@ export interface POI {
   details_de?: string;
   openingHours_de?: string;
   discountInfo_de?: string;
+  tags_de?: string[];
   partyInfo_de?: string;
   partyHours_de?: string;
 }
@@ -404,6 +408,10 @@ export const poiData: POI[] = [
     openingHours_fr: "Mar-Dim : 12h00-14h30, 19h00-22h30 ; Lun : Fermé",
     openingHours_de: "Di-So: 12:00-14:30, 19:00-22:30; Mo: Geschlossen",
     tags: ["Piemontese", "Tradizionale", "Polenta", "Prenotazione"],
+    tags_en: ["Piedmontese", "Traditional", "Polenta", "Reservation"],
+    tags_es: ["Piamontés", "Tradicional", "Polenta", "Reserva"],
+    tags_fr: ["Piémontais", "Traditionnel", "Polenta", "Réservation"],
+    tags_de: ["Piemontesisch", "Traditionell", "Polenta", "Reservierung"],
     name_en: "Alpino Restaurant",
     shortDescription_en: "Typical Piedmontese cuisine.",
     details_en:
@@ -596,6 +604,38 @@ export const poiData: POI[] = [
       "Omeopatia",
       "Veterinaria",
     ],
+    tags_en: [
+      "Pharmacy",
+      "Health",
+      "City Center",
+      "Cosmetics",
+      "Homeopathy",
+      "Veterinary",
+    ], // English
+    tags_es: [
+      "Farmacia",
+      "Salud",
+      "Centro",
+      "Cosmética",
+      "Homeopatía",
+      "Veterinaria",
+    ], // Spanish
+    tags_fr: [
+      "Pharmacie",
+      "Santé",
+      "Centre Ville",
+      "Cosmétiques",
+      "Homéopathie",
+      "Vétérinaire",
+    ], // French
+    tags_de: [
+      "Apotheke",
+      "Gesundheit",
+      "Stadtzentrum",
+      "Kosmetik",
+      "Homöopathie",
+      "Veterinär",
+    ], // German
     name_en: "Balestrini Pharmacy",
     shortDescription_en: "Central pharmacy in Piazza V. Veneto.",
     details_en:
