@@ -4,6 +4,7 @@ import Script from "next/script";
 import { LanguageProvider } from "../context/LanguageContext";
 import Header from "../components/Header";
 import ErrorBoundary from "../components/ErrorBoundary";
+import { Toaster } from "sonner";
 
 // --- IMPORT LEAFLET CSS HERE ---
 import "leaflet/dist/leaflet.css";
@@ -59,6 +60,7 @@ export default function RootLayout({
       </head>
       <body className="h-full flex flex-col">
         <LanguageProvider>
+          <Toaster position="top-right" richColors closeButton theme="system" />
           <Header />
           {/* Wrap main content area */}
           <ErrorBoundary>
