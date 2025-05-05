@@ -49,6 +49,11 @@ body {
   width: 48px !important;
   height: 48px !important;
   border-radius: 50% !important;
+  /* Add a subtle box-shadow for depth */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  /* Default background will be the outer ring color */
+  /* Transition for hover effects if any */
+  transition: background-color 0.2s ease-in-out;
 }
 
 .marker-cluster div {
@@ -56,10 +61,97 @@ body {
   height: 44px !important;
   margin-left: 2px !important;
   margin-top: 2px !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  line-height: 44px !important;
   border-radius: 50% !important;
+
+  /* Text styling */
+  text-align: center;
+  color: #ffffff; /* White text for contrast */
+  font-size: 16px !important; /* Keep size */
+  font-weight: 700 !important; /* Make slightly bolder */
+  line-height: 44px !important; /* Keep vertical alignment */
+
+  /* Default inner background */
+  /* Transition for background changes */
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* --- Specific Cluster Sizes --- */
+
+/* SMALL Clusters (e.g., < 10 markers) */
+.marker-cluster-small {
+  /* Outer Ring: Lighter/desaturated olive */
+  background-color: rgba(
+    170,
+    173,
+    155,
+    0.6
+  ); /* Derived from #8A8D7B, with alpha */
+}
+.marker-cluster-small div {
+  /* Inner Circle: Brand dark green, decent opacity */
+  background-color: rgba(51, 76, 63, 0.75); /* #334C3F with alpha */
+}
+
+/* MEDIUM Clusters (e.g., 10 - 99 markers) */
+.marker-cluster-medium {
+  /* Outer Ring: Brand olive */
+  background-color: rgba(138, 141, 123, 0.7); /* #8A8D7B with alpha */
+  /* Optional: Slightly larger size for medium? */
+  width: 52px !important;
+  height: 52px !important;
+}
+.marker-cluster-medium div {
+  /* Inner Circle: Brand dark green, higher opacity */
+  background-color: rgba(51, 76, 63, 0.9); /* #334C3F with more alpha */
+  /* Adjust inner size/positioning if parent size changed */
+  width: 48px !important;
+  height: 48px !important;
+  line-height: 48px !important;
+  margin-left: 2px !important;
+  margin-top: 2px !important;
+}
+
+/* LARGE Clusters (e.g., 100+ markers) */
+.marker-cluster-large {
+  /* Outer Ring: Brand dark green */
+  background-color: rgba(51, 76, 63, 0.8); /* #334C3F with alpha */
+  /* Optional: Even larger size? */
+  width: 56px !important;
+  height: 56px !important;
+}
+.marker-cluster-large div {
+  /* Inner Circle: Slightly darker/more opaque, or different color */
+  /* Option 1: Darker Green */
+  background-color: rgba(35, 56, 45, 0.95); /* Darkened #334C3F */
+  /* Option 2: Brand Red for high density alert (use if appropriate) */
+  /* background-color: rgba(180, 32, 37, 0.9); */ /* #B42025 with alpha */
+
+  /* Adjust inner size/positioning if parent size changed */
+  width: 52px !important;
+  height: 52px !important;
+  line-height: 52px !important;
+  margin-left: 2px !important;
+  margin-top: 2px !important;
+}
+
+/* Optional: Hover effect for clusters */
+.marker-cluster:hover {
+  /* Example: Slightly lighten the outer ring */
+  background-color: rgba(
+    180,
+    183,
+    165,
+    0.7
+  ); /* Adjust based on which size is hovered */
+}
+.marker-cluster:hover div {
+  /* Example: Make inner circle fully opaque */
+  background-color: rgba(
+    51,
+    76,
+    63,
+    1
+  ); /* Adjust based on which size is hovered */
 }
 
 /* --- FIX for Leaflet CSS image path error --- */
