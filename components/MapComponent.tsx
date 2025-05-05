@@ -1,8 +1,6 @@
 // components/MapComponent.tsx
 "use client";
 
-import { toast } from "sonner";
-
 import React, {
   useState,
   useEffect,
