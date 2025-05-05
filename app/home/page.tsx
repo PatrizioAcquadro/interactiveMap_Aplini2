@@ -61,7 +61,7 @@ export default function HomePage() {
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
             <h2 className="text-3xl font-semibold text-brand-dark-green mb-4 flex items-center">
               <SparklesIcon className="h-6 w-6 mr-2 text-brand-olive" />{" "}
-              L&aposIdea
+              {t("home_the_idea")}
             </h2>
             <p>{t("home_p1")}</p>
             <p>{t("home_p2")}</p>
@@ -69,7 +69,7 @@ export default function HomePage() {
           <div className="relative h-64 md:h-80 rounded-lg shadow-lg overflow-hidden bg-gray-200">
             {/* Replace with relevant image: e.g., stylized Biella photo, early Instagram screenshot concept */}
             <Image
-              src="/images/placeholder_idea.jpg"
+              src="/images/disco.png"
               layout="fill"
               objectFit="cover"
               alt="Biella Event Idea"
@@ -89,7 +89,7 @@ export default function HomePage() {
           <div className="relative h-64 md:h-80 rounded-lg shadow-lg overflow-hidden bg-gray-200 md:order-last">
             {/* Replace with relevant image: e.g., Alpini symbol, map graphic concept */}
             <Image
-              src="/images/placeholder_adunata.jpg"
+              src="/images/alpini.png"
               layout="fill"
               objectFit="cover"
               alt="Adunata Map Concept"
@@ -99,7 +99,7 @@ export default function HomePage() {
           </div>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed md:order-first">
             <h2 className="text-3xl font-semibold text-brand-dark-green mb-4">
-              La Missione per l&aposAdunata
+              {t("home_adunata_mission")}
             </h2>
             <p>{t("home_p3")}</p>
             <blockquote className="border-l-4 border-brand-olive pl-4 italic text-gray-600 my-6 py-2">

@@ -21,6 +21,9 @@ dependencies:
   autoprefixer:
     specifier: ^10.4.21
     version: 10.4.21(postcss@8.5.3)
+  import-in-the-middle:
+    specifier: ^1.13.1
+    version: 1.13.1
   leaflet:
     specifier: ^1.9.4
     version: 1.9.4
@@ -48,6 +51,9 @@ dependencies:
   react-leaflet-markercluster:
     specifier: ^5.0.0-rc.0
     version: 5.0.0-rc.0(leaflet.markercluster@1.5.3)(leaflet@1.9.4)(react-dom@19.0.0)(react-leaflet@5.0.0)(react@19.0.0)
+  require-in-the-middle:
+    specifier: ^7.5.2
+    version: 7.5.2
 
 devDependencies:
   '@eslint/eslintrc':

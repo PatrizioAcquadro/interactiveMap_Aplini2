@@ -115,5 +115,8 @@
     "ad_placeholder": "Spazio Pubblicitario",
 
     "googleRatingLabel": "Valutazione Google",
-    "googleReviewsSuffix": "recensioni"
+    "googleReviewsSuffix": "recensioni",
+
+    "home_the_idea": "L'Idea",
+    "home_adunata_mission": "La missione per l'Adunata"
 }
