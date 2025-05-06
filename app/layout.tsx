@@ -63,14 +63,13 @@ export default function RootLayout({
         />
 
         <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8600182876678262"
+          id="adsense-core-script" // Unique ID
+          strategy="afterInteractive" // Crucial: Load after Iubenda and page interactivity
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8600182876678262" // Your Publisher ID
           crossOrigin="anonymous"
-          strategy="afterInteractive" // Load after the page is interactive
-          // Optional: Add onError for debugging
-          // onError={(e) => {
-          //   console.error('AdSense Script failed to load', e)
-          // }}
+          async // AdSense script is designed to load async
+          // Optional: Add onError for debugging load failures
+          // onError={(e) => { console.error('AdSense Core Script failed to load', e); }}
         />
       </head>
       <body className="h-full flex flex-col">

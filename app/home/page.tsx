@@ -6,22 +6,6 @@ import Image from "next/image"; // For potential images
 import { useLanguage } from "../../context/LanguageContext";
 import { SparklesIcon } from "@heroicons/react/24/outline"; // Example icon
 
-// Simple placeholder component for Ads
-const AdPlaceholder: React.FC<{ className?: string }> = ({
-  className = "",
-}) => {
-  const { t } = useLanguage();
-  return (
-    <div
-      className={`h-24 md:h-32 bg-gray-200/50 flex items-center justify-center rounded-lg border border-gray-300/30 ${className}`}
-    >
-      <span className="text-gray-500 text-sm opacity-75">
-        {t("ad_placeholder")}
-      </span>
-    </div>
-  );
-};
-
 export default function HomePage() {
   const { t } = useLanguage();
 
@@ -79,9 +63,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Ad Placeholder 1 */}
-        <AdPlaceholder className={`${fadeSlideUp} animation-delay-300`} />
-
         {/* Section 2: Growth & Adunata Mission */}
         <div
           className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center ${fadeSlideUp} animation-delay-400`}
@@ -110,7 +91,6 @@ export default function HomePage() {
         </div>
 
         {/* Ad Placeholder 2 */}
-        <AdPlaceholder className={`${fadeSlideUp} animation-delay-500`} />
       </div>
     </main>
   );
