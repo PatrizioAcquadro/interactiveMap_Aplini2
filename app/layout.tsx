@@ -48,6 +48,49 @@ export default function RootLayout({
     >
       <head>
         <Script
+          id="iubenda-config"
+          strategy="beforeInteractive" // Load very early, before hydration
+          dangerouslySetInnerHTML={{
+            __html: `
+              var _iub = _iub || [];
+              _iub.csConfiguration = {
+                "siteId": 4012257,
+                "cookiePolicyId": 94735600,
+                "lang": "it", // Ensure this matches your default or is dynamic
+                "storage": {"useSiteId":true}
+                // Add any other specific configurations from Iubenda here
+                // e.g., banner settings, TCF options if needed directly
+              };
+            `,
+          }}
+        />
+        {/* 2. Autoblocking Script */}
+        <Script
+          id="iubenda-autoblocking"
+          strategy="beforeInteractive" // Load early to enable blocking
+          src="https://cs.iubenda.com/autoblocking/4012257.js"
+        />
+        {/* 3. TCF Stub (Transparency and Consent Framework) */}
+        <Script
+          id="iubenda-tcf-stub"
+          strategy="beforeInteractive" // TCF needs to be ready early for AdSense
+          src="//cdn.iubenda.com/cs/tcf/stub-v2.js"
+        />
+        {/* 4. Safe TCF Implementation */}
+        <Script
+          id="iubenda-safe-tcf"
+          strategy="beforeInteractive" // Load early
+          src="//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js"
+        />
+        {/* 5. Main Iubenda Cookie Solution Script */}
+        <Script
+          id="iubenda-cs"
+          strategy="beforeInteractive" // Load main logic early as well
+          src="//cdn.iubenda.com/cs/iubenda_cs.js"
+          // charset="UTF-8" // charset is usually default, next/script doesn't have prop
+          // async // next/script handles async loading based on strategy
+        />
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8600182876678262"
           crossOrigin="anonymous"
