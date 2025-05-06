@@ -122,5 +122,9 @@
 
     "link_privacy_policy": "Privacy Policy",
     "link_cookie_policy": "Cookie Policy",
-    "link_terms_conditions": "Terms and Conditions"
+    "link_terms_conditions": "Terms and Conditions",
+
+    "poiCategory_medical_post": "Advanced Medical Post",
+    "poiCategory_field_hospital": "Field Hospital",
+    "poiCategory_parking": "Car Parking"
 }

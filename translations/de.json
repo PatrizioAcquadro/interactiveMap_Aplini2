@@ -113,5 +113,8 @@
     "home_adunata_mission": "Die Mission für die Adunata",
     "link_privacy_policy": "Datenschutzrichtlinie",
     "link_cookie_policy": "Cookie-Richtlinie",
-    "link_terms_conditions": "Allgemeine Geschäftsbedingungen"
+    "link_terms_conditions": "Allgemeine Geschäftsbedingungen",
+    "poiCategory_medical_post": "Erweiterter Sanitätsposten",
+    "poiCategory_field_hospital": "Feldlazarett",
+    "poiCategory_parking": "PKW-Parkplatz"
 }

@@ -122,5 +122,9 @@
 
     "link_privacy_policy": "Privacy Policy",
     "link_cookie_policy": "Cookie Policy",
-    "link_terms_conditions": "Termini e Condizioni"
+    "link_terms_conditions": "Termini e Condizioni",
+
+    "poiCategory_medical_post": "Posto Medico Avanzato",
+    "poiCategory_parking": "Parcheggio Auto",
+    "poiCategory_field_hospital": "Ospedale da Campo"
 }

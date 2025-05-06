@@ -113,5 +113,8 @@
     "home_adunata_mission": "La misión para la Adunata",
     "link_privacy_policy": "Política de Privacidad",
     "link_cookie_policy": "Política de Cookies",
-    "link_terms_conditions": "Términos y Condiciones"
+    "link_terms_conditions": "Términos y Condiciones",
+    "poiCategory_medical_post": "Puesto Médico Avanzado",
+    "poiCategory_field_hospital": "Hospital de Campaña",
+    "poiCategory_parking": "Aparcamiento Coches"
 }
