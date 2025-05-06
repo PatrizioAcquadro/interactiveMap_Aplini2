@@ -47,11 +47,19 @@ export default function RootLayout({
       className={`${inter.variable} font-sans h-full bg-brand-white`}
     >
       <head>
-        <script
-          type="text/javascript"
+        <Script
+          id="iubenda-unified-widget" // New unique ID
+          strategy="beforeInteractive" // STILL load early for blocking/consent
           src="//embeds.iubenda.com/widgets/2ffb952f-b9d2-4fa4-b21a-3e90fbf297d4.js"
-        ></script>
+          // Note: async/charset are handled by strategy
+        />
 
+        {/* +++ KEEP IUBENDA POLICY LOADER SCRIPT (If using policy modals) +++ */}
+        <Script
+          id="iubenda-policy-loader"
+          strategy="afterInteractive"
+          src="https://cdn.iubenda.com/iubenda.js"
+        />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8600182876678262"
