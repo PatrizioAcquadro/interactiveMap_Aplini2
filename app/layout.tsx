@@ -60,6 +60,7 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="https://cdn.iubenda.com/iubenda.js"
         />
+
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8600182876678262"
