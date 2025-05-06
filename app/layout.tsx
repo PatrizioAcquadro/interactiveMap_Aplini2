@@ -48,45 +48,17 @@ export default function RootLayout({
     >
       <head>
         <Script
-          id="iubenda-config"
-          strategy="beforeInteractive" // Load very early, before hydration
-          dangerouslySetInnerHTML={{
-            __html: `
-          var _iub = _iub || [];
-          _iub.csConfiguration = {
-            "siteId": 4012257,
-            "cookiePolicyId": 94735600,
-            "lang": "it", // Ensure this matches your default or is dynamic
-            "storage": {"useSiteId":true}
-            // Add any other specific configurations from Iubenda here if needed
-          };
-        `,
-          }}
+          id="iubenda-unified-widget" // New unique ID
+          strategy="beforeInteractive" // STILL load early for blocking/consent
+          src="//embeds.iubenda.com/widgets/2ffb952f-b9d2-4fa4-b21a-3e90fbf297d4.js"
+          // Note: async/charset are handled by strategy
         />
-        {/* 2. Autoblocking Script */}
+
+        {/* +++ KEEP IUBENDA POLICY LOADER SCRIPT (If using policy modals) +++ */}
         <Script
-          id="iubenda-autoblocking"
-          strategy="beforeInteractive" // Load early to enable blocking
-          src="https://cs.iubenda.com/autoblocking/4012257.js"
-        />
-        {/* 3. TCF Stub (Transparency and Consent Framework) */}
-        <Script
-          id="iubenda-tcf-stub"
-          strategy="beforeInteractive" // TCF needs to be ready early for AdSense
-          src="//cdn.iubenda.com/cs/tcf/stub-v2.js"
-        />
-        {/* 4. Safe TCF Implementation */}
-        <Script
-          id="iubenda-safe-tcf"
-          strategy="beforeInteractive" // Load early
-          src="//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js"
-        />
-        {/* 5. Main Iubenda Cookie Solution Script */}
-        <Script
-          id="iubenda-cs"
-          strategy="beforeInteractive" // Load main logic early as well
-          src="//cdn.iubenda.com/cs/iubenda_cs.js"
-          // Note: async and charset are handled by next/script strategy
+          id="iubenda-policy-loader"
+          strategy="afterInteractive"
+          src="https://cdn.iubenda.com/iubenda.js"
         />
         <Script
           async
