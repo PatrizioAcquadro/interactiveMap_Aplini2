@@ -125,6 +125,15 @@ const LocateControl = () => {
           offset: L.point(0, -10), // Adjust offset to sit nicely above dot
         })
         .openPopup();
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "locate_me_success", {
+          event_category: "Map Interaction",
+          event_label: "User Located Successfully",
+          value: Math.round(e.accuracy), // Send accuracy as value
+          accuracy_meters: Math.round(e.accuracy),
+        });
+      }
     }; // End onLocationFound
 
     const onLocationError = (e: L.ErrorEvent) => {
@@ -138,6 +147,16 @@ const LocateControl = () => {
         message = t("locationErrorUnavailable");
       } // else code 3: TIMEOUT
       alert(`${t("locationErrorPrefix")} ${message}`);
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "locate_me_error", {
+          event_category: "Map Interaction",
+          error_code: e.code,
+          // Send the user-facing message OR the raw message, your choice
+          error_message: message,
+          // 'error_message': e.message // Alternative: send raw error
+        });
+      }
     };
 
     map.on("locationfound", onLocationFound);
@@ -371,18 +390,50 @@ const MapComponent: React.FC = () => {
   }, []);
 
   // --- Handlers ---
-  const handleMarkerClick = useCallback((poi: POI) => {
-    setSelectedPoiId(poi.id);
-    setHoveredPoiId(null);
-    setIsLegendOpen(false);
-    setIsLangMenuOpen(false);
-  }, []);
-  const handleShowDetails = useCallback((poi: POI) => {
-    setSelectedPoi(poi);
-    setSelectedPoiId(poi.id);
-    setIsLegendOpen(false);
-    setIsLangMenuOpen(false);
-  }, []);
+  const handleMarkerClick = useCallback(
+    (poi: POI) => {
+      setSelectedPoiId(poi.id);
+      setHoveredPoiId(null);
+      setIsLegendOpen(false);
+      setIsLangMenuOpen(false);
+
+      if (typeof window.gtag === "function") {
+        // Determine localized name if needed, otherwise use base name
+        const poiName =
+          language === "en" && poi.name_en ? poi.name_en : poi.name;
+        window.gtag("event", "poi_popup_opened", {
+          event_category: "POI Interaction",
+          event_label: `${poiName} (ID: ${poi.id})`,
+          poi_name: poiName,
+          poi_id: poi.id,
+          poi_type: poi.type,
+        });
+      }
+    },
+    [language]
+  );
+  const handleShowDetails = useCallback(
+    (poi: POI) => {
+      setSelectedPoi(poi);
+      setSelectedPoiId(poi.id);
+      setIsLegendOpen(false);
+      setIsLangMenuOpen(false);
+
+      if (typeof window.gtag === "function") {
+        // Determine localized name if needed
+        const poiName =
+          language === "en" && poi.name_en ? poi.name_en : poi.name;
+        window.gtag("event", "poi_details_modal_opened", {
+          event_category: "POI Interaction",
+          event_label: `Details for ${poiName} (ID: ${poi.id})`,
+          poi_name: poiName,
+          poi_id: poi.id,
+          poi_type: poi.type,
+        });
+      }
+    },
+    [language]
+  );
   const handleCloseModal = useCallback(() => {
     setSelectedPoi(null);
     setSelectedPoiId(null);
@@ -556,7 +607,16 @@ const MapComponent: React.FC = () => {
 
       {/* *** ADD Guide Trigger Button *** */}
       <button
-        onClick={() => setIsIntroOpen(true)}
+        onClick={() => {
+          setIsIntroOpen(true);
+          // --- ADD EVENT TRACKING HERE ---
+          if (typeof window.gtag === "function") {
+            window.gtag("event", "show_guide_clicked", {
+              event_category: "User Interaction",
+            });
+          }
+          // --- END EVENT TRACKING ---
+        }}
         className={`absolute top-16 right-[72px] sm:top-4 sm:right-[72px] z-20 p-3 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-200 ease-in-out hover:scale-105 ${
           showPulse ? "animate-pulse" : ""
         }`}
