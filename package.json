@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.2.0",
     "@next/third-parties": "^15.3.1",
     "@sentry/nextjs": "^9.14.0",
+    "@vercel/speed-insights": "^1.2.0",
     "autoprefixer": "^10.4.21",
     "import-in-the-middle": "^1.13.1",
     "leaflet": "^1.9.4",

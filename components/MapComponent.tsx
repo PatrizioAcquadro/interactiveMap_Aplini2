@@ -1,6 +1,8 @@
 // components/MapComponent.tsx
 "use client";
 
+import * as Sentry from "@sentry/nextjs";
+
 import React, {
   useState,
   useEffect,
@@ -546,11 +548,13 @@ const MapComponent: React.FC = () => {
             }
           }
         }
-      } catch (error) {
-        // console.error( // <-- REMOVE/COMMENT OUT (Unless you specifically want error logging)
-        //   "useEffect[searchTargetPoi]: Error accessing cluster layers:",
-        //   error
-        // );
+      } catch (error) { // 'error' is defined here
+        // --- REPLACE the commented console.error with Sentry ---
+        console.error( // Keep a console error for local debugging if you like
+             "MapComponent: Error accessing marker cluster layers:",
+             error
+        );
+        Sentry.captureException(error);
       }
 
       if (targetMarker) {

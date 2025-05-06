@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import ErrorBoundary from "../components/ErrorBoundary";
 import { Toaster } from "sonner";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // --- IMPORT LEAFLET CSS HERE ---
 import "leaflet/dist/leaflet.css";
@@ -82,6 +83,7 @@ export default function RootLayout({
           </ErrorBoundary>
         </LanguageProvider>
         <GoogleAnalytics gaId="G-0H27310H20" />
+        <SpeedInsights />
       </body>
     </html>
   );
