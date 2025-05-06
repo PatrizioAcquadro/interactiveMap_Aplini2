@@ -62,16 +62,6 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="https://cdn.iubenda.com/iubenda.js"
         />
-
-        <Script
-          id="adsense-core-script" // Unique ID
-          strategy="afterInteractive" // Crucial: Load after Iubenda and page interactivity
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8600182876678262" // Your Publisher ID
-          crossOrigin="anonymous"
-          async // AdSense script is designed to load async
-          // Optional: Add onError for debugging load failures
-          // onError={(e) => { console.error('AdSense Core Script failed to load', e); }}
-        />
       </head>
       <body className="h-full flex flex-col">
         <LanguageProvider>
