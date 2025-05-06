@@ -352,11 +352,6 @@ const PoiDetailModal: React.FC<PoiDetailModalProps> = ({ poi, onClose }) => {
             <DirectionsMapIcon className="h-5 w-5 mr-2" />
             {t("getDirections")}
           </a>
-          {/* Ad Placeholder */}
-          <div className="w-full sm:w-auto h-12 bg-gray-200 flex items-center justify-center text-xs text-gray-500 rounded">
-            {" "}
-            Ad Banner Placeholder{" "}
-          </div>
         </div>
       </div>
     </div>

@@ -3,6 +3,12 @@ import type { Config } from "tailwindcss";
 const { fontFamily } = require("tailwindcss/defaultTheme"); // Import default theme
 
 const config: Config = {
+  safelist: [
+    "marker-cluster-small",
+    "marker-cluster-medium",
+    "marker-cluster-large",
+    // Add other classes here if needed, but start with these cluster ones
+  ],
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
