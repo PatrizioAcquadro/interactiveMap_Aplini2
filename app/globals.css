@@ -78,7 +78,8 @@ body {
 /* --- Specific Cluster Sizes --- */
 
 /* SMALL Clusters (e.g., < 10 markers) */
-.marker-cluster-small {
+.leaflet-container .marker-cluster-small {
+  /* Added .leaflet-container */
   /* Outer Ring: Lighter/desaturated olive */
   background-color: rgba(
     170,
@@ -87,20 +88,23 @@ body {
     0.6
   ); /* Derived from #8A8D7B, with alpha */
 }
-.marker-cluster-small div {
+.leaflet-container .marker-cluster-small div {
+  /* Added .leaflet-container */
   /* Inner Circle: Brand dark green, decent opacity */
   background-color: rgba(51, 76, 63, 0.75); /* #334C3F with alpha */
 }
 
 /* MEDIUM Clusters (e.g., 10 - 99 markers) */
-.marker-cluster-medium {
+.leaflet-container .marker-cluster-medium {
+  /* Added .leaflet-container */
   /* Outer Ring: Brand olive */
   background-color: rgba(138, 141, 123, 0.7); /* #8A8D7B with alpha */
   /* Optional: Slightly larger size for medium? */
   width: 52px !important;
   height: 52px !important;
 }
-.marker-cluster-medium div {
+.leaflet-container .marker-cluster-medium div {
+  /* Added .leaflet-container */
   /* Inner Circle: Brand dark green, higher opacity */
   background-color: rgba(51, 76, 63, 0.9); /* #334C3F with more alpha */
   /* Adjust inner size/positioning if parent size changed */
@@ -112,14 +116,16 @@ body {
 }
 
 /* LARGE Clusters (e.g., 100+ markers) */
-.marker-cluster-large {
+.leaflet-container .marker-cluster-large {
+  /* Added .leaflet-container */
   /* Outer Ring: Brand dark green */
   background-color: rgba(51, 76, 63, 0.8); /* #334C3F with alpha */
   /* Optional: Even larger size? */
   width: 56px !important;
   height: 56px !important;
 }
-.marker-cluster-large div {
+.leaflet-container .marker-cluster-large div {
+  /* Added .leaflet-container */
   /* Inner Circle: Slightly darker/more opaque, or different color */
   /* Option 1: Darker Green */
   background-color: rgba(35, 56, 45, 0.95); /* Darkened #334C3F */
