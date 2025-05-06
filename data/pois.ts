@@ -2201,6 +2201,92 @@ export const poiData: POI[] = [
     partyHours: "",
   },
   {
+    id: 502,
+    name: "Senza Frontiere Minimarket prodotti Sudamericani",
+    name_en: "Senza Frontiere Minimarket South American products",
+    name_es: "Senza Frontiere Minimarket productos Sudamericanos",
+    name_fr: "Senza Frontiere Minimarket produits Sud-Américains",
+    name_de: "Senza Frontiere Minimarket Südamerikanische Produkte",
+    type: "clothing", // Using "clothing" as a general shop type based on current setup
+    coordinates: [45.565297, 8.050295], // Coordinates for Via Sebastiano Ferrero, 14, Biella
+    googleRating: 4.8,
+    googleReviewCount: 18,
+    images: ["/images/senzaFrontiere.png"],
+    address: "Via Sebastiano Ferrero, 14, 13900 Biella BI",
+    phone: "366 996 9091",
+    website: "https://www.facebook.com/senzafrontiereminimarket/?locale=it_IT",
+    shortDescription: "Minimarket con prodotti tipici sudamericani.",
+    shortDescription_en: "Minimarket with typical South American products.",
+    shortDescription_es: "Minimarket con productos típicos sudamericanos.",
+    shortDescription_fr: "Supérette avec produits typiques sud-américains.",
+    shortDescription_de: "Minimarkt mit typischen südamerikanischen Produkten.",
+    details:
+      "Senza Frontiere è un minimarket specializzato in prodotti alimentari e bevande tipiche dell'America Latina. Situato in Via Sebastiano Ferrero, offre un'ampia scelta per chi cerca sapori autentici sudamericani. Orari estesi nel weekend.",
+    details_en:
+      "Senza Frontiere is a minimarket specializing in typical Latin American food and beverages. Located on Via Sebastiano Ferrero, it offers a wide selection for those seeking authentic South American flavors. Extended hours on weekends.",
+    details_es:
+      "Senza Frontiere es un minimarket especializado en alimentos y bebidas típicas de América Latina. Ubicado en Via Sebastiano Ferrero, ofrece una amplia selección para quienes buscan sabores auténticos sudamericanos. Horario extendido los fines de semana.",
+    details_fr:
+      "Senza Frontiere est une supérette spécialisée dans les aliments et boissons typiques d'Amérique Latine. Située Via Sebastiano Ferrero, elle offre un large choix pour ceux qui recherchent des saveurs sud-américaines authentiques. Horaires étendus le week-end.",
+    details_de:
+      "Senza Frontiere ist ein Minimarkt, der auf typische lateinamerikanische Lebensmittel und Getränke spezialisiert ist. Er befindet sich in der Via Sebastiano Ferrero und bietet eine große Auswahl für diejenigen, die authentische südamerikanische Aromen suchen. Erweiterte Öffnungszeiten am Wochenende.",
+    openingHours: `Lun: 15:00-20:00\nMar-Mer-Gio: 09:00-20:00\nVen-Sab-Dom: 06:00-02:00`,
+    openingHours_en: `Mon: 15:00-20:00\nTue-Wed-Thu: 09:00-20:00\nFri-Sat-Sun: 06:00-02:00`,
+    openingHours_es: `Lun: 15:00-20:00\nMar-Mié-Jue: 09:00-20:00\nVie-Sáb-Dom: 06:00-02:00`,
+    openingHours_fr: `Lun: 15h00-20h00\nMar-Mer-Jeu: 09h00-20h00\nVen-Sam-Dim: 06h00-02h00`,
+    openingHours_de: `Mo: 15:00-20:00\nDi-Mi-Do: 09:00-20:00\nFr-Sa-So: 06:00-02:00`,
+    discountInfo: "",
+    discountInfo_en: "",
+    discountInfo_es: "",
+    discountInfo_fr: "",
+    discountInfo_de: "",
+    tags: [
+      "Minimarket",
+      "Alimentari",
+      "Prodotti Sudamericani",
+      "Etnico",
+      "Via Ferrero",
+    ],
+    tags_en: [
+      "Minimarket",
+      "Groceries",
+      "South American Products",
+      "Ethnic",
+      "Via Ferrero",
+    ],
+    tags_es: [
+      "Minimarket",
+      "Comestibles",
+      "Productos Sudamericanos",
+      "Étnico",
+      "Via Ferrero",
+    ],
+    tags_fr: [
+      "Supérette",
+      "Épicerie",
+      "Produits Sud-Américains",
+      "Ethnique",
+      "Via Ferrero",
+    ],
+    tags_de: [
+      "Minimarkt",
+      "Lebensmittel",
+      "Südamerikanische Produkte",
+      "Ethnisch",
+      "Via Ferrero",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
     id: 601, // New unique ID for bars
     name: "Vanilla 2.0",
     name_en: "Vanilla 2.0",
@@ -2322,37 +2408,42 @@ export const poiData: POI[] = [
     // *** VERIFY/ADJUST COORDINATES [45.5664, 8.0534] IF NEEDED ***
     coordinates: [45.565335, 8.050832],
     shortDescription:
-      "Caffetteria e bar in centro, angolo Via Micca/Via Ferrero.",
+      "Caffetteria e bar in centro. Aperitivo speciale. Orari estesi nel weekend.",
     shortDescription_en:
-      "Café and bar in the center, corner of Via Micca/Via Ferrero.",
+      "Café and bar in the center. Special aperitivo. Extended weekend hours.",
     shortDescription_es:
-      "Cafetería y bar en el centro, esquina Via Micca/Via Ferrero.",
+      "Cafetería y bar en el centro. Aperitivo especial. Horario extendido los fines de semana.",
     shortDescription_fr:
-      "Café et bar au centre-ville, coin Via Micca/Via Ferrero.",
-    shortDescription_de: "Café und Bar im Zentrum, Ecke Via Micca/Via Ferrero.",
+      "Café et bar au centre-ville. Apéritif spécial. Horaires étendus le week-end.",
+    shortDescription_de:
+      "Café und Bar im Zentrum. Spezieller Aperitivo. Erweiterte Öffnungszeiten am Wochenende.",
     details:
-      "Coffee Corner Biella è un accogliente bar/caffetteria situato all'angolo tra Via Pietro Micca e Via Sebastiano Ferrero. Ideale per colazioni, pause caffè, pranzi veloci o aperitivi durante la giornata. Un punto di ritrovo centrale per una sosta durante l'Adunata.",
+      "Coffee Corner Biella è un accogliente bar/caffetteria situato all'angolo tra Via Pietro Micca e Via Sebastiano Ferrero. Ideale per colazioni, pause caffè, pranzi veloci o per gustare il loro aperitivo speciale. Un punto di ritrovo centrale per una sosta durante l'Adunata, con orari prolungati nel fine settimana.",
     details_en:
-      "Coffee Corner Biella is a cozy bar/café located at the corner of Via Pietro Micca and Via Sebastiano Ferrero. Ideal for breakfast, coffee breaks, quick lunches, or daytime aperitifs. A central meeting point for a break during the Adunata.",
+      "Coffee Corner Biella is a cozy bar/café located at the corner of Via Pietro Micca and Via Sebastiano Ferrero. Ideal for breakfast, coffee breaks, quick lunches, or enjoying their special aperitivo. A central meeting point for a break during the Adunata, with extended hours on weekends.",
     details_es:
-      "Coffee Corner Biella es una acogedora cafetería/bar ubicada en la esquina de Via Pietro Micca y Via Sebastiano Ferrero. Ideal para desayunos, pausas para el café, almuerzos rápidos o aperitivos durante el día. Un punto de encuentro céntrico para un descanso durante la Adunata.",
+      "Coffee Corner Biella es una acogedora cafetería/bar ubicada en la esquina de Via Pietro Micca y Via Sebastiano Ferrero. Ideal para desayunos, pausas para el café, almuerzos rápidos o para disfrutar de su aperitivo especial. Un punto de encuentro céntrico para un descanso durante la Adunata, con horario extendido los fines de semana.",
     details_fr:
-      "Coffee Corner Biella est un café-bar chaleureux situé à l'angle de la Via Pietro Micca et de la Via Sebastiano Ferrero. Idéal pour le petit-déjeuner, les pauses-café, les déjeuners rapides ou les apéritifs en journée. Un point de rencontre central pour une pause pendant l'Adunata.",
+      "Coffee Corner Biella est un café-bar chaleureux situé à l'angle de la Via Pietro Micca et de la Via Sebastiano Ferrero. Idéal pour le petit-déjeuner, les pauses-café, les déjeuners rapides ou pour profiter de leur apéritif spécial. Un point de rencontre central pour une pause pendant l'Adunata, avec des horaires prolongés le week-end.",
     details_de:
-      "Das Coffee Corner Biella ist ein gemütliches Café/Bar an der Ecke Via Pietro Micca und Via Sebastiano Ferrero. Ideal für Frühstück, Kaffeepausen, schnelle Mittagessen oder Aperitifs während des Tages. Ein zentraler Treffpunkt für eine Pause während der Adunata.",
+      "Das Coffee Corner Biella ist ein gemütliches Café/Bar an der Ecke Via Pietro Micca und Via Sebastiano Ferrero. Ideal für Frühstück, Kaffeepausen, schnelle Mittagessen oder um ihren speziellen Aperitivo zu genießen. Ein zentraler Treffpunkt für eine Pause während der Adunata, mit verlängerten Öffnungszeiten am Wochenende.",
     address: "Via Pietro Micca, 29 (angolo Via S. Ferrero), 13900 Biella BI", // Provided Address
     phone: "339 8506071", // Provided Phone
     website: "https://www.facebook.com/cooffeecornerbiella/", // Provided Facebook link
     // Formatting Opening Hours
-    openingHours: `Lun-Sab: 06:00-19:30\nDom: 06:00-13:00`,
-    openingHours_en: `Mon-Sat: 06:00-19:30\nSun: 06:00-13:00`,
-    openingHours_es: `Lun-Sáb: 06:00-19:30\nDom: 06:00-13:00`,
-    openingHours_fr: `Lun-Sam: 06h00-19h30\nDim: 06h00-13h00`,
-    openingHours_de: `Mo-Sa: 06:00-19:30\nSo: 06:00-13:00`,
-    // No specific event/discount info provided
+    openingHours: `Lun-Gio: 06:00-19:30\nVen-Sab-Dom: 06:00-22:00`,
+    openingHours_en: `Mon-Thu: 06:00-19:30\nFri-Sat-Sun: 06:00-22:00`,
+    openingHours_es: `Lun-Jue: 06:00-19:30\nVie-Sáb-Dom: 06:00-22:00`,
+    openingHours_fr: `Lun-Jeu: 06h00-19h30\nVen-Sam-Dim: 06h00-22h00`,
+    openingHours_de: `Mo-Do: 06:00-19:30\nFr-Sa-So: 06:00-22:00`,
+    // --- UPDATED Discount Info ---
+    discountInfo: "Aperitivo speciale disponibile.",
+    discountInfo_en: "Special aperitivo available.",
+    discountInfo_es: "Aperitivo especial disponible.",
+    discountInfo_fr: "Apéritif spécial disponible.",
+    discountInfo_de: "Spezieller Aperitivo erhältlich.",
     partyInfo: "",
     partyHours: "",
-    discountInfo: "",
     tags: [
       "Bar",
       "Caffè",
@@ -2516,6 +2607,664 @@ export const poiData: POI[] = [
     googleRating: 4.7,
     googleReviewCount: 253,
     images: ["/images/dolcemanna.png"],
+  },
+  {
+    id: 604, // New unique ID for bars
+    name: "Guest Disco Bar Brusnengo",
+    name_en: "Guest Disco Bar Brusnengo",
+    name_es: "Guest Disco Bar Brusnengo",
+    name_fr: "Guest Disco Bar Brusnengo",
+    name_de: "Guest Disco Bar Brusnengo",
+    type: "bar", // Use the bar type
+    // Coordinates for Via Torino, 46, Brusnengo BI
+    // *** VERIFY/ADJUST COORDINATES [45.6082, 8.2237] IF NEEDED ***
+    coordinates: [45.584388, 8.268623], // Approximate for Brusnengo
+    shortDescription:
+      "Disco bar a Brusnengo con musica dal vivo e panini con salamella.",
+    shortDescription_en:
+      "Disco bar in Brusnengo with live music and salamella sandwiches.",
+    shortDescription_es:
+      "Disco bar en Brusnengo con música en vivo y bocadillos de salamella.",
+    shortDescription_fr:
+      "Disco-bar à Brusnengo avec musique live et sandwichs à la salamella.",
+    shortDescription_de:
+      "Disco-Bar in Brusnengo mit Live-Musik und Salamella-Sandwiches.",
+    details:
+      "Guest Disco Bar a Brusnengo è il posto ideale per serate animate. Offre tavoli all'aperto, ottimi cocktail e musica dal vivo. Specialità della casa: panini con salamella sempre disponibili! Consulta il loro Linktree per aggiornamenti e eventi.",
+    details_en:
+      "Guest Disco Bar in Brusnengo is the ideal spot for lively evenings. Features outdoor seating, great cocktails, and live music. House specialty: salamella sandwiches always available! Check their Linktree for updates and events.",
+    details_es:
+      "Guest Disco Bar en Brusnengo es el lugar ideal para veladas animadas. Cuenta con mesas al aire libre, excelentes cócteles y música en vivo. Especialidad de la casa: ¡bocadillos de salamella siempre disponibles! Consulta su Linktree para actualizaciones y eventos.",
+    details_fr:
+      "Guest Disco Bar à Brusnengo est l'endroit idéal pour des soirées animées. Dispose de places assises en extérieur, d'excellents cocktails et de musique live. Spécialité maison : sandwichs à la salamella toujours disponibles ! Consultez leur Linktree pour les mises à jour et les événements.",
+    details_de:
+      "Die Guest Disco Bar in Brusnengo (von Gallone Lara) ist der ideale Ort für lebhafte Abende. Bietet Sitzgelegenheiten im Freien, großartige Cocktails und Live-Musik. Hausspezialität: Salamella-Sandwiches immer verfügbar! Überprüfen Sie deren Linktree für Updates und Veranstaltungen.",
+    address: "Via Torino, 46, 13862 Brusnengo BI", // Provided Address
+    phone: "346 6347107", // Provided Phone
+    website: "https://linktr.ee/guest.brusnengo", // Provided Linktree
+    // Formatting Opening Hours
+    openingHours: `Lun-Mar: 16:00-00:00\nMer: Chiuso\nGio: 08:00-01:00\nVen-Sab: 08:00-03:00\nDom: 08:00-00:00`,
+    openingHours_en: `Mon-Tue: 16:00-00:00\nWed: Closed\nThu: 08:00-01:00\nFri-Sat: 08:00-03:00\nSun: 08:00-00:00`,
+    openingHours_es: `Lun-Mar: 16:00-00:00\nMié: Cerrado\nJue: 08:00-01:00\nVie-Sáb: 08:00-03:00\nDom: 08:00-00:00`,
+    openingHours_fr: `Lun-Mar: 16h00-00h00\nMer: Fermé\nJeu: 08h00-01h00\nVen-Sam: 08h00-03h00\nDim: 08h00-00h00`,
+    openingHours_de: `Mo-Di: 16:00-00:00\nMi: Geschlossen\nDo: 08:00-01:00\nFr-Sa: 08:00-03:00\nSo: 08:00-00:00`,
+    partyInfo: "Musica dal vivo", // From "Servizio"
+    partyInfo_en: "Live music",
+    partyInfo_es: "Música en vivo",
+    partyInfo_fr: "Musique live",
+    partyInfo_de: "Live-Musik",
+    partyHours: "Variabile (Vedi Programma/Linktree)", // Best to refer to their updates
+    partyHours_en: "Varies (See Program/Linktree)",
+    partyHours_es: "Varía (Ver Programa/Linktree)",
+    partyHours_fr: "Variable (Voir Programme/Linktree)",
+    partyHours_de: "Variiert (Siehe Programm/Linktree)",
+    discountInfo: "Panini con salamella sempre disponibili", // Special offer
+    discountInfo_en: "Salamella sandwiches always available",
+    discountInfo_es: "Bocadillos de salamella siempre disponibles",
+    discountInfo_fr: "Sandwichs à la salamella toujours disponibles",
+    discountInfo_de: "Salamella-Sandwiches immer verfügbar",
+    tags: [
+      "Bar",
+      "Disco Bar",
+      "Musica dal Vivo",
+      "Cocktail",
+      "Aperto Serata",
+      "Brusnengo",
+      "Salamella",
+    ], // Relevant tags
+    tags_en: [
+      "Bar",
+      "Disco Bar",
+      "Live Music",
+      "Cocktails",
+      "Late Night",
+      "Brusnengo",
+      "Salamella",
+    ],
+    tags_es: [
+      "Bar",
+      "Disco Bar",
+      "Música en Vivo",
+      "Cócteles",
+      "Abierto Noche",
+      "Brusnengo",
+      "Salamella",
+    ],
+    tags_fr: [
+      "Bar",
+      "Disco Bar",
+      "Musique Live",
+      "Cocktails",
+      "Ouvert Tard",
+      "Brusnengo",
+      "Salamella",
+    ],
+    tags_de: [
+      "Bar",
+      "Disco-Bar",
+      "Live-Musik",
+      "Cocktails",
+      "Spät Geöffnet",
+      "Brusnengo",
+      "Salamella",
+    ],
+    googleRating: 4.6, // Add if found, often Linktree doesn't show this
+    googleReviewCount: 130,
+    images: ["/images/guest.png"], // Add paths like ['/images/guest-brusnengo-1.jpg']
+  },
+  {
+    id: 605, // CORRECTED ID
+    name: "Walhalla - Interno 21",
+    name_en: "Walhalla - Interno 21",
+    name_es: "Walhalla - Interno 21",
+    name_fr: "Walhalla - Interno 21",
+    name_de: "Walhalla - Interno 21",
+    type: "bar",
+    // Coordinates for Giardino Fondo Edo Tempia, Via Guglielmo Marconi 21
+    // (Approximate, please verify and adjust if needed. This points to the garden area accessible from Marconi 21)
+    coordinates: [45.568134, 8.058118],
+    googleRating: 4.5,
+    googleReviewCount: 546,
+    address:
+      "Giardino Fondo Edo Tempia, Via Guglielmo Marconi, 21, 13900 Biella BI",
+    phone: "351 745 8514",
+    website: "https://www.instagram.com/walhalla_cocktail_bar_biella/?hl=it",
+    shortDescription:
+      "Cocktail bar e ristorante con DJ set. Cucina vegana disponibile.",
+    shortDescription_en:
+      "Cocktail bar and restaurant with DJ sets. Vegan cuisine available.",
+    shortDescription_es:
+      "Cocktail bar y restaurante con DJ sets. Cocina vegana disponible.",
+    shortDescription_fr:
+      "Bar à cocktails et restaurant avec DJ sets. Cuisine végétalienne disponible.",
+    shortDescription_de:
+      "Cocktailbar und Restaurant mit DJ-Sets. Vegane Küche erhältlich.",
+    details:
+      "Walhalla-Interno 21, situato nello splendido Giardino Fondo Edo Tempia, unisce l'arte dei cocktail di Walhalla alla proposta culinaria di Interno 21. Offre colazione, pranzo e cena (con opzioni vegane) in orario continuato nel weekend. Dispone di tavoli all'aperto e si anima con DJ set dal giovedì alla domenica.",
+    details_en:
+      "Walhalla-Interno 21, located in the beautiful Fondo Edo Tempia Garden, combines Walhalla's cocktail art with Interno 21's culinary offerings. It serves breakfast, lunch, and dinner (with vegan options) continuously on weekends. Features outdoor seating and comes alive with DJ sets from Thursday to Sunday.",
+    details_es:
+      "Walhalla-Interno 21, ubicado en el hermoso Jardín Fondo Edo Tempia, combina el arte de los cócteles de Walhalla con la oferta culinaria de Interno 21. Sirve desayuno, almuerzo y cena (con opciones veganas) en horario continuado los fines de semana. Cuenta con mesas al aire libre y se anima con DJ sets de jueves a domingo.",
+    details_fr:
+      "Walhalla-Interno 21, situé dans le magnifique Jardin Fondo Edo Tempia, combine l'art des cocktails de Walhalla avec l'offre culinaire d'Interno 21. Il sert le petit-déjeuner, le déjeuner et le dîner (avec options végétaliennes) en continu le week-end. Dispose de tables en extérieur et s'anime avec des DJ sets du jeudi au dimanche.",
+    details_de:
+      "Das Walhalla-Interno 21, im wunderschönen Fondo Edo Tempia Garten gelegen, verbindet Walhallas Cocktailkunst mit dem kulinarischen Angebot von Interno 21. Es serviert Frühstück, Mittag- und Abendessen (mit veganen Optionen) am Wochenende durchgehend. Verfügt über Sitzplätze im Freien und wird von Donnerstag bis Sonntag mit DJ-Sets belebt.",
+    images: ["/images/walhalla.jpeg"], // Suggested image path
+    openingHours: `Gio: 18:00-02:00\nVen-Sab-Dom: 08:00-03:00 (orario continuato)`,
+    openingHours_en: `Thu: 18:00-02:00\nFri-Sat-Sun: 08:00-03:00 (continuous hours)`,
+    openingHours_es: `Jue: 18:00-02:00\nVie-Sáb-Dom: 08:00-03:00 (horario continuado)`,
+    openingHours_fr: `Jeu: 18h00-02h00\nVen-Sam-Dim: 08h00-03h00 (horaire continu)`,
+    openingHours_de: `Do: 18:00-02:00\nFr-Sa-So: 08:00-03:00 (durchgehend geöffnet)`,
+    discountInfo:
+      "Serve piatti vegani. Cocktail, birra e vino a cura di Walhalla.", // Highlighting special features
+    discountInfo_en:
+      "Serves vegan dishes. Cocktails, beer, and wine by Walhalla.",
+    discountInfo_es:
+      "Sirve platos veganos. Cócteles, cerveza y vino por Walhalla.",
+    discountInfo_fr:
+      "Sert des plats végétaliens. Cocktails, bière et vin par Walhalla.",
+    discountInfo_de:
+      "Serviert vegane Gerichte. Cocktails, Bier und Wein von Walhalla.",
+    tags: [
+      "Bar",
+      "Ristorante",
+      "Cocktail",
+      "DJ Set",
+      "Musica",
+      "Vegano",
+      "Giardino",
+      "Tavoli all'aperto",
+    ],
+    tags_en: [
+      "Bar",
+      "Restaurant",
+      "Cocktails",
+      "DJ Set",
+      "Music",
+      "Vegan",
+      "Garden",
+      "Outdoor Seating",
+    ],
+    tags_es: [
+      "Bar",
+      "Restaurante",
+      "Cócteles",
+      "DJ Set",
+      "Música",
+      "Vegano",
+      "Jardín",
+      "Terraza",
+    ],
+    tags_fr: [
+      "Bar",
+      "Restaurant",
+      "Cocktails",
+      "DJ Set",
+      "Musique",
+      "Végétalien",
+      "Jardin",
+      "Terrasse",
+    ],
+    tags_de: [
+      "Bar",
+      "Restaurant",
+      "Cocktails",
+      "DJ-Set",
+      "Musik",
+      "Vegan",
+      "Garten",
+      "Außensitzplätze",
+    ],
+    partyInfo: "Gio: DJ Maiz (Aperitivo).", // UPDATED
+    partyInfo_en: "Thu: DJ Maiz (Aperitivo).", // UPDATED
+    partyInfo_es: "Jue: DJ Maiz (Aperitivo).", // UPDATED
+    partyInfo_fr: "Jeu: DJ Maiz (Apéritif).", // UPDATED
+    partyInfo_de: "Do: DJ Maiz (Aperitivo).", // UPDATED
+    partyHours: "Gio: 18:00-02:00.", // UPDATED
+    partyHours_en: "Thu: 18:00-02:00.", // UPDATED
+    partyHours_es: "Jue: 18:00-02:00.", // UPDATED
+    partyHours_fr: "Jeu: 18h00-02h00.", // UPDATED
+    partyHours_de: "Do: 18:00-02:00.", // UPDATED
+  },
+  {
+    id: 606,
+    name: "Loft Cafe",
+    name_en: "Loft Cafe",
+    name_es: "Loft Cafe",
+    name_fr: "Loft Cafe",
+    name_de: "Loft Cafe",
+    type: "bar",
+    coordinates: [45.564105, 8.057392], // Coordinates for Via Italia, 1, Biella BI
+    googleRating: 4.3, // Found on Google
+    googleReviewCount: 878, // Found on Google
+    address: "Via Italia, 1, 13900 Biella BI",
+    phone: "015 015 5309",
+    website: "https://www.loftbiella.com/menu", // Ensured full URL
+    shortDescription:
+      "Bar e caffetteria in Via Italia. Aperto da colazione a tarda sera.",
+    shortDescription_en:
+      "Bar and café on Via Italia. Open from breakfast to late evening.",
+    shortDescription_es:
+      "Bar y cafetería en Via Italia. Abierto desde el desayuno hasta tarde en la noche.",
+    shortDescription_fr:
+      "Bar et café sur la Via Italia. Ouvert du petit-déjeuner jusque tard dans la soirée.",
+    shortDescription_de:
+      "Bar und Café in der Via Italia. Geöffnet vom Frühstück bis spät abends.",
+    details:
+      "Loft Cafe, situato nella centrale Via Italia, è un locale versatile aperto dalla mattina presto fino a mezzanotte. Ideale per colazioni, pranzi, aperitivi e serate. Menu disponibile su loftbiella.com. Un punto di ritrovo nel cuore di Biella.",
+    details_en:
+      "Loft Cafe, located on the central Via Italia, is a versatile venue open from early morning until midnight. Ideal for breakfast, lunch, aperitifs, and evenings. Menu available at loftbiella.com. A meeting point in the heart of Biella.",
+    details_es:
+      "Loft Cafe, ubicado en la céntrica Via Italia, es un local versátil abierto desde primera hora de la mañana hasta medianoche. Ideal para desayunos, almuerzos, aperitivos y veladas. Menú disponible en loftbiella.com. Un punto de encuentro en el corazón de Biella.",
+    details_fr:
+      "Loft Cafe, situé sur la Via Italia centrale, est un lieu polyvalent ouvert tôt le matin jusqu'à minuit. Idéal pour les petits déjeuners, déjeuners, apéritifs et soirées. Menu disponible sur loftbiella.com. Un point de rencontre au cœur de Biella.",
+    details_de:
+      "Das Loft Cafe in der zentralen Via Italia ist ein vielseitiger Treffpunkt, der von früh morgens bis Mitternacht geöffnet ist. Ideal für Frühstück, Mittagessen, Aperitifs und Abende. Speisekarte verfügbar unter loftbiella.com. Ein Treffpunkt im Herzen von Biella.",
+    images: ["/images/loft.png"], // Suggested image path, please create this image
+    openingHours: `Lun-Sab: 07:30-00:00\nDom: 08:00-00:00`,
+    openingHours_en: `Mon-Sat: 07:30-00:00\nSun: 08:00-00:00`,
+    openingHours_es: `Lun-Sáb: 07:30-00:00\nDom: 08:00-00:00`,
+    openingHours_fr: `Lun-Sam: 07h30-00h00\nDim: 08h00-00h00`,
+    openingHours_de: `Mo-Sa: 07:30-00:00\nSo: 08:00-00:00`,
+    discountInfo: "",
+    discountInfo_en: "",
+    discountInfo_es: "",
+    discountInfo_fr: "",
+    discountInfo_de: "",
+    tags: [
+      "Bar",
+      "Caffetteria",
+      "Colazione",
+      "Pranzo",
+      "Aperitivo",
+      "Serale",
+      "Via Italia",
+      "Centro",
+    ],
+    tags_en: [
+      "Bar",
+      "Café",
+      "Breakfast",
+      "Lunch",
+      "Aperitif",
+      "Evening",
+      "Via Italia",
+      "Center",
+    ],
+    tags_es: [
+      "Bar",
+      "Cafetería",
+      "Desayuno",
+      "Almuerzo",
+      "Aperitivo",
+      "Noche",
+      "Via Italia",
+      "Centro",
+    ],
+    tags_fr: [
+      "Bar",
+      "Café",
+      "Petit Déjeuner",
+      "Déjeuner",
+      "Apéritif",
+      "Soirée",
+      "Via Italia",
+      "Centre",
+    ],
+    tags_de: [
+      "Bar",
+      "Café",
+      "Frühstück",
+      "Mittagessen",
+      "Aperitif",
+      "Abend",
+      "Via Italia",
+      "Zentrum",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 208,
+    name: "New Wood Pub", // Corrected name based on Facebook URL
+    name_en: "New Wood Pub",
+    name_es: "New Wood Pub",
+    name_fr: "New Wood Pub",
+    name_de: "New Wood Pub",
+    type: "restaurant", // Still categorized as restaurant due to food offerings
+    // Coordinates for Via Matteotti 129/G, Gaglianico
+    // *** VERIFY/ADJUST COORDINATES [45.5535, 8.1060] IF NEEDED ***
+    coordinates: [45.532078, 8.074942], // From previous "New Wood" attempt
+    shortDescription:
+      "Pub a Gaglianico: colazioni, ristorante, pizzeria, aperitivi, eventi.",
+    shortDescription_en:
+      "Pub in Gaglianico: breakfast, restaurant, pizzeria, aperitifs, events.",
+    shortDescription_es:
+      "Pub en Gaglianico: desayunos, restaurante, pizzería, aperitivos, eventos.",
+    shortDescription_fr:
+      "Pub à Gaglianico : petit-déjeuner, restaurant, pizzeria, apéritifs, événements.",
+    shortDescription_de:
+      "Pub in Gaglianico: Frühstück, Restaurant, Pizzeria, Aperitifs, Veranstaltungen.",
+    details:
+      "New Wood a Gaglianico è un locale multifunzionale che offre un'esperienza completa: dalle colazioni mattutine, al servizio ristorante e pizzeria per pranzo e cena, fino a trasformarsi in un vivace pub la sera. È noto per i suoi aperitivi e per ospitare regolarmente eventi e serate a tema, specialmente durante il weekend. Un punto di riferimento versatile a Gaglianico per cibo e intrattenimento.",
+    details_en:
+      "New Wood in Gaglianico is a multifunctional venue offering a complete experience: from morning breakfasts, to restaurant and pizzeria service for lunch and dinner, to transforming into a lively pub in the evening. It is known for its aperitifs and for regularly hosting events and themed nights, especially on weekends. A versatile landmark in Gaglianico for food and entertainment.",
+    details_es:
+      "New Wood en Gaglianico es un local multifuncional que ofrece una experiencia completa: desde desayunos por la mañana, servicio de restaurante y pizzería para almuerzos y cenas, hasta transformarse en un animado pub por la noche. Es conocido por sus aperitivos y por organizar regularmente eventos y noches temáticas, especialmente los fines de semana. Un punto de referencia versátil en Gaglianico para comida y entretenimiento.",
+    details_fr:
+      "New Wood à Gaglianico est un lieu multifonctionnel offrant une expérience complète : des petits déjeuners matinaux, au service de restauration et de pizzeria pour le déjeuner et le dîner, jusqu'à se transformer en un pub animé le soir. Il est réputé pour ses apéritifs et pour organiser régulièrement des événements et des soirées à thème, notamment le week-end. Un lieu de référence polyvalent à Gaglianico pour la restauration et le divertissement.",
+    details_de:
+      "Das New Wood in Gaglianico ist ein multifunktionaler Veranstaltungsort, der ein umfassendes Erlebnis bietet: vom morgendlichen Frühstück über Restaurant- und Pizzeriaservice zum Mittag- und Abendessen bis hin zur Verwandlung in einen lebhaften Pub am Abend. Es ist bekannt für seine Aperitifs und für die regelmäßige Ausrichtung von Veranstaltungen und Themenabenden, besonders an Wochenenden. Ein vielseitiger Anlaufpunkt in Gaglianico für Essen und Unterhaltung.",
+    // --- END UPDATED GENERAL DETAILS ---
+
+    address: "Via Matteotti 129/G, 13854 Gaglianico BI",
+    phone: "393 3516073",
+    website: "https://www.facebook.com/NewWoodPub/?locale=it_IT",
+    openingHours: `Lun: Chiuso\nMar: 19:30-01:30\nMer: Chiuso\nGio: Chiuso\nVen-Dom: 09:00-04:00`,
+    openingHours_en: `Mon: Closed\nTue: 19:30-01:30\nWed: Closed\nThu: Closed\nFri-Sun: 09:00-04:00`,
+    openingHours_es: `Lun: Cerrado\nMar: 19:30-01:30\nMié: Cerrado\nJue: Cerrado\nVie-Dom: 09:00-04:00`,
+    openingHours_fr: `Lun: Fermé\nMar: 19h30-01h30\nMer: Fermé\nJeu: Fermé\nVen-Dim: 09h00-04h00`,
+    openingHours_de: `Mo: Geschlossen\nDi: 19:30-01:30\nMi: Geschlossen\nDo: Geschlossen\nFr-So: 09:00-04:00`,
+    partyInfo: "Venerdì: Otra Latin Night con Luca Teck", // Only Friday event mentioned
+    partyInfo_en: "Friday: Otra Latin Night with Luca Teck",
+    partyInfo_es: "Viernes: Otra Latin Night con Luca Teck",
+    partyInfo_fr: "Vendredi : Otra Latin Night avec Luca Teck",
+    partyInfo_de: "Freitag: Otra Latin Night mit Luca Teck",
+    partyHours: "Venerdì dalle 22:00",
+    partyHours_en: "Friday from 22:00",
+    partyHours_es: "Viernes desde las 22:00",
+    partyHours_fr: "Vendredi à partir de 22h00",
+    partyHours_de: "Freitag ab 22:00 Uhr",
+    discountInfo: "", // No specific discount provided in this set of info
+    tags: [
+      "Ristorante",
+      "Pizzeria",
+      "Pub",
+      "Eventi",
+      "Colazione",
+      "Aperitivo",
+      "Gaglianico",
+      "Musica Latina",
+    ], // Tags based on info
+    tags_en: [
+      "Restaurant",
+      "Pizzeria",
+      "Pub",
+      "Events",
+      "Breakfast",
+      "Aperitif",
+      "Gaglianico",
+      "Latin Music",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Pizzería",
+      "Pub",
+      "Eventos",
+      "Desayuno",
+      "Aperitivo",
+      "Gaglianico",
+      "Música Latina",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Pizzeria",
+      "Pub",
+      "Événements",
+      "Petit Déjeuner",
+      "Apéritif",
+      "Gaglianico",
+      "Musique Latine",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Pizzeria",
+      "Pub",
+      "Veranstaltungen",
+      "Frühstück",
+      "Aperitif",
+      "Gaglianico",
+      "Lateinamerikanische Musik",
+    ],
+    googleRating: 3.7, // Add if found
+    googleReviewCount: 430,
+    images: ["/images/newwood.jpeg"],
+  },
+  {
+    id: 209,
+    name: "Konstanten",
+    name_en: "Konstanten",
+    name_es: "Konstanten",
+    name_fr: "Konstanten",
+    name_de: "Konstanten",
+    type: "restaurant",
+    // Coordinates for SP230, 17, Benna BI - Please verify/adjust if needed
+    coordinates: [45.501037, 8.132125],
+    googleRating: 4.3,
+    googleReviewCount: 77,
+    address: "SP230, 17, 13871 Benna BI",
+    phone: "015 419 2231",
+    website: "https://www.facebook.com/Konstanten.benna/", // Updated Facebook page
+    shortDescription:
+      "Ristorante a Benna con tavoli all'aperto, menu bambini, cani ammessi. Menu speciale Alpini.",
+    shortDescription_en:
+      "Restaurant in Benna with outdoor seating, kids' menu, dogs allowed. Special Alpini menu.",
+    shortDescription_es:
+      "Restaurante en Benna con terraza, menú para niños, perros admitidos. Menú especial Alpini.",
+    shortDescription_fr:
+      "Restaurant à Benna avec terrasse, menu enfants, chiens admis. Menu spécial Alpini.",
+    shortDescription_de:
+      "Restaurant in Benna mit Außensitzplätzen, Kindermenü, Hunde erlaubt. Spezielles Alpini-Menü.",
+    details:
+      "Konstanten è un ristorante situato a Benna sulla SP230. Offre un ambiente accogliente con tavoli all'aperto, è pet-friendly e propone menu per bambini. Durante l'Adunata, sarà disponibile un menu speciale per gli Alpini. Aperto per colazione, pranzo e cena, con orari estesi nel weekend fino a tarda notte.",
+    details_en:
+      "Konstanten is a restaurant located in Benna on SP230. It offers a welcoming atmosphere with outdoor seating, is pet-friendly, and has a kids' menu. During the Adunata, a special menu for the Alpini will be available. Open for breakfast, lunch, and dinner, with extended hours on weekends until late at night.",
+    details_es:
+      "Konstanten es un restaurante ubicado en Benna en la SP230. Ofrece un ambiente acogedor con mesas al aire libre, es amigable con las mascotas y tiene menú para niños. Durante la Adunata, habrá un menú especial para los Alpini. Abierto para desayuno, almuerzo y cena, con horario extendido los fines de semana hasta altas horas de la noche.",
+    details_fr:
+      "Konstanten est un restaurant situé à Benna sur la SP230. Il offre une ambiance accueillante avec des tables en extérieur, accepte les animaux et propose un menu pour enfants. Pendant l'Adunata, un menu spécial pour les Alpini sera disponible. Ouvert pour le petit-déjeuner, le déjeuner et le dîner, avec des horaires prolongés le week-end jusque tard dans la nuit.",
+    details_de:
+      "Das Konstanten ist ein Restaurant in Benna an der SP230. Es bietet eine einladende Atmosphäre mit Sitzplätzen im Freien, ist haustierfreundlich und hat ein Kindermenü. Während der Adunata wird ein spezielles Menü für die Alpini angeboten. Geöffnet für Frühstück, Mittag- und Abendessen, mit verlängerten Öffnungszeiten am Wochenende bis spät in die Nacht.",
+    images: ["/images/konstanten.png"], // Suggested image path, please create this image
+    openingHours: `Lun, Mar, Mer: 07:00-15:00\nGio: 07:00-15:00, 18:00-22:00\nVen, Sab, Dom: 07:00-04:00`,
+    openingHours_en: `Mon, Tue, Wed: 07:00-15:00\nThu: 07:00-15:00, 18:00-22:00\nFri, Sat, Sun: 07:00-04:00`,
+    openingHours_es: `Lun, Mar, Mié: 07:00-15:00\nJue: 07:00-15:00, 18:00-22:00\nVie, Sáb, Dom: 07:00-04:00`,
+    openingHours_fr: `Lun, Mar, Mer: 07h00-15h00\nJeu: 07h00-15h00, 18h00-22h00\nVen, Sam, Dim: 07h00-04h00`,
+    openingHours_de: `Mo, Di, Mi: 07:00-15:00\nDo: 07:00-15:00, 18:00-22:00\nFr, Sa, So: 07:00-04:00`,
+    discountInfo: "Menu speciale per gli Alpini disponibile.",
+    discountInfo_en: "Special menu for Alpini available.",
+    discountInfo_es: "Menú especial para Alpini disponible.",
+    discountInfo_fr: "Menu spécial pour les Alpini disponible.",
+    discountInfo_de: "Spezialmenü für Alpini verfügbar.",
+    tags: [
+      "Ristorante",
+      "Benna",
+      "Tavoli all'aperto",
+      "Menu Bambini",
+      "Cani Ammessi",
+      "Musica dal Vivo",
+      "Menu Alpini",
+      "Colazione",
+      "Pranzo",
+      "Cena",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Benna",
+      "Outdoor Seating",
+      "Kids Menu",
+      "Dogs Allowed",
+      "Live Music",
+      "Alpini Menu",
+      "Breakfast",
+      "Lunch",
+      "Dinner",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Benna",
+      "Terraza",
+      "Menú Infantil",
+      "Perros Admitidos",
+      "Música en Vivo",
+      "Menú Alpini",
+      "Desayuno",
+      "Almuerzo",
+      "Cena",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Benna",
+      "Terrasse",
+      "Menu Enfants",
+      "Chiens Admis",
+      "Musique Live",
+      "Menu Alpini",
+      "Petit Déjeuner",
+      "Déjeuner",
+      "Dîner",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Benna",
+      "Außensitzplätze",
+      "Kindermenü",
+      "Hunde Erlaubt",
+      "Live-Musik",
+      "Alpini Menü",
+      "Frühstück",
+      "Mittagessen",
+      "Abendessen",
+    ],
+    partyInfo: "Venerdì: Shock by Daniel Mas (Dance hits party).",
+    partyInfo_en: "Friday: Shock by Daniel Mas (Dance hits party).",
+    partyInfo_es: "Viernes: Shock by Daniel Mas (Dance hits party).",
+    partyInfo_fr: "Vendredi : Shock by Daniel Mas (Dance hits party).",
+    partyInfo_de: "Freitag: Shock by Daniel Mas (Dance-Hits-Party).",
+    partyHours: "Venerdì: Orario serale.", // Generalizing as specific band times not provided
+    partyHours_en: "Friday: Evening hours.",
+    partyHours_es: "Viernes: Horario de noche.",
+    partyHours_fr: "Vendredi : Soirée.",
+    partyHours_de: "Freitag: Abendstunden.",
+  },
+  {
+    id: 210,
+    name: "Pizzeria Gigi",
+    name_en: "Pizzeria Gigi",
+    name_es: "Pizzeria Gigi",
+    name_fr: "Pizzeria Gigi",
+    name_de: "Pizzeria Gigi",
+    type: "restaurant",
+    coordinates: [45.468243, 8.069503], // Via Roma, 11, Cerrione
+    googleRating: 4.7,
+    googleReviewCount: 194,
+    address: "Via Roma, 11, 13882 Cerrione BI",
+    phone: "392 680 5084",
+    website: "https://www.facebook.com/p/Pizzeria-Gigi-100063591580261/",
+    shortDescription:
+      "Pizzeria con forno a legna a Cerrione. Tavoli all'aperto, pizze deliziose a prezzi ottimi.",
+    shortDescription_en:
+      "Pizzeria with wood-fired oven in Cerrione. Outdoor seating, delicious pizzas at great prices.",
+    shortDescription_es:
+      "Pizzería con horno de leña en Cerrione. Terraza, pizzas deliciosas a precios excelentes.",
+    shortDescription_fr:
+      "Pizzeria avec four à bois à Cerrione. Terrasse, pizzas délicieuses à des prix avantageux.",
+    shortDescription_de:
+      "Pizzeria mit Holzofen in Cerrione. Außensitzplätze, köstliche Pizzen zu tollen Preisen.",
+    details:
+      "Pizzeria Gigi, situata a Cerrione, è rinomata per le sue pizze cotte nel forno a legna, offerte a un prezzo incredibilmente conveniente. Dispone di tavoli all'aperto per gustare la pizza nelle belle serate. Un'ottima scelta per una cena gustosa e informale.",
+    details_en:
+      "Pizzeria Gigi, located in Cerrione, is renowned for its pizzas cooked in a wood-fired oven, offered at an incredibly affordable price. It has outdoor seating to enjoy pizza on pleasant evenings. An excellent choice for a tasty and informal dinner.",
+    details_es:
+      "Pizzeria Gigi, ubicada en Cerrione, es famosa por sus pizzas cocinadas en horno de leña, ofrecidas a un precio increíblemente asequible. Cuenta con mesas al aire libre para disfrutar de la pizza en las noches agradables. Una excelente opción para una cena sabrosa e informal.",
+    details_fr:
+      "Pizzeria Gigi, située à Cerrione, est réputée pour ses pizzas cuites au four à bois, proposées à un prix incroyablement abordable. Elle dispose de tables en extérieur pour savourer une pizza lors des belles soirées. Un excellent choix pour un dîner savoureux et informel.",
+    details_de:
+      "Die Pizzeria Gigi in Cerrione ist bekannt für ihre im Holzofen gebackenen Pizzen zu einem unglaublich günstigen Preis. Sie verfügt über Sitzplätze im Freien, um Pizza an schönen Abenden zu genießen. Eine ausgezeichnete Wahl für ein leckeres und informelles Abendessen.",
+    images: ["/images/pizzeriaGigi.png"],
+    openingHours: `Mar: Chiuso\nMer-Gio-Ven: 18:30-22:00\nSab: 18:30-23:00\nDom: 18:30-22:30\nLun: Chiuso`,
+    openingHours_en: `Tue: Closed\nWed-Thu-Fri: 18:30-22:00\nSat: 18:30-23:00\nSun: 18:30-22:30\nMon: Closed`,
+    openingHours_es: `Mar: Cerrado\nMié-Jue-Vie: 18:30-22:00\nSáb: 18:30-23:00\nDom: 18:30-22:30\nLun: Cerrado`,
+    openingHours_fr: `Mar: Fermé\nMer-Jeu-Ven: 18h30-22h00\nSam: 18h30-23h00\nDim: 18h30-22h30\nLun: Fermé`,
+    openingHours_de: `Di: Geschlossen\nMi-Do-Fr: 18:30-22:00\nSa: 18:30-23:00\nSo: 18:30-22:30\nMo: Geschlossen`,
+    discountInfo:
+      "Pizze deliziose da forno a legna a prezzi incredibilmente bassi. Ottimo rapporto qualità-prezzo.",
+    discountInfo_en:
+      "Delicious wood-fired pizzas at incredibly low prices. Excellent value for money.",
+    discountInfo_es:
+      "Deliciosas pizzas en horno de leña a precios increíblemente bajos. Excelente relación calidad-precio.",
+    discountInfo_fr:
+      "Délicieuses pizzas au four à bois à des prix incroyablement bas. Excellent rapport qualité-prix.",
+    discountInfo_de:
+      "Köstliche Holzofenpizzen zu unglaublich niedrigen Preisen. Ausgezeichnetes Preis-Leistungs-Verhältnis.",
+    tags: [
+      "Ristorante",
+      "Pizzeria",
+      "Forno a Legna",
+      "Cerrione",
+      "Tavoli all'aperto",
+      "Pizza Economica",
+      "Buon Prezzo",
+      "Cena",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Pizzeria",
+      "Wood-fired Oven",
+      "Cerrione",
+      "Outdoor Seating",
+      "Affordable Pizza",
+      "Good Value",
+      "Dinner",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Pizzería",
+      "Horno de Leña",
+      "Cerrione",
+      "Terraza",
+      "Pizza Económica",
+      "Buen Precio",
+      "Cena",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Pizzeria",
+      "Four à Bois",
+      "Cerrione",
+      "Terrasse",
+      "Pizza Abordable",
+      "Bon Prix",
+      "Dîner",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Pizzeria",
+      "Holzofen",
+      "Cerrione",
+      "Außensitzplätze",
+      "Günstige Pizza",
+      "Gutes Preis-Leistungs-Verhältnis",
+      "Abendessen",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
   },
   {
     id: 701,
