@@ -61,6 +61,30 @@ export default function RootLayout({
           src="https://cdn.iubenda.com/iubenda.js"
         />
 
+        {/* +++ GOOGLE ANALYTICS (GA4) TAG START +++ */}
+        {/* 1. Load the gtag.js library */}
+        <Script
+          id="google-gtag-js"
+          strategy="afterInteractive" // Load after page is interactive
+          src="https://www.googletagmanager.com/gtag/js?id=G-0H27310H20" // Your GA4 Measurement ID
+          async // gtag.js is designed to be loaded asynchronously
+        />
+        {/* 2. Initialize dataLayer and configure GA4 */}
+        <Script
+          id="google-gtag-config"
+          strategy="afterInteractive" // Load after page is interactive
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-0H27310H20');
+              `,
+          }}
+        />
+        {/* +++ GOOGLE ANALYTICS (GA4) TAG END +++ */}
+
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8600182876678262"
