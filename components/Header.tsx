@@ -16,6 +16,8 @@ import {
   LockClosedIcon,
   InformationCircleIcon,
   ChevronDownIcon,
+  CircleStackIcon,
+  DocumentTextIcon,
 } from "@heroicons/react/24/outline";
 // --- Import TranslationKey ---
 import {
@@ -80,7 +82,21 @@ const utilityLinks: UtilityLinkItem[] = [
     href: "https://www.instagram.com/biellainfesta/",
     icon: FaInstagram,
   },
-  { nameKey: "link_privacy", href: "/privacy", icon: LockClosedIcon },
+  {
+    nameKey: "link_privacy_policy", // Use the new translation key
+    href: "https://www.iubenda.com/privacy-policy/94735600", // Iubenda URL
+    icon: LockClosedIcon, // Icon for Privacy
+  },
+  {
+    nameKey: "link_cookie_policy", // Use the new translation key
+    href: "https://www.iubenda.com/privacy-policy/94735600/cookie-policy", // Iubenda URL
+    icon: CircleStackIcon, // Icon for Cookies (adjust if you prefer another)
+  },
+  {
+    nameKey: "link_terms_conditions", // Use the new translation key
+    href: "https://www.iubenda.com/termini-e-condizioni/94735600", // Iubenda URL
+    icon: DocumentTextIcon, // Icon for Terms
+  },
   {
     nameKey: "link_credits",
     href: "https://www.linkedin.com/in/patrizio-acquadro/",

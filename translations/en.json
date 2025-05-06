@@ -118,5 +118,9 @@
     "googleReviewsSuffix": "reviews",
 
     "home_the_idea": "The Idea",
-    "home_adunata_mission": "The mission for the Adunata"
+    "home_adunata_mission": "The mission for the Adunata",
+
+    "link_privacy_policy": "Privacy Policy",
+    "link_cookie_policy": "Cookie Policy",
+    "link_terms_conditions": "Terms and Conditions"
 }

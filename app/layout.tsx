@@ -90,6 +90,12 @@ export default function RootLayout({
           // charset="UTF-8" // charset is usually default, next/script doesn't have prop
           // async // next/script handles async loading based on strategy
         />
+        {/* +++ ADD IUBENDA POLICY LOADER SCRIPT (Loads iubenda.js) +++ */}
+        <Script
+          id="iubenda-policy-loader"
+          strategy="afterInteractive" // Load after page is interactive
+          src="https://cdn.iubenda.com/iubenda.js"
+        />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8600182876678262"
