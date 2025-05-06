@@ -508,10 +508,10 @@ const MapComponent: React.FC = () => {
   useEffect(() => {
     // Run only when searchTargetPoi has a value and the cluster ref is ready
     if (searchTargetPoi && markerClusterRef.current) {
-      console.log(
-        "useEffect[searchTargetPoi]: Processing target -",
-        searchTargetPoi.name
-      );
+      // console.log( // <-- REMOVE/COMMENT OUT
+      //   "useEffect[searchTargetPoi]: Processing target -",
+      //   searchTargetPoi.name
+      // );
       const clusterGroup = markerClusterRef.current; // The Leaflet MarkerClusterGroup instance
       let targetMarker: L.Marker | null = null;
 
@@ -525,9 +525,9 @@ const MapComponent: React.FC = () => {
           : featureGroup
           ? featureGroup.getLayers()
           : [];
-        console.log(
-          `useEffect[searchTargetPoi]: Found ${layers.length} layers in cluster group.`
-        );
+        // console.log( // <-- REMOVE/COMMENT OUT
+        //   `useEffect[searchTargetPoi]: Found ${layers.length} layers in cluster group.`
+        // );
 
         for (const layer of layers) {
           if (layer instanceof L.Marker) {
@@ -538,54 +538,56 @@ const MapComponent: React.FC = () => {
             // Use precise comparison
             if (markerLatLng.equals(targetLatLng)) {
               targetMarker = layer;
-              console.log(
-                "useEffect[searchTargetPoi]: Found matching marker layer:",
-                targetMarker
-              );
+              // console.log( // <-- REMOVE/COMMENT OUT
+              //   "useEffect[searchTargetPoi]: Found matching marker layer:",
+              //   targetMarker
+              // );
               break; // Found it
             }
           }
         }
       } catch (error) {
-        console.error(
-          "useEffect[searchTargetPoi]: Error accessing cluster layers:",
-          error
-        );
+        // console.error( // <-- REMOVE/COMMENT OUT (Unless you specifically want error logging)
+        //   "useEffect[searchTargetPoi]: Error accessing cluster layers:",
+        //   error
+        // );
       }
 
       if (targetMarker) {
         // Use zoomToShowLayer for reliable unclustering and visibility
-        console.log(
-          "useEffect[searchTargetPoi]: Calling zoomToShowLayer for marker."
-        );
+        // console.log( // <-- REMOVE/COMMENT OUT
+        //   "useEffect[searchTargetPoi]: Calling zoomToShowLayer for marker."
+        // );
         clusterGroup.zoomToShowLayer(targetMarker, () => {
-          console.log(
-            "useEffect[searchTargetPoi]: zoomToShowLayer callback - opening popup."
-          );
+          // console.log( // <-- REMOVE/COMMENT OUT
+          //   "useEffect[searchTargetPoi]: zoomToShowLayer callback - opening popup."
+          // );
           // Open popup *after* zoom/uncluster animation is complete
           targetMarker?.openPopup();
         });
       } else {
         // Fallback if marker wasn't found in the layers (less ideal)
-        console.warn(
-          "useEffect[searchTargetPoi]: Could not find marker layer for POI ID:",
-          searchTargetPoi.id,
-          ". MapEvents flyTo will handle zoom."
-        );
+        // console.warn( // <-- REMOVE/COMMENT OUT
+        //   "useEffect[searchTargetPoi]: Could not find marker layer for POI ID:",
+        //   searchTargetPoi.id,
+        //   ". MapEvents flyTo will handle zoom."
+        // );
         // MapEvents should still handle the flyTo, no explicit fallback needed here usually.
       }
 
       // Reset searchTargetPoi after a short delay to prevent re-triggering immediately
       // And allow animations/map interactions to potentially finish
       const timer = setTimeout(() => {
-        console.log(
-          "useEffect[searchTargetPoi]: Resetting searchTargetPoi state."
-        );
+        // console.log( // <-- REMOVE/COMMENT OUT
+        //   "useEffect[searchTargetPoi]: Resetting searchTargetPoi state."
+        // );
         setSearchTargetPoi(null);
       }, 500); // Delay can be adjusted
       return () => clearTimeout(timer); // Cleanup timeout on unmount or if effect re-runs
     }
-  }, [searchTargetPoi]);
+    // --- Ensure setSearchTargetPoi is included in dependencies if ESLint complains ---
+    // Although it's likely stable, some lint rules might want it.
+  }, [searchTargetPoi /*, setSearchTargetPoi */]); // Dependency array
 
   return (
     <div className="h-full w-full relative z-10">
