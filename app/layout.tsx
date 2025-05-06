@@ -52,16 +52,15 @@ export default function RootLayout({
           strategy="beforeInteractive" // Load very early, before hydration
           dangerouslySetInnerHTML={{
             __html: `
-              var _iub = _iub || [];
-              _iub.csConfiguration = {
-                "siteId": 4012257,
-                "cookiePolicyId": 94735600,
-                "lang": "it", // Ensure this matches your default or is dynamic
-                "storage": {"useSiteId":true}
-                // Add any other specific configurations from Iubenda here
-                // e.g., banner settings, TCF options if needed directly
-              };
-            `,
+          var _iub = _iub || [];
+          _iub.csConfiguration = {
+            "siteId": 4012257,
+            "cookiePolicyId": 94735600,
+            "lang": "it", // Ensure this matches your default or is dynamic
+            "storage": {"useSiteId":true}
+            // Add any other specific configurations from Iubenda here if needed
+          };
+        `,
           }}
         />
         {/* 2. Autoblocking Script */}
@@ -87,14 +86,7 @@ export default function RootLayout({
           id="iubenda-cs"
           strategy="beforeInteractive" // Load main logic early as well
           src="//cdn.iubenda.com/cs/iubenda_cs.js"
-          // charset="UTF-8" // charset is usually default, next/script doesn't have prop
-          // async // next/script handles async loading based on strategy
-        />
-        {/* +++ ADD IUBENDA POLICY LOADER SCRIPT (Loads iubenda.js) +++ */}
-        <Script
-          id="iubenda-policy-loader"
-          strategy="afterInteractive" // Load after page is interactive
-          src="https://cdn.iubenda.com/iubenda.js"
+          // Note: async and charset are handled by next/script strategy
         />
         <Script
           async
