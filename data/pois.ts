@@ -2287,6 +2287,206 @@ export const poiData: POI[] = [
     partyHours_de: "",
   },
   {
+    id: 503, // New unique ID
+    name: "La Boutique di Andrea",
+    name_en: "Andrea's Boutique (Food Shop)",
+    name_es: "La Boutique de Andrea (Tienda Gourmet)",
+    name_fr: "La Boutique d'Andrea (Épicerie Fine)",
+    name_de: "Andreas Boutique (Feinkostladen)",
+    type: "clothing", // Using 'clothing' as a general shop type as per current setup
+    coordinates: [45.507713, 8.121268],
+    googleRating: 4.3,
+    googleReviewCount: 12,
+    address: "Via Zumaglini, 13, 13871 Verrone BI",
+    phone: "3483775095",
+    website: "https://laboutiqueandrea.it/",
+    shortDescription:
+      "La Boutique di Andrea a Verrone: eccellenza alimentare e sapori autentici. Il vostro scrigno di delizie locali!",
+    shortDescription_en:
+      "Andrea's Boutique in Verrone: food excellence and authentic flavors. Your treasure chest of local delights!",
+    shortDescription_es:
+      "La Boutique de Andrea en Verrone: excelencia alimentaria y sabores auténticos. ¡Tu cofre del tesoro de delicias locales!",
+    shortDescription_fr:
+      "La Boutique d'Andrea à Verrone : excellence alimentaire et saveurs authentiques. Votre coffre aux trésors de délices locaux !",
+    shortDescription_de:
+      "Andreas Boutique in Verrone: exzellente Lebensmittel und authentische Aromen. Ihre Schatzkammer lokaler Köstlichkeiten!",
+    details:
+      "La Boutique di Andrea a Verrone è il punto di riferimento per chi ricerca prodotti alimentari di altissima qualità e un servizio impeccabile. Con una passione per l'eccellenza e la tradizione, selezioniamo le migliori materie prime, privilegiando produttori locali. All'interno troverete carni pregiate, salumi artigianali che raccontano storie di sapore, formaggi tipici dal gusto inconfondibile, e piatti gastronomici pronti. Il nostro personale esperto vi accoglierà con un sorriso, pronto a guidarvi nella scelta di delizie per la vostra tavola o per un picnic speciale durante l'Adunata. Un vero tempio del gusto dove tradizione e innovazione si incontrano.",
+    details_en:
+      "Andrea's Boutique in Verrone is the reference point for those seeking top-quality food products and impeccable service. With a passion for excellence and tradition, we select the best raw materials, favoring local producers. Inside, you'll find premium meats, artisanal cured meats that tell stories of flavor, typical cheeses with an unmistakable taste, and ready-made gastronomic dishes. Our expert staff will welcome you with a smile, ready to guide you in choosing delights for your table or for a special picnic during the Adunata. A true temple of taste where tradition and innovation meet.",
+    details_es:
+      "La Boutique de Andrea en Verrone es el punto de referencia para quienes buscan productos alimenticios de la más alta calidad y un servicio impecable. Con pasión por la excelencia y la tradición, seleccionamos las mejores materias primas, privilegiando a los productores locales. En su interior encontrará carnes de primera calidad, embutidos artesanales que cuentan historias de sabor, quesos típicos con un gusto inconfundible y platos gastronómicos listos para llevar. Nuestro personal experto le recibirá con una sonrisa, listo para guiarle en la elección de delicias para su mesa o para un picnic especial durante la Adunata. Un verdadero templo del gusto donde tradición e innovación se encuentran.",
+    details_fr:
+      "La Boutique d'Andrea à Verrone est le point de référence pour ceux qui recherchent des produits alimentaires de première qualité et un service impeccable. Passionnés par l'excellence et la tradition, nous sélectionnons les meilleures matières premières, en privilégiant les producteurs locaux. À l'intérieur, vous trouverez des viandes de premier choix, des charcuteries artisanales qui racontent des histoires de saveurs, des fromages typiques au goût incomparable et des plats gastronomiques prêts à emporter. Notre personnel expert vous accueillera avec le sourire, prêt à vous guider dans le choix de délices pour votre table ou pour un pique-nique spécial pendant l'Adunata. Un véritable temple du goût où tradition et innovation se rencontrent.",
+    details_de:
+      "Andreas Boutique in Verrone ist der Bezugspunkt für alle, die hochwertige Lebensmittel und tadellosen Service suchen. Mit Leidenschaft für Exzellenz und Tradition wählen wir die besten Rohstoffe aus und bevorzugen lokale Produzenten. Im Inneren finden Sie erstklassiges Fleisch, handwerkliche Wurstwaren, die Geschmacksgeschichten erzählen, typische Käsesorten mit unverwechselbarem Geschmack und fertige gastronomische Gerichte. Unser fachkundiges Personal empfängt Sie mit einem Lächeln und berät Sie gerne bei der Auswahl von Köstlichkeiten für Ihren Tisch oder für ein besonderes Picknick während der Adunata. Ein wahrer Geschmackstempel, in dem Tradition und Innovation aufeinandertreffen.",
+    images: ["/images/boutiqueAndrea.jpeg"], // Example image path
+    openingHours: `giovedì: 07:00-12:30, 15:30-19:00\nvenerdì: 07:00-12:30, 15:30-19:00\nsabato: 07:00-13:00\ndomenica: Chiuso\nlunedì: 07:00-12:30\nmartedì: 07:00-12:30, 15:30-19:00\nmercoledì: 07:00-12:30, 15:30-19:00`,
+    openingHours_en: `Thursday: 07:00-12:30, 15:30-19:00\nFriday: 07:00-12:30, 15:30-19:00\nSaturday: 07:00-13:00\nSunday: Closed\nMonday: 07:00-12:30\nTuesday: 07:00-12:30, 15:30-19:00\nWednesday: 07:00-12:30, 15:30-19:00`,
+    openingHours_es: `Jueves: 07:00-12:30, 15:30-19:00\nViernes: 07:00-12:30, 15:30-19:00\nSábado: 07:00-13:00\nDomingo: Cerrado\nLunes: 07:00-12:30\nMartes: 07:00-12:30, 15:30-19:00\nMiércoles: 07:00-12:30, 15:30-19:00`,
+    openingHours_fr: `Jeudi : 07h00-12h30, 15h30-19h00\nVendredi : 07h00-12h30, 15h30-19h00\nSamedi : 07h00-13h00\nDimanche : Fermé\nLundi : 07h00-12h30\nMardi : 07h00-12h30, 15h30-19h00\nMercredi : 07h00-12h30, 15h30-19h00`,
+    openingHours_de: `Donnerstag: 07:00-12:30, 15:30-19:00\nFreitag: 07:00-12:30, 15:30-19:00\nSamstag: 07:00-13:00\nSonntag: Geschlossen\nMontag: 07:00-12:30\nDienstag: 07:00-12:30, 15:30-19:00\nMittwoch: 07:00-12:30, 15:30-19:00`,
+    discountInfo: "Selezione di prodotti locali e artigianali di prima scelta.",
+    discountInfo_en: "Selection of premium local and artisanal products.",
+    discountInfo_es:
+      "Selección de productos locales y artesanales de primera calidad.",
+    discountInfo_fr:
+      "Sélection de produits locaux et artisanaux de premier choix.",
+    discountInfo_de:
+      "Auswahl an erstklassigen lokalen und handwerklichen Produkten.",
+    tags: [
+      "Alimentari",
+      "Gastronomia",
+      "Macelleria",
+      "Salumeria",
+      "Formaggi",
+      "Prodotti Tipici",
+      "Verrone",
+    ],
+    tags_en: [
+      "Groceries",
+      "Delicatessen",
+      "Butcher",
+      "Charcuterie",
+      "Cheese",
+      "Typical Products",
+      "Verrone",
+    ],
+    tags_es: [
+      "Comestibles",
+      "Delicatessen",
+      "Carnicería",
+      "Charcutería",
+      "Quesos",
+      "Productos Típicos",
+      "Verrone",
+    ],
+    tags_fr: [
+      "Épicerie",
+      "Traiteur",
+      "Boucherie",
+      "Charcuterie",
+      "Fromages",
+      "Produits Typiques",
+      "Verrone",
+    ],
+    tags_de: [
+      "Lebensmittel",
+      "Feinkost",
+      "Metzgerei",
+      "Wurstwaren",
+      "Käse",
+      "Typische Produkte",
+      "Verrone",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 504, // New unique ID
+    name: "Macelleria De Ruvo (Carne Equina)",
+    name_en: "De Ruvo Butcher (Horse Meat)",
+    name_es: "Carnicería De Ruvo (Carne de Caballo)",
+    name_fr: "Boucherie De Ruvo (Viande Chevaline)",
+    name_de: "Metzgerei De Ruvo (Pferdefleisch)",
+    type: "clothing", // Using 'clothing' as a general shop type
+    coordinates: [45.56886, 8.052659],
+    googleRating: 4.6,
+    googleReviewCount: 81,
+    address: "Piazza I Maggio, 12/D, 13900 Biella BI",
+    phone: "01521701",
+    website: "https://www.macelleriaderuvo.it/",
+    shortDescription:
+      "Macelleria De Ruvo a Biella: la vostra boutique di carne equina. Qualità, tenerezza e benefici unici, anche con consegna in giornata!",
+    shortDescription_en:
+      "De Ruvo Butcher in Biella: your horse meat boutique. Quality, tenderness, and unique benefits, with same-day delivery!",
+    shortDescription_es:
+      "Carnicería De Ruvo en Biella: su boutique de carne de caballo. ¡Calidad, terneza y beneficios únicos, con entrega en el día!",
+    shortDescription_fr:
+      "Boucherie De Ruvo à Biella : votre boutique de viande chevaline. Qualité, tendreté et bienfaits uniques, avec livraison le jour même !",
+    shortDescription_de:
+      "Metzgerei De Ruvo in Biella: Ihre Boutique für Pferdefleisch. Qualität, Zartheit und einzigartige Vorteile, mit Lieferung am selben Tag!",
+    details:
+      "Scoprite la Macelleria De Ruvo in Piazza I Maggio, Biella, un punto di riferimento per l'eccellente carne equina. Rinomata per la sua tenerezza, la carne equina è magrissima, ricca di ferro facilmente assimilabile e povera di colesterolo, ideale per diete, sportivi e chi cerca un'alimentazione sana. Perfetta per bambini in crescita e donne in gravidanza. De Ruvo offre tagli selezionati e la comodità della consegna in giornata. Una scelta gustosa e nutriente per arricchire i vostri pasti durante l'Adunata.",
+    details_en:
+      "Discover De Ruvo Butcher in Piazza I Maggio, Biella, a benchmark for excellent horse meat. Renowned for its tenderness, horse meat is very lean, rich in easily absorbable iron, and low in cholesterol, ideal for diets, athletes, and those seeking healthy nutrition. Perfect for growing children and pregnant women. De Ruvo offers selected cuts and the convenience of same-day delivery. A tasty and nutritious choice to enrich your meals during the Adunata.",
+    details_es:
+      "Descubra la Carnicería De Ruvo en Piazza I Maggio, Biella, un referente en carne de caballo de excelente calidad. Reconocida por su terneza, la carne de caballo es muy magra, rica en hierro de fácil absorción y baja en colesterol, ideal para dietas, deportistas y quienes buscan una nutrición saludable. Perfecta para niños en crecimiento y mujeres embarazadas. De Ruvo ofrece cortes selectos y la comodidad de la entrega en el mismo día. Una opción sabrosa y nutritiva para enriquecer sus comidas durante la Adunata.",
+    details_fr:
+      "Découvrez la Boucherie De Ruvo sur la Piazza I Maggio, Biella, une référence en matière d'excellente viande chevaline. Réputée pour sa tendreté, la viande chevaline est très maigre, riche en fer facilement assimilable et pauvre en cholestérol, idéale pour les régimes, les sportifs et ceux qui recherchent une alimentation saine. Parfaite pour les enfants en croissance et les femmes enceintes. De Ruvo propose des coupes sélectionnées et la commodité de la livraison le jour même. Un choix savoureux et nutritif pour enrichir vos repas pendant l'Adunata.",
+    details_de:
+      "Entdecken Sie die Metzgerei De Ruvo an der Piazza I Maggio, Biella, ein Maßstab für ausgezeichnetes Pferdefleisch. Bekannt für seine Zartheit, ist Pferdefleisch sehr mager, reich an leicht absorbierbarem Eisen und cholesterinarm, ideal für Diäten, Sportler und alle, die eine gesunde Ernährung suchen. Perfekt für wachsende Kinder und schwangere Frauen. De Ruvo bietet ausgewählte Teilstücke und den Komfort der Lieferung am selben Tag. Eine schmackhafte und nahrhafte Wahl, um Ihre Mahlzeiten während der Adunata zu bereichern.",
+    images: ["/images/macelleria_de_ruvo_biella.jpg"], // Example image path
+    openingHours: `giovedì: 07:30-12:30, 15:00-19:15\nvenerdì: 07:30-12:30, 15:00-19:15\nsabato: 07:30-12:30, 15:00-19:15\ndomenica: Chiuso\nlunedì: 07:30-12:30, 15:00-19:15\nmartedì: 07:30-12:30, 15:00-19:15\nmercoledì: 07:30-12:30`,
+    openingHours_en: `Thursday: 07:30-12:30, 15:00-19:15\nFriday: 07:30-12:30, 15:00-19:15\nSaturday: 07:30-12:30, 15:00-19:15\nSunday: Closed\nMonday: 07:30-12:30, 15:00-19:15\nTuesday: 07:30-12:30, 15:00-19:15\nWednesday: 07:30-12:30`,
+    openingHours_es: `Jueves: 07:30-12:30, 15:00-19:15\nViernes: 07:30-12:30, 15:00-19:15\nSábado: 07:30-12:30, 15:00-19:15\nDomingo: Cerrado\nLunes: 07:30-12:30, 15:00-19:15\nMartes: 07:30-12:30, 15:00-19:15\nMiércoles: 07:30-12:30`,
+    openingHours_fr: `Jeudi : 07h30-12h30, 15h00-19h15\nVendredi : 07h30-12h30, 15h00-19h15\nSamedi : 07h30-12h30, 15h00-19h15\nDimanche : Fermé\nLundi : 07h30-12h30, 15h00-19h15\nMardi : 07h30-12h30, 15h00-19h15\nMercredi : 07h30-12h30`,
+    openingHours_de: `Donnerstag: 07:30-12:30, 15:00-19:15\nFreitag: 07:30-12:30, 15:00-19:15\nSamstag: 07:30-12:30, 15:00-19:15\nSonntag: Geschlossen\nMontag: 07:30-12:30, 15:00-19:15\nDienstag: 07:30-12:30, 15:00-19:15\nMittwoch: 07:30-12:30`,
+    discountInfo: "Qualità e freschezza garantite.",
+    discountInfo_en: "Quality and freshness guaranteed.",
+    discountInfo_es: "Calidad y frescura garantizadas.",
+    discountInfo_fr: "Qualité et fraîcheur garanties.",
+    discountInfo_de: "Qualität und Frische garantiert.",
+    tags: [
+      "Macelleria",
+      "Carne Equina",
+      "Prodotti Tipici",
+      "Alimentazione Sana",
+      "Consegna Domicilio",
+      "Biella",
+    ],
+    tags_en: [
+      "Butcher",
+      "Horse Meat",
+      "Typical Products",
+      "Healthy Eating",
+      "Home Delivery",
+      "Biella",
+    ],
+    tags_es: [
+      "Carnicería",
+      "Carne de Caballo",
+      "Productos Típicos",
+      "Alimentación Saludable",
+      "Entrega Domicilio",
+      "Biella",
+    ],
+    tags_fr: [
+      "Boucherie",
+      "Viande Chevaline",
+      "Produits Typiques",
+      "Alimentation Saine",
+      "Livraison Domicile",
+      "Biella",
+    ],
+    tags_de: [
+      "Metzgerei",
+      "Pferdefleisch",
+      "Typische Produkte",
+      "Gesunde Ernährung",
+      "Lieferservice",
+      "Biella",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
     id: 601, // New unique ID for bars
     name: "Vanilla 2.0",
     name_en: "Vanilla 2.0",
@@ -2861,11 +3061,11 @@ export const poiData: POI[] = [
     details_de:
       "Das Loft Cafe in der zentralen Via Italia ist ein vielseitiger Treffpunkt, der von früh morgens bis Mitternacht geöffnet ist. Ideal für Frühstück, Mittagessen, Aperitifs und Abende. Speisekarte verfügbar unter loftbiella.com. Ein Treffpunkt im Herzen von Biella.",
     images: ["/images/loft.png"], // Suggested image path, please create this image
-    openingHours: `Lun-Sab: 07:30-00:00\nDom: 08:00-00:00`,
-    openingHours_en: `Mon-Sat: 07:30-00:00\nSun: 08:00-00:00`,
-    openingHours_es: `Lun-Sáb: 07:30-00:00\nDom: 08:00-00:00`,
-    openingHours_fr: `Lun-Sam: 07h30-00h00\nDim: 08h00-00h00`,
-    openingHours_de: `Mo-Sa: 07:30-00:00\nSo: 08:00-00:00`,
+    openingHours: `Lun-Gio: 07:30-00:00\nVen-Sab-Dom: 07:00-3:00`, // UPDATED
+    openingHours_en: `Mon-Thu: 07:30-00:00\nFri-Sat-Sun: 07:00-3:00`, // UPDATED
+    openingHours_es: `Lun-Jue: 07:30-00:00\nVie-Sáb-Dom: 07:00-3:00`, // UPDATED
+    openingHours_fr: `Lun-Jeu: 07h30-00h00\nVen-Sam-Dim: 07h00-3h00`, // UPDATED
+    openingHours_de: `Mo-Do: 07:30-00:00\nFr-Sa-So: 07:00-3:00`, // UPDATED
     discountInfo: "",
     discountInfo_en: "",
     discountInfo_es: "",
@@ -2920,6 +3120,440 @@ export const poiData: POI[] = [
       "Abend",
       "Via Italia",
       "Zentrum",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 607, // New unique ID
+    name: "Bar Revolution",
+    name_en: "Revolution Bar",
+    name_es: "Bar Revolution",
+    name_fr: "Bar Revolution",
+    name_de: "Bar Revolution",
+    type: "bar",
+    coordinates: [45.557312, 8.059502],
+    googleRating: 4.6,
+    googleReviewCount: 12,
+    address: "Via Addis Abeba, 11b, 13900 Biella BI",
+    phone: "3463165144",
+    website:
+      "https://www.facebook.com/p/Revolution-bar-100054420313497/?locale=it_IT",
+    shortDescription:
+      "Bar Revolution a Biella: energia pura! Panini tipici, fiumi di birra/vino e orario NO-STOP nel weekend Adunata. Imperdibile!",
+    shortDescription_en:
+      "Revolution Bar in Biella: pure energy! Typical sandwiches, rivers of beer/wine, and NON-STOP hours on Adunata weekend. Unmissable!",
+    shortDescription_es:
+      "Bar Revolution en Biella: ¡pura energía! Bocadillos típicos, ríos de cerveza/vino y horario ININTERRUMPIDO el fin de semana de la Adunata. ¡Imperdible!",
+    shortDescription_fr:
+      "Bar Revolution à Biella : pure énergie ! Sandwichs typiques, fleuves de bière/vin et horaires NON-STOP le week-end de l'Adunata. Immanquable !",
+    shortDescription_de:
+      "Bar Revolution in Biella: pure Energie! Typische Sandwiches, Bier-/Weinströme und NONSTOP-Öffnungszeiten am Adunata-Wochenende. Unverzichtbar!",
+    details:
+      "Bar Revolution, in Via Addis Abeba a Biella, è il punto di ritrovo perfetto per vivere l'Adunata con la giusta carica! APERTO 24 ORE SU 24 (Venerdì-Sabato-Domenica), offre un menù speciale con panini farciti con ingredienti tipici come lingua in salsa verde, porchetta BBQ e salumi locali, valorizzando prodotti come toma e maccagno biellesi. Preparatevi a 'fiumi' di birra e vino, oltre a spritz e cocktail classici. Un'atmosfera vivace, cibo gustoso al bar e cani ammessi. La sosta ideale per non perdere neanche un momento della festa!",
+    details_en:
+      "Revolution Bar, on Via Addis Abeba in Biella, is the perfect meeting point to experience the Adunata with the right energy! OPEN 24 HOURS (Friday-Saturday-Sunday), it offers a special menu with sandwiches stuffed with typical ingredients like tongue in green sauce, BBQ porchetta, and local cured meats, highlighting products like Biella's toma and maccagno cheeses. Get ready for 'rivers' of beer and wine, plus spritzes and classic cocktails. A lively atmosphere, tasty bar food, and dogs allowed. The ideal stop to not miss a moment of the celebration!",
+    details_es:
+      "Bar Revolution, en Via Addis Abeba en Biella, ¡es el punto de encuentro perfecto para vivir la Adunata con la energía adecuada! ABIERTO 24 HORAS (Viernes-Sábado-Domingo), ofrece un menú especial con bocadillos rellenos de ingredientes típicos como lengua en salsa verde, porchetta a la barbacoa y embutidos locales, destacando productos como los quesos toma y maccagno de Biella. Prepárense para 'ríos' de cerveza y vino, además de spritzes y cócteles clásicos. Un ambiente animado, comida sabrosa en el bar y perros admitidos. ¡La parada ideal para no perderse ni un momento de la fiesta!",
+    details_fr:
+      "Le Bar Revolution, Via Addis Abeba à Biella, est le point de rencontre idéal pour vivre l'Adunata avec la bonne énergie ! OUVERT 24H/24 (Vendredi-Samedi-Dimanche), il propose un menu spécial avec des sandwichs garnis d'ingrédients typiques comme la langue en sauce verte, la porchetta BBQ et les charcuteries locales, mettant en valeur des produits comme les fromages toma et maccagno de Biella. Préparez-vous à des 'fleuves' de bière et de vin, ainsi qu'à des spritz et des cocktails classiques. Une ambiance animée, de la nourriture savoureuse au bar et les chiens sont admis. L'arrêt idéal pour ne manquer aucun moment de la fête !",
+    details_de:
+      "Die Bar Revolution in der Via Addis Abeba in Biella ist der perfekte Treffpunkt, um die Adunata mit der richtigen Energie zu erleben! GEÖFFNET 24 STUNDEN (Freitag-Samstag-Sonntag), bietet sie ein spezielles Menü mit Sandwiches, gefüllt mit typischen Zutaten wie Zunge in grüner Sauce, BBQ-Porchetta und lokalen Wurstwaren, wobei Produkte wie Biellas Toma- und Maccagno-Käse hervorgehoben werden. Machen Sie sich bereit für 'Ströme' von Bier und Wein sowie Spritz und klassische Cocktails. Eine lebhafte Atmosphäre, leckeres Essen an der Bar und Hunde sind erlaubt. Der ideale Stopp, um keinen Moment der Feier zu verpassen!",
+    images: ["/images/revolution.jpg"], // Example image path
+    openingHours: `giovedì: 06:00-20:00\nvenerdì: Aperto 24 ore\nsabato: Aperto 24 ore\ndomenica: Aperto 24 ore\nlunedì: 06:00-20:00\nmartedì: 06:00-20:00\nmercoledì: 06:00-20:00`,
+    openingHours_en: `Thursday: 06:00-20:00\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours\nMonday: 06:00-20:00\nTuesday: 06:00-20:00\nWednesday: 06:00-20:00`,
+    openingHours_es: `Jueves: 06:00-20:00\nViernes: Abierto 24 horas\nSábado: Abierto 24 horas\nDomingo: Abierto 24 horas\nLunes: 06:00-20:00\nMartes: 06:00-20:00\nMiércoles: 06:00-20:00`,
+    openingHours_fr: `Jeudi : 06h00-20h00\nVendredi : Ouvert 24h/24\nSamedi : Ouvert 24h/24\nDimanche : Ouvert 24h/24\nLundi : 06h00-20h00\nMardi : 06h00-20h00\nMercredi : 06h00-20h00`,
+    openingHours_de: `Donnerstag: 06:00-20:00\nFreitag: 24 Stunden geöffnet\nSamstag: 24 Stunden geöffnet\nSonntag: 24 Stunden geöffnet\nMontag: 06:00-20:00\nDienstag: 06:00-20:00\nMittwoch: 06:00-20:00`,
+    discountInfo: "Panini speciali con prodotti tipici. Fiumi di birra e vino!",
+    discountInfo_en:
+      "Special sandwiches with typical products. Rivers of beer and wine!",
+    discountInfo_es:
+      "¡Bocadillos especiales con productos típicos. Ríos de cerveza y vino!",
+    discountInfo_fr:
+      "Sandwichs spéciaux avec produits typiques. Fleuves de bière et de vin !",
+    discountInfo_de:
+      "Spezielle Sandwiches mit typischen Produkten. Ströme von Bier und Wein!",
+    tags: [
+      "Bar",
+      "Panini Tipici",
+      "Birra",
+      "Vino",
+      "Aperto 24h (Weekend Adunata)",
+      "Biella",
+      "Cani Ammessi",
+    ],
+    tags_en: [
+      "Bar",
+      "Typical Sandwiches",
+      "Beer",
+      "Wine",
+      "Open 24h (Adunata Weekend)",
+      "Biella",
+      "Dogs Allowed",
+    ],
+    tags_es: [
+      "Bar",
+      "Bocadillos Típicos",
+      "Cerveza",
+      "Vino",
+      "Abierto 24h (Fin Semana Adunata)",
+      "Biella",
+      "Perros Admitidos",
+    ],
+    tags_fr: [
+      "Bar",
+      "Sandwichs Typiques",
+      "Bière",
+      "Vin",
+      "Ouvert 24h (Weekend Adunata)",
+      "Biella",
+      "Chiens Admis",
+    ],
+    tags_de: [
+      "Bar",
+      "Typische Sandwiches",
+      "Bier",
+      "Wein",
+      "24h Geöffnet (Adunata Wochenende)",
+      "Biella",
+      "Hunde Erlaubt",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 608, // New unique ID
+    name: "La Flaca Bar de Tapas",
+    name_en: "La Flaca Tapas Bar",
+    name_es: "La Flaca Bar de Tapas",
+    name_fr: "La Flaca Bar à Tapas",
+    name_de: "La Flaca Tapas-Bar",
+    type: "bar",
+    coordinates: [45.566988, 8.04583],
+    googleRating: 5.0,
+    googleReviewCount: 26,
+    address:
+      "Via Amedeo Avogadro di Quaregna, 14, 13900 Biella BI (Stazione Funicolare Biella Piazzo)", // Added Funicular station context
+    phone: "3517829357",
+    website: "https://linktr.ee/laflacabardetapas",
+    shortDescription:
+      "La Flaca Bar de Tapas: un angolo di Spagna a Biella Piazzo! Tapas autentiche, cocktail e sangria. ¡Olé!",
+    shortDescription_en:
+      "La Flaca Tapas Bar: a corner of Spain in Biella Piazzo! Authentic tapas, cocktails, and sangria. ¡Olé!",
+    shortDescription_es:
+      "La Flaca Bar de Tapas: ¡un rincón de España en Biella Piazzo! Tapas auténticas, cócteles y sangría. ¡Olé!",
+    shortDescription_fr:
+      "La Flaca Bar à Tapas : un coin d'Espagne à Biella Piazzo ! Tapas authentiques, cocktails et sangria. ¡Olé !",
+    shortDescription_de:
+      "La Flaca Tapas-Bar: eine Ecke Spaniens in Biella Piazzo! Authentische Tapas, Cocktails und Sangria. ¡Olé!",
+    details:
+      "Vivi l'autentica atmosfera spagnola a La Flaca Bar de Tapas, situato vicino alla stazione della Funicolare per Biella Piazzo. Lasciati conquistare dai veri sapori iberici con una selezione di tapas tradizionali, accompagnate da cocktail creativi, rinfrescante sangria e altre bevande. Un ambiente vivace e accogliente, perfetto per un aperitivo prolungato o una serata diversa dal solito. Ideale per una sosta gustosa e internazionale durante l'Adunata.",
+    details_en:
+      "Experience the authentic Spanish atmosphere at La Flaca Tapas Bar, located near the Funicular station to Biella Piazzo. Let yourself be captivated by true Iberian flavors with a selection of traditional tapas, accompanied by creative cocktails, refreshing sangria, and other drinks. A lively and welcoming environment, perfect for an extended aperitif or a different kind of evening. Ideal for a tasty and international stop during the Adunata.",
+    details_es:
+      "Vive la auténtica atmósfera española en La Flaca Bar de Tapas, ubicado cerca de la estación del Funicular a Biella Piazzo. Déjate cautivar por los verdaderos sabores ibéricos con una selección de tapas tradicionales, acompañadas de cócteles creativos, refrescante sangría y otras bebidas. Un ambiente animado y acogedor, perfecto para un aperitivo prolongado o una velada diferente. Ideal para una parada sabrosa e internacional durante la Adunata.",
+    details_fr:
+      "Vivez l'atmosphère espagnole authentique à La Flaca Bar à Tapas, situé près de la station du Funiculaire pour Biella Piazzo. Laissez-vous séduire par les vraies saveurs ibériques avec une sélection de tapas traditionnelles, accompagnées de cocktails créatifs, de sangria rafraîchissante et d'autres boissons. Un environnement animé et accueillant, parfait pour un apéritif prolongé ou une soirée différente. Idéal pour une halte savoureuse et internationale pendant l'Adunata.",
+    details_de:
+      "Erleben Sie die authentische spanische Atmosphäre in der La Flaca Tapas-Bar in der Nähe der Standseilbahnstation nach Biella Piazzo. Lassen Sie sich von echten iberischen Aromen mit einer Auswahl an traditionellen Tapas verzaubern, begleitet von kreativen Cocktails, erfrischender Sangria und anderen Getränken. Eine lebhafte und einladende Umgebung, perfekt für einen ausgedehnten Aperitif oder einen etwas anderen Abend. Ideal für einen schmackhaften und internationalen Stopp während der Adunata.",
+    images: ["/images/flaca.png"], // Example image path
+    openingHours: `giovedì: 17:30-22:00\nvenerdì: 17:30-01:00\nsabato: 17:30-01:00\ndomenica: 17:30-22:00\nlunedì: Chiuso\nmartedì: Chiuso\nmercoledì: Chiuso`,
+    openingHours_en: `Thursday: 17:30-22:00\nFriday: 17:30-01:00\nSaturday: 17:30-01:00\nSunday: 17:30-22:00\nMonday: Closed\nTuesday: Closed\nWednesday: Closed`,
+    openingHours_es: `Jueves: 17:30-22:00\nViernes: 17:30-01:00\nSábado: 17:30-01:00\nDomingo: 17:30-22:00\nLunes: Cerrado\nMartes: Cerrado\nMiércoles: Cerrado`,
+    openingHours_fr: `Jeudi : 17h30-22h00\nVendredi : 17h30-01h00\nSamedi : 17h30-01h00\nDimanche : 17h30-22h00\nLundi : Fermé\nMardi : Fermé\nMercredi : Fermé`,
+    openingHours_de: `Donnerstag: 17:30-22:00\nFreitag: 17:30-01:00\nSamstag: 17:30-01:00\nSonntag: 17:30-22:00\nMontag: Geschlossen\nDienstag: Geschlossen\nMittwoch: Geschlossen`,
+    discountInfo: "Autentiche tapas spagnole, cocktail e sangria!",
+    discountInfo_en: "Authentic Spanish tapas, cocktails, and sangria!",
+    discountInfo_es: "¡Auténticas tapas españolas, cócteles y sangría!",
+    discountInfo_fr: "Tapas espagnoles authentiques, cocktails et sangria !",
+    discountInfo_de: "Authentische spanische Tapas, Cocktails und Sangria!",
+    tags: [
+      "Bar",
+      "Tapas",
+      "Cocktail",
+      "Sangria",
+      "Cucina Spagnola",
+      "Biella Piazzo",
+      "Funicolare",
+      "Aperitivo",
+    ],
+    tags_en: [
+      "Bar",
+      "Tapas",
+      "Cocktails",
+      "Sangria",
+      "Spanish Cuisine",
+      "Biella Piazzo",
+      "Funicular",
+      "Aperitif",
+    ],
+    tags_es: [
+      "Bar",
+      "Tapas",
+      "Cócteles",
+      "Sangría",
+      "Cocina Española",
+      "Biella Piazzo",
+      "Funicular",
+      "Aperitivo",
+    ],
+    tags_fr: [
+      "Bar",
+      "Tapas",
+      "Cocktails",
+      "Sangria",
+      "Cuisine Espagnole",
+      "Biella Piazzo",
+      "Funiculaire",
+      "Apéritif",
+    ],
+    tags_de: [
+      "Bar",
+      "Tapas",
+      "Cocktails",
+      "Sangria",
+      "Spanische Küche",
+      "Biella Piazzo",
+      "Standseilbahn",
+      "Aperitif",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 609, // New unique ID
+    name: "Cremeria del Piazzo",
+    name_en: "Cremeria del Piazzo (Piazzo Creamery)",
+    name_es: "Cremeria del Piazzo (Lechería del Piazzo)",
+    name_fr: "Cremeria del Piazzo (Crèmerie du Piazzo)",
+    name_de: "Cremeria del Piazzo (Piazzo Molkerei)",
+    type: "bar", // Strong café/gelateria/bar elements
+    coordinates: [45.56617, 8.045296],
+    googleRating: 3.9,
+    googleReviewCount: 240,
+    address: "Piazza della Cisterna, 7/A, 13900 Biella BI (Biella Piazzo)", // Added Piazzo context
+    phone: "3899910334",
+    website: "https://cremeriadelpiazzo.it/",
+    shortDescription:
+      "Cremeria del Piazzo: storia e dolcezza a Biella Piazzo. Gelato, caffè, cocktail e tanto altro.",
+    shortDescription_en:
+      "Cremeria del Piazzo: history and sweetness in Biella Piazzo. Gelato, coffee, cocktails, and much more.",
+    shortDescription_es:
+      "Cremeria del Piazzo: historia y dulzura en Biella Piazzo. Helados, café, cócteles y mucho más.",
+    shortDescription_fr:
+      "Cremeria del Piazzo : histoire et douceur à Biella Piazzo. Glaces, café, cocktails et bien plus.",
+    shortDescription_de:
+      "Cremeria del Piazzo: Geschichte und Süße in Biella Piazzo. Eis, Kaffee, Cocktails und vieles mehr.",
+    details:
+      "Situata nel cuore del quartiere medievale di Biella Piazzo, la Cremeria del Piazzo è un locale storico che offre un'ampia gamma di delizie. Dalla caffetteria mattutina con bakery e colazioni, al gelato artigianale, frappè, cioccolateria, tè e tisane. Perfetta per una pausa, un aperitivo con ottimi cocktail o uno spuntino con toast, focacce e crêpes (anche gluten-free). Dispone di tavoli all'aperto. Attenzione: non si accettano prenotazioni. Un luogo ricco di fascino per ogni momento della giornata durante l'Adunata.",
+    details_en:
+      "Located in the heart of the medieval Piazzo district of Biella, Cremeria del Piazzo is a historic venue offering a wide range of delights. From morning coffee with bakery items and breakfast, to artisanal gelato, milkshakes, chocolate, tea, and herbal infusions. Perfect for a break, an aperitif with excellent cocktails, or a snack with toast, focaccia, and crepes (also gluten-free). Features outdoor seating. Please note: no reservations are accepted. A charming place for any time of day during the Adunata.",
+    details_es:
+      "Ubicada en el corazón del barrio medieval de Biella Piazzo, la Cremeria del Piazzo es un local histórico que ofrece una amplia gama de delicias. Desde el café matutino con bollería y desayunos, hasta helados artesanales, batidos, chocolatería, té e infusiones. Perfecta para una pausa, un aperitivo con excelentes cócteles o un tentempié con tostadas, focaccias y crepes (también sin gluten). Dispone de mesas al aire libre. Atención: no se aceptan reservas. Un lugar lleno de encanto para cualquier momento del día durante la Adunata.",
+    details_fr:
+      "Située au cœur du quartier médiéval de Biella Piazzo, la Cremeria del Piazzo est un lieu historique offrant une large gamme de délices. Du café du matin avec viennoiseries et petits déjeuners, aux glaces artisanales, milkshakes, chocolats, thés et tisanes. Parfait pour une pause, un apéritif avec d'excellents cocktails, ou un en-cas avec toasts, focaccias et crêpes (également sans gluten). Dispose de tables en extérieur. Attention : les réservations ne sont pas acceptées. Un lieu plein de charme pour chaque moment de la journée pendant l'Adunata.",
+    details_de:
+      "Die Cremeria del Piazzo im Herzen des mittelalterlichen Viertels Piazzo von Biella ist ein historischer Ort, der eine große Auswahl an Köstlichkeiten bietet. Vom Morgenkaffee mit Backwaren und Frühstück über handwerkliches Eis, Milchshakes, Schokolade, Tee und Kräutertees. Perfekt für eine Pause, einen Aperitif mit ausgezeichneten Cocktails oder einen Snack mit Toast, Focaccia und Crêpes (auch glutenfrei). Verfügt über Sitzplätze im Freien. Bitte beachten Sie: Reservierungen werden nicht angenommen. Ein charmanter Ort für jede Tageszeit während der Adunata.",
+    images: ["/images/cremeria.png"], // Example image path
+    openingHours: `giovedì: 07:30-20:00\nvenerdì: 07:30-20:00\nsabato: 07:30-20:00\ndomenica: 07:30-20:00\nlunedì: 07:30-20:00\nmartedì: 07:30-20:00\nmercoledì: 07:30-20:00`,
+    openingHours_en: `Thursday: 07:30-20:00\nFriday: 07:30-20:00\nSaturday: 07:30-20:00\nSunday: 07:30-20:00\nMonday: 07:30-20:00\nTuesday: 07:30-20:00\nWednesday: 07:30-20:00`,
+    openingHours_es: `Jueves: 07:30-20:00\nViernes: 07:30-20:00\nSábado: 07:30-20:00\nDomingo: 07:30-20:00\nLunes: 07:30-20:00\nMartes: 07:30-20:00\nMiércoles: 07:30-20:00`,
+    openingHours_fr: `Jeudi : 07h30-20h00\nVendredi : 07h30-20h00\nSamedi : 07h30-20h00\nDimanche : 07h30-20h00\nLundi : 07h30-20h00\nMardi : 07h30-20h00\nMercredi : 07h30-20h00`,
+    openingHours_de: `Donnerstag: 07:30-20:00\nFreitag: 07:30-20:00\nSamstag: 07:30-20:00\nSonntag: 07:30-20:00\nMontag: 07:30-20:00\nDienstag: 07:30-20:00\nMittwoch: 07:30-20:00`,
+    discountInfo:
+      "Gelato artigianale, caffetteria, cocktail. Crêpes senza glutineì",
+    discountInfo_en:
+      "Artisanal gelato, coffee shop, cocktails. Gluten-free crepes.",
+    discountInfo_es:
+      "Helado artesanal, cafetería, cócteles. Crepes sin gluten.",
+    discountInfo_fr: "Glace artisanale, café, cocktails. Crêpes sans gluten.",
+    discountInfo_de: "Handwerkliches Eis, Café, Cocktails. Glutenfreie Crêpes.",
+    tags: [
+      "Bar",
+      "Gelateria",
+      "Caffetteria",
+      "Cocktail",
+      "Biella Piazzo",
+      "Senza Glutine",
+      "Tavoli Aperto",
+      "No Prenotazioni",
+    ],
+    tags_en: [
+      "Bar",
+      "Gelateria",
+      "Coffee Shop",
+      "Cocktails",
+      "Biella Piazzo",
+      "Gluten-Free",
+      "Outdoor Seating",
+      "No Reservations",
+    ],
+    tags_es: [
+      "Bar",
+      "Heladería",
+      "Cafetería",
+      "Cócteles",
+      "Biella Piazzo",
+      "Sin Gluten",
+      "Terraza",
+      "No Reservas",
+    ],
+    tags_fr: [
+      "Bar",
+      "Glacier",
+      "Café",
+      "Cocktails",
+      "Biella Piazzo",
+      "Sans Gluten",
+      "Terrasse",
+      "Pas de Réservations",
+    ],
+    tags_de: [
+      "Bar",
+      "Eisdiele",
+      "Café",
+      "Cocktails",
+      "Biella Piazzo",
+      "Glutenfrei",
+      "Außenbereich",
+      "Keine Reservierungen",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 610, // New unique ID
+    name: "Caffè Galleria To Mich",
+    name_en: "To Mich Gallery Café",
+    name_es: "Café Galería To Mich",
+    name_fr: "Café Galerie To Mich",
+    name_de: "Café Galerie To Mich",
+    type: "bar", // Also has strong café and light meal aspects
+    coordinates: [45.564799, 8.054944],
+    googleRating: 4.1,
+    googleReviewCount: 57,
+    address: "Via Antonio Gramsci, 6, 13900 Biella BI (Galleria)", // Added "Galleria" context
+    phone: "3519424924",
+    website:
+      "https://www.facebook.com/people/Caff%C3%A8-galleria-To-Mich/61565500285150/", // Cleaned FB link
+    shortDescription:
+      "Caffè Galleria To Mich: spazio, gusto e sorprese a Biella! Lasagne, babà alla grappa e orario no-stop nel weekend Adunata.",
+    shortDescription_en:
+      "To Mich Gallery Café: space, taste, and surprises in Biella! Lasagna, grappa babà, and non-stop hours on Adunata weekend.",
+    shortDescription_es:
+      "Café Galería To Mich: ¡espacio, sabor y sorpresas en Biella! Lasaña, babà a la grappa y horario ininterrumpido el fin de semana de la Adunata.",
+    shortDescription_fr:
+      "Café Galerie To Mich : espace, goût et surprises à Biella ! Lasagnes, baba au grappa et horaires non-stop le week-end de l'Adunata.",
+    shortDescription_de:
+      "Café Galerie To Mich: Platz, Geschmack und Überraschungen in Biella! Lasagne, Grappa-Babà und Nonstop-Öffnungszeiten am Adunata-Wochenende.",
+    details:
+      "Il Caffè Galleria To Mich, situato in una spaziosa galleria coperta in Via Gramsci, offre un ambiente versatile con 130 posti a sedere su due livelli. Con ORARI ESTESI per l'Adunata (Ven-Dom 07:30-03:00), è perfetto dalla colazione al dopocena. Gustate le loro rinomate lasagne o lasciatevi tentare dal babà napoletano alla grappa. Un luogo ideale per gruppi e per una pausa confortevole e gustosa in ogni momento, al riparo e nel cuore di Biella.",
+    details_en:
+      "To Mich Gallery Café, located in a spacious covered gallery on Via Gramsci, offers a versatile environment with 130 seats on two levels. With EXTENDED HOURS for the Adunata (Fri-Sun 07:30-03:00), it's perfect from breakfast to after-dinner. Enjoy their renowned lasagna or be tempted by the Neapolitan grappa babà. An ideal place for groups and for a comfortable, tasty break at any time, sheltered and in the heart of Biella.",
+    details_es:
+      "El Café Galería To Mich, ubicado en una espaciosa galería cubierta en Via Gramsci, ofrece un ambiente versátil con 130 asientos en dos niveles. Con HORARIO EXTENDIDO para la Adunata (Vie-Dom 07:30-03:00), es perfecto desde el desayuno hasta después de la cena. Disfrute de su famosa lasaña o déjese tentar por el babà napolitano a la grappa. Un lugar ideal para grupos y para una pausa cómoda y sabrosa en cualquier momento, resguardado y en el corazón de Biella.",
+    details_fr:
+      "Le Café Galerie To Mich, situé dans une galerie couverte spacieuse sur la Via Gramsci, offre un environnement polyvalent avec 130 places assises sur deux niveaux. Avec des HORAIRES PROLONGÉS pour l'Adunata (Ven-Dim 07h30-03h00), il est parfait du petit-déjeuner à l'après-dîner. Dégustez leurs lasagnes renommées ou laissez-vous tenter par le baba napolitain au grappa. Un lieu idéal pour les groupes et pour une pause confortable et savoureuse à tout moment, à l'abri et au cœur de Biella.",
+    details_de:
+      "Das Café Galerie To Mich in einer geräumigen überdachten Galerie in der Via Gramsci bietet eine vielseitige Umgebung mit 130 Sitzplätzen auf zwei Ebenen. Mit VERLÄNGERTEN ÖFFNUNGSZEITEN für die Adunata (Fr-So 07:30-03:00) ist es perfekt vom Frühstück bis nach dem Abendessen. Genießen Sie die berühmte Lasagne oder lassen Sie sich vom neapolitanischen Grappa-Babà verführen. Ein idealer Ort für Gruppen und für eine komfortable, schmackhafte Pause zu jeder Zeit, geschützt und im Herzen von Biella.",
+    images: ["/images/mich.png"], // Example image path
+    openingHours: `giovedì: 07:30-20:00\nvenerdì: 07:30-03:00\nsabato: 07:30-03:00\ndomenica: 07:30-03:00\nlunedì: 07:30-20:00\nmartedì: 07:30-20:00\nmercoledì: 07:30-20:00`,
+    openingHours_en: `Thursday: 07:30-20:00\nFriday: 07:30-03:00\nSaturday: 07:30-03:00\nSunday: 07:30-03:00\nMonday: 07:30-20:00\nTuesday: 07:30-20:00\nWednesday: 07:30-20:00`,
+    openingHours_es: `Jueves: 07:30-20:00\nViernes: 07:30-03:00\nSábado: 07:30-03:00\nDomingo: 07:30-03:00\nLunes: 07:30-20:00\nMartes: 07:30-20:00\nMiércoles: 07:30-20:00`,
+    openingHours_fr: `Jeudi : 07h30-20h00\nVendredi : 07h30-03h00\nSamedi : 07h30-03h00\nDimanche : 07h30-03h00\nLundi : 07h30-20h00\nMardi : 07h30-20h00\nMercredi : 07h30-20h00`,
+    openingHours_de: `Donnerstag: 07:30-20:00\nFreitag: 07:30-03:00\nSamstag: 07:30-03:00\nSonntag: 07:30-03:00\nMontag: 07:30-20:00\nDienstag: 07:30-20:00\nMittwoch: 07:30-20:00`,
+    discountInfo:
+      "Ottime lasagne e babà napoletano alla grappa. Ampio spazio al coperto.",
+    discountInfo_en:
+      "Excellent lasagna and Neapolitan grappa babà. Ample covered space.",
+    discountInfo_es:
+      "Excelente lasaña y babà napolitano a la grappa. Amplio espacio cubierto.",
+    discountInfo_fr:
+      "Excellentes lasagnes et baba napolitain au grappa. Grand espace couvert.",
+    discountInfo_de:
+      "Ausgezeichnete Lasagne und neapolitanischer Grappa-Babà. Großer überdachter Bereich.",
+    tags: [
+      "Bar",
+      "Caffetteria",
+      "Ristorante",
+      "Lasagne",
+      "Babà",
+      "Galleria Coperta",
+      "Biella Centro",
+      "Aperto Tardi (Weekend)",
+    ],
+    tags_en: [
+      "Bar",
+      "Café",
+      "Restaurant",
+      "Lasagna",
+      "Babà",
+      "Covered Gallery",
+      "Biella Center",
+      "Open Late (Weekend)",
+    ],
+    tags_es: [
+      "Bar",
+      "Cafetería",
+      "Restaurante",
+      "Lasaña",
+      "Babà",
+      "Galería Cubierta",
+      "Biella Centro",
+      "Abierto Tarde (Fin de Semana)",
+    ],
+    tags_fr: [
+      "Bar",
+      "Café",
+      "Restaurant",
+      "Lasagnes",
+      "Baba",
+      "Galerie Couverte",
+      "Biella Centre",
+      "Ouvert Tard (Week-end)",
+    ],
+    tags_de: [
+      "Bar",
+      "Café",
+      "Restaurant",
+      "Lasagne",
+      "Babà",
+      "Überdachte Galerie",
+      "Biella Zentrum",
+      "Spät Geöffnet (Wochenende)",
     ],
     partyInfo: "",
     partyInfo_en: "",
@@ -3073,12 +3707,12 @@ export const poiData: POI[] = [
       "Konstanten est un restaurant situé à Benna sur la SP230. Il offre une ambiance accueillante avec des tables en extérieur, accepte les animaux et propose un menu pour enfants. Pendant l'Adunata, un menu spécial pour les Alpini sera disponible. Ouvert pour le petit-déjeuner, le déjeuner et le dîner, avec des horaires prolongés le week-end jusque tard dans la nuit.",
     details_de:
       "Das Konstanten ist ein Restaurant in Benna an der SP230. Es bietet eine einladende Atmosphäre mit Sitzplätzen im Freien, ist haustierfreundlich und hat ein Kindermenü. Während der Adunata wird ein spezielles Menü für die Alpini angeboten. Geöffnet für Frühstück, Mittag- und Abendessen, mit verlängerten Öffnungszeiten am Wochenende bis spät in die Nacht.",
-    images: ["/images/konstanten.png"], // Suggested image path, please create this image
-    openingHours: `Lun, Mar, Mer: 07:00-15:00\nGio: 07:00-15:00, 18:00-22:00\nVen, Sab, Dom: 07:00-04:00`,
-    openingHours_en: `Mon, Tue, Wed: 07:00-15:00\nThu: 07:00-15:00, 18:00-22:00\nFri, Sat, Sun: 07:00-04:00`,
-    openingHours_es: `Lun, Mar, Mié: 07:00-15:00\nJue: 07:00-15:00, 18:00-22:00\nVie, Sáb, Dom: 07:00-04:00`,
-    openingHours_fr: `Lun, Mar, Mer: 07h00-15h00\nJeu: 07h00-15h00, 18h00-22h00\nVen, Sam, Dim: 07h00-04h00`,
-    openingHours_de: `Mo, Di, Mi: 07:00-15:00\nDo: 07:00-15:00, 18:00-22:00\nFr, Sa, So: 07:00-04:00`,
+    images: ["/images/konstanten.jpeg"], // Suggested image path, please create this image
+    openingHours: `Lun, Mar, Mer: 07:00-15:00\nGio: 07:00-15:00, 18:00-22:00\nVen, Sab, Dom: 10:00-24:00`,
+    openingHours_en: `Mon, Tue, Wed: 07:00-15:00\nThu: 07:00-15:00, 18:00-22:00\nFri, Sat, Sun: 10:00-24:00`,
+    openingHours_es: `Lun, Mar, Mié: 07:00-15:00\nJue: 07:00-15:00, 18:00-22:00\nVie, Sáb, Dom: 10:00-24:00`,
+    openingHours_fr: `Lun, Mar, Mer: 07h00-15h00\nJeu: 07h00-15h00, 18h00-22h00\nVen, Sam, Dim: 10h00-24h00`,
+    openingHours_de: `Mo, Di, Mi: 07:00-15:00\nDo: 07:00-15:00, 18:00-22:00\nFr, Sa, So: 10:00-24:00`,
     discountInfo: "Menu speciale per gli Alpini disponibile.",
     discountInfo_en: "Special menu for Alpini available.",
     discountInfo_es: "Menú especial para Alpini disponible.",
@@ -3189,12 +3823,12 @@ export const poiData: POI[] = [
       "Pizzeria Gigi, située à Cerrione, est réputée pour ses pizzas cuites au four à bois, proposées à un prix incroyablement abordable. Elle dispose de tables en extérieur pour savourer une pizza lors des belles soirées. Un excellent choix pour un dîner savoureux et informel.",
     details_de:
       "Die Pizzeria Gigi in Cerrione ist bekannt für ihre im Holzofen gebackenen Pizzen zu einem unglaublich günstigen Preis. Sie verfügt über Sitzplätze im Freien, um Pizza an schönen Abenden zu genießen. Eine ausgezeichnete Wahl für ein leckeres und informelles Abendessen.",
-    images: ["/images/pizzeriaGigi.png"],
-    openingHours: `Mar: Chiuso\nMer-Gio-Ven: 18:30-22:00\nSab: 18:30-23:00\nDom: 18:30-22:30\nLun: Chiuso`,
-    openingHours_en: `Tue: Closed\nWed-Thu-Fri: 18:30-22:00\nSat: 18:30-23:00\nSun: 18:30-22:30\nMon: Closed`,
-    openingHours_es: `Mar: Cerrado\nMié-Jue-Vie: 18:30-22:00\nSáb: 18:30-23:00\nDom: 18:30-22:30\nLun: Cerrado`,
-    openingHours_fr: `Mar: Fermé\nMer-Jeu-Ven: 18h30-22h00\nSam: 18h30-23h00\nDim: 18h30-22h30\nLun: Fermé`,
-    openingHours_de: `Di: Geschlossen\nMi-Do-Fr: 18:30-22:00\nSa: 18:30-23:00\nSo: 18:30-22:30\nMo: Geschlossen`,
+    images: ["/images/pizzeriaGigi.jpeg"],
+    openingHours: `Mar: Chiuso\nMer-Gio: 18:30-22:00\nVen: 10:00-24:00\nSab: 10:00-24:00\nDom: 10:00-24:00\nLun: Chiuso`,
+    openingHours_en: `Tue: Closed\nWed-Thu: 18:30-22:00\nFri: 10:00-24:00\nSat: 10:00-24:00\nSun: 10:00-24:00\nMon: Closed`,
+    openingHours_es: `Mar: Cerrado\nMié-Jue: 18:30-22:00\nVie: 10:00-24:00\nSáb: 10:00-24:00\nDom: 10:00-24:00\nLun: Cerrado`,
+    openingHours_fr: `Mar: Fermé\nMer-Jeu: 18h30-22h00\nVen: 10h00-24h00\nSam: 10h00-24h00\nDim: 10h00-24h00\nLun: Fermé`,
+    openingHours_de: `Di: Geschlossen\nMi-Do: 18:30-22:00\nFr: 10:00-24:00\nSa: 10:00-24:00\nSo: 10:00-24:00\nMo: Geschlossen`,
     discountInfo:
       "Pizze deliziose da forno a legna a prezzi incredibilmente bassi. Ottimo rapporto qualità-prezzo.",
     discountInfo_en:
@@ -3254,6 +3888,1564 @@ export const poiData: POI[] = [
       "Günstige Pizza",
       "Gutes Preis-Leistungs-Verhältnis",
       "Abendessen",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  // ... (previous POI entries) ...
+  {
+    id: 211, // New unique ID
+    name: "La Bottega di Katia",
+    name_en: "Katia's Shop (La Bottega di Katia)",
+    name_es: "La Bodega de Katia",
+    name_fr: "L'Échoppe de Katia",
+    name_de: "Katias Laden (La Bottega di Katia)",
+    type: "restaurant",
+    coordinates: [45.468478, 8.069409],
+    googleRating: 4.9,
+    googleReviewCount: 8,
+    address: "Piazza Chiarletti, 13882 Cerrione BI",
+    phone: "3492857495",
+    website:
+      "https://www.facebook.com/people/La-bottega-di-Katia/61576047234072/",
+    shortDescription:
+      "La Bottega di Katia: sapori autentici, accoglienza calorosa e orari no-stop per l'Adunata!",
+    shortDescription_en:
+      "Katia's Shop: authentic flavors, warm hospitality, and non-stop hours for the Adunata!",
+    shortDescription_es:
+      "La Bodega de Katia: ¡Sabores auténticos, cálida bienvenida y horario ininterrumpido para la Adunata!",
+    shortDescription_fr:
+      "L'Échoppe de Katia : Saveurs authentiques, accueil chaleureux et horaires non-stop pour l'Adunata !",
+    shortDescription_de:
+      "Katias Laden: Authentische Aromen, herzliche Gastfreundschaft und Nonstop-Öffnungszeiten für die Adunata!",
+    details:
+      "Scoprite La Bottega di Katia a Cerrione, un'autentica osteria dall'atmosfera vivace e accogliente. Perfetta per l'Adunata, con ORARI ESTESI (APERTO 24 ORE Venerdì, Sabato, Domenica!), vi delizierà con panini farciti, ricchi taglieri di prodotti locali, e la genuina 'pasta pasticciata'. Scegliete il conveniente menu a prezzo fisso o gustate un ottimo spritz. È la sosta ideale per rifocillarsi con gusto e allegria durante l'evento!",
+    details_en:
+      "Discover Katia's Shop in Cerrione, an authentic osteria with a lively and welcoming atmosphere. Perfect for the Adunata, with EXTENDED HOURS (OPEN 24 HOURS Friday, Saturday, Sunday!), it will delight you with stuffed sandwiches, rich platters of local products, and genuine 'pasta pasticciata'. Opt for the affordable fixed-price menu or enjoy a great spritz. It's the ideal stop to refuel with taste and joy during the event!",
+    details_es:
+      "Descubre La Bodega de Katia en Cerrione, una auténtica ostería con un ambiente animado y acogedor. Perfecta para la Adunata, con HORARIO EXTENDIDO (¡ABIERTO 24 HORAS Viernes, Sábado, Domingo!), te deleitará con bocadillos rellenos, ricas tablas de productos locales y la genuina 'pasta pasticciata'. Opta por el asequible menú de precio fijo o disfruta de un excelente spritz. ¡Es la parada ideal para reponer fuerzas con sabor y alegría durante el evento!",
+    details_fr:
+      "Découvrez L'Échoppe de Katia à Cerrione, une authentique osteria à l'atmosphère vivante et accueillante. Parfaite pour l'Adunata, avec des HORAIRES PROLONGÉS (OUVERT 24H/24 Vendredi, Samedi, Dimanche !), elle vous régalera de sandwichs garnis, de riches planches de produits locaux et de l'authentique 'pasta pasticciata'. Optez pour le menu à prix fixe abordable ou savourez un excellent spritz. C'est l'arrêt idéal pour se restaurer avec goût et joie pendant l'événement !",
+    details_de:
+      "Entdecken Sie Katias Laden in Cerrione, eine authentische Osteria mit lebendiger und einladender Atmosphäre. Perfekt für die Adunata, mit VERLÄNGERTEN ÖFFNUNGSZEITEN (Freitag, Samstag, Sonntag 24 STUNDEN GEÖFFNET!), wird es Sie mit gefüllten Sandwiches, reichhaltigen Platten mit lokalen Produkten und echter 'Pasta Pasticciata' begeistern. Wählen Sie das günstige Festpreismenü oder genießen Sie einen großartigen Spritz. Der ideale Stopp, um sich während der Veranstaltung geschmackvoll und fröhlich zu stärken!",
+    images: ["/images/bottegaKatia.jpeg"],
+    openingHours: `giovedì: 07:00-12:30, 16:30-19:30\nvenerdì: Aperto 24 ore\nsabato: Aperto 24 ore\ndomenica: Aperto 24 ore\nlunedì: 07:00-12:30, 16:30-19:30\nmartedì: 07:00-12:30, 16:30-19:30\nmercoledì: 07:00-12:30`,
+    openingHours_en: `Thursday: 07:00-12:30, 16:30-19:30\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours\nMonday: 07:00-12:30, 16:30-19:30\nTuesday: 07:00-12:30, 16:30-19:30\nWednesday: 07:00-12:30`,
+    openingHours_es: `Jueves: 07:00-12:30, 16:30-19:30\nViernes: Abierto 24 horas\nSábado: Abierto 24 horas\nDomingo: Abierto 24 horas\nLunes: 07:00-12:30, 16:30-19:30\nMartes: 07:00-12:30, 16:30-19:30\nMiércoles: 07:00-12:30`,
+    openingHours_fr: `Jeudi : 07h00-12h30, 16h30-19h30\nVendredi : Ouvert 24h/24\nSamedi : Ouvert 24h/24\nDimanche : Ouvert 24h/24\nLundi : 07h00-12h30, 16h30-19h30\nMardi : 07h00-12h30, 16h30-19h30\nMercredi : 07h00-12h30`,
+    openingHours_de: `Donnerstag: 07:00-12:30, 16:30-19:30\nFreitag: 24 Stunden geöffnet\nSamstag: 24 Stunden geöffnet\nSonntag: 24 Stunden geöffnet\nMontag: 07:00-12:30, 16:30-19:30\nDienstag: 07:00-12:30, 16:30-19:30\nMittwoch: 07:00-12:30`,
+    discountInfo: "Menu a prezzo fisso conveniente. Imperdibile!",
+    discountInfo_en: "Affordable fixed-price menu. Unmissable!",
+    discountInfo_es: "Menú de precio fijo asequible. ¡Imperdible!",
+    discountInfo_fr: "Menu à prix fixe abordable. Immanquable !",
+    discountInfo_de: "Günstiges Festpreismenü. Unbedingt probieren!",
+    tags: [
+      "Osteria",
+      "Bar",
+      "Cucina Tipica",
+      "Panini",
+      "Aperitivo",
+      "Cerrione",
+      "Aperto 24 Ore Adunata",
+    ],
+    tags_en: [
+      "Osteria",
+      "Bar",
+      "Typical Cuisine",
+      "Sandwiches",
+      "Aperitif",
+      "Cerrione",
+      "Open 24h Adunata",
+    ],
+    tags_es: [
+      "Ostería",
+      "Bar",
+      "Cocina Típica",
+      "Bocadillos",
+      "Aperitivo",
+      "Cerrione",
+      "Abierto 24h Adunata",
+    ],
+    tags_fr: [
+      "Osteria",
+      "Bar",
+      "Cuisine Typique",
+      "Sandwichs",
+      "Apéritif",
+      "Cerrione",
+      "Ouvert 24h Adunata",
+    ],
+    tags_de: [
+      "Osteria",
+      "Bar",
+      "Typische Küche",
+      "Sandwiches",
+      "Aperitif",
+      "Cerrione",
+      "24h Geöffnet Adunata",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 212, // New unique ID
+    name: "Pizza 23",
+    name_en: "Pizza 23",
+    name_es: "Pizza 23",
+    name_fr: "Pizza 23",
+    name_de: "Pizza 23",
+    type: "restaurant",
+    coordinates: [45.492434, 8.087857],
+    googleRating: 4.3,
+    googleReviewCount: 106,
+    address: "Via Papa Giovanni XXIII, 22, 13882 Vergnasco BI",
+    phone: "3293874844",
+    website: "https://www.facebook.com/profile.php?id=61563746240250",
+    shortDescription:
+      "Pizza 23 a Vergnasco: il tuo pit-stop del gusto! Pizze, kebab, fritti e altro, con consegna a domicilio.", // Slightly toned down
+    shortDescription_en:
+      "Pizza 23 in Vergnasco: your flavor pit-stop! Pizza, kebab, fried treats, and more, with home delivery.",
+    shortDescription_es:
+      "Pizza 23 en Vergnasco: ¡tu parada de sabor! Pizza, kebab, fritos y más, con entrega a domicilio.",
+    shortDescription_fr:
+      "Pizza 23 à Vergnasco : votre pit-stop saveur ! Pizzas, kebabs, fritures et plus, avec livraison à domicile.",
+    shortDescription_de:
+      "Pizza 23 in Vergnasco: Ihr Geschmacks-Boxenstopp! Pizza, Kebab, Frittiertes und mehr, mit Lieferservice.",
+    details:
+      "Pizza 23 a Vergnasco rappresenta una scelta gastronomica versatile e apprezzata, ideale per i partecipanti all'Adunata. Il locale offre un'ampia gamma di specialità, incluse pizze, calzoni, panini, focacce, fritti e kebab, per soddisfare diverse preferenze. Un servizio distintivo è la consegna a domicilio, che garantisce la comodità di ricevere il pasto direttamente presso la propria sistemazione. Ottima soluzione per una cena rapida, saporita e conveniente durante l'evento.",
+    details_en:
+      "Pizza 23 in Vergnasco offers a versatile and well-regarded dining option, ideal for Adunata attendees. The establishment features a wide range of specialties, including pizzas, calzones, sandwiches, focaccias, fried items, and kebabs, catering to diverse preferences. A standout service is home delivery, ensuring the convenience of receiving your meal directly at your accommodation. An excellent solution for a quick, flavorful, and convenient dinner during the event.",
+    details_es:
+      "Pizza 23 en Vergnasco representa una opción gastronómica versátil y apreciada, ideal para los asistentes a la Adunata. El establecimiento ofrece una amplia gama de especialidades, incluyendo pizzas, calzones, bocadillos, focaccias, fritos y kebabs, para satisfacer diversas preferencias. Un servicio distintivo es la entrega a domicilio, que garantiza la comodidad de recibir su comida directamente en su alojamiento. Una excelente solución para una cena rápida, sabrosa y conveniente durante el evento.",
+    details_fr:
+      "Pizza 23 à Vergnasco constitue une option de restauration polyvalente et appréciée, idéale pour les participants à l'Adunata. L'établissement propose une large gamme de spécialités, y compris des pizzas, calzones, sandwichs, focaccias, fritures et kebabs, pour satisfaire diverses préférences. Un service distinctif est la livraison à domicile, assurant la commodité de recevoir votre repas directement à votre hébergement. Une excellente solution pour un dîner rapide, savoureux et pratique pendant l'événement.",
+    details_de:
+      "Pizza 23 in Vergnasco bietet eine vielseitige und geschätzte gastronomische Option, ideal für Adunata-Teilnehmer. Das Lokal verfügt über eine breite Palette an Spezialitäten, darunter Pizzen, Calzonen, Sandwiches, Focaccias, Frittiertes und Kebabs, um unterschiedlichen Vorlieben gerecht zu werden. Ein herausragender Service ist die Lieferung nach Hause, die den Komfort gewährleistet, Ihre Mahlzeit direkt in Ihrer Unterkunft zu erhalten. Eine ausgezeichnete Lösung für ein schnelles, geschmackvolles und bequemes Abendessen während der Veranstaltung.",
+    images: ["/images/pizza23.jpeg"],
+    openingHours: `giovedì: 17:30-20:45\nvenerdì: 17:30-20:45\nsabato: 17:30-20:45\ndomenica: 17:30-20:45\nlunedì: Chiuso\nmartedì: 17:30-20:45\nmercoledì: 17:30-20:45`,
+    openingHours_en: `Thursday: 17:30-20:45\nFriday: 17:30-20:45\nSaturday: 17:30-20:45\nSunday: 17:30-20:45\nMonday: Closed\nTuesday: 17:30-20:45\nWednesday: 17:30-20:45`,
+    openingHours_es: `Jueves: 17:30-20:45\nViernes: 17:30-20:45\nSábado: 17:30-20:45\nDomingo: 17:30-20:45\nLunes: Cerrado\nMartes: 17:30-20:45\nMiércoles: 17:30-20:45`,
+    openingHours_fr: `Jeudi : 17h30-20h45\nVendredi : 17h30-20h45\nSamedi : 17h30-20h45\nDimanche : 17h30-20h45\nLundi : Fermé\nMardi : 17h30-20h45\nMercredi : 17h30-20h45`,
+    openingHours_de: `Donnerstag: 17:30-20:45\nFreitag: 17:30-20:45\nSamstag: 17:30-20:45\nSonntag: 17:30-20:45\nMontag: Geschlossen\nDienstag: 17:30-20:45\nMittwoch: 17:30-20:45`,
+    discountInfo: "Servizio di consegna a domicilio disponibile.",
+    discountInfo_en: "Home delivery service available.",
+    discountInfo_es: "Servicio de entrega a domicilio disponible.",
+    discountInfo_fr: "Service de livraison à domicile disponible.",
+    discountInfo_de: "Lieferservice nach Hause verfügbar.",
+    tags: ["Pizzeria", "Kebab", "Consegna Domicilio", "Vergnasco", "Cena"], // More focused tags
+    tags_en: ["Pizzeria", "Kebab", "Home Delivery", "Vergnasco", "Dinner"],
+    tags_es: ["Pizzería", "Kebab", "Entrega Domicilio", "Vergnasco", "Cena"],
+    tags_fr: ["Pizzeria", "Kebab", "Livraison Domicile", "Vergnasco", "Dîner"],
+    tags_de: ["Pizzeria", "Kebab", "Lieferservice", "Vergnasco", "Abendessen"],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 213, // New unique ID
+    name: "Pizzeria Orchidea",
+    name_en: "Pizzeria Orchidea",
+    name_es: "Pizzeria Orchidea",
+    name_fr: "Pizzeria Orchidea",
+    name_de: "Pizzeria Orchidea",
+    type: "restaurant",
+    coordinates: [45.487682, 8.082564],
+    googleRating: 4.6, // If you find this, we can add it
+    googleReviewCount: 140, // If you find this, we can add it
+    address: "Via Adua, 32, 13882 Vergnasco BI",
+    phone: "0152583660",
+    website:
+      "https://restaurantguru.it/Orchidea-di-Zambito-Francesco-Vergnasco",
+    shortDescription:
+      "Pizzeria Orchidea a Vergnasco: eccellente pizza e fritto misto, con accogliente dehor. Una delizia per tutti!",
+    shortDescription_en:
+      "Pizzeria Orchidea in Vergnasco: excellent pizza and mixed fried seafood, with a welcoming outdoor area. A delight for everyone!",
+    shortDescription_es:
+      "Pizzeria Orchidea en Vergnasco: excelente pizza y fritura mixta, con una acogedora terraza. ¡Una delicia para todos!",
+    shortDescription_fr:
+      "Pizzeria Orchidea à Vergnasco : excellente pizza et friture mixte, avec une terrasse accueillante. Un délice pour tous !",
+    shortDescription_de:
+      "Pizzeria Orchidea in Vergnasco: ausgezeichnete Pizza und gemischte frittierte Meeresfrüchte, mit einladendem Außenbereich. Ein Genuss für alle!",
+    details:
+      "Pizzeria Orchidea, situata a Vergnasco, è rinomata per la sua ottima pizza e il delizioso fritto misto. Il locale offre un ambiente confortevole, arricchito da un piacevole dehor (tavoli all'aperto), ideale per gustare le specialità durante le belle giornate. Attenta alle famiglie, propone anche menu per bambini. Una scelta eccellente per un pasto gustoso e rilassante, perfetta per i partecipanti all'Adunata che cercano qualità e un'atmosfera conviviale.",
+    details_en:
+      "Pizzeria Orchidea, located in Vergnasco, is renowned for its excellent pizza and delicious mixed fried seafood. The venue offers a comfortable setting, enhanced by a pleasant outdoor seating area (dehor), ideal for enjoying specialties on fine days. Family-friendly, it also offers a children's menu. An excellent choice for a tasty and relaxing meal, perfect for Adunata attendees seeking quality and a convivial atmosphere.",
+    details_es:
+      "Pizzeria Orchidea, ubicada en Vergnasco, es reconocida por su excelente pizza y su deliciosa fritura mixta. El local ofrece un ambiente confortable, realzado por una agradable zona de mesas al aire libre (dehor), ideal para disfrutar de las especialidades en los días soleados. Pensado para las familias, también ofrece menú para niños. Una excelente opción para una comida sabrosa y relajante, perfecta para los asistentes a la Adunata que buscan calidad y un ambiente agradable.",
+    details_fr:
+      "La Pizzeria Orchidea, située à Vergnasco, est réputée pour son excellente pizza et sa délicieuse friture mixte. L'établissement offre un cadre confortable, agrémenté d'une agréable terrasse (dehor), idéale pour déguster les spécialités lors des beaux jours. Adaptée aux familles, elle propose également un menu pour enfants. Un excellent choix pour un repas savoureux et relaxant, parfait pour les participants à l'Adunata en quête de qualité et d'une ambiance conviviale.",
+    details_de:
+      "Die Pizzeria Orchidea in Vergnasco ist bekannt für ihre ausgezeichnete Pizza und die köstlichen gemischten frittierten Meeresfrüchte. Das Lokal bietet eine komfortable Umgebung, die durch einen angenehmen Außenbereich (Dehor) ergänzt wird, ideal, um Spezialitäten an schönen Tagen zu genießen. Familienfreundlich, bietet es auch ein Kindermenü. Eine ausgezeichnete Wahl für eine schmackhafte und entspannende Mahlzeit, perfekt für Adunata-Teilnehmer, die Qualität und eine gesellige Atmosphäre suchen.",
+    images: ["/images/pizzeriaOrchidea.jpeg"], // Example image path
+    openingHours: `giovedì: 11:00-13:30, 18:00-21:30\nvenerdì: 11:00-13:30, 18:00-22:00\nsabato: 11:00-13:30, 18:00-22:00\ndomenica: 11:00-13:30, 18:00-22:00\nlunedì: Chiuso\nmartedì: 11:00-13:30, 18:00-21:30\nmercoledì: 11:00-13:30, 18:00-21:30`,
+    openingHours_en: `Thursday: 11:00-13:30, 18:00-21:30\nFriday: 11:00-13:30, 18:00-22:00\nSaturday: 11:00-13:30, 18:00-22:00\nSunday: 11:00-13:30, 18:00-22:00\nMonday: Closed\nTuesday: 11:00-13:30, 18:00-21:30\nWednesday: 11:00-13:30, 18:00-21:30`,
+    openingHours_es: `Jueves: 11:00-13:30, 18:00-21:30\nViernes: 11:00-13:30, 18:00-22:00\nSábado: 11:00-13:30, 18:00-22:00\nDomingo: 11:00-13:30, 18:00-22:00\nLunes: Cerrado\nMartes: 11:00-13:30, 18:00-21:30\nMiércoles: 11:00-13:30, 18:00-21:30`,
+    openingHours_fr: `Jeudi : 11h00-13h30, 18h00-21h30\nVendredi : 11h00-13h30, 18h00-22h00\nSamedi : 11h00-13h30, 18h00-22h00\nDimanche : 11h00-13h30, 18h00-22h00\nLundi : Fermé\nMardi : 11h00-13h30, 18h00-21h30\nMercredi : 11h00-13h30, 18h00-21h30`,
+    openingHours_de: `Donnerstag: 11:00-13:30, 18:00-21:30\nFreitag: 11:00-13:30, 18:00-22:00\nSamstag: 11:00-13:30, 18:00-22:00\nSonntag: 11:00-13:30, 18:00-22:00\nMontag: Geschlossen\nDienstag: 11:00-13:30, 18:00-21:30\nMittwoch: 11:00-13:30, 18:00-21:30`,
+    discountInfo: "Menu per bambini disponibile. Godetevi il dehor!",
+    discountInfo_en: "Children's menu available. Enjoy the outdoor seating!",
+    discountInfo_es: "Menú para niños disponible. ¡Disfruta de la terraza!",
+    discountInfo_fr: "Menu enfant disponible. Profitez de la terrasse !",
+    discountInfo_de: "Kindermenü verfügbar. Genießen Sie den Außenbereich!",
+    tags: [
+      "Pizzeria",
+      "Ristorante",
+      "Fritto Misto",
+      "Dehor",
+      "Menu Bambini",
+      "Vergnasco",
+      "Pizza",
+    ],
+    tags_en: [
+      "Pizzeria",
+      "Restaurant",
+      "Mixed Fried Seafood",
+      "Outdoor Seating",
+      "Kids Menu",
+      "Vergnasco",
+      "Pizza",
+    ],
+    tags_es: [
+      "Pizzería",
+      "Restaurante",
+      "Fritura Mixta",
+      "Terraza",
+      "Menú Infantil",
+      "Vergnasco",
+      "Pizza",
+    ],
+    tags_fr: [
+      "Pizzeria",
+      "Restaurant",
+      "Friture Mixte",
+      "Terrasse",
+      "Menu Enfants",
+      "Vergnasco",
+      "Pizza",
+    ],
+    tags_de: [
+      "Pizzeria",
+      "Restaurant",
+      "Frittierte Meeresfrüchte",
+      "Außenbereich",
+      "Kindermenü",
+      "Vergnasco",
+      "Pizza",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 214, // New unique ID
+    name: "Corallo Bar Ristorante",
+    name_en: "Corallo Bar & Restaurant",
+    name_es: "Corallo Bar Restaurante",
+    name_fr: "Corallo Bar Restaurant",
+    name_de: "Corallo Bar Restaurant",
+    type: "restaurant",
+    coordinates: [45.52453, 8.073045],
+    // googleRating: ???, // If you find this, we can add it
+    // googleReviewCount: ???, // If you find this, we can add it
+    address:
+      "Via Pralino, 1, 13876 Sandigliano (BI) (c/o Centro Sportivo Pralino)", // Added context of Sports Center
+    phone: "3711878948 / 3333906600", // Combined numbers for clarity
+    website: "https://www.instagram.com/corallo_bar/", // Corrected IG link (removed extra params)
+    shortDescription:
+      "Corallo a Sandigliano: gusto non-stop! Ristorante e bar con terrazzo, aperto 24h nel weekend Adunata. Menu speciali e polenta e spezzatino!",
+    shortDescription_en:
+      "Corallo in Sandigliano: non-stop flavor! Restaurant and bar with terrace, open 24h on Adunata weekend. Special menus and polenta with stew!",
+    shortDescription_es:
+      "Corallo en Sandigliano: ¡sabor sin parar! Restaurante y bar con terraza, abierto 24h el fin de semana de la Adunata. ¡Menús especiales y polenta con estofado!",
+    shortDescription_fr:
+      "Corallo à Sandigliano : saveur non-stop ! Restaurant et bar avec terrasse, ouvert 24h/24 le week-end de l'Adunata. Menus spéciaux et polenta au ragoût !",
+    shortDescription_de:
+      "Corallo in Sandigliano: Geschmack rund um die Uhr! Restaurant und Bar mit Terrasse, am Adunata-Wochenende 24 Stunden geöffnet. Spezialmenüs und Polenta mit Gulasch!",
+    details:
+      "Il Corallo, situato presso il Centro Sportivo Pralino a Sandigliano, è la destinazione ideale per ogni momento della giornata, specialmente durante l'Adunata. Con un ampio terrazzo e un bar con dehor, offre un'atmosfera vivace e accogliente. Aperto 24 ORE SU 24 (Venerdì-Sabato-Domenica), serve colazioni, aperitivi, merende, e menù giornalieri (Primo+Secondo+Acqua a €13,00). Non perdete il MENÙ SPECIALE ADUNATA ALPINI, con il tradizionale 'Polenta e Spezzatino' a soli €8,00. Perfetto per gruppi e per chi cerca un ristoro completo e conveniente a qualsiasi ora.",
+    details_en:
+      "Corallo, located at the Pralino Sports Center in Sandigliano, is the ideal destination for any time of day, especially during the Adunata. With a large terrace and a bar with outdoor seating, it offers a lively and welcoming atmosphere. Open 24 HOURS (Friday-Saturday-Sunday), it serves breakfast, aperitifs, snacks, and daily menus (Main Course+Second Course+Water at €13.00). Don't miss the SPECIAL ADUNATA ALPINI MENU, featuring the traditional 'Polenta and Stew' for only €8.00. Perfect for groups and those seeking a complete and affordable refreshment at any hour.",
+    details_es:
+      "Corallo, ubicado en el Centro Deportivo Pralino en Sandigliano, es el destino ideal para cualquier momento del día, especialmente durante la Adunata. Con una amplia terraza y un bar con mesas al aire libre, ofrece un ambiente animado y acogedor. Abierto 24 HORAS (Viernes-Sábado-Domingo), sirve desayunos, aperitivos, meriendas y menús diarios (Primer Plato+Segundo Plato+Agua a 13,00 €). No te pierdas el MENÚ ESPECIAL ADUNATA ALPINI, con la tradicional 'Polenta con Estofado' por solo 8,00 €. Perfecto para grupos y para aquellos que buscan un refrigerio completo y asequible a cualquier hora.",
+    details_fr:
+      "Le Corallo, situé au Centre Sportif Pralino à Sandigliano, est la destination idéale à tout moment de la journée, surtout pendant l'Adunata. Avec une grande terrasse et un bar avec terrasse extérieure, il offre une atmosphère animée et accueillante. Ouvert 24H/24 (Vendredi-Samedi-Dimanche), il sert petits déjeuners, apéritifs, goûters et menus du jour (Plat+Second Plat+Eau à 13,00 €). Ne manquez pas le MENU SPÉCIAL ADUNATA ALPINI, avec la traditionnelle 'Polenta et Ragoût' pour seulement 8,00 €. Parfait pour les groupes et ceux qui recherchent un rafraîchissement complet et abordable à toute heure.",
+    details_de:
+      "Das Corallo im Sportzentrum Pralino in Sandigliano ist das ideale Ziel für jede Tageszeit, besonders während der Adunata. Mit einer großen Terrasse und einer Bar mit Außenbereich bietet es eine lebhafte und einladende Atmosphäre. Geöffnet 24 STUNDEN (Freitag-Samstag-Sonntag), serviert es Frühstück, Aperitifs, Snacks und Tagesmenüs (Hauptgericht+Zweiter Gang+Wasser für 13,00 €). Verpassen Sie nicht das SPEZIELLE ADUNATA ALPINI MENÜ mit der traditionellen 'Polenta und Gulasch' für nur 8,00 €. Perfekt für Gruppen und diejenigen, die eine vollständige und preiswerte Erfrischung zu jeder Stunde suchen.",
+    images: ["/images/corallo.jpeg"], // Example image path
+    openingHours:
+      "Ven-Sab-Dom: Aperto 24 ore su 24. Altri giorni: verificare per orari specifici.", // Simplified due to primary info
+    openingHours_en:
+      "Fri-Sat-Sun: Open 24 hours. Other days: check for specific hours.",
+    openingHours_es:
+      "Vie-Sáb-Dom: Abierto 24 horas. Otros días: consultar horarios específicos.",
+    openingHours_fr:
+      "Ven-Sam-Dim: Ouvert 24h/24. Autres jours : vérifier les horaires spécifiques.",
+    openingHours_de:
+      "Fr-Sa-So: 24 Stunden geöffnet. Andere Tage: spezifische Zeiten prüfen.",
+    discountInfo:
+      "Menu giornaliero €13. Menu Speciale Adunata: Polenta e Spezzatino €8.",
+    discountInfo_en: "Daily menu €13. Special Adunata Menu: Polenta & Stew €8.",
+    discountInfo_es:
+      "Menú diario 13 €. Menú Especial Adunata: Polenta y Estofado 8 €.",
+    discountInfo_fr:
+      "Menu du jour 13 €. Menu Spécial Adunata : Polenta & Ragoût 8 €.",
+    discountInfo_de:
+      "Tagesmenü 13 €. Spezial Adunata Menü: Polenta & Gulasch 8 €.",
+    tags: [
+      "Ristorante",
+      "Bar",
+      "Aperto 24h (Weekend)",
+      "Menu Fisso",
+      "Polenta Spezzatino",
+      "Adunata Menu",
+      "Terrazzo",
+      "Sandigliano",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Bar",
+      "Open 24h (Weekend)",
+      "Set Menu",
+      "Polenta Stew",
+      "Adunata Menu",
+      "Terrace",
+      "Sandigliano",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Bar",
+      "Abierto 24h (Fin de Semana)",
+      "Menú Fijo",
+      "Polenta Estofado",
+      "Menú Adunata",
+      "Terraza",
+      "Sandigliano",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Bar",
+      "Ouvert 24h (Weekend)",
+      "Menu Fixe",
+      "Polenta Ragoût",
+      "Menu Adunata",
+      "Terrasse",
+      "Sandigliano",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Bar",
+      "24h Geöffnet (Wochenende)",
+      "Festmenü",
+      "Polenta Gulasch",
+      "Adunata Menü",
+      "Terrasse",
+      "Sandigliano",
+    ],
+    partyInfo: "", // The 24h opening and special menu are the main "events"
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 215, // New unique ID
+    name: "La Tavernetta",
+    name_en: "La Tavernetta",
+    name_es: "La Tavernetta",
+    name_fr: "La Tavernetta",
+    name_de: "La Tavernetta",
+    type: "restaurant",
+    coordinates: [45.56782, 8.057301],
+    googleRating: 4.1,
+    googleReviewCount: 574,
+    address: "Via della Repubblica, 45, 13900 Biella BI",
+    phone: "01531469",
+    website: "https://www.latavernettabiella.it/",
+    shortDescription:
+      "La Tavernetta a Biella: sapori autentici e convivialità. Pizza, primi, secondi di carne/pesce e Menù Alpino speciale!",
+    shortDescription_en:
+      "La Tavernetta in Biella: authentic flavors and conviviality. Pizza, pasta, meat/fish mains, and a special Alpino Menu!",
+    shortDescription_es:
+      "La Tavernetta en Biella: sabores auténticos y cordialidad. ¡Pizza, pasta, carnes/pescados y un Menú Alpino especial!",
+    shortDescription_fr:
+      "La Tavernetta à Biella : saveurs authentiques et convivialité. Pizza, pâtes, viandes/poissons et un Menu Alpin spécial !",
+    shortDescription_de:
+      "La Tavernetta in Biella: authentische Aromen und Geselligkeit. Pizza, Pasta, Fleisch-/Fischgerichte und ein spezielles Alpini-Menü!",
+    details:
+      "La Tavernetta, nel cuore di Biella, vi accoglie con la sua cucina semplice, conviviale e un'ampia scelta: pizza, primi piatti, secondi di carne e pesce. Per l'Adunata, ORARI PROLUNGATI (08:00-03:00 Ven-Dom) e speciali 'Menù dell'Alpino' a pranzo e cena. Imperdibili i due menù completi a prezzo fisso (€30): uno di pesce (Spaghetti allo scoglio, fritto misto) e uno di terra (Penne alla Norma, milanese). Dispone di tavoli all'aperto, accetta cani e offre menù per bambini. La scelta ideale per un pasto gustoso in compagnia durante l'evento.",
+    details_en:
+      "La Tavernetta, in the heart of Biella, welcomes you with its simple, convivial cuisine and a wide choice: pizza, pasta dishes, meat and fish main courses. For the Adunata, EXTENDED HOURS (08:00-03:00 Fri-Sun) and special 'Alpino Menus' for lunch and dinner. Don't miss the two complete fixed-price menus (€30): one fish-based (Seafood spaghetti, mixed fried fish) and one meat-based (Penne alla Norma, Milanese cutlet). Features outdoor seating, is dog-friendly, and offers a children's menu. The ideal choice for a tasty meal in good company during the event.",
+    details_es:
+      "La Tavernetta, en el corazón de Biella, le da la bienvenida con su cocina sencilla y cordial y una amplia oferta: pizza, platos de pasta, segundos platos de carne y pescado. Para la Adunata, HORARIO EXTENDIDO (08:00-03:00 Vie-Dom) y 'Menús del Alpino' especiales para almuerzo y cena. No se pierda los dos menús completos de precio fijo (30 €): uno de pescado (Espaguetis con marisco, fritura mixta de pescado) y uno de carne (Penne alla Norma, milanesa). Dispone de mesas al aire libre, admite perros y ofrece menú para niños. La opción ideal para una comida sabrosa en buena compañía durante el evento.",
+    details_fr:
+      "La Tavernetta, au cœur de Biella, vous accueille avec sa cuisine simple et conviviale et un large choix : pizzas, pâtes, plats de viande et de poisson. Pour l'Adunata, HORAIRES PROLONGÉS (08h00-03h00 Ven-Dim) et 'Menus de l'Alpin' spéciaux pour le déjeuner et le dîner. Ne manquez pas les deux menus complets à prix fixe (30 €) : un à base de poisson (Spaghetti aux fruits de mer, friture mixte de poisson) et un à base de viande (Penne alla Norma, escalope milanaise). Dispose de tables en extérieur, accepte les chiens et propose un menu pour enfants. Le choix idéal pour un repas savoureux en bonne compagnie pendant l'événement.",
+    details_de:
+      "La Tavernetta im Herzen von Biella empfängt Sie mit seiner einfachen, geselligen Küche und einer großen Auswahl: Pizza, Nudelgerichte, Fleisch- und Fischhauptgerichte. Für die Adunata gibt es VERLÄNGERTE ÖFFNUNGSZEITEN (08:00-03:00 Fr-So) und spezielle 'Alpini-Menüs' zum Mittag- und Abendessen. Verpassen Sie nicht die beiden kompletten Festpreismenüs (30 €): eines mit Fisch (Spaghetti mit Meeresfrüchten, gemischter frittierter Fisch) und eines mit Fleisch (Penne alla Norma, Mailänder Schnitzel). Verfügt über Sitzplätze im Freien, ist hundefreundlich und bietet ein Kindermenü. Die ideale Wahl für eine schmackhafte Mahlzeit in guter Gesellschaft während der Veranstaltung.",
+    images: ["/images/tavernetta.jpeg"], // Example image path
+    openingHours: `giovedì: 12:00-14:30, 18:30-23:30\nvenerdì: 08:00-03:00\nsabato: 08:00-03:00\ndomenica: 08:00-03:00\nlunedì: Chiuso\nmartedì: 12:00-14:30, 18:30-23:30\nmercoledì: 12:00-14:30, 18:30-23:30`,
+    openingHours_en: `Thursday: 12:00-14:30, 18:30-23:30\nFriday: 08:00-03:00\nSaturday: 08:00-03:00\nSunday: 08:00-03:00\nMonday: Closed\nTuesday: 12:00-14:30, 18:30-23:30\nWednesday: 12:00-14:30, 18:30-23:30`,
+    openingHours_es: `Jueves: 12:00-14:30, 18:30-23:30\nViernes: 08:00-03:00\nSábado: 08:00-03:00\nDomingo: 08:00-03:00\nLunes: Cerrado\nMartes: 12:00-14:30, 18:30-23:30\nMiércoles: 12:00-14:30, 18:30-23:30`,
+    openingHours_fr: `Jeudi : 12h00-14h30, 18h30-23h30\nVendredi : 08h00-03h00\nSamedi : 08h00-03h00\nDimanche : 08h00-03h00\nLundi : Fermé\nMardi : 12h00-14h30, 18h30-23h30\nMercredi : 12h00-14h30, 18h30-23h30`,
+    openingHours_de: `Donnerstag: 12:00-14:30, 18:30-23:30\nFreitag: 08:00-03:00\nSamstag: 08:00-03:00\nSonntag: 08:00-03:00\nMontag: Geschlossen\nDienstag: 12:00-14:30, 18:30-23:30\nMittwoch: 12:00-14:30, 18:30-23:30`,
+    discountInfo:
+      "Menù dell'Alpino e due Menù completi a prezzo fisso (€30) disponibili!",
+    discountInfo_en:
+      "Alpino's Menu and two complete fixed-price menus (€30) available!",
+    discountInfo_es:
+      "¡Menú del Alpino y dos menús completos de precio fijo (30 €) disponibles!",
+    discountInfo_fr:
+      "Menu de l'Alpin et deux menus complets à prix fixe (30 €) disponibles !",
+    discountInfo_de:
+      "Alpini-Menü und zwei komplette Festpreismenüs (30 €) verfügbar!",
+    tags: [
+      "Ristorante",
+      "Pizzeria",
+      "Cucina Italiana",
+      "Menu Fisso",
+      "Adunata Menu",
+      "Biella Centro",
+      "Tavoli Aperto",
+      "Cani Ammessi",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Pizzeria",
+      "Italian Cuisine",
+      "Set Menu",
+      "Adunata Menu",
+      "Biella Center",
+      "Outdoor Seating",
+      "Dogs Allowed",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Pizzería",
+      "Cocina Italiana",
+      "Menú Fijo",
+      "Menú Adunata",
+      "Biella Centro",
+      "Terraza",
+      "Perros Admitidos",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Pizzeria",
+      "Cuisine Italienne",
+      "Menu Fixe",
+      "Menu Adunata",
+      "Biella Centre",
+      "Terrasse",
+      "Chiens Admis",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Pizzeria",
+      "Italienische Küche",
+      "Festmenü",
+      "Adunata Menü",
+      "Biella Zentrum",
+      "Außenbereich",
+      "Hunde Erlaubt",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 216, // New unique ID
+    name: "Ristorante Pizzeria Positano",
+    name_en: "Positano Restaurant Pizzeria",
+    name_es: "Restaurante Pizzeria Positano",
+    name_fr: "Restaurant Pizzeria Positano",
+    name_de: "Restaurant Pizzeria Positano",
+    type: "restaurant",
+    coordinates: [45.555825, 8.062821],
+    googleRating: 4.0,
+    googleReviewCount: 521,
+    address: "Via Torino, 77, 13900 Biella BI",
+    phone: "015403975",
+    website: "https://www.ristorantepositanobiella.it/",
+    shortDescription:
+      "Positano a Biella: autentica cucina napoletana, pizza da forno a legna e colazioni! Weekend con orario esteso per l'Adunata.",
+    shortDescription_en:
+      "Positano in Biella: authentic Neapolitan cuisine, wood-fired pizza, and breakfast! Extended weekend hours for the Adunata.",
+    shortDescription_es:
+      "Positano en Biella: auténtica cocina napolitana, pizza en horno de leña ¡y desayunos! Horario extendido los fines de semana para la Adunata.",
+    shortDescription_fr:
+      "Positano à Biella : authentique cuisine napolitaine, pizza au four à bois et petits déjeuners ! Horaires prolongés le week-end pour l'Adunata.",
+    shortDescription_de:
+      "Positano in Biella: authentische neapolitanische Küche, Holzofenpizza und Frühstück! Erweiterte Wochenend-Öffnungszeiten für die Adunata.",
+    details:
+      "Il Ristorante Pizzeria Positano a Biella vi trasporta nei sapori della tradizione napoletana. Offre colazioni (Ven-Dom 07-11), pranzo e cena con ORARI ESTESI nel weekend Adunata (fino 01:30). Gustate la vera pizza di Tramonti cotta in forno a legna, specialità di pesce fresco, piatti vegani e dolci fatti in casa. Due sale accoglienti, dehor, WiFi gratuito e aria condizionata. Ideale per gruppi, con menu per bambini e possibilità di asporto. Un'esperienza culinaria completa per ogni momento della vostra visita.",
+    details_en:
+      "Positano Restaurant Pizzeria in Biella transports you to the flavors of Neapolitan tradition. It offers breakfast (Fri-Sun 07-11), lunch, and dinner with EXTENDED HOURS on Adunata weekend (until 01:30). Savor authentic Tramonti pizza cooked in a wood-fired oven, fresh fish specialties, vegan dishes, and homemade desserts. Two welcoming rooms, outdoor seating, free WiFi, and air conditioning. Ideal for groups, with a children's menu and takeaway options. A complete culinary experience for every moment of your visit.",
+    details_es:
+      "El Restaurante Pizzeria Positano en Biella le transporta a los sabores de la tradición napolitana. Ofrece desayunos (Vie-Dom 07-11), almuerzos y cenas con HORARIO EXTENDIDO el fin de semana de la Adunata (hasta la 01:30). Saboree la auténtica pizza de Tramonti cocida en horno de leña, especialidades de pescado fresco, platos veganos y postres caseros. Dos acogedoras salas, terraza, WiFi gratuito y aire acondicionado. Ideal para grupos, con menú infantil y opción para llevar. Una experiencia culinaria completa para cada momento de su visita.",
+    details_fr:
+      "Le Restaurant Pizzeria Positano à Biella vous transporte dans les saveurs de la tradition napolitaine. Il propose petits déjeuners (Ven-Dim 07-11), déjeuners et dîners avec HORAIRES PROLONGÉS le week-end de l'Adunata (jusqu'à 01h30). Savourez l'authentique pizza de Tramonti cuite au four à bois, des spécialités de poisson frais, des plats végétaliens et des desserts maison. Deux salles accueillantes, terrasse, WiFi gratuit et climatisation. Idéal pour les groupes, avec menu enfant et plats à emporter. Une expérience culinaire complète pour chaque instant de votre visite.",
+    details_de:
+      "Das Restaurant Pizzeria Positano in Biella entführt Sie in die Aromen der neapolitanischen Tradition. Es bietet Frühstück (Fr-So 07-11), Mittag- und Abendessen mit VERLÄNGERTEN ÖFFNUNGSZEITEN am Adunata-Wochenende (bis 01:30 Uhr). Genießen Sie authentische Tramonti-Pizza aus dem Holzofen, frische Fischspezialitäten, vegane Gerichte und hausgemachte Desserts. Zwei einladende Säle, Außenbereich, kostenloses WLAN und Klimaanlage. Ideal für Gruppen, mit Kindermenü und Take-Away-Optionen. Ein umfassendes kulinarisches Erlebnis für jeden Moment Ihres Besuchs.",
+    images: ["/images/positano.png"], // Example image path
+    openingHours: `giovedì: 12:00-14:30, 18:30-23:30\nvenerdì: 07:00-11:00 (Colazioni), 11:00-16:00 (Pranzo), 18:00-01:30 (Cena)\nsabato: 07:00-11:00 (Colazioni), 11:00-16:00 (Pranzo), 18:00-01:30 (Cena)\ndomenica: 07:00-11:00 (Colazioni), 11:00-16:00 (Pranzo), 18:00-01:30 (Cena)\nlunedì: 12:00-14:30, 18:30-23:30\nmartedì: 12:00-14:30, 18:30-23:30\nmercoledì: Chiuso`,
+    openingHours_en: `Thursday: 12:00-14:30, 18:30-23:30\nFriday: 07:00-11:00 (Breakfast), 11:00-16:00 (Lunch), 18:00-01:30 (Dinner)\nSaturday: 07:00-11:00 (Breakfast), 11:00-16:00 (Lunch), 18:00-01:30 (Dinner)\nSunday: 07:00-11:00 (Breakfast), 11:00-16:00 (Lunch), 18:00-01:30 (Dinner)\nMonday: 12:00-14:30, 18:30-23:30\nTuesday: 12:00-14:30, 18:30-23:30\nWednesday: Closed`,
+    openingHours_es: `Jueves: 12:00-14:30, 18:30-23:30\nViernes: 07:00-11:00 (Desayunos), 11:00-16:00 (Almuerzo), 18:00-01:30 (Cena)\nSábado: 07:00-11:00 (Desayunos), 11:00-16:00 (Almuerzo), 18:00-01:30 (Cena)\nDomingo: 07:00-11:00 (Desayunos), 11:00-16:00 (Almuerzo), 18:00-01:30 (Cena)\nLunes: 12:00-14:30, 18:30-23:30\nMartes: 12:00-14:30, 18:30-23:30\nMiércoles: Cerrado`,
+    openingHours_fr: `Jeudi : 12h00-14h30, 18h30-23h30\nVendredi : 07h00-11h00 (Petits déj.), 11h00-16h00 (Déj.), 18h00-01h30 (Dîner)\nSamedi : 07h00-11h00 (Petits déj.), 11h00-16h00 (Déj.), 18h00-01h30 (Dîner)\nDimanche : 07h00-11h00 (Petits déj.), 11h00-16h00 (Déj.), 18h00-01h30 (Dîner)\nLundi : 12h00-14h30, 18h30-23h30\nMardi : 12h00-14h30, 18h30-23h30\nMercredi : Fermé`,
+    openingHours_de: `Donnerstag: 12:00-14:30, 18:30-23:30\nFreitag: 07:00-11:00 (Frühstück), 11:00-16:00 (Mittag), 18:00-01:30 (Abend)\nSamstag: 07:00-11:00 (Frühstück), 11:00-16:00 (Mittag), 18:00-01:30 (Abend)\nSonntag: 07:00-11:00 (Frühstück), 11:00-16:00 (Mittag), 18:00-01:30 (Abend)\nMontag: 12:00-14:30, 18:30-23:30\nDienstag: 12:00-14:30, 18:30-23:30\nMittwoch: Geschlossen`,
+    discountInfo:
+      "Piatti vegani, menu bambini e servizio d'asporto disponibili.", // Changed to reflect broader services
+    discountInfo_en:
+      "Vegan dishes, children's menu, and takeaway service available.",
+    discountInfo_es:
+      "Platos veganos, menú infantil y servicio para llevar disponibles.",
+    discountInfo_fr:
+      "Plats végétaliens, menu enfants et service à emporter disponibles.",
+    discountInfo_de:
+      "Vegane Gerichte, Kindermenü und Take-Away-Service verfügbar.",
+    tags: [
+      "Ristorante",
+      "Pizzeria",
+      "Cucina Napoletana",
+      "Colazione",
+      "Piatti Vegani",
+      "Asporto",
+      "Biella",
+      "Forno a Legna",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Pizzeria",
+      "Neapolitan Cuisine",
+      "Breakfast",
+      "Vegan Dishes",
+      "Takeaway",
+      "Biella",
+      "Wood-fired Oven",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Pizzería",
+      "Cocina Napolitana",
+      "Desayuno",
+      "Platos Veganos",
+      "Para Llevar",
+      "Biella",
+      "Horno de Leña",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Pizzeria",
+      "Cuisine Napolitaine",
+      "Petit Déjeuner",
+      "Plats Végétaliens",
+      "À Emporter",
+      "Biella",
+      "Four à Bois",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Pizzeria",
+      "Neapolitanische Küche",
+      "Frühstück",
+      "Vegane Gerichte",
+      "Take-Away",
+      "Biella",
+      "Holzofen",
+    ],
+    partyInfo: "", // Not a specific "party" venue unless the sports event dinners are highlighted by them for Adunata
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 217, // New unique ID
+    name: "Garden Biella",
+    name_en: "Garden Biella",
+    name_es: "Garden Biella",
+    name_fr: "Garden Biella",
+    name_de: "Garden Biella",
+    type: "restaurant", // Could also be 'bar' given the strong cocktail and after-dinner offering
+    coordinates: [45.562993, 8.05601], // Approximate coordinates for Giardino Zumaglini, adjust if more precise needed
+    googleRating: 4.0,
+    googleReviewCount: 525,
+    address: "Giardino Pubblico Zumaglini, 13900 Biella BI",
+    phone: "3772896774",
+    website: "https://www.facebook.com/gardenbiella/?locale=it_IT", // Assuming this is the direct link to their menu as specified
+    shortDescription:
+      "Garden Biella: oasi di gusto nel verde! Colazioni, pranzi, aperitivi, cene e cocktail. Specialità Alpine e orari no-stop nel weekend!",
+    shortDescription_en:
+      "Garden Biella: oasis of taste in the green! Breakfast, lunch, aperitifs, dinner, and cocktails. Alpine specialties and non-stop weekend hours!",
+    shortDescription_es:
+      "Garden Biella: ¡oasis de sabor en el verde! Desayunos, almuerzos, aperitivos, cenas y cócteles. ¡Especialidades alpinas y horario ininterrumpido los fines de semana!",
+    shortDescription_fr:
+      "Garden Biella : oasis de goût dans la verdure ! Petits déjeuners, déjeuners, apéritifs, dîners et cocktails. Spécialités alpines et horaires non-stop le week-end !",
+    shortDescription_de:
+      "Garden Biella: Geschmacksoase im Grünen! Frühstück, Mittagessen, Aperitifs, Abendessen und Cocktails. Alpenspezialitäten und Nonstop-Öffnungszeiten am Wochenende!",
+    details:
+      "Immerso nel Giardino Pubblico Zumaglini, Garden Biella è il luogo perfetto per una pausa di gusto a ogni ora. Con servizio self-service assistito, offre colazioni, pranzi, aperitivi con ottimi cocktail, cene e dopocena. ORARI ESTESI per l'Adunata (Ven-Dom 07:30-02:00). Il menù spazia da panini e focacce a piatti caldi come polenta concia, lasagne, spezzatino, e specialità come il 'Tagliere degli Alpini' e la 'Merenda degli Alpini'. Disponibili piatti vegetariani, birre alla spina e posti a sedere sia interni che esterni. Un'esperienza di relax e sapore nel cuore verde di Biella.",
+    details_en:
+      "Nestled in the Zumaglini Public Garden, Garden Biella is the perfect place for a tasteful break at any hour. With assisted self-service, it offers breakfast, lunch, aperitifs with excellent cocktails, dinner, and after-dinner drinks. EXTENDED HOURS for the Adunata (Fri-Sun 07:30-02:00). The menu ranges from sandwiches and focaccias to hot dishes like polenta concia, lasagna, stew, and specialties like the 'Alpini Platter' and 'Alpini Snack'. Vegetarian dishes, draft beers, and both indoor and outdoor seating are available. An experience of relaxation and flavor in the green heart of Biella.",
+    details_es:
+      "Ubicado en el Jardín Público Zumaglini, Garden Biella es el lugar perfecto para una pausa de sabor a cualquier hora. Con autoservicio asistido, ofrece desayunos, almuerzos, aperitivos con excelentes cócteles, cenas y copas después de cenar. HORARIO EXTENDIDO para la Adunata (Vie-Dom 07:30-02:00). El menú abarca desde bocadillos y focaccias hasta platos calientes como polenta concia, lasaña, estofado, y especialidades como la 'Tabla de los Alpinos' y la 'Merienda de los Alpinos'. Platos vegetarianos, cervezas de barril y asientos tanto interiores como exteriores disponibles. Una experiencia de relajación y sabor en el corazón verde de Biella.",
+    details_fr:
+      "Niché dans le Jardin Public Zumaglini, Garden Biella est l'endroit idéal pour une pause gourmande à toute heure. Avec un self-service assisté, il propose petits déjeuners, déjeuners, apéritifs avec d'excellents cocktails, dîners et après-dîners. HORAIRES PROLONGÉS pour l'Adunata (Ven-Dim 07h30-02h00). Le menu varie des sandwichs et focaccias aux plats chauds comme la polenta concia, les lasagnes, le ragoût, et des spécialités comme le 'Plateau des Alpins' et le 'Goûter des Alpins'. Plats végétariens, bières pression et places assises intérieures et extérieures disponibles. Une expérience de détente et de saveur au cœur verdoyant de Biella.",
+    details_de:
+      "Eingebettet in den öffentlichen Garten Zumaglini ist Garden Biella der perfekte Ort für eine geschmackvolle Pause zu jeder Stunde. Mit unterstütztem Selbstbedienungsservice bietet es Frühstück, Mittagessen, Aperitifs mit ausgezeichneten Cocktails, Abendessen und Drinks nach dem Essen. VERLÄNGERTE ÖFFNUNGSZEITEN für die Adunata (Fr-So 07:30-02:00). Die Speisekarte reicht von Sandwiches und Focaccias bis hin zu warmen Gerichten wie Polenta Concia, Lasagne, Eintopf und Spezialitäten wie der 'Alpini-Platte' und dem 'Alpini-Snack'. Vegetarische Gerichte, Fassbiere sowie Sitzplätze im Innen- und Außenbereich sind verfügbar. Ein Erlebnis der Entspannung und des Geschmacks im grünen Herzen von Biella.",
+    images: ["/images/garden.png"], // Example image path
+    openingHours: `giovedì: 08:00-00:00\nvenerdì: 07:30-02:00\nsabato: 07:30-02:00\ndomenica: 07:30-02:00\nlunedì: Chiuso\nmartedì: 08:00-00:00\nmercoledì: 08:00-00:00`,
+    openingHours_en: `Thursday: 08:00-00:00\nFriday: 07:30-02:00\nSaturday: 07:30-02:00\nSunday: 07:30-02:00\nMonday: Closed\nTuesday: 08:00-00:00\nWednesday: 08:00-00:00`,
+    openingHours_es: `Jueves: 08:00-00:00\nViernes: 07:30-02:00\nSábado: 07:30-02:00\nDomingo: 07:30-02:00\nLunes: Cerrado\nMartes: 08:00-00:00\nMiércoles: 08:00-00:00`,
+    openingHours_fr: `Jeudi : 08h00-00h00\nVendredi : 07h30-02h00\nSamedi : 07h30-02h00\nDimanche : 07h30-02h00\nLundi : Fermé\nMardi : 08h00-00h00\nMercredi : 08h00-00h00`,
+    openingHours_de: `Donnerstag: 08:00-00:00\nFreitag: 07:30-02:00\nSamstag: 07:30-02:00\nSonntag: 07:30-02:00\nMontag: Geschlossen\nDienstag: 08:00-00:00\nMittwoch: 08:00-00:00`,
+    discountInfo:
+      "Tagliere e Merenda degli Alpini disponibili. Piatti vegetariani.",
+    discountInfo_en:
+      "Alpini Platter and Alpini Snack available. Vegetarian dishes.",
+    discountInfo_es:
+      "Tabla de los Alpinos y Merienda de los Alpinos disponibles. Platos vegetarianos.",
+    discountInfo_fr:
+      "Plateau des Alpins et Goûter des Alpins disponibles. Plats végétariens.",
+    discountInfo_de:
+      "Alpini-Platte und Alpini-Snack erhältlich. Vegetarische Gerichte.",
+    tags: [
+      "Ristorante",
+      "Bar",
+      "Caffetteria",
+      "Self-Service",
+      "Giardino Zumaglini",
+      "Cocktail",
+      "Specialità Alpine",
+      "Aperto Tardi",
+      "Vegetariano",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Bar",
+      "Cafeteria",
+      "Self-Service",
+      "Zumaglini Garden",
+      "Cocktails",
+      "Alpine Specialties",
+      "Open Late",
+      "Vegetarian",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Bar",
+      "Cafetería",
+      "Autoservicio",
+      "Jardín Zumaglini",
+      "Cócteles",
+      "Especialidades Alpinas",
+      "Abierto Tarde",
+      "Vegetariano",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Bar",
+      "Cafétéria",
+      "Self-Service",
+      "Jardin Zumaglini",
+      "Cocktails",
+      "Spécialités Alpines",
+      "Ouvert Tard",
+      "Végétarien",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Bar",
+      "Cafeteria",
+      "Selbstbedienung",
+      "Zumaglini Garten",
+      "Cocktails",
+      "Alpenspezialitäten",
+      "Spät Geöffnet",
+      "Vegetarisch",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 218, // New unique ID
+    name: "Pizzeria Ristorante Il Tramonto",
+    name_en: "Il Tramonto Pizzeria & Restaurant",
+    name_es: "Pizzeria Restaurante Il Tramonto",
+    name_fr: "Pizzeria Restaurant Il Tramonto",
+    name_de: "Pizzeria Restaurant Il Tramonto",
+    type: "restaurant",
+    coordinates: [45.565015, 8.090584],
+    googleRating: 4.5,
+    googleReviewCount: 1410, // Corrected count
+    address: "Via Milano, 4, 13856 Vigliano Biellese BI",
+    phone: "3450184316",
+    website: "https://pizzeriailtramonto.it/", // Using the main website from info
+    shortDescription:
+      "Il Tramonto a Vigliano: eccellenza piemontese, pizza superba e 'Barbera dell'Adunata'! Orari estesi nel weekend.",
+    shortDescription_en:
+      "Il Tramonto in Vigliano: Piedmontese excellence, superb pizza, and 'Barbera dell'Adunata'! Extended weekend hours.",
+    shortDescription_es:
+      "Il Tramonto en Vigliano: excelencia piamontesa, pizza soberbia ¡y 'Barbera dell'Adunata'! Horario extendido los fines de semana.",
+    shortDescription_fr:
+      "Il Tramonto à Vigliano : excellence piémontaise, pizza superbe et 'Barbera de l'Adunata' ! Horaires prolongés le week-end.",
+    shortDescription_de:
+      "Il Tramonto in Vigliano: piemontesische Exzellenz, hervorragende Pizza und 'Barbera dell'Adunata'! Erweiterte Wochenend-Öffnungszeiten.",
+    details:
+      "Pizzeria Ristorante Il Tramonto a Vigliano Biellese vi aspetta per un'esperienza culinaria che celebra la tradizione italiana e piemontese. Oltre a una vasta selezione di pizze, il menù offre prelibati antipasti come il tris piemontese e crudo e burrata, primi piatti (ravioli, calamarata) e secondi di carne (brasato, salsiccetta) e pesce (fritto di calamari). ORARI ESTESI nel weekend Adunata (Ven-Dom 11:30-24:00). Non perdete i dolci fatti in casa e il 'Rosso Barbera dell’Adunata'. Con tavoli all'aperto, Wi-Fi e opzioni vegane, è il luogo ideale per un pasto memorabile.",
+    details_en:
+      "Pizzeria Ristorante Il Tramonto in Vigliano Biellese awaits you for a culinary experience celebrating Italian and Piedmontese tradition. In addition to a wide selection of pizzas, the menu offers delicious appetizers like the Piedmontese trio and prosciutto with burrata, pasta dishes (ravioli, calamarata), and meat (braised beef, sausage stew) and fish (fried calamari) main courses. EXTENDED HOURS on Adunata weekend (Fri-Sun 11:30-24:00). Don't miss the homemade desserts and the 'Rosso Barbera dell’Adunata'. With outdoor seating, Wi-Fi, and vegan options, it's the ideal place for a memorable meal.",
+    details_es:
+      "Pizzeria Restaurante Il Tramonto en Vigliano Biellese le espera para una experiencia culinaria que celebra la tradición italiana y piamontesa. Además de una amplia selección de pizzas, el menú ofrece deliciosos entrantes como el trío piamontés y prosciutto con burrata, platos de pasta (raviolis, calamarata) y segundos platos de carne (estofado de ternera, guiso de salchicha) y pescado (calamares fritos). HORARIO EXTENDIDO el fin de semana de la Adunata (Vie-Dom 11:30-24:00). No se pierda los postres caseros y el 'Rosso Barbera dell’Adunata'. Con mesas al aire libre, Wi-Fi y opciones veganas, es el lugar ideal para una comida memorable.",
+    details_fr:
+      "La Pizzeria Restaurant Il Tramonto à Vigliano Biellese vous attend pour une expérience culinaire célébrant la tradition italienne et piémontaise. En plus d'une large sélection de pizzas, le menu propose de délicieux hors-d'œuvre comme le trio piémontais et le prosciutto et burrata, des plats de pâtes (raviolis, calamarata) et des plats principaux de viande (bœuf braisé, ragoût de saucisse) et de poisson (calamars frits). HORAIRES PROLONGÉS le week-end de l'Adunata (Ven-Dim 11h30-24h00). Ne manquez pas les desserts maison et le 'Rosso Barbera dell’Adunata'. Avec des tables en extérieur, le Wi-Fi et des options végétaliennes, c'est l'endroit idéal pour un repas mémorable.",
+    details_de:
+      "Das Pizzeria Ristorante Il Tramonto in Vigliano Biellese erwartet Sie zu einem kulinarischen Erlebnis, das die italienische und piemontesische Tradition feiert. Neben einer großen Auswahl an Pizzen bietet die Speisekarte köstliche Vorspeisen wie das piemontesische Trio und Rohschinken mit Burrata, Nudelgerichte (Ravioli, Calamarata) sowie Fleisch- (Schmorbraten, Wurstgulasch) und Fischhauptgerichte (frittierte Calamari). VERLÄNGERTE ÖFFNUNGSZEITEN am Adunata-Wochenende (Fr-So 11:30-24:00). Verpassen Sie nicht die hausgemachten Desserts und den 'Rosso Barbera dell’Adunata'. Mit Sitzplätzen im Freien, WLAN und veganen Optionen ist es der ideale Ort für eine unvergessliche Mahlzeit.",
+    images: ["/images/tramonto.png"], // Example image path
+    openingHours: `giovedì: 12:00-14:00, 18:00-23:30\nvenerdì: 11:30-24:00\nsabato: 11:30-24:00\ndomenica: 11:30-24:00\nlunedì: 12:00-14:00, 18:00-23:30\nmartedì: 12:00-14:00, 18:00-23:30\nmercoledì: 12:00-14:00, 18:00-23:30`,
+    openingHours_en: `Thursday: 12:00-14:00, 18:00-23:30\nFriday: 11:30-24:00\nSaturday: 11:30-24:00\nSunday: 11:30-24:00\nMonday: 12:00-14:00, 18:00-23:30\nTuesday: 12:00-14:00, 18:00-23:30\nWednesday: 12:00-14:00, 18:00-23:30`,
+    openingHours_es: `Jueves: 12:00-14:00, 18:00-23:30\nViernes: 11:30-24:00\nSábado: 11:30-24:00\nDomingo: 11:30-24:00\nLunes: 12:00-14:00, 18:00-23:30\nMartes: 12:00-14:00, 18:00-23:30\nMiércoles: 12:00-14:00, 18:00-23:30`,
+    openingHours_fr: `Jeudi : 12h00-14h00, 18h00-23h30\nVendredi : 11h30-24h00\nSamedi : 11h30-24h00\nDimanche : 11h30-24h00\nLundi : 12h00-14h00, 18h00-23h30\nMardi : 12h00-14h00, 18h00-23h30\nMercredi : 12h00-14h00, 18h00-23h30`,
+    openingHours_de: `Donnerstag: 12:00-14:00, 18:00-23:30\nFreitag: 11:30-24:00\nSamstag: 11:30-24:00\nSonntag: 11:30-24:00\nMontag: 12:00-14:00, 18:00-23:30\nDienstag: 12:00-14:00, 18:00-23:30\nMittwoch: 12:00-14:00, 18:00-23:30`,
+    discountInfo:
+      "Provate il 'Rosso Barbera dell’Adunata'! Piatti vegani disponibili.",
+    discountInfo_en:
+      "Try the 'Rosso Barbera dell’Adunata'! Vegan dishes available.",
+    discountInfo_es:
+      "¡Pruebe el 'Rosso Barbera dell’Adunata'! Platos veganos disponibles.",
+    discountInfo_fr:
+      "Goûtez le 'Rosso Barbera dell’Adunata' ! Plats végétaliens disponibles.",
+    discountInfo_de:
+      "Probieren Sie den 'Rosso Barbera dell’Adunata'! Vegane Gerichte erhältlich.",
+    tags: [
+      "Ristorante",
+      "Pizzeria",
+      "Cucina Piemontese",
+      "Cucina Italiana",
+      "Piatti Vegani",
+      "Vigliano Biellese",
+      "Barbera Adunata",
+      "Tavoli Aperto",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Pizzeria",
+      "Piedmontese Cuisine",
+      "Italian Cuisine",
+      "Vegan Dishes",
+      "Vigliano Biellese",
+      "Adunata Barbera",
+      "Outdoor Seating",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Pizzería",
+      "Cocina Piamontesa",
+      "Cocina Italiana",
+      "Platos Veganos",
+      "Vigliano Biellese",
+      "Barbera Adunata",
+      "Terraza",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Pizzeria",
+      "Cuisine Piémontaise",
+      "Cuisine Italienne",
+      "Plats Végétaliens",
+      "Vigliano Biellese",
+      "Barbera Adunata",
+      "Terrasse",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Pizzeria",
+      "Piemontesische Küche",
+      "Italienische Küche",
+      "Vegane Gerichte",
+      "Vigliano Biellese",
+      "Adunata Barbera",
+      "Außenbereich",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 219, // New unique ID
+    name: "Osteria 1992",
+    name_en: "Osteria 1992",
+    name_es: "Osteria 1992",
+    name_fr: "Osteria 1992",
+    name_de: "Osteria 1992",
+    type: "restaurant", // Also has strong bar elements
+    coordinates: [45.564386, 8.058449],
+    googleRating: 4.6,
+    googleReviewCount: 41,
+    address: "Viale Giacomo Matteotti, 8, 13900 Biella BI",
+    phone: "0158131392",
+    website: "https://www.instagram.com/osteria1992/?hl=it", // Primary website
+    // Menu link can be mentioned in details if desired, or use a dedicated menu field if you add one
+    shortDescription:
+      "Osteria 1992: eleganza e sapori piemontesi nel cuore di Biella. Un'esperienza culinaria raffinata e accogliente.",
+    shortDescription_en:
+      "Osteria 1992: elegance and Piedmontese flavors in the heart of Biella. A refined and welcoming culinary experience.",
+    shortDescription_es:
+      "Osteria 1992: elegancia y sabores piamonteses en el corazón de Biella. Una experiencia culinaria refinada y acogedora.",
+    shortDescription_fr:
+      "Osteria 1992 : élégance et saveurs piémontaises au cœur de Biella. Une expérience culinaire raffinée et accueillante.",
+    shortDescription_de:
+      "Osteria 1992: Eleganz und piemontesische Aromen im Herzen von Biella. Ein raffiniertes und einladendes kulinarisches Erlebnis.",
+    details:
+      "Situata in Viale Matteotti, nel centro di Biella, Osteria 1992 offre un'esperienza culinaria elegante che celebra i piatti tipici piemontesi e italiani. Il menù vanta antipasti come taglieri selezionati e sformati, primi gustosi quali ravioli al sugo d'arrosto, e secondi tradizionali come lo spezzatino con polenta. Il locale dispone anche di un bar ben fornito, perfetto per una pausa caffè con brioche, un aperitivo con spritz o cocktail, o un dopocena. Un ambiente raffinato e accogliente, ideale per un pranzo o una cena di qualità durante la vostra visita a Biella per l'Adunata. Menu disponibile su Linktree (linktr.ee/osteria1992).",
+    details_en:
+      "Located on Viale Matteotti, in the center of Biella, Osteria 1992 offers an elegant culinary experience celebrating typical Piedmontese and Italian dishes. The menu boasts appetizers like selected platters and flans, tasty first courses such as ravioli with roast sauce, and traditional main courses like stew with polenta. The venue also features a well-stocked bar, perfect for a coffee break with pastries, an aperitif with spritz or cocktails, or an after-dinner drink. A refined and welcoming environment, ideal for a quality lunch or dinner during your visit to Biella for the Adunata. Menu available on Linktree (linktr.ee/osteria1992).",
+    details_es:
+      "Ubicada en Viale Matteotti, en el centro de Biella, Osteria 1992 ofrece una elegante experiencia culinaria que celebra los platos típicos piamonteses e italianos. El menú cuenta con entrantes como tablas selectas y flanes, sabrosos primeros platos como raviolis en salsa de asado, y segundos platos tradicionales como estofado con polenta. El local también dispone de un bar bien surtido, perfecto para una pausa para el café con bollería, un aperitivo con spritz o cócteles, o una copa después de cenar. Un ambiente refinado y acogedor, ideal para un almuerzo o cena de calidad durante su visita a Biella para la Adunata. Menú disponible en Linktree (linktr.ee/osteria1992).",
+    details_fr:
+      "Située sur Viale Matteotti, au centre de Biella, l'Osteria 1992 propose une expérience culinaire élégante célébrant les plats typiques piémontais et italiens. Le menu comprend des hors-d'œuvre tels que des planches sélectionnées et des flans, de savoureux plats de pâtes comme les raviolis à la sauce rôtie, et des plats principaux traditionnels comme le ragoût à la polenta. L'établissement dispose également d'un bar bien approvisionné, parfait pour une pause-café avec viennoiseries, un apéritif avec spritz ou cocktails, ou un digestif. Un environnement raffiné et accueillant, idéal pour un déjeuner ou un dîner de qualité lors de votre visite à Biella pour l'Adunata. Menu disponible sur Linktree (linktr.ee/osteria1992).",
+    details_de:
+      "Die Osteria 1992 in der Viale Matteotti im Zentrum von Biella bietet ein elegantes kulinarisches Erlebnis, das typische piemontesische und italienische Gerichte zelebriert. Die Speisekarte bietet Vorspeisen wie ausgewählte Platten und Flans, schmackhafte erste Gänge wie Ravioli mit Bratensauce und traditionelle Hauptgerichte wie Eintopf mit Polenta. Das Lokal verfügt auch über eine gut sortierte Bar, perfekt für eine Kaffeepause mit Gebäck, einen Aperitif mit Spritz oder Cocktails oder einen Drink nach dem Abendessen. Eine raffinierte und einladende Umgebung, ideal für ein hochwertiges Mittag- oder Abendessen während Ihres Besuchs in Biella für die Adunata. Speisekarte verfügbar auf Linktree (linktr.ee/osteria1992).",
+    images: ["/images/osteria.jpeg"], // Example image path
+    openingHours: `giovedì: 12:00-14:00, 19:00-22:00\nvenerdì: 12:00-14:00, 19:00-22:00\nsabato: 12:00-14:00, 19:00-22:00\ndomenica: Chiuso\nlunedì: 12:00-14:00, 19:00-22:00\nmartedì: 12:00-14:00, 19:00-22:00\nmercoledì: 12:00-14:00, 19:00-22:00`,
+    openingHours_en: `Thursday: 12:00-14:00, 19:00-22:00\nFriday: 12:00-14:00, 19:00-22:00\nSaturday: 12:00-14:00, 19:00-22:00\nSunday: Closed\nMonday: 12:00-14:00, 19:00-22:00\nTuesday: 12:00-14:00, 19:00-22:00\nWednesday: 12:00-14:00, 19:00-22:00`,
+    openingHours_es: `Jueves: 12:00-14:00, 19:00-22:00\nViernes: 12:00-14:00, 19:00-22:00\nSábado: 12:00-14:00, 19:00-22:00\nDomingo: Cerrado\nLunes: 12:00-14:00, 19:00-22:00\nMartes: 12:00-14:00, 19:00-22:00\nMiércoles: 12:00-14:00, 19:00-22:00`,
+    openingHours_fr: `Jeudi : 12h00-14h00, 19h00-22h00\nVendredi : 12h00-14h00, 19h00-22h00\nSamedi : 12h00-14h00, 19h00-22h00\nDimanche : Fermé\nLundi : 12h00-14h00, 19h00-22h00\nMardi : 12h00-14h00, 19h00-22h00\nMercredi : 12h00-14h00, 19h00-22h00`,
+    openingHours_de: `Donnerstag: 12:00-14:00, 19:00-22:00\nFreitag: 12:00-14:00, 19:00-22:00\nSamstag: 12:00-14:00, 19:00-22:00\nSonntag: Geschlossen\nMontag: 12:00-14:00, 19:00-22:00\nDienstag: 12:00-14:00, 19:00-22:00\nMittwoch: 12:00-14:00, 19:00-22:00`,
+    discountInfo:
+      "Cucina piemontese e italiana raffinata. Ampia scelta al bar.",
+    discountInfo_en:
+      "Refined Piedmontese and Italian cuisine. Wide selection at the bar.",
+    discountInfo_es:
+      "Cocina piamontesa e italiana refinada. Amplia selección en el bar.",
+    discountInfo_fr:
+      "Cuisine piémontaise et italienne raffinée. Large choix au bar.",
+    discountInfo_de:
+      "Raffinierte piemontesische und italienische Küche. Große Auswahl an der Bar.",
+    tags: [
+      "Ristorante",
+      "Osteria",
+      "Cucina Piemontese",
+      "Cucina Italiana",
+      "Elegante",
+      "Biella Centro",
+      "Bar",
+      "Cocktail",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Osteria",
+      "Piedmontese Cuisine",
+      "Italian Cuisine",
+      "Elegant",
+      "Biella Center",
+      "Bar",
+      "Cocktails",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Ostería",
+      "Cocina Piamontesa",
+      "Cocina Italiana",
+      "Elegante",
+      "Biella Centro",
+      "Bar",
+      "Cócteles",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Osteria",
+      "Cuisine Piémontaise",
+      "Cuisine Italienne",
+      "Élégant",
+      "Biella Centre",
+      "Bar",
+      "Cocktails",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Osteria",
+      "Piemontesische Küche",
+      "Italienische Küche",
+      "Elegant",
+      "Biella Zentrum",
+      "Bar",
+      "Cocktails",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 220, // New unique ID
+    name: "Ristorante Prosciutteria San Daniele",
+    name_en: "San Daniele Prosciutteria Restaurant",
+    name_es: "Restaurante Jamonería San Daniele",
+    name_fr: "Restaurant Charcuterie San Daniele",
+    name_de: "Restaurant Schinkenstube San Daniele",
+    type: "restaurant",
+    coordinates: [45.564746, 8.049684],
+    googleRating: 4.2,
+    googleReviewCount: 601,
+    address: "Via Sebastiano Ferrero, 23, 13900 Biella BI",
+    phone: "01522762",
+    website: "https://www.prosciutteriasandaniele.it/",
+    shortDescription:
+      "Prosciutteria San Daniele a Biella: l'eccellenza dei salumi, carni alla griglia e vini. Un'esperienza di gusto indimenticabile!",
+    shortDescription_en:
+      "San Daniele Prosciutteria in Biella: the excellence of cured meats, grilled meats, and wines. An unforgettable taste experience!",
+    shortDescription_es:
+      "Jamonería San Daniele en Biella: la excelencia de los embutidos, carnes a la parrilla y vinos. ¡Una experiencia de sabor inolvidable!",
+    shortDescription_fr:
+      "Charcuterie San Daniele à Biella : l'excellence des charcuteries, viandes grillées et vins. Une expérience gustative inoubliable !",
+    shortDescription_de:
+      "Schinkenstube San Daniele in Biella: die Exzellenz von Wurstwaren, Grillfleisch und Weinen. Ein unvergessliches Geschmackserlebnis!",
+    details:
+      "Il Ristorante Prosciutteria San Daniele, nel cuore di Biella, è un tempio del gusto specializzato in taglieri di salumi e formaggi pregiati, carni alla griglia di altissima qualità e una cantina di vini selezionati. Aperto 7 GIORNI SU 7 per pranzo e cena, con ORARI ESTESI nel weekend Adunata (Ven-Dom 10:00-23:00). Il locale dispone di tavoli all'aperto, seggioloni per bambini e accoglie volentieri i cani. Perfetto per chi cerca un'esperienza culinaria autentica e raffinata, con un focus su materie prime eccellenti, in un ambiente accogliente durante l'evento.",
+    details_en:
+      "San Daniele Prosciutteria Restaurant, in the heart of Biella, is a temple of taste specializing in platters of fine cured meats and cheeses, top-quality grilled meats, and a cellar of selected wines. Open 7 DAYS A WEEK for lunch and dinner, with EXTENDED HOURS on Adunata weekend (Fri-Sun 10:00-23:00). The venue features outdoor seating, high chairs for children, and warmly welcomes dogs. Perfect for those seeking an authentic and refined culinary experience, with a focus on excellent raw materials, in a welcoming environment during the event.",
+    details_es:
+      "El Restaurante Jamonería San Daniele, en el corazón de Biella, es un templo del sabor especializado en tablas de embutidos y quesos selectos, carnes a la parrilla de altísima calidad y una bodega de vinos escogidos. Abierto los 7 DÍAS DE LA SEMANA para almuerzos y cenas, con HORARIO EXTENDIDO el fin de semana de la Adunata (Vie-Dom 10:00-23:00). El local dispone de mesas al aire libre, tronas para niños y admite perros con gusto. Perfecto para quienes buscan una experiencia culinaria auténtica y refinada, con un enfoque en materias primas excelentes, en un ambiente acogedor durante el evento.",
+    details_fr:
+      "Le Restaurant Charcuterie San Daniele, au cœur de Biella, est un temple du goût spécialisé dans les planches de charcuteries fines et de fromages, les viandes grillées de première qualité et une cave de vins sélectionnés. Ouvert 7 JOURS SUR 7 pour le déjeuner et le dîner, avec des HORAIRES PROLONGÉS le week-end de l'Adunata (Ven-Dim 10h00-23h00). L'établissement dispose de tables en extérieur, de chaises hautes pour enfants et accueille volontiers les chiens. Parfait pour ceux qui recherchent une expérience culinaire authentique et raffinée, axée sur d'excellentes matières premières, dans un cadre accueillant pendant l'événement.",
+    details_de:
+      "Das Restaurant Schinkenstube San Daniele im Herzen von Biella ist ein Geschmackstempel, spezialisiert auf Platten mit feinen Wurst- und Käsesorten, erstklassigem Grillfleisch und einem Keller mit ausgewählten Weinen. Geöffnet 7 TAGE DIE WOCHE zum Mittag- und Abendessen, mit VERLÄNGERTEN ÖFFNUNGSZEITEN am Adunata-Wochenende (Fr-So 10:00-23:00). Das Lokal verfügt über Sitzplätze im Freien, Hochstühle für Kinder und heißt Hunde herzlich willkommen. Perfekt für diejenigen, die ein authentisches und raffiniertes kulinarisches Erlebnis mit Fokus auf exzellente Rohstoffe in einer einladenden Umgebung während der Veranstaltung suchen.",
+    images: ["/images/prosciutteria.jpeg"], // Example image path
+    openingHours: `giovedì: 12:00-14:30, 19:00-23:00\nvenerdì: 10:00-23:00\nsabato: 10:00-23:00\ndomenica: 10:00-23:00\nlunedì: 12:00-14:30, 19:00-23:00\nmartedì: 12:00-14:30, 19:00-23:00\nmercoledì: 12:00-14:30, 19:00-23:00`,
+    openingHours_en: `Thursday: 12:00-14:30, 19:00-23:00\nFriday: 10:00-23:00\nSaturday: 10:00-23:00\nSunday: 10:00-23:00\nMonday: 12:00-14:30, 19:00-23:00\nTuesday: 12:00-14:30, 19:00-23:00\nWednesday: 12:00-14:30, 19:00-23:00`,
+    openingHours_es: `Jueves: 12:00-14:30, 19:00-23:00\nViernes: 10:00-23:00\nSábado: 10:00-23:00\nDomingo: 10:00-23:00\nLunes: 12:00-14:30, 19:00-23:00\nMartes: 12:00-14:30, 19:00-23:00\nMiércoles: 12:00-14:30, 19:00-23:00`,
+    openingHours_fr: `Jeudi : 12h00-14h30, 19h00-23h00\nVendredi : 10h00-23h00\nSamedi : 10h00-23h00\nDimanche : 10h00-23h00\nLundi : 12h00-14h30, 19h00-23h00\nMardi : 12h00-14h30, 19h00-23h00\nMercredi : 12h00-14h30, 19h00-23h00`,
+    openingHours_de: `Donnerstag: 12:00-14:30, 19:00-23:00\nFreitag: 10:00-23:00\nSamstag: 10:00-23:00\nSonntag: 10:00-23:00\nMontag: 12:00-14:30, 19:00-23:00\nDienstag: 12:00-14:30, 19:00-23:00\nMittwoch: 12:00-14:30, 19:00-23:00`,
+    discountInfo:
+      "Specializzati in taglieri, grigliate e vini selezionati. Cani ammessi.",
+    discountInfo_en:
+      "Specializing in platters, grilled meats, and selected wines. Dogs allowed.",
+    discountInfo_es:
+      "Especializados en tablas, carnes a la parrilla y vinos selectos. Perros admitidos.",
+    discountInfo_fr:
+      "Spécialisé dans les planches, les grillades et les vins sélectionnés. Chiens admis.",
+    discountInfo_de:
+      "Spezialisiert auf Platten, Grillfleisch und ausgewählte Weine. Hunde erlaubt.",
+    tags: [
+      "Ristorante",
+      "Prosciutteria",
+      "Taglieri",
+      "Carne Grigliata",
+      "Vini",
+      "Biella Centro",
+      "Tavoli Aperto",
+      "Cani Ammessi",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Prosciutteria",
+      "Platters",
+      "Grilled Meat",
+      "Wines",
+      "Biella Center",
+      "Outdoor Seating",
+      "Dogs Allowed",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Jamonería",
+      "Tablas",
+      "Carne a la Parrilla",
+      "Vinos",
+      "Biella Centro",
+      "Terraza",
+      "Perros Admitidos",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Charcuterie",
+      "Planches",
+      "Viande Grillée",
+      "Vins",
+      "Biella Centre",
+      "Terrasse",
+      "Chiens Admis",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Schinkenstube",
+      "Platten",
+      "Grillfleisch",
+      "Weine",
+      "Biella Zentrum",
+      "Außenbereich",
+      "Hunde Erlaubt",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 221, // New unique ID
+    name: "Di Biase Pizzeria Gourmet e Bar",
+    name_en: "Di Biase Gourmet Pizzeria & Bar",
+    name_es: "Di Biase Pizzeria Gourmet y Bar",
+    name_fr: "Di Biase Pizzeria Gourmet et Bar",
+    name_de: "Di Biase Gourmet Pizzeria & Bar",
+    type: "restaurant", // Primarily a pizzeria, but with bar facilities
+    coordinates: [45.558603, 8.06307],
+    googleRating: 4.6,
+    googleReviewCount: 53,
+    address: "Via Trento, 34, 13900 Biella BI",
+    phone: "0152470131",
+    website: "https://di-biase-pizzeria-gourmet.fly.dev/",
+    shortDescription:
+      "Di Biase a Biella: l'arte della pizza gourmet e l'eleganza di un bar. Un'esperienza di gusto superiore.",
+    shortDescription_en:
+      "Di Biase in Biella: the art of gourmet pizza and the elegance of a bar. A superior taste experience.",
+    shortDescription_es:
+      "Di Biase en Biella: el arte de la pizza gourmet y la elegancia de un bar. Una experiencia de sabor superior.",
+    shortDescription_fr:
+      "Di Biase à Biella : l'art de la pizza gourmet et l'élégance d'un bar. Une expérience gustative supérieure.",
+    shortDescription_de:
+      "Di Biase in Biella: die Kunst der Gourmet-Pizza und die Eleganz einer Bar. Ein überlegenes Geschmackserlebnis.",
+    details:
+      "Di Biase Pizzeria Gourmet e Bar, in Via Trento a Biella, offre un'interpretazione raffinata della pizza, elevandola a esperienza gourmet. Ogni pizza è frutto di ricerca e ingredienti selezionati, per un sapore unico e ricercato. Il locale combina l'eccellenza della pizzeria con l'atmosfera accogliente di un bar, perfetto per un pasto di qualità o un aperitivo. Una scelta ideale per chi desidera gustare una pizza speciale e creativa durante l'Adunata, in un ambiente curato.",
+    details_en:
+      "Di Biase Gourmet Pizzeria & Bar, on Via Trento in Biella, offers a refined interpretation of pizza, elevating it to a gourmet experience. Each pizza is the result of research and selected ingredients, for a unique and sophisticated taste. The venue combines pizzeria excellence with the welcoming atmosphere of a bar, perfect for a quality meal or an aperitif. An ideal choice for those wishing to enjoy a special and creative pizza during the Adunata, in a well-kept environment.",
+    details_es:
+      "Di Biase Pizzeria Gourmet y Bar, en Via Trento en Biella, ofrece una interpretación refinada de la pizza, elevándola a una experiencia gourmet. Cada pizza es fruto de la investigación y de ingredientes seleccionados, para un sabor único y sofisticado. El local combina la excelencia de la pizzería con el ambiente acogedor de un bar, perfecto para una comida de calidad o un aperitivo. Una opción ideal para quienes deseen disfrutar de una pizza especial y creativa durante la Adunata, en un entorno cuidado.",
+    details_fr:
+      "Di Biase Pizzeria Gourmet et Bar, Via Trento à Biella, propose une interprétation raffinée de la pizza, l'élevant au rang d'expérience gastronomique. Chaque pizza est le fruit de recherches et d'ingrédients sélectionnés, pour un goût unique et sophistiqué. L'établissement allie l'excellence de la pizzeria à l'atmosphère accueillante d'un bar, parfait pour un repas de qualité ou un apéritif. Un choix idéal pour ceux qui souhaitent déguster une pizza spéciale et créative pendant l'Adunata, dans un cadre soigné.",
+    details_de:
+      "Die Di Biase Gourmet Pizzeria & Bar in der Via Trento in Biella bietet eine raffinierte Interpretation der Pizza und erhebt sie zu einem Gourmet-Erlebnis. Jede Pizza ist das Ergebnis von Forschung und ausgewählten Zutaten für einen einzigartigen und anspruchsvollen Geschmack. Das Lokal verbindet die Exzellenz einer Pizzeria mit der einladenden Atmosphäre einer Bar, perfekt für eine hochwertige Mahlzeit oder einen Aperitif. Eine ideale Wahl für diejenigen, die während der Adunata eine besondere und kreative Pizza in einer gepflegten Umgebung genießen möchten.",
+    images: ["/images/pizzaGourmet.png"], // Example image path
+    openingHours: `giovedì: 10:00-14:30, 18:00-22:00\nvenerdì: 10:00-14:30, 18:00-22:00\nsabato: 18:00-23:00\ndomenica: 18:00-22:00\nlunedì: 10:00-14:30, 18:00-22:00\nmartedì: 10:00-14:30, 18:00-22:00\nmercoledì: Chiuso`,
+    openingHours_en: `Thursday: 10:00-14:30, 18:00-22:00\nFriday: 10:00-14:30, 18:00-22:00\nSaturday: 18:00-23:00\nSunday: 18:00-22:00\nMonday: 10:00-14:30, 18:00-22:00\nTuesday: 10:00-14:30, 18:00-22:00\nWednesday: Closed`,
+    openingHours_es: `Jueves: 10:00-14:30, 18:00-22:00\nViernes: 10:00-14:30, 18:00-22:00\nSábado: 18:00-23:00\nDomingo: 18:00-22:00\nLunes: 10:00-14:30, 18:00-22:00\nMartes: 10:00-14:30, 18:00-22:00\nMiércoles: Cerrado`,
+    openingHours_fr: `Jeudi : 10h00-14h30, 18h00-22h00\nVendredi : 10h00-14h30, 18h00-22h00\nSamedi : 18h00-23h00\nDimanche : 18h00-22h00\nLundi : 10h00-14h30, 18h00-22h00\nMardi : 10h00-14h30, 18h00-22h00\nMercredi : Fermé`,
+    openingHours_de: `Donnerstag: 10:00-14:30, 18:00-22:00\nFreitag: 10:00-14:30, 18:00-22:00\nSamstag: 18:00-23:00\nSonntag: 18:00-22:00\nMontag: 10:00-14:30, 18:00-22:00\nDienstag: 10:00-14:30, 18:00-22:00\nMittwoch: Geschlossen`,
+    discountInfo: "Pizze gourmet con ingredienti selezionati e servizio bar.",
+    discountInfo_en:
+      "Gourmet pizzas with selected ingredients and bar service.",
+    discountInfo_es:
+      "Pizzas gourmet con ingredientes seleccionados y servicio de bar.",
+    discountInfo_fr:
+      "Pizzas gastronomiques avec ingrédients sélectionnés et service de bar.",
+    discountInfo_de: "Gourmet-Pizzen mit ausgewählten Zutaten und Bar-Service.",
+    tags: [
+      "Pizzeria Gourmet",
+      "Ristorante",
+      "Bar",
+      "Pizza Artigianale",
+      "Biella Centro",
+      "Cucina Raffinata",
+    ],
+    tags_en: [
+      "Gourmet Pizzeria",
+      "Restaurant",
+      "Bar",
+      "Artisanal Pizza",
+      "Biella Center",
+      "Refined Cuisine",
+    ],
+    tags_es: [
+      "Pizzería Gourmet",
+      "Restaurante",
+      "Bar",
+      "Pizza Artesanal",
+      "Biella Centro",
+      "Cocina Refinada",
+    ],
+    tags_fr: [
+      "Pizzeria Gourmet",
+      "Restaurant",
+      "Bar",
+      "Pizza Artisanale",
+      "Biella Centre",
+      "Cuisine Raffinée",
+    ],
+    tags_de: [
+      "Gourmet-Pizzeria",
+      "Restaurant",
+      "Bar",
+      "Handwerkliche Pizza",
+      "Biella Zentrum",
+      "Raffinierte Küche",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 222, // New unique ID
+    name: "Osteria Due Cuori",
+    name_en: "Osteria Due Cuori (Two Hearts Inn)",
+    name_es: "Osteria Due Cuori (Posada Dos Corazones)",
+    name_fr: "Osteria Due Cuori (Auberge Deux Cœurs)",
+    name_de: "Osteria Due Cuori (Gasthaus Zwei Herzen)",
+    type: "restaurant",
+    coordinates: [45.56622, 8.045301],
+    googleRating: 4.4,
+    googleReviewCount: 367,
+    address: "Piazza della Cisterna, 11, 13900 Biella BI (Biella Piazzo)",
+    phone: "01530145",
+    website: "https://www.osteriaduecuori.it/",
+    shortDescription:
+      "Osteria Due Cuori a Biella Piazzo: passione, Slow Food e menu Alpini semplificato per l'Adunata! Gusto autentico.",
+    shortDescription_en:
+      "Osteria Due Cuori in Biella Piazzo: passion, Slow Food, and a simplified Alpini menu for the Adunata! Authentic taste.",
+    shortDescription_es:
+      "Osteria Due Cuori en Biella Piazzo: pasión, Slow Food ¡y menú Alpino simplificado para la Adunata! Sabor auténtico.",
+    shortDescription_fr:
+      "Osteria Due Cuori à Biella Piazzo : passion, Slow Food et menu Alpin simplifié pour l'Adunata ! Goût authentique.",
+    shortDescription_de:
+      "Osteria Due Cuori in Biella Piazzo: Leidenschaft, Slow Food und ein vereinfachtes Alpini-Menü für die Adunata! Authentischer Geschmack.",
+    details:
+      "L'Osteria Due Cuori, gioiello gastronomico a Biella Piazzo e segnalata da Slow Food, celebra la cucina del territorio con ingredienti locali e stagionali. Ogni piatto è 'espresso' per freschezza. Per l'Adunata, oltre al menù alla carta, propongono un MENU ALPINI SEMPLIFICATO, pensato per un servizio più agile e focalizzato sui sapori tradizionali. Offrono carni eccellenti, opzioni vegetariane/vegane/senza glutine e gli storici torcetti. Con tavoli all'aperto e accoglienza per bambini e cani, è ideale per un'esperienza culinaria autentica e di qualità durante l'evento.",
+    details_en:
+      "Osteria Due Cuori, a gastronomic gem in Biella Piazzo recognized by Slow Food, celebrates local cuisine with seasonal ingredients. Every dish is freshly prepared ('espresso'). For the Adunata, in addition to the à la carte menu, they offer a SIMPLIFIED ALPINI MENU, designed for quicker service and focused on traditional flavors. They feature excellent meats, vegetarian/vegan/gluten-free options, and historic torcetti biscuits. With outdoor seating and a welcome for children and dogs, it's ideal for an authentic, high-quality culinary experience during the event.",
+    details_es:
+      "Osteria Due Cuori, joya gastronómica en Biella Piazzo reconocida por Slow Food, celebra la cocina local con ingredientes de temporada. Cada plato es 'expreso'. Para la Adunata, además del menú a la carta, ofrecen un MENÚ ALPINO SIMPLIFICADO, pensado para un servicio más ágil y centrado en sabores tradicionales. Cuentan con excelentes carnes, opciones vegetarianas/veganas/sin gluten y los históricos torcetti. Con mesas al aire libre y bienvenida a niños y perros, es ideal para una experiencia culinaria auténtica y de calidad durante el evento.",
+    details_fr:
+      "L'Osteria Due Cuori, joyau gastronomique de Biella Piazzo reconnu par Slow Food, célèbre la cuisine du terroir avec des ingrédients de saison. Chaque plat est 'expresso'. Pour l'Adunata, en plus du menu à la carte, ils proposent un MENU ALPIN SIMPLIFIÉ, conçu pour un service plus rapide et axé sur les saveurs traditionnelles. Ils offrent d'excellentes viandes, des options végétariennes/végétaliennes/sans gluten et les biscuits historiques torcetti. Avec des tables en extérieur et un accueil pour les enfants et les chiens, c'est l'idéal pour une expérience culinaire authentique et de qualité pendant l'événement.",
+    details_de:
+      "Die Osteria Due Cuori, ein gastronomisches Juwel in Biella Piazzo, von Slow Food anerkannt, zelebriert die lokale Küche mit saisonalen Zutaten. Jedes Gericht wird frisch zubereitet ('espresso'). Für die Adunata bieten sie zusätzlich zum À-la-carte-Menü ein VEREINFACHTES ALPINI-MENÜ an, das auf schnelleren Service und traditionelle Aromen ausgerichtet ist. Sie bieten ausgezeichnetes Fleisch, vegetarische/vegane/glutenfreie Optionen und historische Torcetti-Kekse. Mit Sitzplätzen im Freien und einem Willkommen für Kinder und Hunde ist es ideal für ein authentisches, hochwertiges kulinarisches Erlebnis während der Veranstaltung.",
+    images: ["/images/2cuori.jpeg"],
+    openingHours: `giovedì: 19:30-21:30\nvenerdì: 12:30-14:30, 19:30-21:30\nsabato: 12:30-14:30, 19:30-21:30\ndomenica: 12:30-14:30, 19:30-21:00\nlunedì: Chiuso\nmartedì: 19:30-21:30\nmercoledì: 19:30-21:30`,
+    openingHours_en: `Thursday: 19:30-21:30\nFriday: 12:30-14:30, 19:30-21:30\nSaturday: 12:30-14:30, 19:30-21:30\nSunday: 12:30-14:30, 19:30-21:00\nMonday: Closed\nTuesday: 19:30-21:30\nWednesday: 19:30-21:30`,
+    openingHours_es: `Jueves: 19:30-21:30\nViernes: 12:30-14:30, 19:30-21:30\nSábado: 12:30-14:30, 19:30-21:30\nDomingo: 12:30-14:30, 19:30-21:00\nLunes: Cerrado\nMartes: 19:30-21:30\nMiércoles: 19:30-21:30`,
+    openingHours_fr: `Jeudi : 19h30-21h30\nVendredi : 12h30-14h30, 19h30-21h30\nSamedi : 12h30-14h30, 19h30-21h30\nDimanche : 12h30-14h30, 19h30-21h00\nLundi : Fermé\nMardi : 19h30-21h30\nMercredi : 19h30-21h30`,
+    openingHours_de: `Donnerstag: 19:30-21:30\nFreitag: 12:30-14:30, 19:30-21:30\nSamstag: 12:30-14:30, 19:30-21:30\nSonntag: 12:30-14:30, 19:30-21:00\nMontag: Geschlossen\nDienstag: 19:30-21:30\nMittwoch: 19:30-21:30`,
+    discountInfo:
+      "Menu Alpini semplificato per l'Adunata. Cucina Slow Food e opzioni per diete specifiche.", // Updated
+    discountInfo_en:
+      "Simplified Alpini menu for the Adunata. Slow Food cuisine and options for specific diets.", // Updated
+    discountInfo_es:
+      "Menú Alpino simplificado para la Adunata. Cocina Slow Food y opciones para dietas específicas.", // Updated
+    discountInfo_fr:
+      "Menu Alpin simplifié pour l'Adunata. Cuisine Slow Food et options pour régimes spécifiques.", // Updated
+    discountInfo_de:
+      "Vereinfachtes Alpini-Menü für die Adunata. Slow Food-Küche und Optionen für spezielle Diäten.", // Updated
+    tags: [
+      "Osteria",
+      "Slow Food",
+      "Cucina Piemontese",
+      "Menu Alpini Semplificato",
+      "Biella Piazzo",
+      "Vegetariano",
+      "Vegano",
+      "Senza Glutine",
+      "Torcetti",
+    ], // Updated
+    tags_en: [
+      "Osteria",
+      "Slow Food",
+      "Piedmontese Cuisine",
+      "Simplified Alpini Menu",
+      "Biella Piazzo",
+      "Vegetarian",
+      "Vegan",
+      "Gluten-Free",
+      "Torcetti Biscuits",
+    ], // Updated
+    tags_es: [
+      "Ostería",
+      "Slow Food",
+      "Cocina Piamontesa",
+      "Menú Alpino Simplificado",
+      "Biella Piazzo",
+      "Vegetariano",
+      "Vegano",
+      "Sin Gluten",
+      "Galletas Torcetti",
+    ], // Updated
+    tags_fr: [
+      "Osteria",
+      "Slow Food",
+      "Cuisine Piémontaise",
+      "Menu Alpin Simplifié",
+      "Biella Piazzo",
+      "Végétarien",
+      "Végétalien",
+      "Sans Gluten",
+      "Biscuits Torcetti",
+    ], // Updated
+    tags_de: [
+      "Osteria",
+      "Slow Food",
+      "Piemontesische Küche",
+      "Vereinfachtes Alpini-Menü",
+      "Biella Piazzo",
+      "Vegetarisch",
+      "Vegan",
+      "Glutenfrei",
+      "Torcetti Gebäck",
+    ], // Updated
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 505, // New unique ID
+    name: "Bevande Miscelate",
+    name_en: "Bevande Miscelate (Mixed Drinks Shop)",
+    name_es: "Bevande Miscelate (Tienda de Bebidas Mezcladas)",
+    name_fr: "Bevande Miscelate (Boutique de Boissons Mixées)",
+    name_de: "Bevande Miscelate (Geschäft für Mixgetränke)",
+    type: "clothing", // Using 'clothing' as a general shop type
+    coordinates: [45.564607, 8.054341],
+    googleRating: 5.0,
+    googleReviewCount: 12,
+    address: "Via Antonio Gramsci, 11b, 13900 Biella BI",
+    phone: "3297115295",
+    website: "https://bevandemiscelate.it/",
+    shortDescription:
+      "Bevande Miscelate: l'arte del cocktail a casa tua! Kit pronti e prodotti locali selezionati. Perfetto per l'Adunata!", // Adjusted
+    shortDescription_en:
+      "Bevande Miscelate: the art of cocktails at home! Ready-made kits and selected local products. Perfect for the Adunata!", // Adjusted
+    shortDescription_es:
+      "Bevande Miscelate: ¡el arte de los cócteles en tu casa! Kits listos y productos locales seleccionados. ¡Perfecto para la Adunata!", // Adjusted
+    shortDescription_fr:
+      "Bevande Miscelate : l'art du cocktail chez vous ! Kits prêts à l'emploi et produits locaux sélectionnés. Parfait pour l'Adunata !", // Adjusted
+    shortDescription_de:
+      "Bevande Miscelate: die Kunst der Cocktails für zu Hause! Fertige Sets und ausgewählte lokale Produkte. Perfekt für die Adunata!", // Adjusted
+    details:
+      "Bevande Miscelate, in Via Gramsci a Biella, è la destinazione innovativa per gli amanti dei cocktail e dei prodotti di qualità. Nato come shop online, offre esclusive box da miscelare con ingredienti selezionati per creare cocktail perfetti a casa. Troverete anche una curata selezione di distillati e prodotti del territorio. ORARI ESTESI nel weekend Adunata (Ven-Sab 09:00-22:00, Dom 09:00-19:00). Ideale per un regalo originale, per arricchire i vostri momenti conviviali durante l'evento, o per gustare eccellenze locali.", // Adjusted
+    details_en:
+      "Bevande Miscelate, on Via Gramsci in Biella, is the innovative destination for cocktail lovers and quality product enthusiasts. Originating as an online shop, it offers exclusive mixing boxes with selected ingredients to create perfect cocktails at home. You'll also find a curated selection of spirits and local products. EXTENDED HOURS on Adunata weekend (Fri-Sat 09:00-22:00, Sun 09:00-19:00). Ideal for an original gift, to enrich your convivial moments during the event, or to taste local excellences.", // Adjusted
+    details_es:
+      "Bevande Miscelate, en Via Gramsci en Biella, es el destino innovador para los amantes de los cócteles y los productos de calidad. Nacida como tienda online, ofrece exclusivas cajas de mezcla con ingredientes seleccionados para crear cócteles perfectos en casa. También encontrará una cuidada selección de destilados y productos locales. HORARIO EXTENDIDO el fin de semana de la Adunata (Vie-Sáb 09:00-22:00, Dom 09:00-19:00). Ideal para un regalo original, para enriquecer sus momentos de convivencia durante el evento o para degustar excelencias locales.", // Adjusted
+    details_fr:
+      "Bevande Miscelate, Via Gramsci à Biella, est la destination innovante pour les amateurs de cocktails et de produits de qualité. Née comme boutique en ligne, elle propose des coffrets de mixologie exclusifs avec des ingrédients sélectionnés pour créer des cocktails parfaits à la maison. Vous trouverez également une sélection soignée de spiritueux et de produits locaux. HORAIRES PROLONGÉS le week-end de l'Adunata (Ven-Sam 09h00-22h00, Dim 09h00-19h00). Idéal pour un cadeau original, pour enrichir vos moments conviviaux pendant l'événement, ou pour déguster des excellences locales.", // Adjusted
+    details_de:
+      "Bevande Miscelate in der Via Gramsci in Biella ist das innovative Ziel für Cocktail-Liebhaber und Qualitätskenner. Ursprünglich als Online-Shop entstanden, bietet es exklusive Mix-Boxen mit ausgewählten Zutaten, um perfekte Cocktails zu Hause zu kreieren. Sie finden auch eine kuratierte Auswahl an Spirituosen und lokalen Produkten. VERLÄNGERTE ÖFFNUNGSZEITEN am Adunata-Wochenende (Fr-Sa 09:00-22:00, So 09:00-19:00). Ideal für ein originelles Geschenk, zur Bereicherung Ihrer geselligen Momente während der Veranstaltung oder zum Genießen lokaler Spezialitäten.", // Adjusted
+    images: ["/images/bevandeMiscelate.png"],
+    openingHours: `giovedì: 10:00-12:00, 15:00-19:00\nvenerdì: 09:30-22:00\nsabato: 09:00-22:00\ndomenica: 09:00-19:00\nlunedì: Chiuso\nmartedì: 10:00-12:00, 15:00-19:00\nmercoledì: Chiuso`,
+    openingHours_en: `Thursday: 10:00-12:00, 15:00-19:00\nFriday: 09:30-22:00\nSaturday: 09:00-22:00\nSunday: 09:00-19:00\nMonday: Closed\nTuesday: 10:00-12:00, 15:00-19:00\nWednesday: Closed`,
+    openingHours_es: `Jueves: 10:00-12:00, 15:00-19:00\nViernes: 09:30-22:00\nSábado: 09:00-22:00\nDomingo: 09:00-19:00\nLunes: Cerrado\nMartes: 10:00-12:00, 15:00-19:00\nMiércoles: Cerrado`,
+    openingHours_fr: `Jeudi : 10h00-12h00, 15h00-19h00\nVendredi : 09h30-22h00\nSamedi : 09h00-22h00\nDimanche : 09h00-19h00\nLundi : Fermé\nMardi : 10h00-12h00, 15h00-19h00\nMercredi : Fermé`,
+    openingHours_de: `Donnerstag: 10:00-12:00, 15:00-19:00\nFreitag: 09:30-22:00\nSamstag: 09:00-22:00\nSonntag: 09:00-19:00\nMontag: Geschlossen\nDienstag: 10:00-12:00, 15:00-19:00\nMittwoch: Geschlossen`,
+    discountInfo: "Kit cocktail pronti e prodotti locali selezionati.", // Adjusted
+    discountInfo_en: "Ready-made cocktail kits and selected local products.", // Adjusted
+    discountInfo_es: "Kits de cóctel listos y productos locales seleccionados.", // Adjusted
+    discountInfo_fr:
+      "Kits cocktails prêts à l'emploi et produits locaux sélectionnés.", // Adjusted
+    discountInfo_de: "Fertige Cocktail-Sets und ausgewählte lokale Produkte.", // Adjusted
+    tags: [
+      "Cocktail Kit",
+      "Distillati",
+      "Prodotti Locali",
+      "Shop Online",
+      "Biella Centro",
+      "Regali",
+    ], // Adjusted
+    tags_en: [
+      "Cocktail Kits",
+      "Spirits",
+      "Local Products",
+      "Online Shop",
+      "Biella Center",
+      "Gifts",
+    ], // Adjusted
+    tags_es: [
+      "Kits de Cóctel",
+      "Destilados",
+      "Productos Locales",
+      "Tienda Online",
+      "Biella Centro",
+      "Regalos",
+    ], // Adjusted
+    tags_fr: [
+      "Kits Cocktail",
+      "Spiritueux",
+      "Produits Locaux",
+      "Boutique en Ligne",
+      "Biella Centre",
+      "Cadeaux",
+    ], // Adjusted
+    tags_de: [
+      "Cocktail-Sets",
+      "Spirituosen",
+      "Lokale Produkte",
+      "Online-Shop",
+      "Biella Zentrum",
+      "Geschenke",
+    ], // Adjusted
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 506, // New unique ID
+    name: "Le Macellerie di Nonno Nino - Carni Botalla 1876",
+    name_en: "Nonno Nino's Butcher Shops - Carni Botalla 1876",
+    name_es: "Las Carnicerías de Nonno Nino - Carni Botalla 1876",
+    name_fr: "Les Boucheries de Nonno Nino - Carni Botalla 1876",
+    name_de: "Nonno Ninos Metzgereien - Carni Botalla 1876",
+    type: "clothing", // Using 'clothing' as a general shop type
+    coordinates: [45.559634, 8.052724],
+    googleRating: 4.6,
+    googleReviewCount: 75,
+    address: "Via Galimberti Tancredi, 3, 13900 Biella BI",
+    phone: "015666103",
+    website: "https://www.carnibotalla1876srl.com/",
+    shortDescription:
+      "Macellerie Nonno Nino - Carni Botalla 1876: tradizione e qualità dal 1876. Carni eccellenti, e orari no-stop per l'Adunata!",
+    shortDescription_en:
+      "Nonno Nino's Butcher Shops - Carni Botalla 1876: tradition and quality since 1876. Excellent meats, and non-stop hours for the Adunata!",
+    shortDescription_es:
+      "Las Carnicerías de Nonno Nino - Carni Botalla 1876: tradición y calidad desde 1876. ¡Carnes excelentes, horario ininterrumpido para la Adunata!",
+    shortDescription_fr:
+      "Les Boucheries de Nonno Nino - Carni Botalla 1876 : tradition et qualité depuis 1876. Viandes excellentes, horaires non-stop pour l'Adunata !",
+    shortDescription_de:
+      "Nonno Ninos Metzgereien - Carni Botalla 1876: Tradition und Qualität seit 1876. Exzellentes Fleisch, Nonstop-Öffnungszeiten für die Adunata!",
+    details:
+      "Le Macellerie di Nonno Nino - Carni Botalla 1876, con una storia che affonda le radici nel 1876, è un'istituzione a Biella per la qualità delle sue carni. Offrono tagli selezionati e un servizio attento, che include la consegna in giornata. Per l'Adunata, il negozio estende i suoi ORARI in modo eccezionale (Ven-Dom 09:00-23:30), garantendo la possibilità di acquistare carni fresche e prelibate per le vostre grigliate o pasti speciali durante l'evento. Una garanzia di eccellenza e tradizione per gli amanti della buona carne.",
+    details_en:
+      "Nonno Nino's Butcher Shops - Carni Botalla 1876, with a history rooted in 1876, is an institution in Biella for the quality of its meats. They offer selected cuts and attentive service, which includes same-day delivery. For the Adunata, the shop extends its HOURS exceptionally (Fri-Sun 09:00-23:30), ensuring the opportunity to purchase fresh and delicious meats for your barbecues or special meals during the event. A guarantee of excellence and tradition for lovers of good meat.",
+    details_es:
+      "Las Carnicerías de Nonno Nino - Carni Botalla 1876, con una historia que se remonta a 1876, es una institución en Biella por la calidad de sus carnes. Ofrecen cortes selectos y un servicio atento, que incluye la entrega en el mismo día. Para la Adunata, la tienda amplía sus HORARIOS de manera excepcional (Vie-Dom 09:00-23:30), garantizando la oportunidad de comprar carnes frescas y deliciosas para sus barbacoas o comidas especiales durante el evento. Una garantía de excelencia y tradición para los amantes de la buena carne.",
+    details_fr:
+      "Les Boucheries de Nonno Nino - Carni Botalla 1876, avec une histoire ancrée en 1876, est une institution à Biella pour la qualité de ses viandes. Elles proposent des coupes sélectionnées et un service attentionné, qui inclut la livraison le jour même. Pour l'Adunata, la boutique prolonge exceptionnellement ses HORAIRES (Ven-Dim 09h00-23h30), garantissant la possibilité d'acheter des viandes fraîches et délicieuses pour vos barbecues ou repas spéciaux pendant l'événement. Une garantie d'excellence et de tradition pour les amateurs de bonne viande.",
+    details_de:
+      "Nonno Ninos Metzgereien - Carni Botalla 1876, mit einer bis ins Jahr 1876 zurückreichenden Geschichte, ist eine Institution in Biella für die Qualität seines Fleisches. Sie bieten ausgewählte Teilstücke und aufmerksamen Service, einschließlich Lieferung am selben Tag. Für die Adunata erweitert das Geschäft seine ÖFFNUNGSZEITEN außergewöhnlich (Fr-So 09:00-23:30), um die Möglichkeit zu gewährleisten, frisches und köstliches Fleisch für Ihre Grillabende oder besondere Mahlzeiten während der Veranstaltung zu kaufen. Eine Garantie für Exzellenz und Tradition für Liebhaber guten Fleisches.",
+    images: ["/images/macelleriaBotalla.jpg"], // Example image path
+    openingHours: `giovedì: 08:30-13:00, 15:30-19:00\nvenerdì: 09:00-23:30\nsabato: 09:00-23:30\ndomenica: 09:00-23:30\nlunedì: Chiuso\nmartedì: 08:30-13:00, 15:30-19:00\nmercoledì: 08:30-13:00, 15:30-19:00`,
+    openingHours_en: `Thursday: 08:30-13:00, 15:30-19:00\nFriday: 09:00-23:30\nSaturday: 09:00-23:30\nSunday: 09:00-23:30\nMonday: Closed\nTuesday: 08:30-13:00, 15:30-19:00\nWednesday: 08:30-13:00, 15:30-19:00`,
+    openingHours_es: `Jueves: 08:30-13:00, 15:30-19:00\nViernes: 09:00-23:30\nSábado: 09:00-23:30\nDomingo: 09:00-23:30\nLunes: Cerrado\nMartes: 08:30-13:00, 15:30-19:00\nMiércoles: 08:30-13:00, 15:30-19:00`,
+    openingHours_fr: `Jeudi : 08h30-13h00, 15h30-19h00\nVendredi : 09h00-23h30\nSamedi : 09h00-23h30\nDimanche : 09h00-23h30\nLundi : Fermé\nMardi : 08h30-13h00, 15h30-19h00\nMercredi : 08h30-13h00, 15h30-19h00`,
+    openingHours_de: `Donnerstag: 08:30-13:00, 15:30-19:00\nFreitag: 09:00-23:30\nSamstag: 09:00-23:30\nSonntag: 09:00-23:30\nMontag: Geschlossen\nDienstag: 08:30-13:00, 15:30-19:00\nMittwoch: 08:30-13:00, 15:30-19:00`,
+    discountInfo: "Carni di alta qualità dal 1876.",
+    discountInfo_en: "High-quality meats since 1876.",
+    discountInfo_es: "Carnes de alta calidad desde 1876.",
+    discountInfo_fr: "Viandes de haute qualité depuis 1876.",
+    discountInfo_de: "Hochwertiges Fleisch seit 1876.",
+    tags: [
+      "Macelleria",
+      "Carni Pregiate",
+      "Tradizione",
+      "Consegna Domicilio",
+      "Biella",
+      "Aperto Tardi (Weekend Adunata)",
+    ],
+    tags_en: [
+      "Butcher Shop",
+      "Premium Meats",
+      "Tradition",
+      "Home Delivery",
+      "Biella",
+      "Open Late (Adunata Weekend)",
+    ],
+    tags_es: [
+      "Carnicería",
+      "Carnes Selectas",
+      "Tradición",
+      "Entrega Domicilio",
+      "Biella",
+      "Abierto Tarde (Fin Semana Adunata)",
+    ],
+    tags_fr: [
+      "Boucherie",
+      "Viandes de Qualité",
+      "Tradition",
+      "Livraison Domicile",
+      "Biella",
+      "Ouvert Tard (Weekend Adunata)",
+    ],
+    tags_de: [
+      "Metzgerei",
+      "Premiumfleisch",
+      "Tradition",
+      "Lieferservice",
+      "Biella",
+      "Spät Geöffnet (Adunata Wochenende)",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 507, // New unique ID
+    name: "Le Macellerie di Nonno Nino - Carni Botalla 1876",
+    name_en: "Nonno Nino's Butcher Shops - Carni Botalla 1876",
+    name_es: "Las Carnicerías de Nonno Nino - Carni Botalla 1876",
+    name_fr: "Les Boucheries de Nonno Nino - Carni Botalla 1876",
+    name_de: "Nonno Ninos Metzgereien - Carni Botalla 1876",
+    type: "clothing", // Using 'clothing' as a general shop type
+    coordinates: [45.527756, 8.020219],
+    googleRating: 4.7,
+    googleReviewCount: 287,
+    address: "Via Via Maghetto, 117, 1388 Mongrando BI",
+    phone: "015666103",
+    website: "https://www.carnibotalla1876srl.com/",
+    shortDescription:
+      "Macellerie Nonno Nino - Carni Botalla 1876: tradizione e qualità dal 1876. Carni eccellenti, e orari no-stop per l'Adunata!",
+    shortDescription_en:
+      "Nonno Nino's Butcher Shops - Carni Botalla 1876: tradition and quality since 1876. Excellent meats, and non-stop hours for the Adunata!",
+    shortDescription_es:
+      "Las Carnicerías de Nonno Nino - Carni Botalla 1876: tradición y calidad desde 1876. ¡Carnes excelentes, horario ininterrumpido para la Adunata!",
+    shortDescription_fr:
+      "Les Boucheries de Nonno Nino - Carni Botalla 1876 : tradition et qualité depuis 1876. Viandes excellentes, horaires non-stop pour l'Adunata !",
+    shortDescription_de:
+      "Nonno Ninos Metzgereien - Carni Botalla 1876: Tradition und Qualität seit 1876. Exzellentes Fleisch, Nonstop-Öffnungszeiten für die Adunata!",
+    details:
+      "Le Macellerie di Nonno Nino - Carni Botalla 1876, con una storia che affonda le radici nel 1876, è un'istituzione a Biella per la qualità delle sue carni. Offrono tagli selezionati e un servizio attento, che include la consegna in giornata. Per l'Adunata, il negozio estende i suoi ORARI in modo eccezionale (Ven-Dom 09:00-23:30), garantendo la possibilità di acquistare carni fresche e prelibate per le vostre grigliate o pasti speciali durante l'evento. Una garanzia di eccellenza e tradizione per gli amanti della buona carne.",
+    details_en:
+      "Nonno Nino's Butcher Shops - Carni Botalla 1876, with a history rooted in 1876, is an institution in Biella for the quality of its meats. They offer selected cuts and attentive service, which includes same-day delivery. For the Adunata, the shop extends its HOURS exceptionally (Fri-Sun 09:00-23:30), ensuring the opportunity to purchase fresh and delicious meats for your barbecues or special meals during the event. A guarantee of excellence and tradition for lovers of good meat.",
+    details_es:
+      "Las Carnicerías de Nonno Nino - Carni Botalla 1876, con una historia que se remonta a 1876, es una institución en Biella por la calidad de sus carnes. Ofrecen cortes selectos y un servicio atento, que incluye la entrega en el mismo día. Para la Adunata, la tienda amplía sus HORARIOS de manera excepcional (Vie-Dom 09:00-23:30), garantizando la oportunidad de comprar carnes frescas y deliciosas para sus barbacoas o comidas especiales durante el evento. Una garantía de excelencia y tradición para los amantes de la buena carne.",
+    details_fr:
+      "Les Boucheries de Nonno Nino - Carni Botalla 1876, avec une histoire ancrée en 1876, est une institution à Biella pour la qualité de ses viandes. Elles proposent des coupes sélectionnées et un service attentionné, qui inclut la livraison le jour même. Pour l'Adunata, la boutique prolonge exceptionnellement ses HORAIRES (Ven-Dim 09h00-23h30), garantissant la possibilité d'acheter des viandes fraîches et délicieuses pour vos barbecues ou repas spéciaux pendant l'événement. Une garantie d'excellence et de tradition pour les amateurs de bonne viande.",
+    details_de:
+      "Nonno Ninos Metzgereien - Carni Botalla 1876, mit einer bis ins Jahr 1876 zurückreichenden Geschichte, ist eine Institution in Biella für die Qualität seines Fleisches. Sie bieten ausgewählte Teilstücke und aufmerksamen Service, einschließlich Lieferung am selben Tag. Für die Adunata erweitert das Geschäft seine ÖFFNUNGSZEITEN außergewöhnlich (Fr-So 09:00-23:30), um die Möglichkeit zu gewährleisten, frisches und köstliches Fleisch für Ihre Grillabende oder besondere Mahlzeiten während der Veranstaltung zu kaufen. Eine Garantie für Exzellenz und Tradition für Liebhaber guten Fleisches.",
+    images: ["/images/macelleriaBotalla.jpg"], // Example image path
+    openingHours: `giovedì: 08:30-13:00, 15:30-19:00\nvenerdì: 09:00-23:30\nsabato: 09:00-23:30\ndomenica: 09:00-23:30\nlunedì: Chiuso\nmartedì: 08:30-13:00, 15:30-19:00\nmercoledì: 08:30-13:00, 15:30-19:00`,
+    openingHours_en: `Thursday: 08:30-13:00, 15:30-19:00\nFriday: 09:00-23:30\nSaturday: 09:00-23:30\nSunday: 09:00-23:30\nMonday: Closed\nTuesday: 08:30-13:00, 15:30-19:00\nWednesday: 08:30-13:00, 15:30-19:00`,
+    openingHours_es: `Jueves: 08:30-13:00, 15:30-19:00\nViernes: 09:00-23:30\nSábado: 09:00-23:30\nDomingo: 09:00-23:30\nLunes: Cerrado\nMartes: 08:30-13:00, 15:30-19:00\nMiércoles: 08:30-13:00, 15:30-19:00`,
+    openingHours_fr: `Jeudi : 08h30-13h00, 15h30-19h00\nVendredi : 09h00-23h30\nSamedi : 09h00-23h30\nDimanche : 09h00-23h30\nLundi : Fermé\nMardi : 08h30-13h00, 15h30-19h00\nMercredi : 08h30-13h00, 15h30-19h00`,
+    openingHours_de: `Donnerstag: 08:30-13:00, 15:30-19:00\nFreitag: 09:00-23:30\nSamstag: 09:00-23:30\nSonntag: 09:00-23:30\nMontag: Geschlossen\nDienstag: 08:30-13:00, 15:30-19:00\nMittwoch: 08:30-13:00, 15:30-19:00`,
+    discountInfo: "Carni di alta qualità dal 1876.",
+    discountInfo_en: "High-quality meats since 1876.",
+    discountInfo_es: "Carnes de alta calidad desde 1876.",
+    discountInfo_fr: "Viandes de haute qualité depuis 1876.",
+    discountInfo_de: "Hochwertiges Fleisch seit 1876.",
+    tags: [
+      "Macelleria",
+      "Carni Pregiate",
+      "Tradizione",
+      "Consegna Domicilio",
+      "Biella",
+      "Aperto Tardi (Weekend Adunata)",
+    ],
+    tags_en: [
+      "Butcher Shop",
+      "Premium Meats",
+      "Tradition",
+      "Home Delivery",
+      "Biella",
+      "Open Late (Adunata Weekend)",
+    ],
+    tags_es: [
+      "Carnicería",
+      "Carnes Selectas",
+      "Tradición",
+      "Entrega Domicilio",
+      "Biella",
+      "Abierto Tarde (Fin Semana Adunata)",
+    ],
+    tags_fr: [
+      "Boucherie",
+      "Viandes de Qualité",
+      "Tradition",
+      "Livraison Domicile",
+      "Biella",
+      "Ouvert Tard (Weekend Adunata)",
+    ],
+    tags_de: [
+      "Metzgerei",
+      "Premiumfleisch",
+      "Tradition",
+      "Lieferservice",
+      "Biella",
+      "Spät Geöffnet (Adunata Wochenende)",
     ],
     partyInfo: "",
     partyInfo_en: "",
