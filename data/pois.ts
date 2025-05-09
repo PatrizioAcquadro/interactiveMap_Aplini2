@@ -6012,6 +6012,227 @@ export const poiData: POI[] = [
     partyHours_de: "",
   },
   {
+    id: 228, // New unique ID (assuming 227 was the last restaurant)
+    name: "Simon Pizza",
+    name_en: "Simon Pizza",
+    name_es: "Simon Pizza",
+    name_fr: "Simon Pizza",
+    name_de: "Simon Pizza",
+    type: "restaurant", // Primarily a pizzeria
+    coordinates: [45.567275, 8.057559],
+    googleRating: 4.5,
+    googleReviewCount: 234,
+    address: "Via Palazzo di Giustizia, 21, 13900 Biella BI",
+    phone: "0150991489",
+    website: "https://www.facebook.com/simonpizza?locale=it_IT",
+    shortDescription:
+      "Simon Pizza a Biella: pizza al taglio (Margherita €5, Farcita €6), pizze intere e panini (€7).",
+    shortDescription_en:
+      "Simon Pizza in Biella: pizza by the slice (Margherita €5, Stuffed €6), whole pizzas, and sandwiches (€7).",
+    shortDescription_es:
+      "Simon Pizza en Biella: pizza al corte (Margherita 5€, Rellena 6€), pizzas enteras y bocadillos (7€).",
+    shortDescription_fr:
+      "Simon Pizza à Biella : pizza à la part (Margherita 5€, Farcie 6€), pizzas entières et sandwichs (7€).",
+    shortDescription_de:
+      "Simon Pizza in Biella: Pizza stückweise (Margherita 5€, Gefüllt 6€), ganze Pizzen und Sandwiches (7€).",
+    details:
+      "Simon Pizza, situata in Via Palazzo di Giustizia a Biella, è la tua destinazione per una pizza gustosa e versatile. Offrono sia pizze intere che la comoda pizza al taglio, con la Margherita a €5 e la Farcita a €6. Nel menù troverete anche una selezione di panini a €7. Ideale per una cena veloce, uno spuntino o per una pizza da asporto. Aperta solo la sera, chiusa il lunedì.",
+    details_en:
+      "Simon Pizza, located on Via Palazzo di Giustizia in Biella, is your destination for tasty and versatile pizza. They offer both whole pizzas and convenient pizza by the slice, with Margherita at €5 and Stuffed (Farcita) at €6. The menu also features a selection of sandwiches at €7. Ideal for a quick dinner, a snack, or a takeaway pizza. Open only in the evenings, closed on Mondays.",
+    details_es:
+      "Simon Pizza, ubicada en Via Palazzo di Giustizia en Biella, es tu destino para una pizza sabrosa y versátil. Ofrecen tanto pizzas enteras como la conveniente pizza al corte, con la Margherita a 5€ y la Rellena (Farcita) a 6€. El menú también incluye una selección de bocadillos a 7€. Ideal para una cena rápida, un tentempié o una pizza para llevar. Abierto solo por las noches, cerrado los lunes.",
+    details_fr:
+      "Simon Pizza, situé Via Palazzo di Giustizia à Biella, est votre destination pour une pizza savoureuse et polyvalente. Ils proposent des pizzas entières ainsi que la pratique pizza à la part, avec la Margherita à 5€ et la Farcie à 6€. Le menu comprend également une sélection de sandwichs à 7€. Idéal pour un dîner rapide, une collation ou une pizza à emporter. Ouvert uniquement le soir, fermé le lundi.",
+    details_de:
+      "Simon Pizza in der Via Palazzo di Giustizia in Biella ist Ihr Ziel für leckere und vielseitige Pizza. Sie bieten sowohl ganze Pizzen als auch praktische Pizza stückweise an, mit Margherita für 5€ und Gefüllter (Farcita) für 6€. Die Speisekarte enthält auch eine Auswahl an Sandwiches für 7€. Ideal für ein schnelles Abendessen, einen Snack oder eine Pizza zum Mitnehmen. Nur abends geöffnet, montags geschlossen.",
+    images: ["/images/simonPizza.png"], // Suggested image path
+    openingHours: `Mar-Dom: 18:30-22:30\nLun: Chiuso`,
+    openingHours_en: `Tue-Sun: 18:30-22:30\nMon: Closed`,
+    openingHours_es: `Mar-Dom: 18:30-22:30\nLun: Cerrado`,
+    openingHours_fr: `Mar-Dim: 18h30-22h30\nLun: Fermé`,
+    openingHours_de: `Di-So: 18:30-22:30\nMo: Geschlossen`,
+    discountInfo: "Pizza al taglio: Margherita €5, Farcita €6. Panini €7.",
+    discountInfo_en:
+      "Pizza by the slice: Margherita €5, Stuffed €6. Sandwiches €7.",
+    discountInfo_es:
+      "Pizza al corte: Margherita 5€, Rellena 6€. Bocadillos 7€.",
+    discountInfo_fr:
+      "Pizza à la part : Margherita 5€, Farcie 6€. Sandwichs 7€.",
+    discountInfo_de:
+      "Pizza stückweise: Margherita 5€, Gefüllt 6€. Sandwiches 7€.",
+    tags: [
+      "Ristorante",
+      "Pizzeria",
+      "Pizza al Taglio",
+      "Panini",
+      "Biella Centro",
+      "Cena",
+      "Asporto",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Pizzeria",
+      "Pizza by the Slice",
+      "Sandwiches",
+      "Biella Center",
+      "Dinner",
+      "Takeaway",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Pizzería",
+      "Pizza al Corte",
+      "Bocadillos",
+      "Biella Centro",
+      "Cena",
+      "Para Llevar",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Pizzeria",
+      "Pizza à la Part",
+      "Sandwichs",
+      "Biella Centre",
+      "Dîner",
+      "À Emporter",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Pizzeria",
+      "Pizza Stückweise",
+      "Sandwiches",
+      "Biella Zentrum",
+      "Abendessen",
+      "Zum Mitnehmen",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 229, // New unique ID
+    name: "Babel Osteria Pizzeria Birreria",
+    name_en: "Babel Osteria Pizzeria Brewery",
+    name_es: "Babel Osteria Pizzeria Cervecería",
+    name_fr: "Babel Osteria Pizzeria Brasserie",
+    name_de: "Babel Osteria Pizzeria Brauhaus",
+    type: "restaurant", // Covers osteria, pizzeria, birreria aspects
+    coordinates: [45.546936, 8.112298],
+    googleRating: 4.3,
+    googleReviewCount: 344,
+    address: "Via Senatore M. Pozzo, 4, 13878 Candelo BI",
+    phone: "3777074259",
+    website: "https://www.facebook.com/babelbirreria/",
+    shortDescription:
+      "Babel a Candelo: osteria, pizzeria e birreria con cocktail, piatti vegetariani e tavoli all'aperto.",
+    shortDescription_en:
+      "Babel in Candelo: osteria, pizzeria, and brewery with cocktails, vegetarian dishes, and outdoor seating.",
+    shortDescription_es:
+      "Babel en Candelo: osteria, pizzería y cervecería con cócteles, platos vegetarianos y terraza.",
+    shortDescription_fr:
+      "Babel à Candelo : osteria, pizzeria et brasserie avec cocktails, plats végétariens et terrasse.",
+    shortDescription_de:
+      "Babel in Candelo: Osteria, Pizzeria und Brauhaus mit Cocktails, vegetarischen Gerichten und Außensitzplätzen.",
+    details:
+      "Babel Osteria Pizzeria Birreria, situata a Candelo in Via Senatore M. Pozzo, è un locale serale che combina le offerte di un'osteria, una pizzeria e una birreria. Potrete gustare pizze, piatti da osteria, una selezione di birre e ottimi cocktail. Il menù include anche opzioni vegetariane. Dispone di tavoli all'aperto per godersi le serate. Aperto solo la sera, chiuso lunedì e martedì.",
+    details_en:
+      "Babel Osteria Pizzeria Birreria, located in Candelo on Via Senatore M. Pozzo, is an evening venue that combines the offerings of an osteria, pizzeria, and brewery. You can enjoy pizzas, osteria dishes, a selection of beers, and great cocktails. The menu also includes vegetarian options. It features outdoor seating to enjoy the evenings. Open only in the evenings, closed on Mondays and Tuesdays.",
+    details_es:
+      "Babel Osteria Pizzeria Birreria, ubicada en Candelo en Via Senatore M. Pozzo, es un local nocturno que combina las ofertas de una osteria, pizzería y cervecería. Podrá disfrutar de pizzas, platos de osteria, una selección de cervezas y excelentes cócteles. El menú también incluye opciones vegetarianas. Cuenta con mesas al aire libre para disfrutar de las noches. Abierto solo por las noches, cerrado los lunes y martes.",
+    details_fr:
+      "Babel Osteria Pizzeria Birreria, situé à Candelo, Via Senatore M. Pozzo, est un établissement de soirée qui combine les offres d'une osteria, d'une pizzeria et d'une brasserie. Vous pourrez y déguster des pizzas, des plats d'osteria, une sélection de bières et d'excellents cocktails. Le menu comprend également des options végétariennes. Il dispose de tables en extérieur pour profiter des soirées. Ouvert uniquement le soir, fermé les lundis et mardis.",
+    details_de:
+      "Das Babel Osteria Pizzeria Birreria in Candelo in der Via Senatore M. Pozzo ist ein Abendrestaurant, das die Angebote einer Osteria, Pizzeria und eines Brauhauses kombiniert. Sie können Pizzen, Osteria-Gerichte, eine Auswahl an Bieren und großartige Cocktails genießen. Die Speisekarte enthält auch vegetarische Optionen. Es verfügt über Sitzplätze im Freien, um die Abende zu genießen. Nur abends geöffnet, montags und dienstags geschlossen.",
+    images: ["/images/babel.png"], // Suggested image path
+    openingHours: `Mer-Gio, Dom: 19:00-01:00\nVen-Sab: 19:00-02:00\nLun-Mar: Chiuso`,
+    openingHours_en: `Wed-Thu, Sun: 19:00-01:00\nFri-Sat: 19:00-02:00\nMon-Tue: Closed`,
+    openingHours_es: `Mié-Jue, Dom: 19:00-01:00\nVie-Sáb: 19:00-02:00\nLun-Mar: Cerrado`,
+    openingHours_fr: `Mer-Jeu, Dim: 19h00-01h00\nVen-Sam: 19h00-02h00\nLun-Mar: Fermé`,
+    openingHours_de: `Mi-Do, So: 19:00-01:00\nFr-Sa: 19:00-02:00\nMo-Di: Geschlossen`,
+    discountInfo:
+      "Cocktail, birre, pizza e piatti da osteria. Opzioni vegetariane.",
+    discountInfo_en:
+      "Cocktails, beers, pizza, and osteria dishes. Vegetarian options.",
+    discountInfo_es:
+      "Cócteles, cervezas, pizza y platos de osteria. Opciones vegetarianas.",
+    discountInfo_fr:
+      "Cocktails, bières, pizza et plats d'osteria. Options végétariennes.",
+    discountInfo_de:
+      "Cocktails, Biere, Pizza und Osteria-Gerichte. Vegetarische Optionen.",
+    tags: [
+      "Ristorante",
+      "Pizzeria",
+      "Birreria",
+      "Osteria",
+      "Cocktail",
+      "Piatti Vegetariani",
+      "Candelo",
+      "Tavoli Aperto",
+      "Serale",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Pizzeria",
+      "Brewery",
+      "Osteria",
+      "Cocktails",
+      "Vegetarian Dishes",
+      "Candelo",
+      "Outdoor Seating",
+      "Evening",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Pizzería",
+      "Cervecería",
+      "Osteria",
+      "Cócteles",
+      "Platos Vegetarianos",
+      "Candelo",
+      "Terraza",
+      "Noche",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Pizzeria",
+      "Brasserie",
+      "Osteria",
+      "Cocktails",
+      "Plats Végétariens",
+      "Candelo",
+      "Terrasse",
+      "Soirée",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Pizzeria",
+      "Brauhaus",
+      "Osteria",
+      "Cocktails",
+      "Vegetarische Gerichte",
+      "Candelo",
+      "Außenbereich",
+      "Abend",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
     id: 505, // New unique ID
     name: "Bevande Miscelate",
     name_en: "Bevande Miscelate (Mixed Drinks Shop)",
