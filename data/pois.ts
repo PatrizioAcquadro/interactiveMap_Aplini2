@@ -997,535 +997,487 @@ export const poiData: POI[] = [
     partyHours: "",
   },
   {
-    id: 301, // New unique ID
-    name: "Posto Medico Avanzato - Via Arnulfo", // Name indicating type and location
-    name_en: "Advanced Medical Post - Via Arnulfo",
-    name_es: "Puesto Médico Avanzado - Via Arnulfo",
-    name_fr: "Poste Médical Avancé - Via Arnulfo",
-    name_de: "Erweiterter Sanitätsposten - Via Arnulfo",
-    type: "medical_post", // Use the new type
-    coordinates: [45.564899, 8.051914], // Approximate Coordinates for Via Arnulfo 8-12 - ADJUST IF NEEDED
-    shortDescription: "Punto di primo soccorso avanzato per l'Adunata.", // Short description
-    shortDescription_en: "Advanced first aid point for the Adunata.",
-    shortDescription_es: "Punto de primeros auxilios avanzado para la Adunata.",
-    shortDescription_fr: "Poste de premiers secours avancé pour l'Adunata.",
-    shortDescription_de: "Erweiterter Erste-Hilfe-Posten für die Adunata.",
+    id: 301,
+    name: "Posto Medico Avanzato - Parcheggio Via Arnulfo", // Added "Parcheggio"
+    name_en: "Advanced Medical Post - Via Arnulfo Parking",
+    name_es: "Puesto Médico Avanzado - Aparcamiento Via Arnulfo",
+    name_fr: "Poste Médical Avancé - Parking Via Arnulfo",
+    name_de: "Erweiterter Sanitätsposten - Parkplatz Via Arnulfo",
+    type: "medical_post",
+    coordinates: [45.564899, 8.051914], // Kept existing coordinates, assuming they cover the parking area
+    address: "Parcheggio Via Giuseppe Arnulfo, Biella", // Updated address to be more general for parking
+    shortDescription: "PMA per Adunata nel parcheggio di Via Arnulfo.",
+    shortDescription_en: "AMP for Adunata in the Via Arnulfo parking area.",
+    shortDescription_es: "PMA para Adunata en el aparcamiento de Via Arnulfo.",
+    shortDescription_fr: "PMA pour Adunata dans le parking de Via Arnulfo.",
+    shortDescription_de: "EMP für Adunata auf dem Parkplatz Via Arnulfo.",
     details:
-      "Postazione medica avanzata gestita dai servizi sanitari per l'Adunata Nazionale Alpini Biella 2025. Fornisce assistenza medica e primo soccorso per emergenze. Situato nell'area di Via Arnulfo. Fare riferimento al piano sanitario ufficiale per dettagli e orari.", // Detailed description
+      "Posto Medico Avanzato operativo per l'Adunata, situato nel Parcheggio di Via Arnulfo. Attivo H24 da Venerdì 9 Maggio ore 08:00.", // Updated details
     details_en:
-      "Advanced medical station managed by the health services for the Adunata Nazionale Alpini Biella 2025. Provides medical assistance and first aid for emergencies. Located in the Via Arnulfo area. Refer to the official health plan for details and hours.",
+      "Advanced Medical Post operational for the Adunata, located in the Via Arnulfo Parking area. Active 24/7 from Friday, May 9th, 8:00 AM.",
     details_es:
-      "Puesto médico avanzado gestionado por los servicios sanitarios para la Adunata Nazionale Alpini Biella 2025. Proporciona asistencia médica y primeros auxilios para emergencias. Ubicado en la zona de Via Arnulfo. Consulte el plan sanitario oficial para obtener detalles y horarios.",
+      "Puesto Médico Avanzado operativo para la Adunata, ubicado en el Aparcamiento de Via Arnulfo. Activo 24/7 desde el Viernes 9 de Mayo a las 08:00.",
     details_fr:
-      "Poste médical avancé géré par les services de santé pour l'Adunata Nazionale Alpini Biella 2025. Fournit une assistance médicale et les premiers secours en cas d'urgence. Situé dans la zone de Via Arnulfo. Consulter le plan sanitaire officiel pour les détails et les horaires.",
+      "Poste Médical Avancé opérationnel pour l'Adunata, situé dans le Parking de la Via Arnulfo. Actif 24h/24 à partir du Vendredi 9 Mai à 08h00.",
     details_de:
-      "Vom Gesundheitsdienst für die Adunata Nazionale Alpini Biella 2025 verwalteter erweiterter medizinischer Posten. Bietet medizinische Hilfe und Erste Hilfe bei Notfällen. Befindet sich im Bereich der Via Arnulfo. Einzelheiten und Öffnungszeiten finden Sie im offiziellen Gesundheitsplan.",
-    address: "Via Giuseppe Arnulfo, 8-12 (Area Sanitaria), Biella", // Specific address + area indicator
-    phone: "", // Usually refer to general emergency numbers (112/118)
-    website: "", // N/A
-    openingHours: "Orari evento / Emergenze (Vedi Piano Sanitario)", // Indicate dependence on event/emergency plan
-    openingHours_en: "Event hours / Emergencies (See Health Plan)",
-    openingHours_es: "Horario del evento / Emergencias (Ver Plan Sanitario)",
-    openingHours_fr: "Horaires de l'événement / Urgences (Voir Plan Sanitaire)",
-    openingHours_de: "Veranstaltungszeiten / Notfälle (Siehe Gesundheitsplan)",
+      "Erweiterter medizinischer Posten für die Adunata auf dem Parkplatz Via Arnulfo. Rund um die Uhr geöffnet ab Freitag, 9. Mai, 08:00 Uhr.",
+    openingHours: "Ven (dalle 08:00) - Dom: H24", // Updated opening hours
+    openingHours_en: "Fri (from 08:00) - Sun: 24h",
+    openingHours_es: "Vie (desde 08:00) - Dom: 24h",
+    openingHours_fr: "Ven (à partir de 08h00) - Dim: 24h",
+    openingHours_de: "Fr (ab 08:00) - So: 24h",
     tags: [
       "Medico",
-      "Pronto Soccorso",
-      "Emergenza",
-      "Adunata",
-      "Ufficiale",
-      "Via Arnulfo",
       "PMA",
-    ], // Relevant tags (PMA=Posto Medico Avanzato)
+      "Adunata",
+      "Via Arnulfo",
+      "Parcheggio",
+      "Emergenza",
+    ], // Added Parcheggio
     tags_en: [
       "Medical",
-      "First Aid",
-      "Emergency",
-      "Adunata",
-      "Official",
-      "Via Arnulfo",
       "AMP",
-    ], // AMP=Advanced Medical Post
+      "Adunata",
+      "Via Arnulfo",
+      "Parking",
+      "Emergency",
+    ],
     tags_es: [
       "Médico",
-      "Primeros Auxilios",
+      "PMA",
+      "Adunata",
+      "Via Arnulfo",
+      "Aparcamiento",
       "Emergencia",
-      "Adunata",
-      "Oficial",
-      "Via Arnulfo",
-      "PMA",
     ],
-    tags_fr: [
-      "Médical",
-      "Premiers Secours",
-      "Urgence",
-      "Adunata",
-      "Officiel",
-      "Via Arnulfo",
-      "PMA",
-    ],
+    tags_fr: ["Médical", "PMA", "Adunata", "Via Arnulfo", "Parking", "Urgence"],
     tags_de: [
       "Medizinisch",
-      "Erste Hilfe",
-      "Notfall",
-      "Adunata",
-      "Offiziell",
-      "Via Arnulfo",
       "EMP",
-    ], // EMP=Erweiterter Med. Posten
-    // Removed Google Rating/Reviews as they don't apply
-    images: ["/images/medicoAlpini.png"], // Add paths to official photos/renderings if available
+      "Adunata",
+      "Via Arnulfo",
+      "Parkplatz",
+      "Notfall",
+    ],
+    images: ["/images/medicoAlpini.png"],
     discountInfo: "",
     partyInfo: "",
     partyHours: "",
   },
   {
-    id: 302, // New unique ID
-    name: "Posto Medico Avanzato - Via Bertodano", // Name indicating type and location
+    id: 302,
+    name: "Posto Medico Avanzato - Via Bertodano",
     name_en: "Advanced Medical Post - Via Bertodano",
     name_es: "Puesto Médico Avanzado - Via Bertodano",
     name_fr: "Poste Médical Avancé - Via Bertodano",
     name_de: "Erweiterter Sanitätsposten - Via Bertodano",
-    type: "medical_post", // Use the medical_post type
-    coordinates: [45.563119, 8.059629], // Approximate Coordinates for Via Bertodano 8/A - ADJUST IF NEEDED
-    shortDescription: "Punto di primo soccorso avanzato per l'Adunata.", // Short description
-    shortDescription_en: "Advanced first aid point for the Adunata.",
-    shortDescription_es: "Punto de primeros auxilios avanzado para la Adunata.",
-    shortDescription_fr: "Poste de premiers secours avancé pour l'Adunata.",
-    shortDescription_de: "Erweiterter Erste-Hilfe-Posten für die Adunata.",
+    type: "medical_post",
+    coordinates: [45.563119, 8.059629], // Kept existing
+    address: "Via Bertodano, 8/A (Area Sanitaria), Biella", // Kept existing
+    shortDescription: "PMA per Adunata in Via Bertodano.",
+    shortDescription_en: "AMP for Adunata on Via Bertodano.",
+    shortDescription_es: "PMA para Adunata en Via Bertodano.",
+    shortDescription_fr: "PMA pour Adunata Via Bertodano.",
+    shortDescription_de: "EMP für Adunata in Via Bertodano.",
     details:
-      "Postazione medica avanzata gestita dai servizi sanitari per l'Adunata Nazionale Alpini Biella 2025. Fornisce assistenza medica e primo soccorso per emergenze. Situato in Via Bertodano. Fare riferimento al piano sanitario ufficiale per dettagli e orari.", // Detailed description
+      "Posto Medico Avanzato operativo per l'Adunata, situato in Via Bertodano. Attivo H24 da Sabato 10 Maggio ore 08:00.", // Updated details
     details_en:
-      "Advanced medical station managed by the health services for the Adunata Nazionale Alpini Biella 2025. Provides medical assistance and first aid for emergencies. Located on Via Bertodano. Refer to the official health plan for details and hours.",
+      "Advanced Medical Post operational for the Adunata, located on Via Bertodano. Active 24/7 from Saturday, May 10th, 8:00 AM.",
     details_es:
-      "Puesto médico avanzado gestionado por los servicios sanitarios para la Adunata Nazionale Alpini Biella 2025. Proporciona asistencia médica y primeros auxilios para emergencias. Ubicado en Via Bertodano. Consulte el plan sanitario oficial para obtener detalles y horarios.",
+      "Puesto Médico Avanzado operativo para la Adunata, ubicado en Via Bertodano. Activo 24/7 desde el Sábado 10 de Mayo a las 08:00.",
     details_fr:
-      "Poste médical avancé géré par les services de santé pour l'Adunata Nazionale Alpini Biella 2025. Fournit une assistance médicale et les premiers secours en cas d'urgence. Situé Via Bertodano. Consulter le plan sanitaire officiel pour les détails et les horaires.",
+      "Poste Médical Avancé opérationnel pour l'Adunata, situé Via Bertodano. Actif 24h/24 à partir du Samedi 10 Mai à 08h00.",
     details_de:
-      "Vom Gesundheitsdienst für die Adunata Nazionale Alpini Biella 2025 verwalteter erweiterter medizinischer Posten. Bietet medizinische Hilfe und Erste Hilfe bei Notfällen. Befindet sich an der Via Bertodano. Einzelheiten und Öffnungszeiten finden Sie im offiziellen Gesundheitsplan.",
-    address: "Via Bertodano, 8/A (Area Sanitaria), Biella", // Specific address + area indicator
-    phone: "", // Usually refer to general emergency numbers (112/118)
-    website: "", // N/A
-    openingHours: "Orari evento / Emergenze (Vedi Piano Sanitario)", // Indicate dependence on event/emergency plan
-    openingHours_en: "Event hours / Emergencies (See Health Plan)",
-    openingHours_es: "Horario del evento / Emergencias (Ver Plan Sanitario)",
-    openingHours_fr: "Horaires de l'événement / Urgences (Voir Plan Sanitaire)",
-    openingHours_de: "Veranstaltungszeiten / Notfälle (Siehe Gesundheitsplan)",
-    tags: [
-      "Medico",
-      "Pronto Soccorso",
-      "Emergenza",
-      "Adunata",
-      "Ufficiale",
-      "Via Bertodano",
-      "PMA",
-    ], // Relevant tags
-    tags_en: [
-      "Medical",
-      "First Aid",
-      "Emergency",
-      "Adunata",
-      "Official",
-      "Via Bertodano",
-      "AMP",
-    ],
-    tags_es: [
-      "Médico",
-      "Primeros Auxilios",
-      "Emergencia",
-      "Adunata",
-      "Oficial",
-      "Via Bertodano",
-      "PMA",
-    ],
-    tags_fr: [
-      "Médical",
-      "Premiers Secours",
-      "Urgence",
-      "Adunata",
-      "Officiel",
-      "Via Bertodano",
-      "PMA",
-    ],
-    tags_de: [
-      "Medizinisch",
-      "Erste Hilfe",
-      "Notfall",
-      "Adunata",
-      "Offiziell",
-      "Via Bertodano",
-      "EMP",
-    ],
-    // Removed Google Rating/Reviews as they don't apply
-    images: ["/images/medicoAlpini.png"], // Add paths to official photos/renderings if available
+      "Erweiterter medizinischer Posten für die Adunata in der Via Bertodano. Rund um die Uhr geöffnet ab Samstag, 10. Mai, 08:00 Uhr.",
+    openingHours: "Sab (dalle 08:00) - Dom: H24", // Updated opening hours
+    openingHours_en: "Sat (from 08:00) - Sun: 24h",
+    openingHours_es: "Sáb (desde 08:00) - Dom: 24h",
+    openingHours_fr: "Sam (à partir de 08h00) - Dim: 24h",
+    openingHours_de: "Sa (ab 08:00) - So: 24h",
+    tags: ["Medico", "PMA", "Adunata", "Via Bertodano", "Emergenza"],
+    tags_en: ["Medical", "AMP", "Adunata", "Via Bertodano", "Emergency"],
+    tags_es: ["Médico", "PMA", "Adunata", "Via Bertodano", "Emergencia"],
+    tags_fr: ["Médical", "PMA", "Adunata", "Via Bertodano", "Urgence"],
+    tags_de: ["Medizinisch", "EMP", "Adunata", "Via Bertodano", "Notfall"],
+    images: ["/images/medicoAlpini.png"],
     discountInfo: "",
     partyInfo: "",
     partyHours: "",
   },
   {
-    id: 303, // New unique ID
-    name: "Posto Medico Avanzato - Via Tripoli", // Name indicating type and location
-    name_en: "Advanced Medical Post - Via Tripoli",
-    name_es: "Puesto Médico Avanzado - Via Tripoli",
-    name_fr: "Poste Médical Avancé - Via Tripoli",
-    name_de: "Erweiterter Sanitätsposten - Via Tripoli",
-    type: "medical_post", // Use the medical_post type
-    coordinates: [45.559579, 8.055032], // Approximate Coordinates for Via Tripoli 16/A - ADJUST IF NEEDED
-    shortDescription: "Punto di primo soccorso avanzato per l'Adunata.", // Short description
-    shortDescription_en: "Advanced first aid point for the Adunata.",
-    shortDescription_es: "Punto de primeros auxilios avanzado para la Adunata.",
-    shortDescription_fr: "Poste de premiers secours avancé pour l'Adunata.",
-    shortDescription_de: "Erweiterter Erste-Hilfe-Posten für die Adunata.",
-    details:
-      "Postazione medica avanzata gestita dai servizi sanitari per l'Adunata Nazionale Alpini Biella 2025. Fornisce assistenza medica e primo soccorso per emergenze. Situato in Via Tripoli. Fare riferimento al piano sanitario ufficiale per dettagli e orari.", // Detailed description
-    details_en:
-      "Advanced medical station managed by the health services for the Adunata Nazionale Alpini Biella 2025. Provides medical assistance and first aid for emergencies. Located on Via Tripoli. Refer to the official health plan for details and hours.",
-    details_es:
-      "Puesto médico avanzado gestionado por los servicios sanitarios para la Adunata Nazionale Alpini Biella 2025. Proporciona asistencia médica y primeros auxilios para emergencias. Ubicado en Via Tripoli. Consulte el plan sanitario oficial para obtener detalles y horarios.",
-    details_fr:
-      "Poste médical avancé géré par les services de santé pour l'Adunata Nazionale Alpini Biella 2025. Fournit une assistance médicale et les premiers secours en cas d'urgence. Situé Via Tripoli. Consulter le plan sanitaire officiel pour les détails et les horaires.",
-    details_de:
-      "Vom Gesundheitsdienst für die Adunata Nazionale Alpini Biella 2025 verwalteter erweiterter medizinischer Posten. Bietet medizinische Hilfe und Erste Hilfe bei Notfällen. Befindet sich an der Via Tripoli. Einzelheiten und Öffnungszeiten finden Sie im offiziellen Gesundheitsplan.",
-    address: "Via Tripoli, 16/A (Area Sanitaria), Biella", // Specific address + area indicator
-    phone: "", // Usually refer to general emergency numbers (112/118)
-    website: "", // N/A
-    openingHours: "Orari evento / Emergenze (Vedi Piano Sanitario)", // Indicate dependence on event/emergency plan
-    openingHours_en: "Event hours / Emergencies (See Health Plan)",
-    openingHours_es: "Horario del evento / Emergencias (Ver Plan Sanitario)",
-    openingHours_fr: "Horaires de l'événement / Urgences (Voir Plan Sanitaire)",
-    openingHours_de: "Veranstaltungszeiten / Notfälle (Siehe Gesundheitsplan)",
-    tags: [
-      "Medico",
-      "Pronto Soccorso",
-      "Emergenza",
-      "Adunata",
-      "Ufficiale",
-      "Via Tripoli",
-      "PMA",
-    ], // Relevant tags
-    tags_en: [
-      "Medical",
-      "First Aid",
-      "Emergency",
-      "Adunata",
-      "Official",
-      "Via Tripoli",
-      "AMP",
-    ],
-    tags_es: [
-      "Médico",
-      "Primeros Auxilios",
-      "Emergencia",
-      "Adunata",
-      "Oficial",
-      "Via Tripoli",
-      "PMA",
-    ],
-    tags_fr: [
-      "Médical",
-      "Premiers Secours",
-      "Urgence",
-      "Adunata",
-      "Officiel",
-      "Via Tripoli",
-      "PMA",
-    ],
-    tags_de: [
-      "Medizinisch",
-      "Erste Hilfe",
-      "Notfall",
-      "Adunata",
-      "Offiziell",
-      "Via Tripoli",
-      "EMP",
-    ],
-    // Removed Google Rating/Reviews as they don't apply
-    images: ["/images/medicoAlpini.png"], // Add paths to official photos/renderings if available
-    discountInfo: "",
-    partyInfo: "",
-    partyHours: "",
-  },
-  {
-    id: 304, // New unique ID
-    name: "Posto Medico Avanzato - Rione San Biagio", // Name indicating type and location
-    name_en: "Advanced Medical Post - San Biagio District",
-    name_es: "Puesto Médico Avanzado - Barrio San Biagio",
-    name_fr: "Poste Médical Avancé - Quartier San Biagio",
-    name_de: "Erweiterter Sanitätsposten - Stadtteil San Biagio",
-    type: "medical_post", // Use the medical_post type
-    // Coordinates point roughly to the central area of Rione San Biagio (near Chiesa di San Biagio).
-    // *** ADJUST THESE COORDINATES [45.5620, 8.0480] IF YOU KNOW THE SPECIFIC LOCATION WITHIN SAN BIAGIO ***
-    coordinates: [45.555828, 8.05352],
+    id: 306,
+    name: "Ospedale da Campo ANA - Piazza Unità d'Italia", // Updated name
+    name_en: "ANA Field Hospital - Piazza Unità d'Italia",
+    name_es: "Hospital de Campaña ANA - Piazza Unità d'Italia",
+    name_fr: "Hôpital de Campagne ANA - Piazza Unità d'Italia",
+    name_de: "ANA Feldlazarett - Piazza Unità d'Italia",
+    type: "field_hospital",
+    coordinates: [45.560768, 8.049324], // <<<!!! PLACEHOLDER COORDINATES for Piazza Unità d'Italia - PLEASE VERIFY/UPDATE !!!>>>
+    address: "Piazza Unità d'Italia, Biella", // Updated address
     shortDescription:
-      "Punto di primo soccorso avanzato per l'Adunata nel Rione San Biagio.", // Short description
+      "Ospedale da Campo ANA per l'Adunata 2025 in Piazza Unità d'Italia.",
     shortDescription_en:
-      "Advanced first aid point for the Adunata in the San Biagio district.",
+      "ANA Field Hospital for Adunata 2025 in Piazza Unità d'Italia.",
     shortDescription_es:
-      "Punto de primeros auxilios avanzado para la Adunata en el barrio de San Biagio.",
+      "Hospital de Campaña ANA para la Adunata 2025 en Piazza Unità d'Italia.",
     shortDescription_fr:
-      "Poste de premiers secours avancé pour l'Adunata dans le quartier San Biagio.",
+      "Hôpital de Campagne ANA pour l'Adunata 2025 Piazza Unità d'Italia.",
     shortDescription_de:
-      "Erweiterter Erste-Hilfe-Posten für die Adunata im Stadtteil San Biagio.",
+      "ANA Feldlazarett für Adunata 2025 am Piazza Unità d'Italia.",
     details:
-      "Postazione medica avanzata gestita dai servizi sanitari per l'Adunata Nazionale Alpini Biella 2025. Fornisce assistenza medica e primo soccorso per emergenze. Situato nel Rione San Biagio. Fare riferimento al piano sanitario ufficiale per dettagli e orari.", // Detailed description
+      "Ospedale da Campo dell'Associazione Nazionale Alpini (ANA) allestito in Piazza Unità d'Italia per l'Adunata Biella 2025. Fornisce assistenza medica avanzata. Operativo H24 a partire dalle ore 14:00 di Venerdì 9 Maggio.", // Updated details
     details_en:
-      "Advanced medical station managed by the health services for the Adunata Nazionale Alpini Biella 2025. Provides medical assistance and first aid for emergencies. Located in the San Biagio district. Refer to the official health plan for details and hours.",
+      "Field Hospital of the National Alpini Association (ANA) set up in Piazza Unità d'Italia for the Adunata Biella 2025. Provides advanced medical assistance. Operational 24/7 starting from 2:00 PM on Friday, May 9th.",
     details_es:
-      "Puesto médico avanzado gestionado por los servicios sanitarios para la Adunata Nazionale Alpini Biella 2025. Proporciona asistencia médica y primeros auxilios para emergencias. Ubicado en el barrio de San Biagio. Consulte el plan sanitario oficial para obtener detalles y horarios.",
+      "Hospital de Campaña de la Asociación Nacional Alpini (ANA) instalado en Piazza Unità d'Italia para la Adunata Biella 2025. Proporciona asistencia médica avanzada. Operativo 24/7 a partir de las 14:00 del Viernes 9 de Mayo.",
     details_fr:
-      "Poste médical avancé géré par les services de santé pour l'Adunata Nazionale Alpini Biella 2025. Fournit une assistance médicale et les premiers secours en cas d'urgence. Situé dans le quartier San Biagio. Consulter le plan sanitaire officiel pour les détails et les horaires.",
+      "Hôpital de Campagne de l'Association Nationale des Alpins (ANA) installé sur la Piazza Unità d'Italia pour l'Adunata Biella 2025. Fournit une assistance médicale avancée. Opérationnel 24h/24 à partir de 14h00 le Vendredi 9 Mai.",
     details_de:
-      "Vom Gesundheitsdienst für die Adunata Nazionale Alpini Biella 2025 verwalteter erweiterter medizinischer Posten. Bietet medizinische Hilfe und Erste Hilfe bei Notfällen. Befindet sich im Stadtteil San Biagio. Einzelheiten und Öffnungszeiten finden Sie im offiziellen Gesundheitsplan.",
-    address: "Rione San Biagio (Area Sanitaria), Biella", // General address indicating the neighborhood
-    phone: "", // Usually refer to general emergency numbers (112/118)
-    website: "", // N/A
-    openingHours: "Orari evento / Emergenze (Vedi Piano Sanitario)", // Indicate dependence on event/emergency plan
-    openingHours_en: "Event hours / Emergencies (See Health Plan)",
-    openingHours_es: "Horario del evento / Emergencias (Ver Plan Sanitario)",
-    openingHours_fr: "Horaires de l'événement / Urgences (Voir Plan Sanitaire)",
-    openingHours_de: "Veranstaltungszeiten / Notfälle (Siehe Gesundheitsplan)",
-    tags: [
-      "Medico",
-      "Pronto Soccorso",
-      "Emergenza",
-      "Adunata",
-      "Ufficiale",
-      "Rione San Biagio",
-      "San Biagio",
-      "PMA",
-    ], // Relevant tags
-    tags_en: [
-      "Medical",
-      "First Aid",
-      "Emergency",
-      "Adunata",
-      "Official",
-      "San Biagio District",
-      "San Biagio",
-      "AMP",
-    ],
-    tags_es: [
-      "Médico",
-      "Primeros Auxilios",
-      "Emergencia",
-      "Adunata",
-      "Oficial",
-      "Barrio San Biagio",
-      "San Biagio",
-      "PMA",
-    ],
-    tags_fr: [
-      "Médical",
-      "Premiers Secours",
-      "Urgence",
-      "Adunata",
-      "Officiel",
-      "Quartier San Biagio",
-      "San Biagio",
-      "PMA",
-    ],
-    tags_de: [
-      "Medizinisch",
-      "Erste Hilfe",
-      "Notfall",
-      "Adunata",
-      "Offiziell",
-      "Stadtteil San Biagio",
-      "San Biagio",
-      "EMP",
-    ],
-    // Removed Google Rating/Reviews as they don't apply
-    images: ["/images/medicoAlpini.png"], // Add paths to official photos/renderings if available
-    discountInfo: "",
-    partyInfo: "",
-    partyHours: "",
-  },
-  {
-    id: 305, // New unique ID
-    name: "Posto Medico Avanzato - Area Thes", // Name indicating type and general complex area
-    name_en: "Advanced Medical Post - ThesArea",
-    name_es: "Puesto Médico Avanzado - Área Thes",
-    name_fr: "Poste Médical Avancé - Zone Thes",
-    name_de: "Erweiterter Sanitätsposten - Bereich Thes",
-    type: "medical_post", // Use the medical_post type
-    // Coordinates point to the general area of Thes/Città Studi.
-    // *** ADJUST THESE COORDINATES [45.5775, 8.0410] IF YOU KNOW THE SPECIFIC BUILDING/LOCATION ***
-    coordinates: [45.559597, 8.041966],
-    shortDescription:
-      "Punto di primo soccorso avanzato per l'Adunata presso Area Thes.", // Short description
-    shortDescription_en:
-      "Advanced first aid point for the Adunata at the Thes Area.",
-    shortDescription_es:
-      "Punto de primeros auxilios avanzado para la Adunata en el Área Thes.",
-    shortDescription_fr:
-      "Poste de premiers secours avancé pour l'Adunata dans la zone Thes.",
-    shortDescription_de:
-      "Erweiterter Erste-Hilfe-Posten für die Adunata im Thes-Bereich.",
-    details:
-      "Postazione medica avanzata gestita dai servizi sanitari per l'Adunata Nazionale Alpini Biella 2025. Fornisce assistenza medica e primo soccorso per emergenze. Situato nell'Area Thes / Città Studi. Fare riferimento al piano sanitario ufficiale per dettagli e orari.", // Detailed description
-    details_en:
-      "Advanced medical station managed by the health services for the Adunata Nazionale Alpini Biella 2025. Provides medical assistance and first aid for emergencies. Located in the Thes / Città Studi Area. Refer to the official health plan for details and hours.",
-    details_es:
-      "Puesto médico avanzado gestionado por los servicios sanitarios para la Adunata Nazionale Alpini Biella 2025. Proporciona asistencia médica y primeros auxilios para emergencias. Ubicado en el Área Thes / Città Studi. Consulte el plan sanitario oficial para obtener detalles y horarios.",
-    details_fr:
-      "Poste médical avancé géré par les services de santé pour l'Adunata Nazionale Alpini Biella 2025. Fournit une assistance médicale et les premiers secours en cas d'urgence. Situé dans la zone Thes / Città Studi. Consulter le plan sanitaire officiel pour les détails et les horaires.",
-    details_de:
-      "Vom Gesundheitsdienst für die Adunata Nazionale Alpini Biella 2025 verwalteter erweiterter medizinischer Posten. Bietet medizinische Hilfe und Erste Hilfe bei Notfällen. Befindet sich im Bereich Thes / Città Studi. Einzelheiten und Öffnungszeiten finden Sie im offiziellen Gesundheitsplan.",
-    address: "Area Thes / Città Studi (Area Sanitaria), Biella", // General address indicating the complex
-    phone: "", // Usually refer to general emergency numbers (112/118)
-    website: "", // N/A
-    openingHours: "Orari evento / Emergenze (Vedi Piano Sanitario)", // Indicate dependence on event/emergency plan
-    openingHours_en: "Event hours / Emergencies (See Health Plan)",
-    openingHours_es: "Horario del evento / Emergencias (Ver Plan Sanitario)",
-    openingHours_fr: "Horaires de l'événement / Urgences (Voir Plan Sanitaire)",
-    openingHours_de: "Veranstaltungszeiten / Notfälle (Siehe Gesundheitsplan)",
-    tags: [
-      "Medico",
-      "Pronto Soccorso",
-      "Emergenza",
-      "Adunata",
-      "Ufficiale",
-      "Thes",
-      "Città Studi",
-      "PMA",
-    ], // Relevant tags
-    tags_en: [
-      "Medical",
-      "First Aid",
-      "Emergency",
-      "Adunata",
-      "Official",
-      "Thes",
-      "Città Studi",
-      "AMP",
-    ],
-    tags_es: [
-      "Médico",
-      "Primeros Auxilios",
-      "Emergencia",
-      "Adunata",
-      "Oficial",
-      "Thes",
-      "Città Studi",
-      "PMA",
-    ],
-    tags_fr: [
-      "Médical",
-      "Premiers Secours",
-      "Urgence",
-      "Adunata",
-      "Officiel",
-      "Thes",
-      "Città Studi",
-      "PMA",
-    ],
-    tags_de: [
-      "Medizinisch",
-      "Erste Hilfe",
-      "Notfall",
-      "Adunata",
-      "Offiziell",
-      "Thes",
-      "Città Studi",
-      "EMP",
-    ],
-    // Removed Google Rating/Reviews as they don't apply
-    images: ["/images/medicoAlpini.png"], // Add paths to official photos/renderings if available
-    discountInfo: "",
-    partyInfo: "",
-    partyHours: "",
-  },
-  {
-    id: 306, // New unique ID
-    name: "Ospedale da Campo Adunata - Zona Vernato", // Name indicating type and general area
-    name_en: "Adunata Field Hospital - Vernato Area",
-    name_es: "Hospital de Campaña Adunata - Zona Vernato",
-    name_fr: "Hôpital de Campagne Adunata - Zone Vernato",
-    name_de: "Adunata Feldlazarett - Vernato Bereich",
-    type: "field_hospital", // Use the new type
-    // Using the same approximate Vernato coordinates as before.
-    // *** ADJUST THESE COORDINATES [45.5565, 8.0660] IF YOU KNOW THE SPECIFIC LOCATION WITHIN VERNATO ***
-    coordinates: [45.560685, 8.049302],
-    shortDescription: "Ospedale da campo principale per l'Adunata 2025.", // Short description emphasizing importance
-    shortDescription_en: "Main field hospital for Adunata 2025.",
-    shortDescription_es: "Hospital de campaña principal para la Adunata 2025.",
-    shortDescription_fr: "Hôpital de campagne principal pour l'Adunata 2025.",
-    shortDescription_de: "Hauptfeldlazarett für die Adunata 2025.",
-    details:
-      "Ospedale da campo allestito per l'Adunata Nazionale Alpini Biella 2025, gestito dai servizi sanitari e dalla Protezione Civile. Fornisce un livello di assistenza medica superiore ai Posti Medici Avanzati per emergenze e necessità maggiori. Situato nella zona del Vernato. Fare riferimento al piano sanitario ufficiale per dettagli operativi e orari.", // Detailed description highlighting its role
-    details_en:
-      "Field hospital set up for the Adunata Nazionale Alpini Biella 2025, managed by health services and Civil Protection. Provides a higher level of medical assistance than Advanced Medical Posts for emergencies and greater needs. Located in the Vernato area. Refer to the official health plan for operational details and hours.",
-    details_es:
-      "Hospital de campaña instalado para la Adunata Nazionale Alpini Biella 2025, gestionado por los servicios sanitarios y Protección Civil. Proporciona un nivel de asistencia médica superior a los Puestos Médicos Avanzados para emergencias y necesidades mayores. Ubicado en la zona de Vernato. Consulte el plan sanitario oficial para detalles operativos y horarios.",
-    details_fr:
-      "Hôpital de campagne mis en place pour l'Adunata Nazionale Alpini Biella 2025, géré par les services de santé et la Protection Civile. Fournit un niveau d'assistance médicale supérieur aux Postes Médicaux Avancés pour les urgences et les besoins plus importants. Situé dans la zone de Vernato. Consulter le plan sanitaire officiel pour les détails opérationnels et les horaires.",
-    details_de:
-      "Für die Adunata Nazionale Alpini Biella 2025 eingerichtetes Feldlazarett, das vom Gesundheitsdienst und dem Zivilschutz verwaltet wird. Bietet ein höheres Maß an medizinischer Versorgung als Erweiterte Sanitätsposten für Notfälle und größere Bedürfnisse. Befindet sich im Vernato-Bereich. Einzelheiten zum Betrieb und zu den Öffnungszeiten finden Sie im offiziellen Gesundheitsplan.",
-    address: "Zona Vernato (Ospedale da Campo), Biella", // General address indicating the neighborhood and type
-    phone: "", // Usually refer to general emergency numbers (112/118)
-    website: "", // N/A
-    openingHours: "Operativo H24 durante l'evento (Vedi Piano Sanitario)", // Likely 24h during event, but verify
-    openingHours_en: "Operational 24h during event (See Health Plan)",
-    openingHours_es: "Operativo 24h durante el evento (Ver Plan Sanitario)",
-    openingHours_fr:
-      "Opérationnel 24h/24 pendant l'événement (Voir Plan Sanitaire)",
-    openingHours_de:
-      "Während der Veranstaltung rund um die Uhr geöffnet (Siehe Gesundheitsplan)",
+      "Feldlazarett der Nationalen Alpini-Vereinigung (ANA) auf der Piazza Unità d'Italia für die Adunata Biella 2025 eingerichtet. Bietet erweiterte medizinische Versorgung. Rund um die Uhr einsatzbereit ab Freitag, 9. Mai, 14:00 Uhr.",
+    openingHours: "Ven (dalle 14:00) - Dom: H24", // Updated opening hours
+    openingHours_en: "Fri (from 14:00) - Sun: 24h",
+    openingHours_es: "Vie (desde 14:00) - Dom: 24h",
+    openingHours_fr: "Ven (à partir de 14h00) - Dim: 24h",
+    openingHours_de: "Fr (ab 14:00) - So: 24h",
     tags: [
       "Medico",
       "Ospedale da Campo",
-      "Emergenza",
+      "ANA",
       "Adunata",
-      "Ufficiale",
-      "Vernato",
-      "Sanità",
-      "Protezione Civile",
-    ], // Relevant tags
+      "Piazza Unità d'Italia",
+      "Emergenza",
+    ], // Updated tags
     tags_en: [
       "Medical",
       "Field Hospital",
-      "Emergency",
+      "ANA",
       "Adunata",
-      "Official",
-      "Vernato",
-      "Healthcare",
-      "Civil Protection",
+      "Piazza Unità d'Italia",
+      "Emergency",
     ],
     tags_es: [
       "Médico",
       "Hospital de Campaña",
-      "Emergencia",
+      "ANA",
       "Adunata",
-      "Oficial",
-      "Vernato",
-      "Sanidad",
-      "Protección Civil",
+      "Piazza Unità d'Italia",
+      "Emergencia",
     ],
     tags_fr: [
       "Médical",
       "Hôpital de Campagne",
-      "Urgence",
+      "ANA",
       "Adunata",
-      "Officiel",
-      "Vernato",
-      "Santé",
-      "Protection Civile",
+      "Piazza Unità d'Italia",
+      "Urgence",
     ],
     tags_de: [
       "Medizinisch",
       "Feldlazarett",
-      "Notfall",
+      "ANA",
       "Adunata",
-      "Offiziell",
-      "Vernato",
-      "Gesundheitswesen",
-      "Zivilschutz",
+      "Piazza Unità d'Italia",
+      "Notfall",
     ],
-    // Removed Google Rating/Reviews as they don't apply
-    images: ["/images/medicoAlpini.png"], // Add paths to official photos/renderings if available
+    images: ["/images/medicoAlpini.png"], // Kept generic, can be updated
     discountInfo: "",
     partyInfo: "",
     partyHours: "",
+  },
+  {
+    id: 307, // New unique ID
+    name: "Posto Medico Avanzato - Via Aldo Moro (Banca Sella)",
+    name_en: "Advanced Medical Post - Via Aldo Moro (Banca Sella)",
+    name_es: "Puesto Médico Avanzado - Via Aldo Moro (Banca Sella)",
+    name_fr: "Poste Médical Avancé - Via Aldo Moro (Banca Sella)",
+    name_de: "Erweiterter Sanitätsposten - Via Aldo Moro (Banca Sella)",
+    type: "medical_post",
+    coordinates: [45.560456, 8.054299],
+    address: "Via Aldo Moro (spalle Banca Sella), Biella",
+    shortDescription: "PMA per Adunata in Via Aldo Moro (spalle Banca Sella).",
+    shortDescription_en:
+      "AMP for Adunata on Via Aldo Moro (behind Banca Sella).",
+    shortDescription_es:
+      "PMA para Adunata en Via Aldo Moro (detrás de Banca Sella).",
+    shortDescription_fr:
+      "PMA pour Adunata Via Aldo Moro (derrière Banca Sella).",
+    shortDescription_de:
+      "EMP für Adunata in Via Aldo Moro (hinter Banca Sella).",
+    details:
+      "Posto Medico Avanzato operativo per l'Adunata, situato in Via Aldo Moro alle spalle di Banca Sella. Attivo H24 da Venerdì 9 Maggio ore 16:00.",
+    details_en:
+      "Advanced Medical Post operational for the Adunata, located on Via Aldo Moro behind Banca Sella. Active 24/7 from Friday, May 9th, 4:00 PM.",
+    details_es:
+      "Puesto Médico Avanzado operativo para la Adunata, ubicado en Via Aldo Moro detrás de Banca Sella. Activo 24/7 desde el Viernes 9 de Mayo a las 16:00.",
+    details_fr:
+      "Poste Médical Avancé opérationnel pour l'Adunata, situé Via Aldo Moro derrière Banca Sella. Actif 24h/24 à partir du Vendredi 9 Mai à 16h00.",
+    details_de:
+      "Erweiterter medizinischer Posten für die Adunata in der Via Aldo Moro hinter der Banca Sella. Rund um die Uhr geöffnet ab Freitag, 9. Mai, 16:00 Uhr.",
+    openingHours: "Ven (dalle 16:00) - Dom: H24", // As per image
+    openingHours_en: "Fri (from 16:00) - Sun: 24h",
+    openingHours_es: "Vie (desde 16:00) - Dom: 24h",
+    openingHours_fr: "Ven (à partir de 16h00) - Dim: 24h",
+    openingHours_de: "Fr (ab 16:00) - So: 24h",
+    tags: ["Medico", "PMA", "Adunata", "Via Aldo Moro", "Emergenza"],
+    tags_en: ["Medical", "AMP", "Adunata", "Via Aldo Moro", "Emergency"],
+    tags_es: ["Médico", "PMA", "Adunata", "Via Aldo Moro", "Emergencia"],
+    tags_fr: ["Médical", "PMA", "Adunata", "Via Aldo Moro", "Urgence"],
+    tags_de: ["Medizinisch", "EMP", "Adunata", "Via Aldo Moro", "Notfall"],
+    images: ["/images/medicoAlpini.png"], // Generic medical image
+  },
+  {
+    id: 308, // New unique ID
+    name: "Posto Medico Avanzato - Piazza Adua",
+    name_en: "Advanced Medical Post - Piazza Adua",
+    name_es: "Puesto Médico Avanzado - Piazza Adua",
+    name_fr: "Poste Médical Avancé - Piazza Adua",
+    name_de: "Erweiterter Sanitätsposten - Piazza Adua",
+    type: "medical_post",
+    coordinates: [45.555717, 8.062571],
+    address: "Piazza Adua, Biella",
+    shortDescription: "PMA per Adunata in Piazza Adua.",
+    shortDescription_en: "AMP for Adunata in Piazza Adua.",
+    shortDescription_es: "PMA para Adunata en Piazza Adua.",
+    shortDescription_fr: "PMA pour Adunata Piazza Adua.",
+    shortDescription_de: "EMP für Adunata am Piazza Adua.",
+    details:
+      "Posto Medico Avanzato operativo per l'Adunata in Piazza Adua. Attivo H24 da Sabato 10 Maggio ore 08:00.",
+    details_en:
+      "Advanced Medical Post operational for the Adunata in Piazza Adua. Active 24/7 from Saturday, May 10th, 8:00 AM.",
+    details_es:
+      "Puesto Médico Avanzado operativo para la Adunata en Piazza Adua. Activo 24/7 desde el Sábado 10 de Mayo a las 08:00.",
+    details_fr:
+      "Poste Médical Avancé opérationnel pour l'Adunata Piazza Adua. Actif 24h/24 à partir du Samedi 10 Mai à 08h00.",
+    details_de:
+      "Erweiterter medizinischer Posten für die Adunata am Piazza Adua. Rund um die Uhr geöffnet ab Samstag, 10. Mai, 08:00 Uhr.",
+    openingHours: "Sab (dalle 08:00) - Dom: H24", // As per image
+    openingHours_en: "Sat (from 08:00) - Sun: 24h",
+    openingHours_es: "Sáb (desde 08:00) - Dom: 24h",
+    openingHours_fr: "Sam (à partir de 08h00) - Dim: 24h",
+    openingHours_de: "Sa (ab 08:00) - So: 24h",
+    tags: ["Medico", "PMA", "Adunata", "Piazza Adua", "Emergenza"],
+    tags_en: ["Medical", "AMP", "Adunata", "Piazza Adua", "Emergency"],
+    tags_es: ["Médico", "PMA", "Adunata", "Piazza Adua", "Emergencia"],
+    tags_fr: ["Médical", "PMA", "Adunata", "Piazza Adua", "Urgence"],
+    tags_de: ["Medizinisch", "EMP", "Adunata", "Piazza Adua", "Notfall"],
+    images: ["/images/medicoAlpini.png"],
+  },
+  {
+    id: 309, // New unique ID
+    name: "Posto Medico Avanzato - Via Addis Abeba / C.so Risorgimento",
+    name_en: "Advanced Medical Post - Via Addis Abeba / C.so Risorgimento",
+    name_es: "Puesto Médico Avanzado - Via Addis Abeba / C.so Risorgimento",
+    name_fr: "Poste Médical Avancé - Via Addis Abeba / C.so Risorgimento",
+    name_de: "Erweiterter Sanitätsposten - Via Addis Abeba / C.so Risorgimento",
+    type: "medical_post",
+    coordinates: [45.555502, 8.053485],
+    address: "Via Addis Abeba (angolo Corso Risorgimento), Biella",
+    shortDescription:
+      "PMA per Adunata all'incrocio Via Addis Abeba / C.so Risorgimento.",
+    shortDescription_en:
+      "AMP for Adunata at Via Addis Abeba / C.so Risorgimento junction.",
+    shortDescription_es:
+      "PMA para Adunata en cruce Via Addis Abeba / C.so Risorgimento.",
+    shortDescription_fr:
+      "PMA pour Adunata à l'angle Via Addis Abeba / C.so Risorgimento.",
+    shortDescription_de:
+      "EMP für Adunata an der Kreuzung Via Addis Abeba / C.so Risorgimento.",
+    details:
+      "Posto Medico Avanzato operativo per l'Adunata all'angolo tra Via Addis Abeba e Corso Risorgimento. Attivo H24 da Domenica 11 Maggio ore 06:00.",
+    details_en:
+      "Advanced Medical Post operational for the Adunata at the corner of Via Addis Abeba and Corso Risorgimento. Active 24/7 from Sunday, May 11th, 6:00 AM.",
+    details_es:
+      "Puesto Médico Avanzado operativo para la Adunata en la esquina de Via Addis Abeba y Corso Risorgimento. Activo 24/7 desde el Domingo 11 de Mayo a las 06:00.",
+    details_fr:
+      "Poste Médical Avancé opérationnel pour l'Adunata à l'angle de la Via Addis Abeba et du Corso Risorgimento. Actif 24h/24 à partir du Dimanche 11 Mai à 06h00.",
+    details_de:
+      "Erweiterter medizinischer Posten für die Adunata an der Ecke Via Addis Abeba und Corso Risorgimento. Rund um die Uhr geöffnet ab Sonntag, 11. Mai, 06:00 Uhr.",
+    openingHours: "Dom (dalle 06:00): H24", // As per image
+    openingHours_en: "Sun (from 06:00): 24h",
+    openingHours_es: "Dom (desde 06:00): 24h",
+    openingHours_fr: "Dim (à partir de 06h00): 24h",
+    openingHours_de: "So (ab 06:00): 24h",
+    tags: [
+      "Medico",
+      "PMA",
+      "Adunata",
+      "Via Addis Abeba",
+      "Corso Risorgimento",
+      "Emergenza",
+    ],
+    tags_en: [
+      "Medical",
+      "AMP",
+      "Adunata",
+      "Via Addis Abeba",
+      "Corso Risorgimento",
+      "Emergency",
+    ],
+    tags_es: [
+      "Médico",
+      "PMA",
+      "Adunata",
+      "Via Addis Abeba",
+      "Corso Risorgimento",
+      "Emergencia",
+    ],
+    tags_fr: [
+      "Médical",
+      "PMA",
+      "Adunata",
+      "Via Addis Abeba",
+      "Corso Risorgimento",
+      "Urgence",
+    ],
+    tags_de: [
+      "Medizinisch",
+      "EMP",
+      "Adunata",
+      "Via Addis Abeba",
+      "Corso Risorgimento",
+      "Notfall",
+    ],
+    images: ["/images/medicoAlpini.png"],
+  },
+  {
+    id: 310, // New unique ID
+    name: "Punto Primo Soccorso (PPS) - LILT Biella",
+    name_en: "First Aid Point (PPS) - LILT Biella",
+    name_es: "Punto de Primeros Auxilios (PPS) - LILT Biella",
+    name_fr: "Point de Premiers Secours (PPS) - LILT Biella",
+    name_de: "Erste-Hilfe-Stelle (PPS) - LILT Biella",
+    type: "medical_post", // Using medical_post, could be more specific if needed
+    coordinates: [45.55881, 8.04226],
+    address: "Via Ivrea, 22, 13900 Biella BI (presso LILT)",
+    shortDescription:
+      "Punto Primo Soccorso (PPS) presso LILT Biella per l'Adunata.",
+    shortDescription_en:
+      "First Aid Point (PPS) at LILT Biella for the Adunata.",
+    shortDescription_es:
+      "Punto de Primeros Auxilios (PPS) en LILT Biella para la Adunata.",
+    shortDescription_fr:
+      "Point de Premiers Secours (PPS) à LILT Biella pour l'Adunata.",
+    shortDescription_de:
+      "Erste-Hilfe-Stelle (PPS) bei LILT Biella für die Adunata.",
+    details:
+      "Punto di Primo Soccorso (PPS) operativo per l'Adunata presso la sede LILT Biella in Via Ivrea. Orari specifici: Sabato 10 Maggio 14:00-24:00, Domenica 11 Maggio dalle 08:00.",
+    details_en:
+      "First Aid Point (PPS) operational for the Adunata at LILT Biella on Via Ivrea. Specific hours: Saturday, May 10th, 2:00 PM - 12:00 AM; Sunday, May 11th, from 8:00 AM.",
+    details_es:
+      "Punto de Primeros Auxilios (PPS) operativo para la Adunata en la sede de LILT Biella en Via Ivrea. Horarios específicos: Sábado 10 de Mayo 14:00-24:00, Domingo 11 de Mayo desde las 08:00.",
+    details_fr:
+      "Point de Premiers Secours (PPS) opérationnel pour l'Adunata au siège de LILT Biella, Via Ivrea. Horaires spécifiques : Samedi 10 Mai 14h00-24h00, Dimanche 11 Mai à partir de 08h00.",
+    details_de:
+      "Erste-Hilfe-Stelle (PPS) für die Adunata am Sitz von LILT Biella in der Via Ivrea. Spezifische Öffnungszeiten: Samstag, 10. Mai 14:00-24:00 Uhr, Sonntag, 11. Mai ab 08:00 Uhr.",
+    openingHours: "Sab: 14:00-24:00\nDom: dalle 08:00", // As per image, Sunday end time not specified
+    openingHours_en: "Sat: 14:00-24:00\nSun: from 08:00",
+    openingHours_es: "Sáb: 14:00-24:00\nDom: desde 08:00",
+    openingHours_fr: "Sam: 14h00-24h00\nDim: à partir de 08h00",
+    openingHours_de: "Sa: 14:00-24:00\nSo: ab 08:00",
+    tags: ["Medico", "PPS", "Primo Soccorso", "LILT", "Adunata", "Via Ivrea"],
+    tags_en: ["Medical", "PPS", "First Aid", "LILT", "Adunata", "Via Ivrea"],
+    tags_es: [
+      "Médico",
+      "PPS",
+      "Primeros Auxilios",
+      "LILT",
+      "Adunata",
+      "Via Ivrea",
+    ],
+    tags_fr: [
+      "Médical",
+      "PPS",
+      "Premiers Secours",
+      "LILT",
+      "Adunata",
+      "Via Ivrea",
+    ],
+    tags_de: [
+      "Medizinisch",
+      "PPS",
+      "Erste Hilfe",
+      "LILT",
+      "Adunata",
+      "Via Ivrea",
+    ],
+    images: ["/images/medicoAlpini.png"],
+  },
+  {
+    id: 311, // New unique ID
+    name: "Punto Prima Assistenza (PPA) - Piazza Cucco (Piazzo)",
+    name_en: "Primary Assistance Point (PPA) - Piazza Cucco (Piazzo)",
+    name_es: "Punto de Primera Asistencia (PPA) - Piazza Cucco (Piazzo)",
+    name_fr: "Point de Première Assistance (PPA) - Piazza Cucco (Piazzo)",
+    name_de: "Erstversorgungsstelle (PPA) - Piazza Cucco (Piazzo)",
+    type: "medical_post", // Using medical_post
+    coordinates: [45.566762, 8.045361],
+    address: "Piazza Cucco, Biella Piazzo",
+    shortDescription:
+      "Punto Prima Assistenza (PPA) in Piazza Cucco (Biella Piazzo) per l'Adunata.",
+    shortDescription_en:
+      "Primary Assistance Point (PPA) in Piazza Cucco (Biella Piazzo) for Adunata.",
+    shortDescription_es:
+      "Punto de Primera Asistencia (PPA) en Piazza Cucco (Biella Piazzo) para Adunata.",
+    shortDescription_fr:
+      "Point de Première Assistance (PPA) Piazza Cucco (Biella Piazzo) pour Adunata.",
+    shortDescription_de:
+      "Erstversorgungsstelle (PPA) am Piazza Cucco (Biella Piazzo) für Adunata.",
+    details:
+      "Punto di Prima Assistenza (PPA) operativo per l'Adunata in Piazza Cucco (Biella Piazzo). Orari specifici: Venerdì 9 Maggio 18:00-01:00, Sabato 10 Maggio 18:00-01:00.",
+    details_en:
+      "Primary Assistance Point (PPA) operational for the Adunata in Piazza Cucco (Biella Piazzo). Specific hours: Friday, May 9th, 6:00 PM - 1:00 AM; Saturday, May 10th, 6:00 PM - 1:00 AM.",
+    details_es:
+      "Punto de Primera Asistencia (PPA) operativo para la Adunata en Piazza Cucco (Biella Piazzo). Horarios específicos: Viernes 9 de Mayo 18:00-01:00, Sábado 10 de Mayo 18:00-01:00.",
+    details_fr:
+      "Point de Première Assistance (PPA) opérationnel pour l'Adunata Piazza Cucco (Biella Piazzo). Horaires spécifiques : Vendredi 9 Mai 18h00-01h00, Samedi 10 Mai 18h00-01h00.",
+    details_de:
+      "Erstversorgungsstelle (PPA) für die Adunata am Piazza Cucco (Biella Piazzo). Spezifische Öffnungszeiten: Freitag, 9. Mai 18:00-01:00 Uhr, Samstag, 10. Mai 18:00-01:00 Uhr.",
+    openingHours: "Ven: 18:00-01:00\nSab: 18:00-01:00", // As per image
+    openingHours_en: "Fri: 18:00-01:00\nSat: 18:00-01:00",
+    openingHours_es: "Vie: 18:00-01:00\nSáb: 18:00-01:00",
+    openingHours_fr: "Ven: 18h00-01h00\nSam: 18h00-01h00",
+    openingHours_de: "Fr: 18:00-01:00\nSa: 18:00-01:00",
+    tags: [
+      "Medico",
+      "PPA",
+      "Assistenza Primaria",
+      "Adunata",
+      "Piazza Cucco",
+      "Piazzo",
+    ],
+    tags_en: [
+      "Medical",
+      "PPA",
+      "Primary Assistance",
+      "Adunata",
+      "Piazza Cucco",
+      "Piazzo",
+    ],
+    tags_es: [
+      "Médico",
+      "PPA",
+      "Asistencia Primaria",
+      "Adunata",
+      "Piazza Cucco",
+      "Piazzo",
+    ],
+    tags_fr: [
+      "Médical",
+      "PPA",
+      "Première Assistance",
+      "Adunata",
+      "Piazza Cucco",
+      "Piazzo",
+    ],
+    tags_de: [
+      "Medizinisch",
+      "PPA",
+      "Erstversorgung",
+      "Adunata",
+      "Piazza Cucco",
+      "Piazzo",
+    ],
+    images: ["/images/medicoAlpini.png"],
   },
   {
     id: 32, // Keep the existing ID
@@ -3784,6 +3736,122 @@ export const poiData: POI[] = [
     partyHours_de: "", // Removed
   },
   {
+    id: 613, // New unique ID (assuming 612 was the last bar)
+    name: "Caffè Vergnano ~ Bar Piscina",
+    name_en: "Caffè Vergnano ~ Bar Piscina (Poolside Bar)",
+    name_es: "Caffè Vergnano ~ Bar Piscina (Bar de la Piscina)",
+    name_fr: "Caffè Vergnano ~ Bar Piscina (Bar de la Piscine)",
+    name_de: "Caffè Vergnano ~ Bar Piscina (Schwimmbad-Bar)",
+    type: "bar", // It's a bar, but with significant food offerings
+    coordinates: [45.553152, 8.055507],
+    googleRating: 4.1,
+    googleReviewCount: 321,
+    address: "Viale Macallè, 23, 13900 Biella BI",
+    phone: "0158494719",
+    website: "https://www.facebook.com/p/Bar-Piscina-100063501672535/",
+    shortDescription:
+      "Bar Piscina (Caffè Vergnano) a Biella: taglieri, panini, primi piatti e aperitivi. Orari estesi nel weekend.",
+    shortDescription_en:
+      "Bar Piscina (Caffè Vergnano) in Biella: platters, sandwiches, pasta dishes, and aperitifs. Extended weekend hours.",
+    shortDescription_es:
+      "Bar Piscina (Caffè Vergnano) en Biella: tablas de embutidos/quesos, bocadillos, platos de pasta y aperitivos. Horario extendido los fines de semana.",
+    shortDescription_fr:
+      "Bar Piscina (Caffè Vergnano) à Biella : planches, sandwichs, plats de pâtes et apéritifs. Horaires étendus le week-end.",
+    shortDescription_de:
+      "Bar Piscina (Caffè Vergnano) in Biella: Platten, Sandwiches, Nudelgerichte und Aperitifs. Erweiterte Wochenendöffnungszeiten.",
+    details:
+      "Il Caffè Vergnano ~ Bar Piscina, in Viale Macallè a Biella, è un locale accogliente che offre una pausa gustosa a ogni ora. Propone taglieri con salumi e formaggi nostrani, panini di vario genere, il classico antipasto piemontese e una selezione di primi piatti. Perfetto per una colazione, un pranzo veloce, un aperitivo o una cena informale. Particolarmente comodo per chi si trova in zona piscina, con orari prolungati fino a tarda notte nel weekend (Ven-Dom fino alle 02:00).",
+    details_en:
+      "Caffè Vergnano ~ Bar Piscina, on Viale Macallè in Biella, is a welcoming spot offering a tasty break at any hour. It serves platters with local cured meats and cheeses, various sandwiches, the classic Piedmontese appetizer, and a selection of pasta dishes. Perfect for breakfast, a quick lunch, an aperitif, or an informal dinner. Particularly convenient for those in the pool area, with extended hours until late at night on weekends (Fri-Sun until 02:00 AM).",
+    details_es:
+      "El Caffè Vergnano ~ Bar Piscina, en Viale Macallè en Biella, es un lugar acogedor que ofrece una pausa sabrosa a cualquier hora. Sirve tablas con embutidos y quesos locales, bocadillos variados, el clásico aperitivo piamontés y una selección de platos de pasta. Perfecto para un desayuno, un almuerzo rápido, un aperitivo o una cena informal. Especialmente conveniente para quienes se encuentren en la zona de la piscina, con horario extendido hasta altas horas de la noche los fines de semana (Vie-Dom hasta las 02:00).",
+    details_fr:
+      "Le Caffè Vergnano ~ Bar Piscina, sur Viale Macallè à Biella, est un lieu accueillant offrant une pause savoureuse à toute heure. Il propose des planches de charcuteries et fromages locaux, divers sandwichs, l'apéritif piémontais classique et une sélection de plats de pâtes. Parfait pour un petit-déjeuner, un déjeuner rapide, un apéritif ou un dîner informel. Particulièrement pratique pour ceux qui se trouvent dans la zone de la piscine, avec des horaires prolongés jusqu'à tard dans la nuit le week-end (Ven-Dim jusqu'à 02h00).",
+    details_de:
+      "Das Caffè Vergnano ~ Bar Piscina in der Viale Macallè in Biella ist ein einladender Ort, der zu jeder Stunde eine schmackhafte Pause bietet. Es serviert Platten mit lokalen Wurst- und Käsesorten, verschiedene Sandwiches, die klassische piemontesische Vorspeise und eine Auswahl an Nudelgerichten. Perfekt für ein Frühstück, ein schnelles Mittagessen, einen Aperitif oder ein informelles Abendessen. Besonders praktisch für diejenigen, die sich im Schwimmbadbereich aufhalten, mit verlängerten Öffnungszeiten bis spät in die Nacht am Wochenende (Fr-So bis 02:00 Uhr).",
+    images: ["/images/rivetti.jpeg"], // Suggested image path
+    openingHours: `Lun-Gio: 07:00-22:00\nVen-Dom: 07:00-02:00`,
+    openingHours_en: `Mon-Thu: 07:00-22:00\nFri-Sun: 07:00-02:00`,
+    openingHours_es: `Lun-Jue: 07:00-22:00\nVie-Dom: 07:00-02:00`,
+    openingHours_fr: `Lun-Jeu: 07h00-22h00\nVen-Dim: 07h00-02h00`,
+    openingHours_de: `Mo-Do: 07:00-22:00\nFr-So: 07:00-02:00`,
+    discountInfo:
+      "Taglieri, panini, antipasto piemontese e primi piatti disponibili.",
+    discountInfo_en:
+      "Platters, sandwiches, Piedmontese appetizer, and pasta dishes available.",
+    discountInfo_es:
+      "Tablas de embutidos/quesos, bocadillos, aperitivo piamontés y platos de pasta disponibles.",
+    discountInfo_fr:
+      "Planches, sandwichs, apéritif piémontais et plats de pâtes disponibles.",
+    discountInfo_de:
+      "Platten, Sandwiches, piemontesische Vorspeise und Nudelgerichte erhältlich.",
+    tags: [
+      "Bar",
+      "Caffetteria",
+      "Taglieri",
+      "Panini",
+      "Primi Piatti",
+      "Antipasto Piemontese",
+      "Biella",
+      "Aperitivo",
+      "Aperto Tardi (Weekend)",
+    ],
+    tags_en: [
+      "Bar",
+      "Cafeteria",
+      "Platters",
+      "Sandwiches",
+      "Pasta Dishes",
+      "Piedmontese Appetizer",
+      "Biella",
+      "Aperitif",
+      "Open Late (Weekend)",
+    ],
+    tags_es: [
+      "Bar",
+      "Cafetería",
+      "Tablas",
+      "Bocadillos",
+      "Platos de Pasta",
+      "Aperitivo Piamontés",
+      "Biella",
+      "Aperitivo",
+      "Abierto Tarde (Fin de Semana)",
+    ],
+    tags_fr: [
+      "Bar",
+      "Cafétéria",
+      "Planches",
+      "Sandwichs",
+      "Plats de Pâtes",
+      "Apéritif Piémontais",
+      "Biella",
+      "Apéritif",
+      "Ouvert Tard (Week-end)",
+    ],
+    tags_de: [
+      "Bar",
+      "Cafeteria",
+      "Platten",
+      "Sandwiches",
+      "Nudelgerichte",
+      "Piemontesische Vorspeise",
+      "Biella",
+      "Aperitif",
+      "Spät Geöffnet (Wochenende)",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
     id: 208,
     name: "New Wood Pub", // Corrected name based on Facebook URL
     name_en: "New Wood Pub",
@@ -5611,6 +5679,339 @@ export const poiData: POI[] = [
     partyHours_de: "", // Removed
   },
   {
+    id: 225,
+    name: "Bar Ristorante Savona",
+    name_en: "Savona Bar & Restaurant (Adunata Menu)",
+    name_es: "Bar Restaurante Savona (Menú Adunata)",
+    name_fr: "Bar Restaurant Savona (Menu Adunata)",
+    name_de: "Bar Restaurant Savona (Adunata Menü)",
+    type: "restaurant",
+    coordinates: [45.56313, 8.133245],
+    googleRating: 4.8,
+    googleReviewCount: 6,
+    address: "Via Quintino Sella, 70, 13855 Valdengo BI",
+    phone: "0159061280",
+    website: "https://www.facebook.com/people/Bar-Savona/100046282900157/",
+    shortDescription:
+      "Bar Savona a Valdengo per l'Adunata: Menù Alpini giornalieri (Pranzo/Cena), panini, dolci e bar completo. Orari dedicati Ven-Dom.",
+    shortDescription_en:
+      "Savona Bar in Valdengo for Adunata: Daily Alpini Menus (Lunch/Dinner), sandwiches, desserts, and full bar. Dedicated Fri-Sun hours.",
+    shortDescription_es:
+      "Bar Savona en Valdengo para la Adunata: Menús Alpinos diarios (Almuerzo/Cena), bocadillos, postres y bar completo. Horarios dedicados Vie-Dom.",
+    shortDescription_fr:
+      "Bar Savona à Valdengo pour l'Adunata : Menus Alpins quotidiens (Déjeuner/Dîner), sandwichs, desserts et bar complet. Horaires dédiés Ven-Dim.",
+    shortDescription_de:
+      "Bar Savona in Valdengo für Adunata: Tägliche Alpini-Menüs (Mittag-/Abendessen), Sandwiches, Desserts und komplette Bar. Eigene Fr-So Öffnungszeiten.",
+    details:
+      "Il Bar Ristorante Savona a Valdengo offre speciali Menù degli Alpini per l'evento:\nVENERDÌ 9: Pranzo (Pasta Castelmagno/Pomodoro; Bistecca coppa/Roastbeef; Patate), Cena (Pasta e fagioli).\nSABATO 10: Pranzo (Pasta ragù/Pomodoro; Milanese pollo/Roastbeef; Zucchine), Cena (Polenta e Salsiccia).\nDOMENICA 11: Pranzo (Pasta Cacio e Pepe/Pomodoro; Hamburger/Roastbeef/Arrosto; Peperoni), Cena (Polenta con porchetta).\nOgni menù include acqua, vino e caffè (Pranzo €15, Cena €12). Dolci della casa (€4). Sempre disponibili panini (Salame Contadino, Cotto e Toma, Porchetta, Hamburger etc., da €5). Bar con caffè, bibite, birra, vino, spritz e cocktail. Lun-Gio aperto 24h.",
+    details_en:
+      "Savona Bar & Restaurant in Valdengo offers special Alpini Menus for the event:\nFRIDAY 9: Lunch (Castelmagno/Tomato Pasta; Coppa steak/Roastbeef; Potatoes), Dinner (Pasta & beans).\nSATURDAY 10: Lunch (Ragù/Tomato Pasta; Chicken Milanese/Roastbeef; Zucchini), Dinner (Polenta & Sausage).\nSUNDAY 11: Lunch (Cacio e Pepe/Tomato Pasta; Hamburger/Roastbeef/Roast; Peppers), Dinner (Polenta with porchetta).\nEach menu includes water, wine, and coffee (Lunch €15, Dinner €12). Homemade desserts (€4). Sandwiches always available (Salame Contadino, Cooked Ham & Toma, Porchetta, Hamburger etc., from €5). Bar with coffee, soft drinks, beer, wine, spritz, and cocktails. Mon-Thu open 24h.",
+    details_es:
+      "El Bar Restaurante Savona en Valdengo ofrece Menús Alpinos especiales para el evento:\nVIERNES 9: Almuerzo (Pasta Castelmagno/Tomate; Filete de coppa/Roastbeef; Patatas), Cena (Pasta y judías).\nSÁBADO 10: Almuerzo (Pasta ragú/Tomate; Milanesa de pollo/Roastbeef; Calabacines), Cena (Polenta y Salchicha).\nDOMINGO 11: Almuerzo (Pasta Cacio e Pepe/Tomate; Hamburguesa/Roastbeef/Asado; Pimientos), Cena (Polenta con porchetta).\nCada menú incluye agua, vino y café (Almuerzo 15€, Cena 12€). Postres caseros (4€). Bocadillos siempre disponibles (Salame Contadino, Jamón Cocido y Toma, Porchetta, Hamburguesa, etc., desde 5€). Bar con café, refrescos, cerveza, vino, spritz y cócteles. Lun-Jue abierto 24h.",
+    details_fr:
+      "Le Bar Restaurant Savona à Valdengo propose des Menus Alpins spéciaux pour l'événement :\nVENDREDI 9 : Déjeuner (Pâtes Castelmagno/Tomate ; Steak de coppa/Rosbif ; Pommes de terre), Dîner (Pâtes et haricots).\nSAMEDI 10 : Déjeuner (Pâtes ragù/Tomate ; Escalope milanaise de poulet/Rosbif ; Courgettes), Dîner (Polenta et Saucisse).\nDIMANCHE 11 : Déjeuner (Pâtes Cacio e Pepe/Tomate ; Hamburger/Rosbif/Rôti ; Poivrons), Dîner (Polenta à la porchetta).\nChaque menu comprend eau, vin et café (Déjeuner 15€, Dîner 12€). Desserts maison (4€). Sandwichs toujours disponibles (Salame Contadino, Jambon Cuit & Toma, Porchetta, Hamburger etc., à partir de 5€). Bar avec café, sodas, bière, vin, spritz et cocktails. Lun-Jeu ouvert 24h.",
+    details_de:
+      "Das Bar Restaurant Savona in Valdengo bietet spezielle Alpini-Menüs für die Veranstaltung:\nFREITAG 9: Mittagessen (Castelmagno/Tomaten-Pasta; Coppa-Steak/Roastbeef; Kartoffeln), Abendessen (Pasta & Bohnen).\nSAMSTAG 10: Mittagessen (Ragù/Tomaten-Pasta; Hähnchen-Milanese/Roastbeef; Zucchini), Abendessen (Polenta & Wurst).\nSONNTAG 11: Mittagessen (Cacio e Pepe/Tomaten-Pasta; Hamburger/Roastbeef/Braten; Paprika), Abendessen (Polenta mit Porchetta).\nJedes Menü beinhaltet Wasser, Wein und Kaffee (Mittagessen 15€, Abendessen 12€). Hausgemachte Desserts (4€). Sandwiches immer verfügbar (Salame Contadino, Kochschinken & Toma, Porchetta, Hamburger etc., ab 5€). Bar mit Kaffee, Softdrinks, Bier, Wein, Spritz und Cocktails. Mo-Do 24 Std. geöffnet.",
+    images: ["/images/barSavona.png"], // Suggesting a new image name for clarity
+    openingHours: `Lun-Gio: Aperto 24 ore su 24\nVen-Dom: 12:00-14:00, 19:00-21:00`, // Updated for Fri-Sun
+    openingHours_en: `Mon-Thu: Open 24 hours\nFri-Sun: 12:00-14:00, 19:00-21:00`,
+    openingHours_es: `Lun-Jue: Abierto 24 horas\nVie-Dom: 12:00-14:00, 19:00-21:00`,
+    openingHours_fr: `Lun-Jeu: Ouvert 24h/24\nVen-Dim: 12h00-14h00, 19h00-21h00`,
+    openingHours_de: `Mo-Do: 24 Stunden geöffnet\nFr-So: 12:00-14:00, 19:00-21:00`,
+    discountInfo:
+      "Menù Alpini: Pranzo €15 / Cena €12 (incl. acqua, vino, caffè). Panini da €5. Dolci €4. Bar completo.",
+    discountInfo_en:
+      "Alpini Menu: Lunch €15 / Dinner €12 (incl. water, wine, coffee). Sandwiches from €5. Desserts €4. Full bar.",
+    discountInfo_es:
+      "Menú Alpino: Almuerzo 15€ / Cena 12€ (incl. agua, vino, café). Bocadillos desde 5€. Postres 4€. Bar completo.",
+    discountInfo_fr:
+      "Menu Alpin : Déjeuner 15€ / Dîner 12€ (incl. eau, vin, café). Sandwichs à partir de 5€. Desserts 4€. Bar complet.",
+    discountInfo_de:
+      "Alpini-Menü: Mittagessen 15€ / Abendessen 12€ (inkl. Wasser, Wein, Kaffee). Sandwiches ab 5€. Desserts 4€. Komplette Bar.",
+    tags: [
+      "Ristorante",
+      "Bar",
+      "Menu Alpini",
+      "Panini",
+      "Valdengo",
+      "Aperto 24h (Lun-Gio)",
+      "Pranzo",
+      "Cena",
+    ], // Adjusted tags
+    tags_en: [
+      "Restaurant",
+      "Bar",
+      "Alpini Menu",
+      "Sandwiches",
+      "Valdengo",
+      "Open 24h (Mon-Thu)",
+      "Lunch",
+      "Dinner",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Bar",
+      "Menú Alpino",
+      "Bocadillos",
+      "Valdengo",
+      "Abierto 24h (Lun-Jue)",
+      "Almuerzo",
+      "Cena",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Bar",
+      "Menu Alpin",
+      "Sandwichs",
+      "Valdengo",
+      "Ouvert 24h (Lun-Jeu)",
+      "Déjeuner",
+      "Dîner",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Bar",
+      "Alpini Menü",
+      "Sandwiches",
+      "Valdengo",
+      "24h Geöffnet (Mo-Do)",
+      "Mittagessen",
+      "Abendessen",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 226, // New unique ID
+    name: "Ristorante Like (Menu Fisso Adunata)",
+    name_en: "Ristorante Like (Adunata Set Menu)",
+    name_es: "Ristorante Like (Menú Fijo Adunata)",
+    name_fr: "Ristorante Like (Menu Fixe Adunata)",
+    name_de: "Ristorante Like (Adunata Festmenü)",
+    type: "restaurant",
+    coordinates: [45.55446, 8.049352],
+    googleRating: 4.1,
+    googleReviewCount: 394,
+    address: "Via Fratelli Rosselli, 72, 13900 Biella BI",
+    phone: "0150991377",
+    website: "https://www.facebook.com/Ristorantelike",
+    shortDescription:
+      "Ristorante Like a Biella: Menu Fisso Adunata (Pranzo/Cena) e formula All You Can Eat. Piatti vegani e Wi-Fi.",
+    shortDescription_en:
+      "Ristorante Like in Biella: Adunata Set Menu (Lunch/Dinner) and All You Can Eat option. Vegan dishes and Wi-Fi.",
+    shortDescription_es:
+      "Ristorante Like en Biella: Menú Fijo Adunata (Almuerzo/Cena) y opción All You Can Eat. Platos veganos y Wi-Fi.",
+    shortDescription_fr:
+      "Ristorante Like à Biella : Menu Fixe Adunata (Déjeuner/Dîner) et option À volonté. Plats végétaliens et Wi-Fi.",
+    shortDescription_de:
+      "Ristorante Like in Biella: Adunata Festmenü (Mittag-/Abendessen) und All-You-Can-Eat-Option. Vegane Gerichte und WLAN.",
+    details:
+      "Ristorante Like in Via Fratelli Rosselli accoglie gli Alpini con uno speciale MENU FISSO: Pranzo a €15,90 (3 piatti a scelta) e Cena a €22,90 (4 piatti a scelta). Entrambi i menù comprendono acqua, 1/4 di vino o bibita o birra piccola, e un caffè (eventuali amari, extra bevande e dolci sono a parte). Oltre a questa offerta per l'Adunata, il locale è noto per la sua formula All You Can Eat. Disponibili piatti vegani e Wi-Fi gratuito. Un'ottima scelta per un pasto completo e conveniente.",
+    details_en:
+      "Ristorante Like on Via Fratelli Rosselli welcomes the Alpini with a special SET MENU: Lunch at €15.90 (3 dishes of your choice) and Dinner at €22.90 (4 dishes of your choice). Both menus include water, 1/4 wine or soft drink or small beer, and a coffee (any bitters, extra drinks, and desserts are separate). In addition to this Adunata offer, the venue is known for its All You Can Eat formula. Vegan dishes and free Wi-Fi available. An excellent choice for a complete and affordable meal.",
+    details_es:
+      "El Ristorante Like en Via Fratelli Rosselli da la bienvenida a los Alpini con un MENÚ FIJO especial: Almuerzo a 15,90€ (3 platos a elegir) y Cena a 22,90€ (4 platos a elegir). Ambos menús incluyen agua, 1/4 de vino o refresco o cerveza pequeña, y un café (cualquier amargo, bebidas extra y postres son aparte). Además de esta oferta para la Adunata, el local es conocido por su fórmula All You Can Eat. Platos veganos y Wi-Fi gratuito disponibles. Una excelente opción para una comida completa y asequible.",
+    details_fr:
+      "Le Ristorante Like, Via Fratelli Rosselli, accueille les Alpins avec un MENU FIXE spécial : Déjeuner à 15,90€ (3 plats au choix) et Dîner à 22,90€ (4 plats au choix). Les deux menus comprennent eau, 1/4 de vin ou boisson gazeuse ou petite bière, et un café (les amers, boissons supplémentaires et desserts sont en sus). En plus de cette offre pour l'Adunata, l'établissement est connu pour sa formule À volonté. Plats végétaliens et Wi-Fi gratuit disponibles. Un excellent choix pour un repas complet et abordable.",
+    details_de:
+      "Das Ristorante Like in der Via Fratelli Rosselli empfängt die Alpini mit einem speziellen FESTMENÜ: Mittagessen für 15,90€ (3 Gerichte zur Auswahl) und Abendessen für 22,90€ (4 Gerichte zur Auswahl). Beide Menüs beinhalten Wasser, 1/4 Wein oder Softdrink oder kleines Bier und einen Kaffee (Bitter, zusätzliche Getränke und Desserts sind extra). Zusätzlich zu diesem Adunata-Angebot ist das Lokal für seine All-You-Can-Eat-Formel bekannt. Vegane Gerichte und kostenloses WLAN verfügbar. Eine ausgezeichnete Wahl für eine komplette und preiswerte Mahlzeit.",
+    images: ["/images/like.jpeg"], // Suggested image name, combining venue and event
+    openingHours: `Lun: 18:30-23:30\nMar-Dom: 12:00-15:00, 18:00-23:45`, // Grouped original hours
+    openingHours_en: `Mon: 18:30-23:30\nTue-Sun: 12:00-15:00, 18:00-23:45`,
+    openingHours_es: `Lun: 18:30-23:30\nMar-Dom: 12:00-15:00, 18:00-23:45`,
+    openingHours_fr: `Lun: 18h30-23h30\nMar-Dim: 12h00-15h00, 18h00-23h45`,
+    openingHours_de: `Mo: 18:30-23:30\nDi-So: 12:00-15:00, 18:00-23:45`,
+    discountInfo:
+      "Menu Fisso Adunata: Pranzo €15,90 (3 piatti + bevande) / Cena €22,90 (4 piatti + bevande). Formula All You Can Eat.",
+    discountInfo_en:
+      "Adunata Set Menu: Lunch €15.90 (3 dishes + drinks) / Dinner €22.90 (4 dishes + drinks). All You Can Eat option.",
+    discountInfo_es:
+      "Menú Fijo Adunata: Almuerzo 15,90€ (3 platos + bebidas) / Cena 22,90€ (4 platos + bebidas). Opción All You Can Eat.",
+    discountInfo_fr:
+      "Menu Fixe Adunata : Déjeuner 15,90€ (3 plats + boissons) / Dîner 22,90€ (4 plats + boissons). Option À volonté.",
+    discountInfo_de:
+      "Adunata Festmenü: Mittagessen 15,90€ (3 Gerichte + Getränke) / Abendessen 22,90€ (4 Gerichte + Getränke). All-You-Can-Eat-Option.",
+    tags: [
+      "Ristorante",
+      "Menu Fisso",
+      "All You Can Eat",
+      "Piatti Vegani",
+      "Biella Centro",
+      "Pranzo",
+      "Cena",
+      "Adunata",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Set Menu",
+      "All You Can Eat",
+      "Vegan Dishes",
+      "Biella Center",
+      "Lunch",
+      "Dinner",
+      "Adunata",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Menú Fijo",
+      "Todo Lo Que Puedas Comer",
+      "Platos Veganos",
+      "Biella Centro",
+      "Almuerzo",
+      "Cena",
+      "Adunata",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Menu Fixe",
+      "À Volonté",
+      "Plats Végétaliens",
+      "Biella Centre",
+      "Déjeuner",
+      "Dîner",
+      "Adunata",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Festmenü",
+      "All You Can Eat",
+      "Vegane Gerichte",
+      "Biella Zentrum",
+      "Mittagessen",
+      "Abendessen",
+      "Adunata",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 227, // New unique ID
+    name: "La Padella",
+    name_en: "La Padella (Pizzeria & Seafood)",
+    name_es: "La Padella (Pizzería y Mariscos)",
+    name_fr: "La Padella (Pizzeria & Fruits de Mer)",
+    name_de: "La Padella (Pizzeria & Meeresfrüchte)",
+    type: "restaurant",
+    coordinates: [45.552046, 8.05024],
+    googleRating: 4.2,
+    googleReviewCount: 1083,
+    address: "Via Fratelli Rosselli, 63, 13900 Biella BI",
+    phone: "015401898",
+    website: "https://www.ristorantepizzerialapadella.com/",
+    shortDescription:
+      "La Padella a Biella: pizza a legna, specialità di mare, piatti vegani e menu bambini. Ambiente informale.",
+    shortDescription_en:
+      "La Padella in Biella: wood-fired pizza, seafood specialties, vegan dishes, and kids' menu. Informal setting.",
+    shortDescription_es:
+      "La Padella en Biella: pizza en horno de leña, especialidades de mariscos, platos veganos y menú para niños. Ambiente informal.",
+    shortDescription_fr:
+      "La Padella à Biella : pizza au four à bois, spécialités de fruits de mer, plats végétaliens et menu enfants. Cadre informel.",
+    shortDescription_de:
+      "La Padella in Biella: Holzofenpizza, Meeresfrüchtespezialitäten, vegane Gerichte und Kindermenü. Informelle Atmosphäre.",
+    details:
+      "Ristorante Pizzeria La Padella, in Via Fratelli Rosselli a Biella, offre un'esperienza culinaria informale con arredi sobri e un lungo bancone di legno. Specializzati in pizza cotta nel forno a legna e deliziose specialità di mare. Il menù include anche opzioni vegane e proposte per bambini. Dispongono di Wi-Fi. Un'ottima scelta per una cena gustosa e rilassata in famiglia o con amici durante l'Adunata.",
+    details_en:
+      "La Padella Pizzeria Restaurant, on Via Fratelli Rosselli in Biella, offers an informal dining experience with simple furnishings and a long wooden counter. They specialize in wood-fired pizza and delicious seafood specialties. The menu also includes vegan options and dishes for children. Wi-Fi is available. An excellent choice for a tasty and relaxed dinner with family or friends during the Adunata.",
+    details_es:
+      "El Restaurante Pizzería La Padella, en Via Fratelli Rosselli en Biella, ofrece una experiencia gastronómica informal con mobiliario sencillo y una larga barra de madera. Se especializan en pizza cocinada en horno de leña y deliciosas especialidades de mariscos. El menú también incluye opciones veganas y platos para niños. Disponen de Wi-Fi. Una excelente opción para una cena sabrosa y relajada en familia o con amigos durante la Adunata.",
+    details_fr:
+      "Le Restaurant Pizzeria La Padella, Via Fratelli Rosselli à Biella, offre une expérience culinaire informelle avec un mobilier simple et un long comptoir en bois. Ils sont spécialisés dans la pizza cuite au four à bois et les délicieuses spécialités de fruits de mer. Le menu comprend également des options végétaliennes et des plats pour enfants. Le Wi-Fi est disponible. Un excellent choix pour un dîner savoureux et détendu en famille ou entre amis pendant l'Adunata.",
+    details_de:
+      "Das Restaurant Pizzeria La Padella in der Via Fratelli Rosselli in Biella bietet ein informelles Speiseerlebnis mit schlichter Einrichtung und einer langen Holztheke. Sie sind spezialisiert auf Pizza aus dem Holzofen und köstliche Meeresfrüchtespezialitäten. Die Speisekarte umfasst auch vegane Optionen und Gerichte für Kinder. WLAN ist verfügbar. Eine ausgezeichnete Wahl für ein leckeres und entspanntes Abendessen mit Familie oder Freunden während der Adunata.",
+    images: ["/images/padella.png"], // Suggested image path
+    openingHours: `Lun, Mer-Gio, Dom: 12:00-14:00, 18:30-23:00\nVen-Sab: 12:00-14:00, 18:30-00:00\nMar: Chiuso`, // Grouped hours
+    openingHours_en: `Mon, Wed-Thu, Sun: 12:00-14:00, 18:30-23:00\nFri-Sat: 12:00-14:00, 18:30-00:00\nTue: Closed`,
+    openingHours_es: `Lun, Mié-Jue, Dom: 12:00-14:00, 18:30-23:00\nVie-Sáb: 12:00-14:00, 18:30-00:00\nMar: Cerrado`,
+    openingHours_fr: `Lun, Mer-Jeu, Dim: 12h00-14h00, 18h30-23h00\nVen-Sam: 12h00-14h00, 18h30-00h00\nMar: Fermé`,
+    openingHours_de: `Mo, Mi-Do, So: 12:00-14:00, 18:30-23:00\nFr-Sa: 12:00-14:00, 18:30-00:00\nDi: Geschlossen`,
+    discountInfo:
+      "Pizza a legna, specialità di mare. Opzioni vegane e menu bambini.",
+    discountInfo_en:
+      "Wood-fired pizza, seafood specialties. Vegan options and kids' menu.",
+    discountInfo_es:
+      "Pizza en horno de leña, especialidades de mariscos. Opciones veganas y menú para niños.",
+    discountInfo_fr:
+      "Pizza au four à bois, spécialités de fruits de mer. Options végétaliennes et menu enfants.",
+    discountInfo_de:
+      "Holzofenpizza, Meeresfrüchtespezialitäten. Vegane Optionen und Kindermenü.",
+    tags: [
+      "Ristorante",
+      "Pizzeria",
+      "Specialità di Mare",
+      "Forno a Legna",
+      "Piatti Vegani",
+      "Menu Bambini",
+      "Biella Centro",
+      "Wi-Fi",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Pizzeria",
+      "Seafood Specialties",
+      "Wood-Fired Oven",
+      "Vegan Dishes",
+      "Kids Menu",
+      "Biella Center",
+      "Wi-Fi",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Pizzería",
+      "Especialidades de Mariscos",
+      "Horno de Leña",
+      "Platos Veganos",
+      "Menú Infantil",
+      "Biella Centro",
+      "Wi-Fi",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Pizzeria",
+      "Spécialités de Fruits de Mer",
+      "Four à Bois",
+      "Plats Végétaliens",
+      "Menu Enfants",
+      "Biella Centre",
+      "Wi-Fi",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Pizzeria",
+      "Meeresfrüchtespezialitäten",
+      "Holzofen",
+      "Vegane Gerichte",
+      "Kindermenü",
+      "Biella Zentrum",
+      "WLAN",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
     id: 505, // New unique ID
     name: "Bevande Miscelate",
     name_en: "Bevande Miscelate (Mixed Drinks Shop)",
@@ -6118,6 +6519,233 @@ export const poiData: POI[] = [
       "Snack",
       "Focaccia",
       "Pizza",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 510, // New unique ID (assuming 509 was the last shop)
+    name: "La Bottega del Pane",
+    name_en: "La Bottega del Pane (The Bread Shop)",
+    name_es: "La Bottega del Pane (La Tienda del Pan)",
+    name_fr: "La Bottega del Pane (La Boutique du Pain)",
+    name_de: "La Bottega del Pane (Der Brotladen)",
+    type: "clothing", // Using 'clothing' as a general shop type
+    coordinates: [45.559341, 8.052471],
+    googleRating: 4.4,
+    googleReviewCount: 52,
+    address: "Via Galimberti Tancredi, 2, 13900 Biella BI",
+    phone: "015405644",
+    website: "https://www.instagram.com/_la_bottega_delpane_/",
+    shortDescription:
+      "La Bottega del Pane a Biella: pane artigianale, focacce, pizze e dolci freschi.",
+    shortDescription_en:
+      "La Bottega del Pane in Biella: artisanal bread, focaccias, pizzas, and fresh pastries.",
+    shortDescription_es:
+      "La Bottega del Pane en Biella: pan artesanal, focaccias, pizzas y dulces frescos.",
+    shortDescription_fr:
+      "La Bottega del Pane à Biella : pain artisanal, focaccias, pizzas et pâtisseries fraîches.",
+    shortDescription_de:
+      "La Bottega del Pane in Biella: handwerkliches Brot, Focaccias, Pizzen und frisches Gebäck.",
+    details:
+      "La Bottega del Pane, in Via Galimberti Tancredi a Biella, offre una deliziosa selezione di prodotti da forno freschi ogni giorno. Potrete trovare pane artigianale di varie tipologie, fragranti focacce, gustose pizze al taglio e una varietà di dolci e pasticceria. Ideale per la colazione, uno spuntino o per acquistare prodotti genuini da forno. Mercoledì orario ridotto solo mattina, domenica chiuso.",
+    details_en:
+      "La Bottega del Pane, on Via Galimberti Tancredi in Biella, offers a delicious selection of fresh baked goods daily. You can find artisanal bread of various types, fragrant focaccias, tasty pizza slices, and a variety of sweets and pastries. Ideal for breakfast, a snack, or to purchase genuine baked products. Wednesday reduced hours (morning only), closed on Sunday.",
+    details_es:
+      "La Bottega del Pane, en Via Galimberti Tancredi en Biella, ofrece una deliciosa selección de productos de panadería frescos todos los días. Podrá encontrar pan artesanal de varios tipos, fragantes focaccias, sabrosas porciones de pizza y una variedad de dulces y pastelería. Ideal para el desayuno, un tentempié o para comprar productos de panadería genuinos. Miércoles horario reducido (solo por la mañana), domingo cerrado.",
+    details_fr:
+      "La Bottega del Pane, Via Galimberti Tancredi à Biella, propose une délicieuse sélection de produits de boulangerie frais tous les jours. Vous y trouverez du pain artisanal de différents types, des focaccias parfumées, de savoureuses parts de pizza et une variété de douceurs et de pâtisseries. Idéal pour le petit-déjeuner, une collation ou pour acheter des produits de boulangerie authentiques. Mercredi horaires réduits (matin uniquement), fermé le dimanche.",
+    details_de:
+      "La Bottega del Pane in der Via Galimberti Tancredi in Biella bietet täglich eine köstliche Auswahl an frischen Backwaren. Hier finden Sie handwerkliches Brot verschiedener Sorten, duftende Focaccias, leckere Pizzastücke sowie eine Vielzahl an Süßigkeiten und Gebäck. Ideal zum Frühstück, für einen Snack oder zum Kauf echter Backwaren. Mittwoch verkürzte Öffnungszeiten (nur vormittags), Sonntag geschlossen.",
+    images: ["/images/bottegaPane.jpeg"], // Suggested image path
+    openingHours: `Lun-Mar, Gio-Sab: 06:00-13:00, 16:00-19:00\nMer: 06:00-13:00\nDom: Chiuso`,
+    openingHours_en: `Mon-Tue, Thu-Sat: 06:00-13:00, 16:00-19:00\nWed: 06:00-13:00\nSun: Closed`,
+    openingHours_es: `Lun-Mar, Jue-Sáb: 06:00-13:00, 16:00-19:00\nMié: 06:00-13:00\nDom: Cerrado`,
+    openingHours_fr: `Lun-Mar, Jeu-Sam: 06h00-13h00, 16h00-19h00\nMer: 06h00-13h00\nDim: Fermé`,
+    openingHours_de: `Mo-Di, Do-Sa: 06:00-13:00, 16:00-19:00\nMi: 06:00-13:00\nSo: Geschlossen`,
+    discountInfo: "",
+    discountInfo_en: "",
+    discountInfo_es: "",
+    discountInfo_fr: "",
+    discountInfo_de: "",
+    tags: [
+      "Panetteria",
+      "Forno",
+      "Pane",
+      "Focaccia",
+      "Pizza",
+      "Dolci",
+      "Biella Centro",
+      "Colazione",
+    ],
+    tags_en: [
+      "Bakery",
+      "Oven",
+      "Bread",
+      "Focaccia",
+      "Pizza",
+      "Pastries",
+      "Biella Center",
+      "Breakfast",
+    ],
+    tags_es: [
+      "Panadería",
+      "Horno",
+      "Pan",
+      "Focaccia",
+      "Pizza",
+      "Dulces",
+      "Biella Centro",
+      "Desayuno",
+    ],
+    tags_fr: [
+      "Boulangerie",
+      "Fournil",
+      "Pain",
+      "Focaccia",
+      "Pizza",
+      "Pâtisseries",
+      "Biella Centre",
+      "Petit Déjeuner",
+    ],
+    tags_de: [
+      "Bäckerei",
+      "Backofen",
+      "Brot",
+      "Focaccia",
+      "Pizza",
+      "Gebäck",
+      "Biella Zentrum",
+      "Frühstück",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 511,
+    name: "Panetteria Carisio",
+    name_en: "Carisio Bakery (Artisanal Bread, Drinks & Alpini Gadgets)", // Updated name_en
+    name_es: "Panadería Carisio (Pan Artesanal, Bebidas y Artículos Alpini)", // Updated name_es
+    name_fr: "Boulangerie Carisio (Pain Artisanal, Boissons & Gadgets Alpins)", // Updated name_fr
+    name_de: "Bäckerei Carisio (Handwerksbrot, Getränke & Alpini-Gadgets)", // Updated name_de
+    type: "clothing",
+    coordinates: [45.558354, 8.051649],
+    googleRating: 5.0,
+    googleReviewCount: 8,
+    address: "Corso Risorgimento, 15A, 13900 Biella BI",
+    phone: "3339239424",
+    website: "https://www.facebook.com/panetteriacarisio/?locale=it_IT",
+    shortDescription:
+      "Panetteria Carisio a Biella: pane, pizza, focacce, dolci, bevande e gadget artigianali Alpini! Orari estesi Ven-Dom.",
+    shortDescription_en:
+      "Carisio Bakery in Biella: bread, pizza, focaccia, pastries, drinks, and Alpini artisanal gadgets! Extended Fri-Sun hours.",
+    shortDescription_es:
+      "Panadería Carisio en Biella: pan, pizza, focaccias, dulces, bebidas ¡y artículos artesanales Alpini! Horario extendido Vie-Dom.",
+    shortDescription_fr:
+      "Boulangerie Carisio à Biella : pain, pizza, focaccias, pâtisseries, boissons et gadgets artisanaux Alpins ! Horaires étendus Ven-Dim.",
+    shortDescription_de:
+      "Bäckerei Carisio in Biella: Brot, Pizza, Focaccia, Gebäck, Getränke und handgefertigte Alpini-Gadgets! Erweiterte Fr-So Öffnungszeiten.",
+    details:
+      "La Panetteria Carisio, in Corso Risorgimento a Biella, è prima di tutto un forno che delizia con pane fresco di giornata, pizze fragranti, focacce saporite, panini e una varietà di dolci. Per accompagnare, offre anche birre, acqua e bibite. Oltre a queste specialità, troverete gadget artigianali unici, con un'edizione speciale dedicata agli Alpini. Perfetta per colazione, spuntini o per acquistare prodotti da forno, bevande e un ricordo dell'Adunata. Durante il weekend dell'evento (Ven-Dom) orario continuato 8:00-21:00.", // Added drinks
+    details_en:
+      "Panetteria Carisio, on Corso Risorgimento in Biella, is first and foremost a bakery delighting with daily fresh bread, fragrant pizzas, savory focaccias, sandwiches, and a variety of pastries. To accompany these, they also offer beers, water, and soft drinks. In addition to these specialties, you'll find unique artisanal gadgets, with a special edition dedicated to the Alpini. Perfect for breakfast, snacks, or to purchase baked goods, drinks, and an Adunata souvenir. Continuous hours 8:00 AM - 9:00 PM during the event weekend (Fri-Sun).", // Added drinks
+    details_es:
+      "La Panadería Carisio, en Corso Risorgimento en Biella, es ante todo una panadería que deleita con pan fresco del día, fragantes pizzas, sabrosas focaccias, bocadillos y una variedad de dulces. Para acompañar, también ofrecen cervezas, agua y refrescos. Además de estas especialidades, también encontrará artículos artesanales únicos, con una edición especial dedicada a los Alpini. Perfecta para el desayuno, tentempiés o para comprar productos de panadería, bebidas y un recuerdo de la Adunata. Horario continuado de 08:00 a 21:00 durante el fin de semana del evento (Vie-Dom).", // Added drinks
+    details_fr:
+      "La Boulangerie Carisio, sur le Corso Risorgimento à Biella, est avant tout une boulangerie qui ravit avec du pain frais du jour, des pizzas parfumées, des focaccias savoureuses, des sandwichs et une variété de pâtisseries. Pour accompagner, elle propose également des bières, de l'eau et des boissons gazeuses. En plus de ces spécialités, vous trouverez également des gadgets artisanaux uniques, avec une édition spéciale dédiée aux Alpins. Parfaite pour le petit-déjeuner, les collations ou pour acheter des produits de boulangerie, des boissons et un souvenir de l'Adunata. Horaires continus de 8h00 à 21h00 pendant le week-end de l'événement (Ven-Dim).", // Added drinks
+    details_de:
+      "Die Bäckerei Carisio am Corso Risorgimento in Biella ist in erster Linie eine Bäckerei, die mit täglich frischem Brot, duftenden Pizzen, herzhaften Focaccias, Sandwiches und einer Vielzahl von Gebäckstücken begeistert. Dazu werden auch Biere, Wasser und Erfrischungsgetränke angeboten. Neben diesen Spezialitäten finden Sie auch einzigartige handgefertigte Gadgets mit einer Sonderedition für die Alpini. Perfekt zum Frühstück, für Snacks oder zum Kauf von Backwaren, Getränken und einem Adunata-Souvenir. Durchgehend geöffnet von 8:00 bis 21:00 Uhr während des Veranstaltungswochenendes (Fr-So).", // Added drinks
+    images: ["/images/panetteriaCarisio.jpeg"],
+    openingHours: `Lun-Gio: 07:00-13:00, 16:00-19:00\nVen-Dom: 08:00-21:00`,
+    openingHours_en: `Mon-Thu: 07:00-13:00, 16:00-19:00\nFri-Sun: 08:00-21:00`,
+    openingHours_es: `Lun-Jue: 07:00-13:00, 16:00-19:00\nVie-Dom: 08:00-21:00`,
+    openingHours_fr: `Lun-Jeu: 07h00-13h00, 16h00-19h00\nVen-Dim: 08h00-21h00`,
+    openingHours_de: `Mo-Do: 07:00-13:00, 16:00-19:00\nFr-So: 08:00-21:00`,
+    discountInfo:
+      "Pane, pizza, focacce, dolci, bevande e gadget artigianali Alpini.", // Added bevande
+    discountInfo_en:
+      "Bread, pizza, focaccia, pastries, drinks, and Alpini artisanal gadgets.",
+    discountInfo_es:
+      "Pan, pizza, focaccias, dulces, bebidas y artículos artesanales Alpini.",
+    discountInfo_fr:
+      "Pain, pizza, focaccias, pâtisseries, boissons et gadgets artisanaux Alpins.",
+    discountInfo_de:
+      "Brot, Pizza, Focaccia, Gebäck, Getränke und handgefertigte Alpini-Gadgets.",
+    tags: [
+      "Panetteria",
+      "Forno",
+      "Pane",
+      "Pizza",
+      "Focaccia",
+      "Dolci",
+      "Bevande",
+      "Gadget Alpini",
+      "Biella Centro",
+      "Souvenir",
+    ], // Added Bevande
+    tags_en: [
+      "Bakery",
+      "Oven",
+      "Bread",
+      "Pizza",
+      "Focaccia",
+      "Pastries",
+      "Drinks",
+      "Alpini Gadgets",
+      "Biella Center",
+      "Souvenirs",
+    ],
+    tags_es: [
+      "Panadería",
+      "Horno",
+      "Pan",
+      "Pizza",
+      "Focaccia",
+      "Dulces",
+      "Bebidas",
+      "Artículos Alpini",
+      "Biella Centro",
+      "Recuerdos",
+    ],
+    tags_fr: [
+      "Boulangerie",
+      "Fournil",
+      "Pain",
+      "Pizza",
+      "Focaccia",
+      "Pâtisseries",
+      "Boissons",
+      "Gadgets Alpins",
+      "Biella Centre",
+      "Souvenirs",
+    ],
+    tags_de: [
+      "Bäckerei",
+      "Backofen",
+      "Brot",
+      "Pizza",
+      "Focaccia",
+      "Gebäck",
+      "Getränke",
+      "Alpini-Gadgets",
+      "Biella Zentrum",
+      "Souvenirs",
     ],
     partyInfo: "",
     partyInfo_en: "",
