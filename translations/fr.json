@@ -15,10 +15,8 @@
     "closeButton": "Fermer",
     "findMyLocation": "Trouver ma position",
     "poiCategory_camper": "Zone camping-car",
-    "poiCategory_taxi": "Point taxi",
     "poiCategory_restaurant": "Restaurant",
     "poiCategory_bar": "Bar",
-    "poiCategory_hotel": "Hôtel",
     "poiCategory_private_accommodation": "Hébergement privé",
     "poiCategory_clothing": "Boutique/Gadgets",
     "header_title": "Adunata Nazionale Alpini - Biella 2025",
@@ -60,14 +58,11 @@
     "partyInfoLabel": "Musique / Soirées",
     "partyHoursLabel": "Horaires",
     "getDirections": "Obtenir l'itinéraire",
-    "poiCategory_bank": "Banque/Distributeur",
-    "poiCategory_activity": "Activité",
     "poiCategory_ztl": "ZTL Adunata",
     "ztl_description": "Zone fermée à la circulation et au stationnement",
     "ztl_times": "Ven 00:00 - Dim 23:00",
     "ztl_note": "Note : la zone s'étend le dimanche.",
     "poiCategory_wc": "WC publics",
-    "poiCategory_pharmacy": "Pharmacie",
     "loader_title": "AduNet",
     "loader_subtitle": "Tout sur l'Adunata 2025 en un clin d'œil.",
     "loader_created_by": "Par @biellainfesta",
@@ -116,5 +111,6 @@
     "link_terms_conditions": "Conditions Générales",
     "poiCategory_medical_post": "Poste Médical Avancé",
     "poiCategory_field_hospital": "Hôpital de Campagne",
-    "poiCategory_parking": "Parking Voitures"
+    "poiCategory_parking": "Parking Voitures",
+    "poiCategory_gelateria": "Glacier"
 }

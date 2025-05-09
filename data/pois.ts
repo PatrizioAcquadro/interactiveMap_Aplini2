@@ -4,15 +4,10 @@ import { IconType } from "react-icons"; // Import IconType
 import ReactDOMServer from "react-dom/server"; // Import for server-side rendering icons to string
 import {
   FaCaravan, // Camper
-  FaTaxi, // Taxi
   FaUtensils, // Restaurant
   FaGlassMartiniAlt, // Bar
-  FaBed, // Hotel
   FaCampground, // Private Accommodation (Tent/Rooms)
-  FaLandmark, // *** ADDED for Bank ***
-  FaStar, // *** ADDED for Activity ***
   FaRestroom,
-  FaBriefcaseMedical,
   FaClinicMedical,
   FaHospitalSymbol,
   FaParking,
@@ -25,17 +20,12 @@ import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid"; // Fallback 
 // Define POI Types (ensure consistency)
 export type PoiType =
   | "camper"
-  | "taxi"
   | "restaurant"
   | "bar"
-  | "hotel"
   | "private_accommodation"
   | "clothing"
-  | "bank"
-  | "activity"
   | "ztl"
   | "wc"
-  | "pharmacy"
   | "medical_post"
   | "field_hospital"
   | "parking"
@@ -2391,99 +2381,109 @@ export const poiData: POI[] = [
     partyHours_de: "",
   },
   {
-    id: 504, // New unique ID
-    name: "Macelleria De Ruvo (Carne Equina)",
-    name_en: "De Ruvo Butcher (Horse Meat)",
-    name_es: "Carnicería De Ruvo (Carne de Caballo)",
-    name_fr: "Boucherie De Ruvo (Viande Chevaline)",
-    name_de: "Metzgerei De Ruvo (Pferdefleisch)",
-    type: "clothing", // Using 'clothing' as a general shop type
+    id: 504,
+    name: "De Ruvo - Specialità Biellesi (Stand Adunata)",
+    name_en: "De Ruvo - Biellese Specialties (Adunata Stand)",
+    name_es: "De Ruvo - Especialidades de Biella (Stand Adunata)",
+    name_fr: "De Ruvo - Spécialités de Biella (Stand Adunata)",
+    name_de: "De Ruvo - Bielleser Spezialitäten (Adunata-Stand)",
+    type: "restaurant",
     coordinates: [45.56886, 8.052659],
     googleRating: 4.6,
     googleReviewCount: 81,
-    address: "Piazza I Maggio, 12/D, 13900 Biella BI",
+    address: "Piazza I Maggio, 12/D, 13900 Biella BI (Stand Adunata)",
     phone: "01521701",
     website: "https://www.macelleriaderuvo.it/",
     shortDescription:
-      "Macelleria De Ruvo a Biella: la vostra boutique di carne equina. Qualità, tenerezza e benefici unici, anche con consegna in giornata!",
+      "Stand De Ruvo all'Adunata: panini con salumi di produzione propria, polenta, formaggi, pizza e bevande.", // Added "con salumi di produzione propria"
     shortDescription_en:
-      "De Ruvo Butcher in Biella: your horse meat boutique. Quality, tenderness, and unique benefits, with same-day delivery!",
+      "De Ruvo stand at Adunata: sandwiches with their own cured meats, polenta, cheeses, pizza, and drinks.",
     shortDescription_es:
-      "Carnicería De Ruvo en Biella: su boutique de carne de caballo. ¡Calidad, terneza y beneficios únicos, con entrega en el día!",
+      "Puesto De Ruvo en la Adunata: bocadillos con embutidos de producción propia, polenta, quesos, pizza y bebidas.",
     shortDescription_fr:
-      "Boucherie De Ruvo à Biella : votre boutique de viande chevaline. Qualité, tendreté et bienfaits uniques, avec livraison le jour même !",
+      "Stand De Ruvo à l'Adunata : sandwichs avec charcuteries maison, polenta, fromages, pizza et boissons.",
     shortDescription_de:
-      "Metzgerei De Ruvo in Biella: Ihre Boutique für Pferdefleisch. Qualität, Zartheit und einzigartige Vorteile, mit Lieferung am selben Tag!",
+      "De Ruvo-Stand bei der Adunata: Sandwiches mit hausgemachten Wurstwaren, Polenta, Käse, Pizza und Getränke.",
     details:
-      "Scoprite la Macelleria De Ruvo in Piazza I Maggio, Biella, un punto di riferimento per l'eccellente carne equina. Rinomata per la sua tenerezza, la carne equina è magrissima, ricca di ferro facilmente assimilabile e povera di colesterolo, ideale per diete, sportivi e chi cerca un'alimentazione sana. Perfetta per bambini in crescita e donne in gravidanza. De Ruvo offre tagli selezionati e la comodità della consegna in giornata. Una scelta gustosa e nutriente per arricchire i vostri pasti durante l'Adunata.",
+      "Lo storico marchio De Ruvo Macelleria propone le sue specialità biellesi all'Adunata. Troverete panini farciti come il 'Biellese' (paletta cotta e Sbirro), 'La Somarina', 'Bresaola' (della macelleria), 'Prosciutto cotto' Rovagnati e 'Coppa' (della macelleria). Offrono anche polenta concia, formaggi Botalla, salumi di produzione propria, focaccia, pizza e una selezione di bevande, inclusa birra Menabrea e liquori alpini. Un assaggio autentico del territorio.", // Specified "di nostra produzione macelleria"
     details_en:
-      "Discover De Ruvo Butcher in Piazza I Maggio, Biella, a benchmark for excellent horse meat. Renowned for its tenderness, horse meat is very lean, rich in easily absorbable iron, and low in cholesterol, ideal for diets, athletes, and those seeking healthy nutrition. Perfect for growing children and pregnant women. De Ruvo offers selected cuts and the convenience of same-day delivery. A tasty and nutritious choice to enrich your meals during the Adunata.",
+      "The historic De Ruvo Macelleria brand offers its Biellese specialties at the Adunata. You'll find stuffed sandwiches like 'Biellese' (cooked ham shoulder and Sbirro), 'La Somarina', 'Bresaola' (from their own butcher shop), Rovagnati 'Cooked Ham', and 'Coppa' (from their own butcher shop). They also offer polenta concia, Botalla cheeses, house-cured meats, focaccia, pizza, and a selection of drinks, including Menabrea beer and alpine liqueurs. An authentic taste of the region.",
     details_es:
-      "Descubra la Carnicería De Ruvo en Piazza I Maggio, Biella, un referente en carne de caballo de excelente calidad. Reconocida por su terneza, la carne de caballo es muy magra, rica en hierro de fácil absorción y baja en colesterol, ideal para dietas, deportistas y quienes buscan una nutrición saludable. Perfecta para niños en crecimiento y mujeres embarazadas. De Ruvo ofrece cortes selectos y la comodidad de la entrega en el mismo día. Una opción sabrosa y nutritiva para enriquecer sus comidas durante la Adunata.",
+      "La histórica marca De Ruvo Macelleria ofrece sus especialidades de Biella en la Adunata. Encontrará bocadillos rellenos como el 'Biellese' (paleta cocida y Sbirro), 'La Somarina', 'Bresaola' (de su propia carnicería), 'Jamón Cocido' Rovagnati y 'Coppa' (de su propia carnicería). También ofrecen polenta concia, quesos Botalla, embutidos de producción propia, focaccia, pizza y una selección de bebidas, incluyendo cerveza Menabrea y licores alpinos. Un auténtico sabor de la región.",
     details_fr:
-      "Découvrez la Boucherie De Ruvo sur la Piazza I Maggio, Biella, une référence en matière d'excellente viande chevaline. Réputée pour sa tendreté, la viande chevaline est très maigre, riche en fer facilement assimilable et pauvre en cholestérol, idéale pour les régimes, les sportifs et ceux qui recherchent une alimentation saine. Parfaite pour les enfants en croissance et les femmes enceintes. De Ruvo propose des coupes sélectionnées et la commodité de la livraison le jour même. Un choix savoureux et nutritif pour enrichir vos repas pendant l'Adunata.",
+      "La marque historique De Ruvo Macelleria propose ses spécialités de Biella à l'Adunata. Vous trouverez des sandwichs garnis comme le 'Biellese' (épaule de porc cuite et Sbirro), 'La Somarina', la 'Bresaola' (de leur propre boucherie), le 'Jambon Cuit' Rovagnati et la 'Coppa' (de leur propre boucherie). Ils proposent également de la polenta concia, des fromages Botalla, des charcuteries maison, de la focaccia, des pizzas et une sélection de boissons, y compris de la bière Menabrea et des liqueurs alpines. Un goût authentique de la région.",
     details_de:
-      "Entdecken Sie die Metzgerei De Ruvo an der Piazza I Maggio, Biella, ein Maßstab für ausgezeichnetes Pferdefleisch. Bekannt für seine Zartheit, ist Pferdefleisch sehr mager, reich an leicht absorbierbarem Eisen und cholesterinarm, ideal für Diäten, Sportler und alle, die eine gesunde Ernährung suchen. Perfekt für wachsende Kinder und schwangere Frauen. De Ruvo bietet ausgewählte Teilstücke und den Komfort der Lieferung am selben Tag. Eine schmackhafte und nahrhafte Wahl, um Ihre Mahlzeiten während der Adunata zu bereichern.",
-    images: ["/images/macelleria_de_ruvo_biella.jpg"], // Example image path
-    openingHours: `giovedì: 07:30-12:30, 15:00-19:15\nvenerdì: 07:30-12:30, 15:00-19:15\nsabato: 07:30-12:30, 15:00-19:15\ndomenica: Chiuso\nlunedì: 07:30-12:30, 15:00-19:15\nmartedì: 07:30-12:30, 15:00-19:15\nmercoledì: 07:30-12:30`,
-    openingHours_en: `Thursday: 07:30-12:30, 15:00-19:15\nFriday: 07:30-12:30, 15:00-19:15\nSaturday: 07:30-12:30, 15:00-19:15\nSunday: Closed\nMonday: 07:30-12:30, 15:00-19:15\nTuesday: 07:30-12:30, 15:00-19:15\nWednesday: 07:30-12:30`,
-    openingHours_es: `Jueves: 07:30-12:30, 15:00-19:15\nViernes: 07:30-12:30, 15:00-19:15\nSábado: 07:30-12:30, 15:00-19:15\nDomingo: Cerrado\nLunes: 07:30-12:30, 15:00-19:15\nMartes: 07:30-12:30, 15:00-19:15\nMiércoles: 07:30-12:30`,
-    openingHours_fr: `Jeudi : 07h30-12h30, 15h00-19h15\nVendredi : 07h30-12h30, 15h00-19h15\nSamedi : 07h30-12h30, 15h00-19h15\nDimanche : Fermé\nLundi : 07h30-12h30, 15h00-19h15\nMardi : 07h30-12h30, 15h00-19h15\nMercredi : 07h30-12h30`,
-    openingHours_de: `Donnerstag: 07:30-12:30, 15:00-19:15\nFreitag: 07:30-12:30, 15:00-19:15\nSamstag: 07:30-12:30, 15:00-19:15\nSonntag: Geschlossen\nMontag: 07:30-12:30, 15:00-19:15\nDienstag: 07:30-12:30, 15:00-19:15\nMittwoch: 07:30-12:30`,
-    discountInfo: "Qualità e freschezza garantite.",
-    discountInfo_en: "Quality and freshness guaranteed.",
-    discountInfo_es: "Calidad y frescura garantizadas.",
-    discountInfo_fr: "Qualité et fraîcheur garanties.",
-    discountInfo_de: "Qualität und Frische garantiert.",
+      "Die historische Marke De Ruvo Macelleria bietet ihre Bielleser Spezialitäten auf der Adunata an. Sie finden gefüllte Sandwiches wie 'Biellese' (gekochte Schweineschulter und Sbirro), 'La Somarina', 'Bresaola' (aus eigener Metzgerei), 'Kochschinken' Rovagnati und 'Coppa' (aus eigener Metzgerei). Sie bieten auch Polenta Concia, Botalla-Käse, hausgemachte Wurstwaren, Focaccia, Pizza und eine Auswahl an Getränken, darunter Menabrea-Bier und Alpenliköre. Ein authentischer Geschmack der Region.",
+    images: ["/images/deRuvo.jpeg"],
+    openingHours: `Lun, Mar, Gio: 07:30-12:30, 15:00-19:15\nMer: 07:30-12:30\nVen-Dom: Orari Adunata (Consultare)`,
+    openingHours_en: `Mon, Tue, Thu: 07:30-12:30, 15:00-19:15\nWed: 07:30-12:30\nFri-Sun: Adunata Hours (Check)`,
+    openingHours_es: `Lun, Mar, Jue: 07:30-12:30, 15:00-19:15\nMié: 07:30-12:30\nVie-Dom: Horario Adunata (Consultar)`,
+    openingHours_fr: `Lun, Mar, Jeu: 07h30-12h30, 15h00-19h15\nMer: 07h30-12h30\nVen-Dim: Horaires Adunata (Consulter)`,
+    openingHours_de: `Mo, Di, Do: 07:30-12:30, 15:00-19:15\nMi: 07:30-12:30\nFr-So: Adunata-Zeiten (Prüfen)`,
+    discountInfo:
+      "Panini con salumi di produzione propria, polenta concia, formaggi locali, pizza e Liquore Alpino.", // Emphasized own production
+    discountInfo_en:
+      "Sandwiches with their own cured meats, polenta concia, local cheeses, pizza, and Alpine Liqueur.",
+    discountInfo_es:
+      "Bocadillos con embutidos de producción propia, polenta concia, quesos locales, pizza y Licor Alpino.",
+    discountInfo_fr:
+      "Sandwichs avec charcuteries maison, polenta concia, fromages locaux, pizza et Liqueur Alpine.",
+    discountInfo_de:
+      "Sandwiches mit hausgemachten Wurstwaren, Polenta Concia, lokalem Käse, Pizza und Alpenlikör.",
     tags: [
-      "Macelleria",
-      "Carne Equina",
-      "Prodotti Tipici",
-      "Alimentazione Sana",
-      "Consegna Domicilio",
-      "Biella",
-    ],
+      "Stand Gastronomico",
+      "Specialità Biellesi",
+      "Panini",
+      "Salumi Produzione Propria",
+      "De Ruvo",
+      "Adunata",
+      "Cucina Tipica",
+    ], // Adjusted tag
     tags_en: [
-      "Butcher",
-      "Horse Meat",
-      "Typical Products",
-      "Healthy Eating",
-      "Home Delivery",
-      "Biella",
+      "Food Stand",
+      "Biellese Specialties",
+      "Sandwiches",
+      "Own Cured Meats",
+      "De Ruvo",
+      "Adunata",
+      "Typical Cuisine",
     ],
     tags_es: [
-      "Carnicería",
-      "Carne de Caballo",
-      "Productos Típicos",
-      "Alimentación Saludable",
-      "Entrega Domicilio",
-      "Biella",
+      "Puesto de Comida",
+      "Especialidades de Biella",
+      "Bocadillos",
+      "Embutidos Propios",
+      "De Ruvo",
+      "Adunata",
+      "Cocina Típica",
     ],
     tags_fr: [
-      "Boucherie",
-      "Viande Chevaline",
-      "Produits Typiques",
-      "Alimentation Saine",
-      "Livraison Domicile",
-      "Biella",
+      "Stand Gastronomique",
+      "Spécialités de Biella",
+      "Sandwichs",
+      "Charcuteries Maison",
+      "De Ruvo",
+      "Adunata",
+      "Cuisine Typique",
     ],
     tags_de: [
-      "Metzgerei",
-      "Pferdefleisch",
-      "Typische Produkte",
-      "Gesunde Ernährung",
-      "Lieferservice",
-      "Biella",
+      "Imbissstand",
+      "Bielleser Spezialitäten",
+      "Sandwiches",
+      "Eigene Wurstwaren",
+      "De Ruvo",
+      "Adunata",
+      "Typische Küche",
     ],
     partyInfo: "",
-    partyInfo_en: "",
-    partyInfo_es: "",
-    partyInfo_fr: "",
-    partyInfo_de: "",
     partyHours: "",
+    partyInfo_en: "",
     partyHours_en: "",
+    partyInfo_es: "",
     partyHours_es: "",
+    partyInfo_fr: "",
     partyHours_fr: "",
+    partyInfo_de: "",
     partyHours_de: "",
   },
   {
@@ -3239,7 +3239,7 @@ export const poiData: POI[] = [
     partyHours_de: "",
   },
   {
-    id: 608, // New unique ID
+    id: 608,
     name: "La Flaca Bar de Tapas",
     name_en: "La Flaca Tapas Bar",
     name_es: "La Flaca Bar de Tapas",
@@ -3250,89 +3250,94 @@ export const poiData: POI[] = [
     googleRating: 5.0,
     googleReviewCount: 26,
     address:
-      "Via Amedeo Avogadro di Quaregna, 14, 13900 Biella BI (Stazione Funicolare Biella Piazzo)", // Added Funicular station context
+      "Via Amedeo Avogadro di Quaregna, 14, 13900 Biella BI (Stazione Funicolare Biella Piazzo)",
     phone: "3517829357",
     website: "https://linktr.ee/laflacabardetapas",
     shortDescription:
-      "La Flaca Bar de Tapas: un angolo di Spagna a Biella Piazzo! Tapas autentiche, cocktail e sangria. ¡Olé!",
+      "La Flaca a Biella Piazzo: autentica Spagna! Panini km0 (Cascina Masca), patatas bravas, tapas, sangria e vini spagnoli.",
     shortDescription_en:
-      "La Flaca Tapas Bar: a corner of Spain in Biella Piazzo! Authentic tapas, cocktails, and sangria. ¡Olé!",
+      "La Flaca in Biella Piazzo: authentic Spain! Km0 sandwiches (Cascina Masca), patatas bravas, tapas, sangria & Spanish wines.",
     shortDescription_es:
-      "La Flaca Bar de Tapas: ¡un rincón de España en Biella Piazzo! Tapas auténticas, cócteles y sangría. ¡Olé!",
+      "La Flaca en Biella Piazzo: ¡auténtica España! Bocadillos km0 (Cascina Masca), patatas bravas, tapas, sangría y vinos españoles.",
     shortDescription_fr:
-      "La Flaca Bar à Tapas : un coin d'Espagne à Biella Piazzo ! Tapas authentiques, cocktails et sangria. ¡Olé !",
+      "La Flaca à Biella Piazzo : l'Espagne authentique ! Sandwichs km0 (Cascina Masca), patatas bravas, tapas, sangria et vins espagnols.",
     shortDescription_de:
-      "La Flaca Tapas-Bar: eine Ecke Spaniens in Biella Piazzo! Authentische Tapas, Cocktails und Sangria. ¡Olé!",
+      "La Flaca in Biella Piazzo: authentisches Spanien! Km0-Sandwiches (Cascina Masca), Patatas Bravas, Tapas, Sangria & spanische Weine.",
     details:
-      "Vivi l'autentica atmosfera spagnola a La Flaca Bar de Tapas, situato vicino alla stazione della Funicolare per Biella Piazzo. Lasciati conquistare dai veri sapori iberici con una selezione di tapas tradizionali, accompagnate da cocktail creativi, rinfrescante sangria e altre bevande. Un ambiente vivace e accogliente, perfetto per un aperitivo prolungato o una serata diversa dal solito. Ideale per una sosta gustosa e internazionale durante l'Adunata.",
+      "Vivi l'autentica atmosfera di un locale tipico spagnolo a La Flaca Bar de Tapas, vicino alla Funicolare per Biella Piazzo. Assapora panini unici con ingredienti a km zero della Cascina Masca, le classiche patatas bravas e una selezione di tapas tradizionali. Accompagna il tutto con cocktail creativi, rinfrescante sangria, birra o vari vini spagnoli. Un ambiente vivace e accogliente, perfetto per una sosta gustosa e internazionale durante l'Adunata.", // Changed "pregiati" to "vari", removed Slow Food reference
     details_en:
-      "Experience the authentic Spanish atmosphere at La Flaca Tapas Bar, located near the Funicular station to Biella Piazzo. Let yourself be captivated by true Iberian flavors with a selection of traditional tapas, accompanied by creative cocktails, refreshing sangria, and other drinks. A lively and welcoming environment, perfect for an extended aperitif or a different kind of evening. Ideal for a tasty and international stop during the Adunata.",
+      "Experience the authentic atmosphere of a typical Spanish venue at La Flaca Tapas Bar, near the Funicular to Biella Piazzo. Savor unique sandwiches with km 0 ingredients from Cascina Masca, classic patatas bravas, and a selection of traditional tapas. Pair it all with creative cocktails, refreshing sangria, beer, or various Spanish wines. A lively and welcoming environment, perfect for a tasty and international stop during the Adunata.", // Changed "fine" to "various", removed Slow Food reference
     details_es:
-      "Vive la auténtica atmósfera española en La Flaca Bar de Tapas, ubicado cerca de la estación del Funicular a Biella Piazzo. Déjate cautivar por los verdaderos sabores ibéricos con una selección de tapas tradicionales, acompañadas de cócteles creativos, refrescante sangría y otras bebidas. Un ambiente animado y acogedor, perfecto para un aperitivo prolongado o una velada diferente. Ideal para una parada sabrosa e internacional durante la Adunata.",
+      "Vive la auténtica atmósfera de un local típico español en La Flaca Bar de Tapas, cerca del Funicular a Biella Piazzo. Saborea bocadillos únicos con ingredientes km 0 de la Cascina Masca, las clásicas patatas bravas y una selección de tapas tradicionales. Acompáñalo todo con cócteles creativos, refrescante sangría, cerveza o varios vinos españoles. Un ambiente animado y acogedor, perfecto para una parada sabrosa e internacional durante la Adunata.", // Changed "selectos" to "varios", removed Slow Food reference
     details_fr:
-      "Vivez l'atmosphère espagnole authentique à La Flaca Bar à Tapas, situé près de la station du Funiculaire pour Biella Piazzo. Laissez-vous séduire par les vraies saveurs ibériques avec une sélection de tapas traditionnelles, accompagnées de cocktails créatifs, de sangria rafraîchissante et d'autres boissons. Un environnement animé et accueillant, parfait pour un apéritif prolongé ou une soirée différente. Idéal pour une halte savoureuse et internationale pendant l'Adunata.",
+      "Vivez l'atmosphère authentique d'un lieu typiquement espagnol à La Flaca Bar à Tapas, près du Funiculaire pour Biella Piazzo. Savourez des sandwichs uniques avec des ingrédients km 0 de la Cascina Masca, les classiques patatas bravas et une sélection de tapas traditionnelles. Accompagnez le tout de cocktails créatifs, de sangria rafraîchissante, de bière ou de divers vins espagnols. Un environnement animé et accueillant, parfait pour une halte savoureuse et internationale pendant l'Adunata.", // Changed "fins" to "divers", removed Slow Food reference
     details_de:
-      "Erleben Sie die authentische spanische Atmosphäre in der La Flaca Tapas-Bar in der Nähe der Standseilbahnstation nach Biella Piazzo. Lassen Sie sich von echten iberischen Aromen mit einer Auswahl an traditionellen Tapas verzaubern, begleitet von kreativen Cocktails, erfrischender Sangria und anderen Getränken. Eine lebhafte und einladende Umgebung, perfekt für einen ausgedehnten Aperitif oder einen etwas anderen Abend. Ideal für einen schmackhaften und internationalen Stopp während der Adunata.",
-    images: ["/images/flaca.png"], // Example image path
+      "Erleben Sie die authentische Atmosphäre eines typisch spanischen Lokals in der La Flaca Tapas-Bar, in der Nähe der Standseilbahn nach Biella Piazzo. Genießen Sie einzigartige Sandwiches mit Km-0-Zutaten von der Cascina Masca, klassische Patatas Bravas und eine Auswahl an traditionellen Tapas. Begleiten Sie alles mit kreativen Cocktails, erfrischender Sangria, Bier oder verschiedenen spanischen Weinen. Eine lebhafte und einladende Umgebung, perfekt für einen schmackhaften und internationalen Stopp während der Adunata.", // Changed "erlesenen" to "verschiedenen", removed Slow Food reference
+    images: ["/images/flaca.jpeg"],
     openingHours: `giovedì: 17:30-22:00\nvenerdì: 17:30-01:00\nsabato: 17:30-01:00\ndomenica: 17:30-22:00\nlunedì: Chiuso\nmartedì: Chiuso\nmercoledì: Chiuso`,
     openingHours_en: `Thursday: 17:30-22:00\nFriday: 17:30-01:00\nSaturday: 17:30-01:00\nSunday: 17:30-22:00\nMonday: Closed\nTuesday: Closed\nWednesday: Closed`,
     openingHours_es: `Jueves: 17:30-22:00\nViernes: 17:30-01:00\nSábado: 17:30-01:00\nDomingo: 17:30-22:00\nLunes: Cerrado\nMartes: Cerrado\nMiércoles: Cerrado`,
     openingHours_fr: `Jeudi : 17h30-22h00\nVendredi : 17h30-01h00\nSamedi : 17h30-01h00\nDimanche : 17h30-22h00\nLundi : Fermé\nMardi : Fermé\nMercredi : Fermé`,
     openingHours_de: `Donnerstag: 17:30-22:00\nFreitag: 17:30-01:00\nSamstag: 17:30-01:00\nSonntag: 17:30-22:00\nMontag: Geschlossen\nDienstag: Geschlossen\nMittwoch: Geschlossen`,
-    discountInfo: "Autentiche tapas spagnole, cocktail e sangria!",
-    discountInfo_en: "Authentic Spanish tapas, cocktails, and sangria!",
-    discountInfo_es: "¡Auténticas tapas españolas, cócteles y sangría!",
-    discountInfo_fr: "Tapas espagnoles authentiques, cocktails et sangria !",
-    discountInfo_de: "Authentische spanische Tapas, Cocktails und Sangria!",
+    discountInfo:
+      "Panini km0 (Cascina Masca), patatas bravas, tapas, sangria e vini spagnoli!",
+    discountInfo_en:
+      "Km0 sandwiches (Cascina Masca), patatas bravas, tapas, sangria & Spanish wines!",
+    discountInfo_es:
+      "¡Bocadillos km0 (Cascina Masca), patatas bravas, tapas, sangría y vinos españoles!",
+    discountInfo_fr:
+      "Sandwichs km0 (Cascina Masca), patatas bravas, tapas, sangria et vins espagnols !",
+    discountInfo_de:
+      "Km0-Sandwiches (Cascina Masca), Patatas Bravas, Tapas, Sangria & spanische Weine!",
     tags: [
       "Bar",
       "Tapas",
-      "Cocktail",
-      "Sangria",
       "Cucina Spagnola",
+      "Panini Km0",
+      "Patatas Bravas",
+      "Sangria",
+      "Vini Spagnoli",
       "Biella Piazzo",
-      "Funicolare",
-      "Aperitivo",
     ],
     tags_en: [
       "Bar",
       "Tapas",
-      "Cocktails",
-      "Sangria",
       "Spanish Cuisine",
+      "Km0 Sandwiches",
+      "Patatas Bravas",
+      "Sangria",
+      "Spanish Wines",
       "Biella Piazzo",
-      "Funicular",
-      "Aperitif",
     ],
     tags_es: [
       "Bar",
       "Tapas",
-      "Cócteles",
-      "Sangría",
       "Cocina Española",
+      "Bocadillos Km0",
+      "Patatas Bravas",
+      "Sangría",
+      "Vinos Españoles",
       "Biella Piazzo",
-      "Funicular",
-      "Aperitivo",
     ],
     tags_fr: [
       "Bar",
       "Tapas",
-      "Cocktails",
-      "Sangria",
       "Cuisine Espagnole",
+      "Sandwichs Km0",
+      "Patatas Bravas",
+      "Sangria",
+      "Vins Espagnols",
       "Biella Piazzo",
-      "Funiculaire",
-      "Apéritif",
     ],
     tags_de: [
       "Bar",
       "Tapas",
-      "Cocktails",
-      "Sangria",
       "Spanische Küche",
+      "Km0-Sandwiches",
+      "Patatas Bravas",
+      "Sangria",
+      "Spanische Weine",
       "Biella Piazzo",
-      "Standseilbahn",
-      "Aperitif",
     ],
     partyInfo: "",
     partyInfo_en: "",
@@ -3380,11 +3385,11 @@ export const poiData: POI[] = [
     details_de:
       "Die Cremeria del Piazzo im Herzen des mittelalterlichen Viertels Piazzo von Biella ist ein historischer Ort, der eine große Auswahl an Köstlichkeiten bietet. Vom Morgenkaffee mit Backwaren und Frühstück über handwerkliches Eis, Milchshakes, Schokolade, Tee und Kräutertees. Perfekt für eine Pause, einen Aperitif mit ausgezeichneten Cocktails oder einen Snack mit Toast, Focaccia und Crêpes (auch glutenfrei). Verfügt über Sitzplätze im Freien. Bitte beachten Sie: Reservierungen werden nicht angenommen. Ein charmanter Ort für jede Tageszeit während der Adunata.",
     images: ["/images/cremeria.png"], // Example image path
-    openingHours: `giovedì: 07:30-20:00\nvenerdì: 07:30-20:00\nsabato: 07:30-20:00\ndomenica: 07:30-20:00\nlunedì: 07:30-20:00\nmartedì: 07:30-20:00\nmercoledì: 07:30-20:00`,
-    openingHours_en: `Thursday: 07:30-20:00\nFriday: 07:30-20:00\nSaturday: 07:30-20:00\nSunday: 07:30-20:00\nMonday: 07:30-20:00\nTuesday: 07:30-20:00\nWednesday: 07:30-20:00`,
-    openingHours_es: `Jueves: 07:30-20:00\nViernes: 07:30-20:00\nSábado: 07:30-20:00\nDomingo: 07:30-20:00\nLunes: 07:30-20:00\nMartes: 07:30-20:00\nMiércoles: 07:30-20:00`,
-    openingHours_fr: `Jeudi : 07h30-20h00\nVendredi : 07h30-20h00\nSamedi : 07h30-20h00\nDimanche : 07h30-20h00\nLundi : 07h30-20h00\nMardi : 07h30-20h00\nMercredi : 07h30-20h00`,
-    openingHours_de: `Donnerstag: 07:30-20:00\nFreitag: 07:30-20:00\nSamstag: 07:30-20:00\nSonntag: 07:30-20:00\nMontag: 07:30-20:00\nDienstag: 07:30-20:00\nMittwoch: 07:30-20:00`,
+    openingHours: `Lun-Gio: 07:30-20:00\nVen-Dom: 08:00-02:00`, // Assumes 08:00-02:00 is for Fri, Sat, Sun
+    openingHours_en: `Mon-Thu: 07:30-20:00\nFri-Sun: 08:00-02:00`,
+    openingHours_es: `Lun-Jue: 07:30-20:00\nVie-Dom: 08:00-02:00`,
+    openingHours_fr: `Lun-Jeu: 07h30-20h00\nVen-Dim: 08h00-02h00`,
+    openingHours_de: `Mo-Do: 07:30-20:00\nFr-So: 08:00-02:00`,
     discountInfo:
       "Gelato artigianale, caffetteria, cocktail. Crêpes senza glutineì",
     discountInfo_en:
@@ -3489,7 +3494,7 @@ export const poiData: POI[] = [
       "Le Café Galerie To Mich, situé dans une galerie couverte spacieuse sur la Via Gramsci, offre un environnement polyvalent avec 130 places assises sur deux niveaux. Avec des HORAIRES PROLONGÉS pour l'Adunata (Ven-Dim 07h30-03h00), il est parfait du petit-déjeuner à l'après-dîner. Dégustez leurs lasagnes renommées ou laissez-vous tenter par le baba napolitain au grappa. Un lieu idéal pour les groupes et pour une pause confortable et savoureuse à tout moment, à l'abri et au cœur de Biella.",
     details_de:
       "Das Café Galerie To Mich in einer geräumigen überdachten Galerie in der Via Gramsci bietet eine vielseitige Umgebung mit 130 Sitzplätzen auf zwei Ebenen. Mit VERLÄNGERTEN ÖFFNUNGSZEITEN für die Adunata (Fr-So 07:30-03:00) ist es perfekt vom Frühstück bis nach dem Abendessen. Genießen Sie die berühmte Lasagne oder lassen Sie sich vom neapolitanischen Grappa-Babà verführen. Ein idealer Ort für Gruppen und für eine komfortable, schmackhafte Pause zu jeder Zeit, geschützt und im Herzen von Biella.",
-    images: ["/images/mich.png"], // Example image path
+    images: ["/images/mich.jpeg"], // Example image path
     openingHours: `giovedì: 07:30-20:00\nvenerdì: 07:30-03:00\nsabato: 07:30-03:00\ndomenica: 07:30-03:00\nlunedì: 07:30-20:00\nmartedì: 07:30-20:00\nmercoledì: 07:30-20:00`,
     openingHours_en: `Thursday: 07:30-20:00\nFriday: 07:30-03:00\nSaturday: 07:30-03:00\nSunday: 07:30-03:00\nMonday: 07:30-20:00\nTuesday: 07:30-20:00\nWednesday: 07:30-20:00`,
     openingHours_es: `Jueves: 07:30-20:00\nViernes: 07:30-03:00\nSábado: 07:30-03:00\nDomingo: 07:30-03:00\nLunes: 07:30-20:00\nMartes: 07:30-20:00\nMiércoles: 07:30-20:00`,
@@ -3567,6 +3572,218 @@ export const poiData: POI[] = [
     partyHours_de: "",
   },
   {
+    id: 611, // New unique ID
+    name: "Bar Centro",
+    name_en: "Bar Centro (Ponderano)",
+    name_es: "Bar Centro (Ponderano)",
+    name_fr: "Bar Centro (Ponderano)",
+    name_de: "Bar Centro (Ponderano)",
+    type: "bar",
+    coordinates: [45.538013, 8.05475],
+    googleRating: 4.2,
+    googleReviewCount: 115,
+    address: "Piazza Giuseppe Garibaldi, 31, 13875 Ponderano BI",
+    phone: "3242884569",
+    website: "https://restaurantguru.it/Bar-Centro-Ponderano",
+    shortDescription:
+      "Bar Centro a Ponderano: il tuo pit-stop ideale! Colazioni, aperitivi e serate. Orari estesi.",
+    shortDescription_en:
+      "Bar Centro in Ponderano: your ideal pit-stop! Breakfast, aperitifs, and evenings. Extended hours.",
+    shortDescription_es:
+      "Bar Centro en Ponderano: ¡tu parada ideal! Desayunos, aperitivos y veladas. Horario extendido.",
+    shortDescription_fr:
+      "Bar Centro à Ponderano : votre halte idéale ! Petits déjeuners, apéritifs et soirées. Horaires étendus.",
+    shortDescription_de:
+      "Bar Centro in Ponderano: Ihr idealer Boxenstopp! Frühstück, Aperitifs und Abende. Erweiterte Öffnungszeiten.",
+    details:
+      "Bar Centro, nel cuore di Ponderano in Piazza Garibaldi, è il luogo perfetto per una pausa energizzante o un momento di relax. Che sia per una colazione veloce, un caffè rigenerante, un aperitivo con amici o per concludere la serata, troverete un ambiente accogliente. Aperto con orario continuato fino a mezzanotte per gran parte della settimana (domenica fino alle 00:00, ma apertura alle 07:00), è una comoda opzione per rifocillarsi durante l'Adunata.",
+    details_en:
+      "Bar Centro, in the heart of Ponderano in Piazza Garibaldi, is the perfect place for an energizing break or a moment of relaxation. Whether for a quick breakfast, a refreshing coffee, an aperitif with friends, or to end the evening, you'll find a welcoming atmosphere. Open continuously until midnight most of the week (Sunday until 00:00, but opens at 07:00), it's a convenient option to refuel during the Adunata.",
+    details_es:
+      "Bar Centro, en el corazón de Ponderano en la Piazza Garibaldi, es el lugar perfecto para una pausa energizante o un momento de relajación. Ya sea para un desayuno rápido, un café reparador, un aperitivo con amigos o para terminar la noche, encontrará un ambiente acogedor. Abierto en horario continuado hasta la medianoche la mayor parte de la semana (domingo hasta las 00:00, pero abre a las 07:00), es una opción conveniente para reponer fuerzas durante la Adunata.",
+    details_fr:
+      "Le Bar Centro, au cœur de Ponderano sur la Piazza Garibaldi, est l'endroit idéal pour une pause énergisante ou un moment de détente. Que ce soit pour un petit déjeuner rapide, un café revigorant, un apéritif entre amis ou pour terminer la soirée, vous trouverez une ambiance accueillante. Ouvert en continu jusqu'à minuit la plupart de la semaine (dimanche jusqu'à 00h00, mais ouverture à 07h00), c'est une option pratique pour se restaurer pendant l'Adunata.",
+    details_de:
+      "Die Bar Centro im Herzen von Ponderano an der Piazza Garibaldi ist der perfekte Ort für eine stärkende Pause oder einen Moment der Entspannung. Ob für ein schnelles Frühstück, einen erfrischenden Kaffee, einen Aperitif mit Freunden oder zum Ausklang des Abends – hier finden Sie eine einladende Atmosphäre. Die Bar ist die meiste Zeit der Woche durchgehend bis Mitternacht geöffnet (Sonntag bis 00:00 Uhr, öffnet aber um 07:00 Uhr) und eine praktische Option, um sich während der Adunata zu stärken.",
+    images: ["/images/barCentro.jpeg"], // Suggested image path
+    openingHours: `Lun-Sab: 06:00-00:00\nDom: 07:00-00:00`,
+    openingHours_en: `Mon-Sat: 06:00-00:00\nSun: 07:00-00:00`,
+    openingHours_es: `Lun-Sáb: 06:00-00:00\nDom: 07:00-00:00`,
+    openingHours_fr: `Lun-Sam: 06h00-00h00\nDim: 07h00-00h00`,
+    openingHours_de: `Mo-Sa: 06:00-00:00\nSo: 07:00-00:00`,
+    discountInfo: "",
+    discountInfo_en: "",
+    discountInfo_es: "",
+    discountInfo_fr: "",
+    discountInfo_de: "",
+    tags: [
+      "Bar",
+      "Caffetteria",
+      "Aperitivo",
+      "Ponderano",
+      "Colazione",
+      "Serale",
+    ],
+    tags_en: [
+      "Bar",
+      "Cafeteria",
+      "Aperitif",
+      "Ponderano",
+      "Breakfast",
+      "Evening",
+    ],
+    tags_es: [
+      "Bar",
+      "Cafetería",
+      "Aperitivo",
+      "Ponderano",
+      "Desayuno",
+      "Noche",
+    ],
+    tags_fr: [
+      "Bar",
+      "Cafétéria",
+      "Apéritif",
+      "Ponderano",
+      "Petit Déjeuner",
+      "Soirée",
+    ],
+    tags_de: [
+      "Bar",
+      "Cafeteria",
+      "Aperitif",
+      "Ponderano",
+      "Frühstück",
+      "Abend",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
+    id: 612,
+    name: "Caffetteria del Ricetto",
+    name_en: "Caffetteria del Ricetto (Ricetto Café)",
+    name_es: "Caffetteria del Ricetto (Cafetería del Ricetto)",
+    name_fr: "Caffetteria del Ricetto (Café du Ricetto)",
+    name_de: "Caffetteria del Ricetto (Ricetto-Café)",
+    type: "bar",
+    coordinates: [45.546378, 8.112179],
+    googleRating: 4.3,
+    googleReviewCount: 141,
+    address: "Piazza Castello, 12, 13878 Candelo BI",
+    phone: "0152537794",
+    website: "https://www.instagram.com/caffetteriadelricettodicandelo/",
+    shortDescription:
+      "Caffetteria nel Ricetto di Candelo: cocktail, musica live, tavoli all'aperto e specialità Adunata (vino 'I Pionieri').",
+    shortDescription_en:
+      "Café in Ricetto di Candelo: cocktails, live music, outdoor seating, and Adunata specialties ('I Pionieri' wine).",
+    shortDescription_es:
+      "Cafetería en el Ricetto de Candelo: cócteles, música en vivo, terraza y especialidades de la Adunata (vino 'I Pionieri').",
+    shortDescription_fr:
+      "Café au Ricetto de Candelo : cocktails, musique live, terrasse et spécialités de l'Adunata (vin 'I Pionieri').",
+    shortDescription_de:
+      "Café im Ricetto di Candelo: Cocktails, Live-Musik, Außensitzplätze und Adunata-Spezialitäten ('I Pionieri'-Wein).",
+    details:
+      "Situata nella storica Piazza Castello del Ricetto di Candelo, la Caffetteria del Ricetto offre un'atmosfera unica con tavoli all'aperto, ottimi cocktail e spesso musica dal vivo. Per l'Adunata, propone prodotti tipici, panini, focacce, birra, spritz e il vino ufficiale dell'Adunata 'I Pionieri'. Un luogo suggestivo per una pausa, un aperitivo o una serata in compagnia, con orari estesi nel weekend (Ven-Dom fino all'01:00).", // "spesso musica dal vivo"
+    details_en:
+      "Located in the historic Piazza Castello of Ricetto di Candelo, Caffetteria del Ricetto offers a unique atmosphere with outdoor seating, great cocktails, and often live music. For the Adunata, it features typical products, sandwiches, focaccias, beer, spritz, and the official Adunata wine 'I Pionieri'. A charming place for a break, an aperitif, or an evening with company, with extended hours on weekends (Fri-Sun until 01:00 AM).", // "often live music"
+    details_es:
+      "Ubicada en la histórica Piazza Castello del Ricetto de Candelo, la Caffetteria del Ricetto ofrece un ambiente único con mesas al aire libre, excelentes cócteles y a menudo música en vivo. Para la Adunata, ofrece productos típicos, bocadillos, focaccias, cerveza, spritz y el vino oficial de la Adunata 'I Pionieri'. Un lugar encantador para una pausa, un aperitivo o una velada en compañía, con horario extendido los fines de semana (Vie-Dom hasta la 01:00).", // "a menudo música en vivo"
+    details_fr:
+      "Situé sur la place historique Piazza Castello du Ricetto de Candelo, la Caffetteria del Ricetto offre une atmosphère unique avec terrasse, d'excellents cocktails et souvent de la musique live. Pour l'Adunata, elle propose des produits typiques, des sandwichs, des focaccias, de la bière, du spritz et le vin officiel de l'Adunata 'I Pionieri'. Un lieu charmant pour une pause, un apéritif ou une soirée en compagnie, avec des horaires prolongés le week-end (Ven-Dim jusqu'à 01h00).", // "souvent de la musique live"
+    details_de:
+      "Das Caffetteria del Ricetto am historischen Piazza Castello im Ricetto di Candelo bietet eine einzigartige Atmosphäre mit Sitzplätzen im Freien, großartigen Cocktails und oft Live-Musik. Für die Adunata werden typische Produkte, Sandwiches, Focaccias, Bier, Spritz und der offizielle Adunata-Wein 'I Pionieri' angeboten. Ein charmanter Ort für eine Pause, einen Aperitif oder einen Abend in Gesellschaft, mit verlängerten Öffnungszeiten am Wochenende (Fr-So bis 01:00 Uhr).", // "oft Live-Musik"
+    images: ["/images/ricetto.jpeg"],
+    openingHours: `Lun-Mar, Gio: 07:00-00:00\nMer: 07:00-14:30\nVen-Dom: 07:00-01:00`,
+    openingHours_en: `Mon-Tue, Thu: 07:00-00:00\nWed: 07:00-14:30\nFri-Sun: 07:00-01:00`,
+    openingHours_es: `Lun-Mar, Jue: 07:00-00:00\nMié: 07:00-14:30\nVie-Dom: 07:00-01:00`,
+    openingHours_fr: `Lun-Mar, Jeu: 07h00-00h00\nMer: 07h00-14h30\nVen-Dim: 07h00-01h00`,
+    openingHours_de: `Mo-Di, Do: 07:00-00:00\nMi: 07:00-14:30\nFr-So: 07:00-01:00`,
+    discountInfo:
+      "Prodotti tipici, panini, focacce e vino ufficiale Adunata 'I Pionieri'.",
+    discountInfo_en:
+      "Typical products, sandwiches, focaccias, and official Adunata wine 'I Pionieri'.",
+    discountInfo_es:
+      "Productos típicos, bocadillos, focaccias y vino oficial de la Adunata 'I Pionieri'.",
+    discountInfo_fr:
+      "Produits typiques, sandwichs, focaccias et vin officiel de l'Adunata 'I Pionieri'.",
+    discountInfo_de:
+      "Typische Produkte, Sandwiches, Focaccias und offizieller Adunata-Wein 'I Pionieri'.",
+    tags: [
+      "Bar",
+      "Caffetteria",
+      "Ricetto Candelo",
+      "Musica dal Vivo",
+      "Cocktail",
+      "Vino Adunata",
+      "Tavoli Aperto",
+      "Panini",
+      "Focacce",
+    ],
+    tags_en: [
+      "Bar",
+      "Cafeteria",
+      "Ricetto Candelo",
+      "Live Music",
+      "Cocktails",
+      "Adunata Wine",
+      "Outdoor Seating",
+      "Sandwiches",
+      "Focaccias",
+    ],
+    tags_es: [
+      "Bar",
+      "Cafetería",
+      "Ricetto Candelo",
+      "Música en Vivo",
+      "Cócteles",
+      "Vino Adunata",
+      "Terraza",
+      "Bocadillos",
+      "Focaccias",
+    ],
+    tags_fr: [
+      "Bar",
+      "Cafétéria",
+      "Ricetto Candelo",
+      "Musique Live",
+      "Cocktails",
+      "Vin Adunata",
+      "Terrasse",
+      "Sandwichs",
+      "Focaccias",
+    ],
+    tags_de: [
+      "Bar",
+      "Cafeteria",
+      "Ricetto Candelo",
+      "Live-Musik",
+      "Cocktails",
+      "Adunata Wein",
+      "Außenbereich",
+      "Sandwiches",
+      "Focaccias",
+    ],
+    partyInfo: "", // Removed
+    partyInfo_en: "", // Removed
+    partyInfo_es: "", // Removed
+    partyInfo_fr: "", // Removed
+    partyInfo_de: "", // Removed
+    partyHours: "", // Removed
+    partyHours_en: "", // Removed
+    partyHours_es: "", // Removed
+    partyHours_fr: "", // Removed
+    partyHours_de: "", // Removed
+  },
+  {
     id: 208,
     name: "New Wood Pub", // Corrected name based on Facebook URL
     name_en: "New Wood Pub",
@@ -3597,8 +3814,6 @@ export const poiData: POI[] = [
       "New Wood à Gaglianico est un lieu multifonctionnel offrant une expérience complète : des petits déjeuners matinaux, au service de restauration et de pizzeria pour le déjeuner et le dîner, jusqu'à se transformer en un pub animé le soir. Il est réputé pour ses apéritifs et pour organiser régulièrement des événements et des soirées à thème, notamment le week-end. Un lieu de référence polyvalent à Gaglianico pour la restauration et le divertissement.",
     details_de:
       "Das New Wood in Gaglianico ist ein multifunktionaler Veranstaltungsort, der ein umfassendes Erlebnis bietet: vom morgendlichen Frühstück über Restaurant- und Pizzeriaservice zum Mittag- und Abendessen bis hin zur Verwandlung in einen lebhaften Pub am Abend. Es ist bekannt für seine Aperitifs und für die regelmäßige Ausrichtung von Veranstaltungen und Themenabenden, besonders an Wochenenden. Ein vielseitiger Anlaufpunkt in Gaglianico für Essen und Unterhaltung.",
-    // --- END UPDATED GENERAL DETAILS ---
-
     address: "Via Matteotti 129/G, 13854 Gaglianico BI",
     phone: "393 3516073",
     website: "https://www.facebook.com/NewWoodPub/?locale=it_IT",
@@ -4878,11 +5093,11 @@ export const poiData: POI[] = [
     details_de:
       "Das Restaurant Schinkenstube San Daniele im Herzen von Biella ist ein Geschmackstempel, spezialisiert auf Platten mit feinen Wurst- und Käsesorten, erstklassigem Grillfleisch und einem Keller mit ausgewählten Weinen. Geöffnet 7 TAGE DIE WOCHE zum Mittag- und Abendessen, mit VERLÄNGERTEN ÖFFNUNGSZEITEN am Adunata-Wochenende (Fr-So 10:00-23:00). Das Lokal verfügt über Sitzplätze im Freien, Hochstühle für Kinder und heißt Hunde herzlich willkommen. Perfekt für diejenigen, die ein authentisches und raffiniertes kulinarisches Erlebnis mit Fokus auf exzellente Rohstoffe in einer einladenden Umgebung während der Veranstaltung suchen.",
     images: ["/images/prosciutteria.jpeg"], // Example image path
-    openingHours: `giovedì: 12:00-14:30, 19:00-23:00\nvenerdì: 10:00-23:00\nsabato: 10:00-23:00\ndomenica: 10:00-23:00\nlunedì: 12:00-14:30, 19:00-23:00\nmartedì: 12:00-14:30, 19:00-23:00\nmercoledì: 12:00-14:30, 19:00-23:00`,
-    openingHours_en: `Thursday: 12:00-14:30, 19:00-23:00\nFriday: 10:00-23:00\nSaturday: 10:00-23:00\nSunday: 10:00-23:00\nMonday: 12:00-14:30, 19:00-23:00\nTuesday: 12:00-14:30, 19:00-23:00\nWednesday: 12:00-14:30, 19:00-23:00`,
-    openingHours_es: `Jueves: 12:00-14:30, 19:00-23:00\nViernes: 10:00-23:00\nSábado: 10:00-23:00\nDomingo: 10:00-23:00\nLunes: 12:00-14:30, 19:00-23:00\nMartes: 12:00-14:30, 19:00-23:00\nMiércoles: 12:00-14:30, 19:00-23:00`,
-    openingHours_fr: `Jeudi : 12h00-14h30, 19h00-23h00\nVendredi : 10h00-23h00\nSamedi : 10h00-23h00\nDimanche : 10h00-23h00\nLundi : 12h00-14h30, 19h00-23h00\nMardi : 12h00-14h30, 19h00-23h00\nMercredi : 12h00-14h30, 19h00-23h00`,
-    openingHours_de: `Donnerstag: 12:00-14:30, 19:00-23:00\nFreitag: 10:00-23:00\nSamstag: 10:00-23:00\nSonntag: 10:00-23:00\nMontag: 12:00-14:30, 19:00-23:00\nDienstag: 12:00-14:30, 19:00-23:00\nMittwoch: 12:00-14:30, 19:00-23:00`,
+    openingHours: `Lun-Gio: 12:00-14:30, 19:00-23:00\nVen-Dom: 10:00-24:00`,
+    openingHours_en: `Mon-Thu: 12:00-14:30, 19:00-23:00\nFri-Sun: 10:00-24:00`,
+    openingHours_es: `Lun-Jue: 12:00-14:30, 19:00-23:00\nVie-Dom: 10:00-24:00`,
+    openingHours_fr: `Lun-Jeu: 12h00-14h30, 19h00-23h00\nVen-Dim: 10h00-24h00`,
+    openingHours_de: `Mo-Do: 12:00-14:30, 19:00-23:00\nFr-So: 10:00-24:00`,
     discountInfo:
       "Specializzati in taglieri, grigliate e vini selezionati. Cani ammessi.",
     discountInfo_en:
@@ -5170,6 +5385,111 @@ export const poiData: POI[] = [
     partyHours_de: "",
   },
   {
+    id: 223, // New unique ID (assuming 222 was the last restaurant)
+    name: "Monviso Brazilian Steakhouse",
+    name_en: "Monviso Brazilian Steakhouse",
+    name_es: "Monviso Brazilian Steakhouse",
+    name_fr: "Monviso Brazilian Steakhouse",
+    name_de: "Monviso Brazilian Steakhouse",
+    type: "restaurant",
+    coordinates: [45.540301, 8.080105],
+    googleRating: 5.0,
+    googleReviewCount: 3, // Note: low review count despite high rating
+    address: "Via Camillo Cavour, 49, 13894 Gaglianico BI",
+    phone: "0153701315",
+    website: "https://monvisosteakhouse.it/",
+    shortDescription:
+      "Steakhouse brasiliana a Gaglianico: rodízio completo, carni selezionate e vasta scelta di vini.",
+    shortDescription_en:
+      "Brazilian steakhouse in Gaglianico: full rodízio, selected meats, and a wide choice of wines.",
+    shortDescription_es:
+      "Steakhouse brasileña en Gaglianico: rodízio completo, carnes seleccionadas y amplia selección de vinos.",
+    shortDescription_fr:
+      "Steakhouse brésilien à Gaglianico : rodízio complet, viandes sélectionnées et large choix de vins.",
+    shortDescription_de:
+      "Brasilianisches Steakhouse in Gaglianico: komplettes Rodízio, ausgewählte Fleischsorten und große Weinauswahl.",
+    details:
+      "Monviso Brazilian Steakhouse a Gaglianico offre un'autentica esperienza culinaria brasiliana con il suo rodízio completo. Godetevi oltre 10 tagli di carne selezionata e pregiata, serviti al tavolo con un servizio impeccabile in un ambiente elegante e confortevole. La proposta è arricchita da un buffet di contorni e da una cantina con più di 30 etichette di vino. Ideale per una cena abbondante e di qualità durante l'Adunata.",
+    details_en:
+      "Monviso Brazilian Steakhouse in Gaglianico offers an authentic Brazilian culinary experience with its full rodízio. Enjoy over 10 cuts of selected and premium meat, served 테이블side with impeccable service in an elegant and comfortable environment. The offering is enriched by a buffet of side dishes and a wine cellar with over 30 wine labels. Ideal for a hearty and quality dinner during the Adunata.",
+    details_es:
+      "Monviso Brazilian Steakhouse en Gaglianico ofrece una auténtica experiencia culinaria brasileña con su rodízio completo. Disfrute de más de 10 cortes de carne seleccionada y de primera calidad, servidos en la mesa con un servicio impecable en un ambiente elegante y confortable. La oferta se enriquece con un buffet de guarniciones y una bodega con más de 30 etiquetas de vino. Ideal para una cena abundante y de calidad durante la Adunata.",
+    details_fr:
+      "Le Monviso Brazilian Steakhouse à Gaglianico offre une expérience culinaire brésilienne authentique avec son rodízio complet. Profitez de plus de 10 coupes de viande sélectionnée et de première qualité, servies à table avec un service impeccable dans un cadre élégant et confortable. L'offre est enrichie par un buffet de garnitures et une cave à vin comptant plus de 30 étiquettes. Idéal pour un dîner copieux et de qualité pendant l'Adunata.",
+    details_de:
+      "Das Monviso Brazilian Steakhouse in Gaglianico bietet ein authentisches brasilianisches kulinarisches Erlebnis mit seinem kompletten Rodízio. Genießen Sie über 10 verschiedene ausgewählte und hochwertige Fleischschnitte, die am Tisch mit tadellosem Service in einem eleganten und komfortablen Ambiente serviert werden. Das Angebot wird durch ein Beilagenbuffet und einen Weinkeller mit über 30 Weinetiketten bereichert. Ideal für ein herzhaftes und hochwertiges Abendessen während der Adunata.",
+    images: ["/images/monviso.jpeg"], // Suggested image path
+    openingHours: `Lun-Mar: 19:00-22:30\nMer-Gio, Ven: 12:00-14:30, 19:00-23:00\nSab-Dom: 12:00-15:00, 19:00-23:00`, // Grouped complex hours
+    openingHours_en: `Mon-Tue: 19:00-22:30\nWed-Thu, Fri: 12:00-14:30, 19:00-23:00\nSat-Sun: 12:00-15:00, 19:00-23:00`,
+    openingHours_es: `Lun-Mar: 19:00-22:30\nMié-Jue, Vie: 12:00-14:30, 19:00-23:00\nSáb-Dom: 12:00-15:00, 19:00-23:00`,
+    openingHours_fr: `Lun-Mar: 19h00-22h30\nMer-Jeu, Ven: 12h00-14h30, 19h00-23h00\nSam-Dim: 12h00-15h00, 19h00-23h00`,
+    openingHours_de: `Mo-Di: 19:00-22:30\nMi-Do, Fr: 12:00-14:30, 19:00-23:00\nSa-So: 12:00-15:00, 19:00-23:00`,
+    discountInfo:
+      "Rodízio completo con 10+ tagli di carne e 30+ etichette di vino.",
+    discountInfo_en: "Full rodízio with 10+ meat cuts and 30+ wine labels.",
+    discountInfo_es:
+      "Rodízio completo con más de 10 cortes de carne y más de 30 etiquetas de vino.",
+    discountInfo_fr:
+      "Rodízio complet avec plus de 10 coupes de viande et plus de 30 étiquettes de vin.",
+    discountInfo_de:
+      "Komplettes Rodízio mit über 10 Fleischsorten und über 30 Weinetiketten.",
+    tags: [
+      "Ristorante",
+      "Steakhouse",
+      "Brasiliano",
+      "Rodízio",
+      "Carne",
+      "Gaglianico",
+      "Vini",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Steakhouse",
+      "Brazilian",
+      "Rodízio",
+      "Meat",
+      "Gaglianico",
+      "Wines",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Steakhouse",
+      "Brasileño",
+      "Rodízio",
+      "Carne",
+      "Gaglianico",
+      "Vinos",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Steakhouse",
+      "Brésilien",
+      "Rodízio",
+      "Viande",
+      "Gaglianico",
+      "Vins",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Steakhouse",
+      "Brasilianisch",
+      "Rodízio",
+      "Fleisch",
+      "Gaglianico",
+      "Weine",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
     id: 505, // New unique ID
     name: "Bevande Miscelate",
     name_en: "Bevande Miscelate (Mixed Drinks Shop)",
@@ -5267,89 +5587,99 @@ export const poiData: POI[] = [
     partyHours_de: "",
   },
   {
-    id: 506, // New unique ID
-    name: "Le Macellerie di Nonno Nino - Carni Botalla 1876",
-    name_en: "Nonno Nino's Butcher Shops - Carni Botalla 1876",
-    name_es: "Las Carnicerías de Nonno Nino - Carni Botalla 1876",
-    name_fr: "Les Boucheries de Nonno Nino - Carni Botalla 1876",
-    name_de: "Nonno Ninos Metzgereien - Carni Botalla 1876",
-    type: "clothing", // Using 'clothing' as a general shop type
+    id: 506,
+    name: "Le Macellerie di Nonno Nino (Stand Adunata Biella)", // Added Biella for clarity
+    name_en: "Nonno Nino's Butcher Shops (Adunata Biella Stand)",
+    name_es: "Las Carnicerías de Nonno Nino (Stand Adunata Biella)",
+    name_fr: "Les Boucheries de Nonno Nino (Stand Adunata Biella)",
+    name_de: "Nonno Ninos Metzgereien (Adunata Biella-Stand)",
+    type: "restaurant",
     coordinates: [45.559634, 8.052724],
     googleRating: 4.6,
     googleReviewCount: 75,
-    address: "Via Galimberti Tancredi, 3, 13900 Biella BI",
+    address: "Via Galimberti, 3, 13900 Biella BI (Stand Adunata)",
     phone: "015666103",
     website: "https://www.carnibotalla1876srl.com/",
     shortDescription:
-      "Macellerie Nonno Nino - Carni Botalla 1876: tradizione e qualità dal 1876. Carni eccellenti, e orari no-stop per l'Adunata!",
+      "Stand Nonno Nino a Biella per l'Adunata: panini gourmet (Fassona, salamella), patatine, vino e birra. Servizio diurno e serale!",
     shortDescription_en:
-      "Nonno Nino's Butcher Shops - Carni Botalla 1876: tradition and quality since 1876. Excellent meats, and non-stop hours for the Adunata!",
+      "Nonno Nino stand in Biella for Adunata: gourmet sandwiches (Fassona, salamella), fries, wine, and beer. Day and evening service!",
     shortDescription_es:
-      "Las Carnicerías de Nonno Nino - Carni Botalla 1876: tradición y calidad desde 1876. ¡Carnes excelentes, horario ininterrumpido para la Adunata!",
+      "Puesto Nonno Nino en Biella para la Adunata: ¡bocadillos gourmet (Fassona, salamella), patatas fritas, vino y cerveza. ¡Servicio diurno y nocturno!",
     shortDescription_fr:
-      "Les Boucheries de Nonno Nino - Carni Botalla 1876 : tradition et qualité depuis 1876. Viandes excellentes, horaires non-stop pour l'Adunata !",
+      "Stand Nonno Nino à Biella pour l'Adunata : sandwichs gourmets (Fassona, salamella), frites, vin et bière. Service de jour et de soir !",
     shortDescription_de:
-      "Nonno Ninos Metzgereien - Carni Botalla 1876: Tradition und Qualität seit 1876. Exzellentes Fleisch, Nonstop-Öffnungszeiten für die Adunata!",
+      "Nonno Nino-Stand in Biella zur Adunata: Gourmet-Sandwiches (Fassona, Salamella), Pommes, Wein und Bier. Tages- und Abendservice!",
     details:
-      "Le Macellerie di Nonno Nino - Carni Botalla 1876, con una storia che affonda le radici nel 1876, è un'istituzione a Biella per la qualità delle sue carni. Offrono tagli selezionati e un servizio attento, che include la consegna in giornata. Per l'Adunata, il negozio estende i suoi ORARI in modo eccezionale (Ven-Dom 09:00-23:30), garantendo la possibilità di acquistare carni fresche e prelibate per le vostre grigliate o pasti speciali durante l'evento. Una garanzia di eccellenza e tradizione per gli amanti della buona carne.",
+      "Per l'Adunata Alpini 2025, Le Macellerie di Nonno Nino in Via Galimberti 3 offrono un menù speciale. Gustate panini gourmet come tartare di Fassona, salamella IGP, hamburger di Fassona, lingua in salsa verde, o a scelta con prosciutto cotto e toma, salame, coppa, mortadella. Disponibili anche patatine fritte, acqua, vino e birra. Servizio diurno e serale da venerdì 9 a domenica 11 maggio.", // More concise
     details_en:
-      "Nonno Nino's Butcher Shops - Carni Botalla 1876, with a history rooted in 1876, is an institution in Biella for the quality of its meats. They offer selected cuts and attentive service, which includes same-day delivery. For the Adunata, the shop extends its HOURS exceptionally (Fri-Sun 09:00-23:30), ensuring the opportunity to purchase fresh and delicious meats for your barbecues or special meals during the event. A guarantee of excellence and tradition for lovers of good meat.",
+      "For the Adunata Alpini 2025, Le Macellerie di Nonno Nino on Via Galimberti 3 offers a special menu. Enjoy gourmet sandwiches like Fassona tartare, IGP salamella, Fassona hamburger, tongue in green sauce, or choose from cooked ham & toma, salami, coppa, mortadella. Also available are french fries, water, wine, and beer. Day and evening service from Friday, May 9th to Sunday, May 11th.", // More concise
     details_es:
-      "Las Carnicerías de Nonno Nino - Carni Botalla 1876, con una historia que se remonta a 1876, es una institución en Biella por la calidad de sus carnes. Ofrecen cortes selectos y un servicio atento, que incluye la entrega en el mismo día. Para la Adunata, la tienda amplía sus HORARIOS de manera excepcional (Vie-Dom 09:00-23:30), garantizando la oportunidad de comprar carnes frescas y deliciosas para sus barbacoas o comidas especiales durante el evento. Una garantía de excelencia y tradición para los amantes de la buena carne.",
+      "Para la Adunata Alpini 2025, Le Macellerie di Nonno Nino en Via Galimberti 3 ofrece un menú especial. Disfrute de bocadillos gourmet como tartar de Fassona, salamella IGP, hamburguesa de Fassona, lengua en salsa verde, o a elegir entre jamón cocido y toma, salami, coppa, mortadela. También disponibles patatas fritas, agua, vino y cerveza. Servicio diurno y nocturno desde el viernes 9 hasta el domingo 11 de mayo.", // More concise
     details_fr:
-      "Les Boucheries de Nonno Nino - Carni Botalla 1876, avec une histoire ancrée en 1876, est une institution à Biella pour la qualité de ses viandes. Elles proposent des coupes sélectionnées et un service attentionné, qui inclut la livraison le jour même. Pour l'Adunata, la boutique prolonge exceptionnellement ses HORAIRES (Ven-Dim 09h00-23h30), garantissant la possibilité d'acheter des viandes fraîches et délicieuses pour vos barbecues ou repas spéciaux pendant l'événement. Une garantie d'excellence et de tradition pour les amateurs de bonne viande.",
+      "Pour l'Adunata Alpini 2025, Le Macellerie di Nonno Nino, Via Galimberti 3, propose un menu spécial. Dégustez des sandwichs gourmets comme le tartare de Fassona, la salamella IGP, le hamburger de Fassona, la langue en sauce verte, ou choisissez parmi jambon cuit & toma, salami, coppa, mortadelle. Également disponibles : frites, eau, vin et bière. Service de jour et de soir du vendredi 9 au dimanche 11 mai.", // More concise
     details_de:
-      "Nonno Ninos Metzgereien - Carni Botalla 1876, mit einer bis ins Jahr 1876 zurückreichenden Geschichte, ist eine Institution in Biella für die Qualität seines Fleisches. Sie bieten ausgewählte Teilstücke und aufmerksamen Service, einschließlich Lieferung am selben Tag. Für die Adunata erweitert das Geschäft seine ÖFFNUNGSZEITEN außergewöhnlich (Fr-So 09:00-23:30), um die Möglichkeit zu gewährleisten, frisches und köstliches Fleisch für Ihre Grillabende oder besondere Mahlzeiten während der Veranstaltung zu kaufen. Eine Garantie für Exzellenz und Tradition für Liebhaber guten Fleisches.",
-    images: ["/images/macelleriaBotalla.jpg"], // Example image path
-    openingHours: `giovedì: 08:30-13:00, 15:30-19:00\nvenerdì: 09:00-23:30\nsabato: 09:00-23:30\ndomenica: 09:00-23:30\nlunedì: Chiuso\nmartedì: 08:30-13:00, 15:30-19:00\nmercoledì: 08:30-13:00, 15:30-19:00`,
-    openingHours_en: `Thursday: 08:30-13:00, 15:30-19:00\nFriday: 09:00-23:30\nSaturday: 09:00-23:30\nSunday: 09:00-23:30\nMonday: Closed\nTuesday: 08:30-13:00, 15:30-19:00\nWednesday: 08:30-13:00, 15:30-19:00`,
-    openingHours_es: `Jueves: 08:30-13:00, 15:30-19:00\nViernes: 09:00-23:30\nSábado: 09:00-23:30\nDomingo: 09:00-23:30\nLunes: Cerrado\nMartes: 08:30-13:00, 15:30-19:00\nMiércoles: 08:30-13:00, 15:30-19:00`,
-    openingHours_fr: `Jeudi : 08h30-13h00, 15h30-19h00\nVendredi : 09h00-23h30\nSamedi : 09h00-23h30\nDimanche : 09h00-23h30\nLundi : Fermé\nMardi : 08h30-13h00, 15h30-19h00\nMercredi : 08h30-13h00, 15h30-19h00`,
-    openingHours_de: `Donnerstag: 08:30-13:00, 15:30-19:00\nFreitag: 09:00-23:30\nSamstag: 09:00-23:30\nSonntag: 09:00-23:30\nMontag: Geschlossen\nDienstag: 08:30-13:00, 15:30-19:00\nMittwoch: 08:30-13:00, 15:30-19:00`,
-    discountInfo: "Carni di alta qualità dal 1876.",
-    discountInfo_en: "High-quality meats since 1876.",
-    discountInfo_es: "Carnes de alta calidad desde 1876.",
-    discountInfo_fr: "Viandes de haute qualité depuis 1876.",
-    discountInfo_de: "Hochwertiges Fleisch seit 1876.",
+      "Für die Adunata Alpini 2025 bietet Le Macellerie di Nonno Nino in der Via Galimberti 3 ein spezielles Menü an. Genießen Sie Gourmet-Sandwiches wie Fassona-Tartar, IGP-Salamella, Fassona-Hamburger, Zunge in grüner Sauce oder wählen Sie zwischen Kochschinken & Toma, Salami, Coppa, Mortadella. Ebenfalls erhältlich sind Pommes Frites, Wasser, Wein und Bier. Tages- und Abendservice von Freitag, 9. Mai bis Sonntag, 11. Mai.", // More concise
+    images: ["/images/macelleriaBotalla.jpg"],
+    openingHours: "Ven 9 Mag - Dom 11 Mag: Servizio Diurno e Serale",
+    openingHours_en: "Fri May 9 - Sun May 11: Day and Evening Service",
+    openingHours_es: "Vie 9 May - Dom 11 May: Servicio Diurno y Nocturno",
+    openingHours_fr: "Ven 9 Mai - Dim 11 Mai : Service de Jour et de Soir",
+    openingHours_de: "Fr 9. Mai - So 11. Mai: Tages- und Abendservice",
+    discountInfo:
+      "Panini gourmet con carni selezionate (Fassona, salamella IGP), patatine, vino e birra per l'Adunata.",
+    discountInfo_en:
+      "Gourmet sandwiches with selected meats (Fassona, IGP salamella), fries, wine, and beer for the Adunata.",
+    discountInfo_es:
+      "Bocadillos gourmet con carnes seleccionadas (Fassona, salamella IGP), patatas fritas, vino y cerveza para la Adunata.",
+    discountInfo_fr:
+      "Sandwichs gourmets avec viandes sélectionnées (Fassona, salamella IGP), frites, vin et bière pour l'Adunata.",
+    discountInfo_de:
+      "Gourmet-Sandwiches mit ausgewähltem Fleisch (Fassona, IGP-Salamella), Pommes, Wein und Bier für die Adunata.",
     tags: [
-      "Macelleria",
-      "Carni Pregiate",
-      "Tradizione",
-      "Consegna Domicilio",
-      "Biella",
-      "Aperto Tardi (Weekend Adunata)",
+      "Stand Gastronomico",
+      "Macelleria Nonno Nino",
+      "Panini Fassona",
+      "Salamella IGP",
+      "Adunata Alpini",
+      "Biella Centro",
+      "Street Food",
     ],
     tags_en: [
-      "Butcher Shop",
-      "Premium Meats",
-      "Tradition",
-      "Home Delivery",
-      "Biella",
-      "Open Late (Adunata Weekend)",
+      "Food Stand",
+      "Nonno Nino Butcher",
+      "Fassona Sandwiches",
+      "IGP Salamella",
+      "Adunata Alpini",
+      "Biella Center",
+      "Street Food",
     ],
     tags_es: [
-      "Carnicería",
-      "Carnes Selectas",
-      "Tradición",
-      "Entrega Domicilio",
-      "Biella",
-      "Abierto Tarde (Fin Semana Adunata)",
+      "Puesto de Comida",
+      "Carnicería Nonno Nino",
+      "Bocadillos Fassona",
+      "Salamella IGP",
+      "Adunata Alpini",
+      "Biella Centro",
+      "Comida Callejera",
     ],
     tags_fr: [
-      "Boucherie",
-      "Viandes de Qualité",
-      "Tradition",
-      "Livraison Domicile",
-      "Biella",
-      "Ouvert Tard (Weekend Adunata)",
+      "Stand Alimentaire",
+      "Boucherie Nonno Nino",
+      "Sandwichs Fassona",
+      "Salamella IGP",
+      "Adunata Alpini",
+      "Biella Centre",
+      "Street Food",
     ],
     tags_de: [
-      "Metzgerei",
-      "Premiumfleisch",
-      "Tradition",
-      "Lieferservice",
-      "Biella",
-      "Spät Geöffnet (Adunata Wochenende)",
+      "Imbissstand",
+      "Metzgerei Nonno Nino",
+      "Fassona-Sandwiches",
+      "IGP-Salamella",
+      "Adunata Alpini",
+      "Biella Zentrum",
+      "Streetfood",
     ],
     partyInfo: "",
     partyInfo_en: "",
@@ -5363,89 +5693,196 @@ export const poiData: POI[] = [
     partyHours_de: "",
   },
   {
-    id: 507, // New unique ID
-    name: "Le Macellerie di Nonno Nino - Carni Botalla 1876",
-    name_en: "Nonno Nino's Butcher Shops - Carni Botalla 1876",
-    name_es: "Las Carnicerías de Nonno Nino - Carni Botalla 1876",
-    name_fr: "Les Boucheries de Nonno Nino - Carni Botalla 1876",
-    name_de: "Nonno Ninos Metzgereien - Carni Botalla 1876",
-    type: "clothing", // Using 'clothing' as a general shop type
+    id: 507,
+    name: "Le Macellerie di Nonno Nino - Adunata Mongrando",
+    name_en: "Nonno Nino's Butcher Shops - Adunata Mongrando",
+    name_es: "Las Carnicerías de Nonno Nino - Adunata Mongrando",
+    name_fr: "Les Boucheries de Nonno Nino - Adunata Mongrando",
+    name_de: "Nonno Ninos Metzgereien - Adunata Mongrando",
+    type: "restaurant",
     coordinates: [45.527756, 8.020219],
     googleRating: 4.7,
     googleReviewCount: 287,
-    address: "Via Via Maghetto, 117, 1388 Mongrando BI",
+    address: "Via Maghetto, 117, 13888 Mongrando BI (Evento Adunata)",
     phone: "015666103",
     website: "https://www.carnibotalla1876srl.com/",
     shortDescription:
-      "Macellerie Nonno Nino - Carni Botalla 1876: tradizione e qualità dal 1876. Carni eccellenti, e orari no-stop per l'Adunata!",
+      "Nonno Nino a Mongrando per l'Adunata: piatti tipici, grigliate, dolci e musica dal vivo (Ven/Sab con Eric & Cinzia)!",
     shortDescription_en:
-      "Nonno Nino's Butcher Shops - Carni Botalla 1876: tradition and quality since 1876. Excellent meats, and non-stop hours for the Adunata!",
+      "Nonno Nino in Mongrando for Adunata: typical dishes, grilled meats, desserts, and live music (Fri/Sat with Eric & Cinzia)!",
     shortDescription_es:
-      "Las Carnicerías de Nonno Nino - Carni Botalla 1876: tradición y calidad desde 1876. ¡Carnes excelentes, horario ininterrumpido para la Adunata!",
+      "Nonno Nino en Mongrando para la Adunata: ¡platos típicos, carnes a la parrilla, postres y música en vivo (Vie/Sáb con Eric & Cinzia)!",
     shortDescription_fr:
-      "Les Boucheries de Nonno Nino - Carni Botalla 1876 : tradition et qualité depuis 1876. Viandes excellentes, horaires non-stop pour l'Adunata !",
+      "Nonno Nino à Mongrando pour l'Adunata : plats typiques, grillades, desserts et musique live (Ven/Sam avec Eric & Cinzia) !",
     shortDescription_de:
-      "Nonno Ninos Metzgereien - Carni Botalla 1876: Tradition und Qualität seit 1876. Exzellentes Fleisch, Nonstop-Öffnungszeiten für die Adunata!",
+      "Nonno Nino in Mongrando zur Adunata: typische Gerichte, Grillfleisch, Desserts und Live-Musik (Fr/Sa mit Eric & Cinzia)!",
     details:
-      "Le Macellerie di Nonno Nino - Carni Botalla 1876, con una storia che affonda le radici nel 1876, è un'istituzione a Biella per la qualità delle sue carni. Offrono tagli selezionati e un servizio attento, che include la consegna in giornata. Per l'Adunata, il negozio estende i suoi ORARI in modo eccezionale (Ven-Dom 09:00-23:30), garantendo la possibilità di acquistare carni fresche e prelibate per le vostre grigliate o pasti speciali durante l'evento. Una garanzia di eccellenza e tradizione per gli amanti della buona carne.",
+      "Qui vi aspettano gustosi taglieri di salumi nostrani e formaggi delle valli, la prelibata tartare di Fassona con bagna cauda, e la classica polenta accompagnata da salsiccia o spezzatino. Per gli amanti della griglia, imperdibili la tagliata di Fassona e il costato di suino, serviti con patatine. Concludete in dolcezza con i dolci artigianali tipici Mongrandesi. E non è tutto: il venerdì e sabato, l'atmosfera si accende con la musica, il ballo e il canto di Eric & Cinzia!",
     details_en:
-      "Nonno Nino's Butcher Shops - Carni Botalla 1876, with a history rooted in 1876, is an institution in Biella for the quality of its meats. They offer selected cuts and attentive service, which includes same-day delivery. For the Adunata, the shop extends its HOURS exceptionally (Fri-Sun 09:00-23:30), ensuring the opportunity to purchase fresh and delicious meats for your barbecues or special meals during the event. A guarantee of excellence and tradition for lovers of good meat.",
+      "Awaiting you here are tasty platters of local cured meats and valley cheeses, exquisite Fassona tartare with bagna cauda, and classic polenta served with sausage or stew. For grill lovers, the Fassona tagliata and pork ribs with fries are unmissable. Finish sweetly with typical Mongrandesi artisanal desserts. And that's not all: on Friday and Saturday, the atmosphere lights up with music, dancing, and singing from Eric & Cinzia!",
     details_es:
-      "Las Carnicerías de Nonno Nino - Carni Botalla 1876, con una historia que se remonta a 1876, es una institución en Biella por la calidad de sus carnes. Ofrecen cortes selectos y un servicio atento, que incluye la entrega en el mismo día. Para la Adunata, la tienda amplía sus HORARIOS de manera excepcional (Vie-Dom 09:00-23:30), garantizando la oportunidad de comprar carnes frescas y deliciosas para sus barbacoas o comidas especiales durante el evento. Una garantía de excelencia y tradición para los amantes de la buena carne.",
+      "Aquí les esperan sabrosas tablas de embutidos locales y quesos del valle, el exquisito tartar de Fassona con bagna cauda, y la clásica polenta acompañada de salchicha o estofado. Para los amantes de la parrilla, imperdibles la tagliata de Fassona y las costillas de cerdo con patatas fritas. Terminen dulcemente con los postres artesanales típicos Mongrandesi. Y eso no es todo: ¡viernes y sábado, el ambiente se enciende con la música, el baile y el canto de Eric & Cinzia!",
     details_fr:
-      "Les Boucheries de Nonno Nino - Carni Botalla 1876, avec une histoire ancrée en 1876, est une institution à Biella pour la qualité de ses viandes. Elles proposent des coupes sélectionnées et un service attentionné, qui inclut la livraison le jour même. Pour l'Adunata, la boutique prolonge exceptionnellement ses HORAIRES (Ven-Dim 09h00-23h30), garantissant la possibilité d'acheter des viandes fraîches et délicieuses pour vos barbecues ou repas spéciaux pendant l'événement. Une garantie d'excellence et de tradition pour les amateurs de bonne viande.",
+      "Vous attendent ici de savoureuses planches de charcuteries locales et de fromages de nos vallées, l'exquis tartare de Fassona avec bagna cauda, et la polenta classique servie avec saucisse ou ragoût. Pour les amateurs de grillades, la tagliata de Fassona et les côtes de porc avec frites sont incontournables. Terminez en douceur avec les desserts artisanaux typiques Mongrandesi. Et ce n'est pas tout : le vendredi et le samedi, l'ambiance s'illumine avec la musique, la danse et le chant d'Eric & Cinzia ! ",
     details_de:
-      "Nonno Ninos Metzgereien - Carni Botalla 1876, mit einer bis ins Jahr 1876 zurückreichenden Geschichte, ist eine Institution in Biella für die Qualität seines Fleisches. Sie bieten ausgewählte Teilstücke und aufmerksamen Service, einschließlich Lieferung am selben Tag. Für die Adunata erweitert das Geschäft seine ÖFFNUNGSZEITEN außergewöhnlich (Fr-So 09:00-23:30), um die Möglichkeit zu gewährleisten, frisches und köstliches Fleisch für Ihre Grillabende oder besondere Mahlzeiten während der Veranstaltung zu kaufen. Eine Garantie für Exzellenz und Tradition für Liebhaber guten Fleisches.",
-    images: ["/images/macelleriaBotalla.jpg"], // Example image path
-    openingHours: `giovedì: 08:30-13:00, 15:30-19:00\nvenerdì: 09:00-23:30\nsabato: 09:00-23:30\ndomenica: 09:00-23:30\nlunedì: Chiuso\nmartedì: 08:30-13:00, 15:30-19:00\nmercoledì: 08:30-13:00, 15:30-19:00`,
-    openingHours_en: `Thursday: 08:30-13:00, 15:30-19:00\nFriday: 09:00-23:30\nSaturday: 09:00-23:30\nSunday: 09:00-23:30\nMonday: Closed\nTuesday: 08:30-13:00, 15:30-19:00\nWednesday: 08:30-13:00, 15:30-19:00`,
-    openingHours_es: `Jueves: 08:30-13:00, 15:30-19:00\nViernes: 09:00-23:30\nSábado: 09:00-23:30\nDomingo: 09:00-23:30\nLunes: Cerrado\nMartes: 08:30-13:00, 15:30-19:00\nMiércoles: 08:30-13:00, 15:30-19:00`,
-    openingHours_fr: `Jeudi : 08h30-13h00, 15h30-19h00\nVendredi : 09h00-23h30\nSamedi : 09h00-23h30\nDimanche : 09h00-23h30\nLundi : Fermé\nMardi : 08h30-13h00, 15h30-19h00\nMercredi : 08h30-13h00, 15h30-19h00`,
-    openingHours_de: `Donnerstag: 08:30-13:00, 15:30-19:00\nFreitag: 09:00-23:30\nSamstag: 09:00-23:30\nSonntag: 09:00-23:30\nMontag: Geschlossen\nDienstag: 08:30-13:00, 15:30-19:00\nMittwoch: 08:30-13:00, 15:30-19:00`,
-    discountInfo: "Carni di alta qualità dal 1876.",
-    discountInfo_en: "High-quality meats since 1876.",
-    discountInfo_es: "Carnes de alta calidad desde 1876.",
-    discountInfo_fr: "Viandes de haute qualité depuis 1876.",
-    discountInfo_de: "Hochwertiges Fleisch seit 1876.",
+      "Hier erwarten euch schmackhafte Platten mit lokalen Wurstwaren und Käsesorten aus den Tälern, exquisites Fassona-Tartar mit Bagna Cauda und klassische Polenta mit Wurst oder Eintopf. Für Grillliebhaber sind das Fassona-Tagliata und die Schweinerippchen mit Pommes ein Muss. Lasst es süß ausklingen mit typischen handgemachten Mongrandesi-Desserts. Und das ist noch nicht alles: Am Freitag und Samstag wird die Atmosphäre mit Musik, Tanz und Gesang von Eric & Cinzia belebt! ",
+    images: ["/images/macelleriaBotalla.jpg"],
+    openingHours: "Gio 8 Mag - Dom 11 Mag (Dettagli su menù)",
+    openingHours_en: "Thu May 8 - Sun May 11 (Details on menu)",
+    openingHours_es: "Jue 8 May - Dom 11 May (Detalles en menú)",
+    openingHours_fr: "Jeu 8 Mai - Dim 11 Mai (Détails sur menu)",
+    openingHours_de: "Do 8. Mai - So 11. Mai (Details auf Menü)",
+    discountInfo:
+      "Menu speciale Adunata con piatti tipici, grigliate e dolci Mongrandesi.",
+    discountInfo_en:
+      "Special Adunata menu with typical dishes, grilled meats, and Mongrandesi desserts.",
+    discountInfo_es:
+      "Menú especial Adunata con platos típicos, carnes a la parrilla y postres Mongrandesi.",
+    discountInfo_fr:
+      "Menu spécial Adunata avec plats typiques, grillades et desserts Mongrandesi.",
+    discountInfo_de:
+      "Spezielles Adunata-Menü mit typischen Gerichten, Grillfleisch und Mongrandesi-Desserts.",
     tags: [
-      "Macelleria",
-      "Carni Pregiate",
-      "Tradizione",
-      "Consegna Domicilio",
-      "Biella",
-      "Aperto Tardi (Weekend Adunata)",
+      "Ristorante",
+      "Macelleria Nonno Nino",
+      "Cucina Tipica",
+      "Grigliata",
+      "Adunata Alpini",
+      "Mongrando",
+      "Musica dal Vivo",
     ],
     tags_en: [
-      "Butcher Shop",
-      "Premium Meats",
-      "Tradition",
-      "Home Delivery",
-      "Biella",
-      "Open Late (Adunata Weekend)",
+      "Restaurant",
+      "Nonno Nino Butcher",
+      "Typical Cuisine",
+      "Grilled Meat",
+      "Adunata Alpini",
+      "Mongrando",
+      "Live Music",
     ],
     tags_es: [
-      "Carnicería",
-      "Carnes Selectas",
-      "Tradición",
-      "Entrega Domicilio",
-      "Biella",
-      "Abierto Tarde (Fin Semana Adunata)",
+      "Restaurante",
+      "Carnicería Nonno Nino",
+      "Cocina Típica",
+      "Parrillada",
+      "Adunata Alpini",
+      "Mongrando",
+      "Música en Vivo",
     ],
     tags_fr: [
-      "Boucherie",
-      "Viandes de Qualité",
-      "Tradition",
-      "Livraison Domicile",
-      "Biella",
-      "Ouvert Tard (Weekend Adunata)",
+      "Restaurant",
+      "Boucherie Nonno Nino",
+      "Cuisine Typique",
+      "Grillades",
+      "Adunata Alpini",
+      "Mongrando",
+      "Musique Live",
     ],
     tags_de: [
-      "Metzgerei",
-      "Premiumfleisch",
-      "Tradition",
-      "Lieferservice",
-      "Biella",
-      "Spät Geöffnet (Adunata Wochenende)",
+      "Restaurant",
+      "Metzgerei Nonno Nino",
+      "Typische Küche",
+      "Grillfleisch",
+      "Adunata Alpini",
+      "Mongrando",
+      "Live-Musik",
+    ],
+    partyInfo: "Musica, Ballo e Canto con Eric & Cinzia",
+    partyInfo_en: "Music, Dancing, and Singing with Eric & Cinzia",
+    partyInfo_es: "Música, Baile y Canto con Eric & Cinzia",
+    partyInfo_fr: "Musique, Danse et Chant avec Eric & Cinzia",
+    partyInfo_de: "Musik, Tanz und Gesang mit Eric & Cinzia",
+    partyHours: "Venerdì e Sabato (sera)",
+    partyHours_en: "Friday and Saturday (evening)",
+    partyHours_es: "Viernes y Sábado (noche)",
+    partyHours_fr: "Vendredi et Samedi (soir)",
+    partyHours_de: "Freitag und Samstag (Abend)",
+  },
+  {
+    id: 508, // New unique ID (assuming 507 was the last shop ID)
+    name: "Conad Gaglianico",
+    name_en: "Conad Gaglianico (Supermarket)",
+    name_es: "Conad Gaglianico (Supermercado)",
+    name_fr: "Conad Gaglianico (Supermarché)",
+    name_de: "Conad Gaglianico (Supermarkt)",
+    type: "clothing", // Using 'clothing' as a general shop type
+    coordinates: [45.539663, 8.070896],
+    googleRating: 4.0,
+    googleReviewCount: 309,
+    address: "Via Fiorita, SNC, 13894 Gaglianico BI",
+    phone: "0152545041",
+    website:
+      "https://www.conad.it/ricerca-negozi/conad-via-fiorita-snc-13894-gaglianico--008162",
+    shortDescription:
+      "Supermercato Conad a Gaglianico: spesa completa, prodotti freschi e offerte.",
+    shortDescription_en:
+      "Conad supermarket in Gaglianico: complete grocery shopping, fresh products, and offers.",
+    shortDescription_es:
+      "Supermercado Conad en Gaglianico: compra completa, productos frescos y ofertas.",
+    shortDescription_fr:
+      "Supermarché Conad à Gaglianico : courses complètes, produits frais et offres.",
+    shortDescription_de:
+      "Conad Supermarkt in Gaglianico: kompletter Einkauf, frische Produkte und Angebote.",
+    details:
+      "Il supermercato Conad di Gaglianico in Via Fiorita offre un'ampia scelta di prodotti per la spesa quotidiana e per le necessità durante l'Adunata. Troverete generi alimentari, prodotti freschi (frutta, verdura, panetteria, macelleria), articoli per la casa e per la cura della persona. Comodo per rifornimenti e per trovare tutto il necessario in un unico posto. Verifica gli orari, specialmente la domenica con chiusura anticipata.",
+    details_en:
+      "The Conad supermarket in Gaglianico on Via Fiorita offers a wide selection of products for daily shopping and for needs during the Adunata. You will find groceries, fresh products (fruit, vegetables, bakery, butchery), household items, and personal care products. Convenient for supplies and for finding everything you need in one place. Check the opening hours, especially on Sunday with early closing.",
+    details_es:
+      "El supermercado Conad de Gaglianico en Via Fiorita ofrece una amplia selección de productos para la compra diaria y para las necesidades durante la Adunata. Encontrará comestibles, productos frescos (fruta, verdura, panadería, carnicería), artículos para el hogar y para el cuidado personal. Conveniente para abastecerse y para encontrar todo lo necesario en un solo lugar. Consulte los horarios, especialmente el domingo con cierre anticipado.",
+    details_fr:
+      "Le supermarché Conad de Gaglianico, Via Fiorita, propose une large sélection de produits pour les courses quotidiennes et pour les besoins pendant l'Adunata. Vous y trouverez des produits d'épicerie, des produits frais (fruits, légumes, boulangerie, boucherie), des articles ménagers et des produits de soins personnels. Pratique pour faire le plein et trouver tout ce dont vous avez besoin en un seul endroit. Vérifiez les horaires d'ouverture, notamment le dimanche avec fermeture anticipée.",
+    details_de:
+      "Der Conad-Supermarkt in Gaglianico in der Via Fiorita bietet eine große Auswahl an Produkten für den täglichen Einkauf und für den Bedarf während der Adunata. Hier finden Sie Lebensmittel, frische Produkte (Obst, Gemüse, Backwaren, Metzgerei), Haushaltsartikel und Körperpflegeprodukte. Praktisch für Besorgungen und um alles Notwendige an einem Ort zu finden. Überprüfen Sie die Öffnungszeiten, besonders am Sonntag mit früherer Schließung.",
+    images: ["/images/conad.jpeg"], // Suggested image path
+    openingHours: `Lun-Sab: 08:00-19:45\nDom: 08:30-12:30`,
+    openingHours_en: `Mon-Sat: 08:00-19:45\nSun: 08:30-12:30`,
+    openingHours_es: `Lun-Sáb: 08:00-19:45\nDom: 08:30-12:30`,
+    openingHours_fr: `Lun-Sam: 08h00-19h45\nDim: 08h30-12h30`,
+    openingHours_de: `Mo-Sa: 08:00-19:45\nSo: 08:30-12:30`,
+    discountInfo: "", // Typically supermarkets don't have a single static discount info for this context
+    discountInfo_en: "",
+    discountInfo_es: "",
+    discountInfo_fr: "",
+    discountInfo_de: "",
+    tags: [
+      "Supermercato",
+      "Alimentari",
+      "Spesa",
+      "Gaglianico",
+      "Prodotti Freschi",
+      "Conad",
+    ],
+    tags_en: [
+      "Supermarket",
+      "Groceries",
+      "Shopping",
+      "Gaglianico",
+      "Fresh Produce",
+      "Conad",
+    ],
+    tags_es: [
+      "Supermercado",
+      "Comestibles",
+      "Compras",
+      "Gaglianico",
+      "Productos Frescos",
+      "Conad",
+    ],
+    tags_fr: [
+      "Supermarché",
+      "Épicerie",
+      "Courses",
+      "Gaglianico",
+      "Produits Frais",
+      "Conad",
+    ],
+    tags_de: [
+      "Supermarkt",
+      "Lebensmittel",
+      "Einkaufen",
+      "Gaglianico",
+      "Frische Produkte",
+      "Conad",
     ],
     partyInfo: "",
     partyInfo_en: "",
@@ -5561,6 +5998,105 @@ export const poiData: POI[] = [
     images: ["/images/biondi.png"], // Removed menu image path
     // --- END EMPTY IMAGES ARRAY ---
   },
+  {
+    id: 702, // New unique ID (assuming 701 was the last gelateria)
+    name: "Mag Gelato",
+    name_en: "Mag Gelato",
+    name_es: "Mag Gelato",
+    name_fr: "Mag Gelato",
+    name_de: "Mag Gelato",
+    type: "gelateria",
+    coordinates: [45.563114, 8.058924],
+    googleRating: 4.4,
+    googleReviewCount: 1151,
+    address: "Via Bertodano, 7, 13900 Biella BI",
+    phone: "0153700747",
+    website: "https://www.instagram.com/mag_gelatobiella/?hl=it",
+    shortDescription:
+      "Mag Gelato a Biella: gelato artigianale, caffetteria e aperitivi. Orari estesi!",
+    shortDescription_en:
+      "Mag Gelato in Biella: artisanal gelato, coffee shop, and aperitifs. Extended hours!",
+    shortDescription_es:
+      "Mag Gelato en Biella: ¡helado artesanal, cafetería y aperitivos. ¡Horario extendido!",
+    shortDescription_fr:
+      "Mag Gelato à Biella : glace artisanale, café et apéritifs. Horaires étendus !",
+    shortDescription_de:
+      "Mag Gelato in Biella: handwerkliches Eis, Café und Aperitifs. Erweiterte Öffnungszeiten!",
+    details:
+      "Mag Gelato, situata in Via Bertodano a Biella, è una rinomata gelateria artigianale che offre anche servizio di caffetteria e aperitivi. Un luogo ideale per una pausa dolce con gelato di alta qualità, una colazione, un caffè o per un momento conviviale con un aperitivo. Con orari prolungati fino a mezzanotte durante il weekend (fino alle 23:00 negli altri giorni), è una tappa perfetta per rinfrescarsi e rilassarsi durante l'Adunata.",
+    details_en:
+      "Mag Gelato, located on Via Bertodano in Biella, is a renowned artisanal gelateria that also offers coffee shop services and aperitifs. An ideal place for a sweet break with high-quality gelato, breakfast, coffee, or for a convivial moment with an aperitif. With extended hours until midnight on weekends (until 23:00 on other days), it's a perfect stop to refresh and relax during the Adunata.",
+    details_es:
+      "Mag Gelato, ubicada en Via Bertodano en Biella, es una reconocida heladería artesanal que también ofrece servicios de cafetería y aperitivos. Un lugar ideal para una pausa dulce con helado de alta calidad, un desayuno, un café o para un momento de convivencia con un aperitivo. Con horario extendido hasta la medianoche los fines de semana (hasta las 23:00 los demás días), es una parada perfecta para refrescarse y relajarse durante la Adunata.",
+    details_fr:
+      "Mag Gelato, situé Via Bertodano à Biella, est un glacier artisanal renommé qui propose également des services de café et d'apéritifs. Un lieu idéal pour une pause sucrée avec une glace de haute qualité, un petit-déjeuner, un café ou pour un moment convivial avec un apéritif. Avec des horaires prolongés jusqu'à minuit le week-end (jusqu'à 23h00 les autres jours), c'est un arrêt parfait pour se rafraîchir et se détendre pendant l'Adunata.",
+    details_de:
+      "Mag Gelato in der Via Bertodano in Biella ist eine renommierte handwerkliche Eisdiele, die auch Café-Service und Aperitifs anbietet. Ein idealer Ort für eine süße Pause mit hochwertigem Eis, ein Frühstück, einen Kaffee oder für einen geselligen Moment bei einem Aperitif. Mit verlängerten Öffnungszeiten bis Mitternacht am Wochenende (an anderen Tagen bis 23:00 Uhr) ist es ein perfekter Zwischenstopp, um sich während der Adunata zu erfrischen und zu entspannen.",
+    images: ["/images/mag.jpeg"], // Suggested image path
+    openingHours: `Lun-Gio: 07:00-23:00\nVen-Dom: 07:00-00:00`, // Note: Friday starts at 07:00, Sat/Sun at 08:00 as per original, but grouped for conciseness due to same closing. If granular start is crucial, it can be split.
+    openingHours_en: `Mon-Thu: 07:00-23:00\nFri-Sun: 07:00-00:00`,
+    openingHours_es: `Lun-Jue: 07:00-23:00\nVie-Dom: 07:00-00:00`,
+    openingHours_fr: `Lun-Jeu: 07h00-23h00\nVen-Dim: 07h00-00h00`,
+    openingHours_de: `Mo-Do: 07:00-23:00\nFr-So: 07:00-00:00`,
+    discountInfo:
+      "Gelato artigianale di alta qualità, caffetteria e aperitivi.",
+    discountInfo_en:
+      "High-quality artisanal gelato, coffee shop, and aperitifs.",
+    discountInfo_es:
+      "Helado artesanal de alta calidad, cafetería y aperitivos.",
+    discountInfo_fr: "Glace artisanale de haute qualité, café et apéritifs.",
+    discountInfo_de: "Hochwertiges handwerkliches Eis, Café und Aperitifs.",
+    tags: [
+      "Gelateria",
+      "Artigianale",
+      "Caffetteria",
+      "Aperitivo",
+      "Biella Centro",
+      "Gelato",
+    ],
+    tags_en: [
+      "Gelateria",
+      "Artisanal",
+      "Coffee Shop",
+      "Aperitif",
+      "Biella Center",
+      "Ice Cream",
+    ],
+    tags_es: [
+      "Heladería",
+      "Artesanal",
+      "Cafetería",
+      "Aperitivo",
+      "Biella Centro",
+      "Helado",
+    ],
+    tags_fr: [
+      "Glacier",
+      "Artisanal",
+      "Café",
+      "Apéritif",
+      "Biella Centre",
+      "Glace",
+    ],
+    tags_de: [
+      "Eisdiele",
+      "Handwerklich",
+      "Café",
+      "Aperitif",
+      "Biella Zentrum",
+      "Eis",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
   // ... Add many more points
 ];
 
@@ -5572,17 +6108,12 @@ interface PoiTypeStyle {
 
 export const poiTypeStyles: Record<PoiType | "default", PoiTypeStyle> = {
   camper: { color: "#3B82F6", icon: FaCaravan }, // Blue
-  taxi: { color: "#F59E0B", icon: FaTaxi }, // Amber
   restaurant: { color: "#F97316", icon: FaUtensils }, // Orange
   bar: { color: "#A855F7", icon: FaGlassMartiniAlt }, // Purple
-  hotel: { color: "#14B8A6", icon: FaBed }, // Teal
   private_accommodation: { color: "#EC4899", icon: FaCampground }, // Pink
   clothing: { color: "#8B5CF6", icon: FaShoppingBag }, // Violet
-  bank: { color: "#0891B2", icon: FaLandmark }, // Added (Teal/Cyan)
-  activity: { color: "#84CC16", icon: FaStar }, // Added (Lime Green)
   ztl: { color: "#84CC16", icon: StopIcon }, // Using lime green & StopIcon
   wc: { color: "#A16207", icon: FaRestroom }, // Added (Light Brown/Tan)
-  pharmacy: { color: "#22C55E", icon: FaBriefcaseMedical },
   medical_post: { color: "#B42025", icon: FaClinicMedical },
   field_hospital: { color: "#2563EB", icon: FaHospitalSymbol },
   parking: { color: "#4682B4", icon: FaParking },
@@ -5605,12 +6136,6 @@ export const legendItems: {
     color: poiTypeStyles.camper.color,
   },
   {
-    type: "taxi",
-    label: "Punto Taxi",
-    icon: poiTypeStyles.taxi.icon,
-    color: poiTypeStyles.taxi.color,
-  },
-  {
     type: "restaurant",
     label: "Ristorante",
     icon: poiTypeStyles.restaurant.icon,
@@ -5621,12 +6146,6 @@ export const legendItems: {
     label: "Bar",
     icon: poiTypeStyles.bar.icon,
     color: poiTypeStyles.bar.color,
-  },
-  {
-    type: "hotel",
-    label: "Hotel",
-    icon: poiTypeStyles.hotel.icon,
-    color: poiTypeStyles.hotel.color,
   },
   {
     type: "private_accommodation",
@@ -5641,28 +6160,10 @@ export const legendItems: {
     color: poiTypeStyles.clothing.color,
   },
   {
-    type: "bank",
-    label: "Banca / ATM",
-    icon: poiTypeStyles.bank.icon,
-    color: poiTypeStyles.bank.color,
-  }, // Added
-  {
-    type: "activity",
-    label: "Attività / Eventi",
-    icon: poiTypeStyles.activity.icon,
-    color: poiTypeStyles.activity.color,
-  }, // Added
-  {
     type: "wc",
     label: "WC Pubblici",
     icon: poiTypeStyles.wc.icon,
     color: poiTypeStyles.wc.color,
-  },
-  {
-    type: "pharmacy",
-    label: "poiCategory_pharmacy",
-    icon: poiTypeStyles.pharmacy.icon,
-    color: poiTypeStyles.pharmacy.color,
   },
   {
     type: "medical_post",

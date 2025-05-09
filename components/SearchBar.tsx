@@ -67,10 +67,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
     const labels: Partial<Record<PoiType, string>> = {
       // Use Partial as not all PoiTypes might have explicit labels here
       camper: t("poiCategory_camper"),
-      taxi: t("poiCategory_taxi"),
       restaurant: t("poiCategory_restaurant"),
       bar: t("poiCategory_bar"),
-      hotel: t("poiCategory_hotel"),
       private_accommodation: t("poiCategory_private_accommodation"),
       clothing: t("poiCategory_clothing"),
     };
