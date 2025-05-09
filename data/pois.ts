@@ -5497,7 +5497,7 @@ export const poiData: POI[] = [
     name_fr: "Bevande Miscelate (Boutique de Boissons Mixées)",
     name_de: "Bevande Miscelate (Geschäft für Mixgetränke)",
     type: "clothing", // Using 'clothing' as a general shop type
-    coordinates: [45.564607, 8.054341],
+    coordinates: [45.564532, 8.054157],
     googleRating: 5.0,
     googleReviewCount: 12,
     address: "Via Antonio Gramsci, 11b, 13900 Biella BI",
@@ -5523,7 +5523,7 @@ export const poiData: POI[] = [
       "Bevande Miscelate, Via Gramsci à Biella, est la destination innovante pour les amateurs de cocktails et de produits de qualité. Née comme boutique en ligne, elle propose des coffrets de mixologie exclusifs avec des ingrédients sélectionnés pour créer des cocktails parfaits à la maison. Vous trouverez également une sélection soignée de spiritueux et de produits locaux. HORAIRES PROLONGÉS le week-end de l'Adunata (Ven-Sam 09h00-22h00, Dim 09h00-19h00). Idéal pour un cadeau original, pour enrichir vos moments conviviaux pendant l'événement, ou pour déguster des excellences locales.", // Adjusted
     details_de:
       "Bevande Miscelate in der Via Gramsci in Biella ist das innovative Ziel für Cocktail-Liebhaber und Qualitätskenner. Ursprünglich als Online-Shop entstanden, bietet es exklusive Mix-Boxen mit ausgewählten Zutaten, um perfekte Cocktails zu Hause zu kreieren. Sie finden auch eine kuratierte Auswahl an Spirituosen und lokalen Produkten. VERLÄNGERTE ÖFFNUNGSZEITEN am Adunata-Wochenende (Fr-Sa 09:00-22:00, So 09:00-19:00). Ideal für ein originelles Geschenk, zur Bereicherung Ihrer geselligen Momente während der Veranstaltung oder zum Genießen lokaler Spezialitäten.", // Adjusted
-    images: ["/images/bevandeMiscelate.png"],
+    images: ["/images/bevandeMiscelate.jpeg"],
     openingHours: `giovedì: 10:00-12:00, 15:00-19:00\nvenerdì: 09:30-22:00\nsabato: 09:00-22:00\ndomenica: 09:00-19:00\nlunedì: Chiuso\nmartedì: 10:00-12:00, 15:00-19:00\nmercoledì: Chiuso`,
     openingHours_en: `Thursday: 10:00-12:00, 15:00-19:00\nFriday: 09:30-22:00\nSaturday: 09:00-22:00\nSunday: 09:00-19:00\nMonday: Closed\nTuesday: 10:00-12:00, 15:00-19:00\nWednesday: Closed`,
     openingHours_es: `Jueves: 10:00-12:00, 15:00-19:00\nViernes: 09:30-22:00\nSábado: 09:00-22:00\nDomingo: 09:00-19:00\nLunes: Cerrado\nMartes: 10:00-12:00, 15:00-19:00\nMiércoles: Cerrado`,
