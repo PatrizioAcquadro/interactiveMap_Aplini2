@@ -5490,6 +5490,127 @@ export const poiData: POI[] = [
     partyHours_de: "",
   },
   {
+    id: 224,
+    name: "Tortuga",
+    name_en: "Tortuga Pub",
+    name_es: "Tortuga Pub",
+    name_fr: "Tortuga Pub",
+    name_de: "Tortuga Pub",
+    type: "restaurant",
+    coordinates: [45.559461, 8.091863],
+    googleRating: 4.2,
+    googleReviewCount: 1105,
+    address: "Via Quintino Sella, 16, 13856 Vigliano Biellese BI",
+    phone: "015510969",
+    website: "https://www.instagram.com/tortugapub_/",
+    shortDescription:
+      "Tortuga a Vigliano: pizzeria forno a legna, griglia, cocktail, musica live e birra speciale Alpini! Orari super estesi nel weekend.",
+    shortDescription_en:
+      "Tortuga in Vigliano: wood-fired pizzeria, grill, cocktails, live music, and special Alpini beer! Super extended weekend hours.",
+    shortDescription_es:
+      "Tortuga en Vigliano: pizzería con horno de leña, parrilla, cócteles, música en vivo ¡y cerveza especial Alpini! Horario súper extendido los fines de semana.",
+    shortDescription_fr:
+      "Tortuga à Vigliano : pizzeria au four à bois, grill, cocktails, musique live et bière spéciale Alpini ! Horaires super étendus le week-end.",
+    shortDescription_de:
+      "Tortuga in Vigliano: Holzofen-Pizzeria, Grill, Cocktails, Live-Musik und spezielles Alpini-Bier! Super verlängerte Wochenendöffnungszeiten.",
+    details:
+      "Il Tortuga a Vigliano Biellese è un locale vivace che offre pizza cotta in forno a legna, carne alla griglia e un'ampia scelta di bevande, inclusi ottimi cocktail, Spritz (a €5), Bionda Media (€5) e la Birra Forst edizione Alpini (€3,50). Dispone di tavoli all'aperto (dehor) e impianto di spillatura anche esterno. Propone regolarmente musica dal vivo. Un punto di ritrovo ideale per mangiare, bere e divertirsi durante l'Adunata, specialmente con gli orari prolungati nel weekend.",
+    details_en:
+      "Tortuga in Vigliano Biellese is a lively venue offering wood-fired pizza, grilled meat, and a wide selection of drinks, including great cocktails, Spritz (€5), Medium Blonde Beer (€5), and the special Forst Alpini edition beer (€3.50). It features outdoor seating (dehor) and an outdoor draft system. Regularly hosts live music. An ideal meeting point to eat, drink, and have fun during the Adunata, especially with extended weekend hours.",
+    details_es:
+      "El Tortuga en Vigliano Biellese es un local animado que ofrece pizza cocinada en horno de leña, carne a la parrilla y una amplia selección de bebidas, incluyendo excelentes cócteles, Spritz (5€), Cerveza Rubia Mediana (5€) y la cerveza especial Forst edición Alpini (3,50€). Cuenta con mesas al aire libre (dehor) y sistema de grifo exterior. Ofrece música en vivo regularmente. Un punto de encuentro ideal para comer, beber y divertirse durante la Adunata, especialmente con el horario extendido los fines de semana.",
+    details_fr:
+      "Le Tortuga à Vigliano Biellese est un lieu animé proposant des pizzas cuites au four à bois, des viandes grillées et une large sélection de boissons, y compris d'excellents cocktails, du Spritz (5€), de la Bière Blonde Moyenne (5€) et la bière spéciale Forst édition Alpini (3,50€). Il dispose de tables en extérieur (dehor) et d'un système de tirage extérieur. Propose régulièrement de la musique live. Un lieu de rencontre idéal pour manger, boire et s'amuser pendant l'Adunata, surtout avec les horaires prolongés le week-end.",
+    details_de:
+      "Das Tortuga in Vigliano Biellese ist ein lebhafter Ort, der Pizza aus dem Holzofen, gegrilltes Fleisch und eine große Auswahl an Getränken anbietet, darunter großartige Cocktails, Spritz (5€), Helles Bier Medium (5€) und das spezielle Forst Alpini Edition Bier (3,50€). Es verfügt über Sitzplätze im Freien (Dehor) und eine Zapfanlage im Außenbereich. Regelmäßig gibt es Live-Musik. Ein idealer Treffpunkt zum Essen, Trinken und Spaß haben während der Adunata, besonders mit den verlängerten Öffnungszeiten am Wochenende.",
+    images: ["/images/tortuga.jpeg"],
+    openingHours: `Mar-Gio: 19:00-01:00\nVen-Dom: 10:00-04:00\nLun: Chiuso`,
+    openingHours_en: `Tue-Thu: 19:00-01:00\nFri-Sun: 10:00-04:00\nMon: Closed`,
+    openingHours_es: `Mar-Jue: 19:00-01:00\nVie-Dom: 10:00-04:00\nLun: Cerrado`,
+    openingHours_fr: `Mar-Jeu: 19h00-01h00\nVen-Dim: 10h00-04h00\nLun: Fermé`,
+    openingHours_de: `Di-Do: 19:00-01:00\nFr-So: 10:00-04:00\nMo: Geschlossen`,
+    discountInfo:
+      "Pizzeria Forno a Legna, Griglia, Dehor. Bionda Media €5, Spritz €5, Birra Forst Ed. Alpini €3,50.",
+    discountInfo_en:
+      "Wood-Fired Pizzeria, Grill, Outdoor Seating. Medium Blonde Beer €5, Spritz €5, Forst Alpini Ed. Beer €3.50.",
+    discountInfo_es:
+      "Pizzería Horno de Leña, Parrilla, Terraza. Cerveza Rubia Mediana 5€, Spritz 5€, Cerveza Forst Ed. Alpini 3,50€.",
+    discountInfo_fr:
+      "Pizzeria Four à Bois, Grill, Terrasse. Bière Blonde Moyenne 5€, Spritz 5€, Bière Forst Éd. Alpini 3,50€.",
+    discountInfo_de:
+      "Holzofen-Pizzeria, Grill, Außenbereich. Helles Bier Medium 5€, Spritz 5€, Forst Alpini Ed. Bier 3,50€.",
+    tags: [
+      "Ristorante",
+      "Pizzeria",
+      "Pub",
+      "Musica dal Vivo",
+      "Carne Griglia",
+      "Cocktail",
+      "Birra Forst Alpini",
+      "Vigliano Biellese",
+      "Dehor",
+      "Aperto Tardi",
+    ],
+    tags_en: [
+      "Restaurant",
+      "Pizzeria",
+      "Pub",
+      "Live Music",
+      "Grilled Meat",
+      "Cocktails",
+      "Forst Alpini Beer",
+      "Vigliano Biellese",
+      "Outdoor Seating",
+      "Open Late",
+    ],
+    tags_es: [
+      "Restaurante",
+      "Pizzería",
+      "Pub",
+      "Música en Vivo",
+      "Carne Parrilla",
+      "Cócteles",
+      "Cerveza Forst Alpini",
+      "Vigliano Biellese",
+      "Terraza",
+      "Abierto Tarde",
+    ],
+    tags_fr: [
+      "Restaurant",
+      "Pizzeria",
+      "Pub",
+      "Musique Live",
+      "Viande Grillée",
+      "Cocktails",
+      "Bière Forst Alpini",
+      "Vigliano Biellese",
+      "Terrasse",
+      "Ouvert Tard",
+    ],
+    tags_de: [
+      "Restaurant",
+      "Pizzeria",
+      "Pub",
+      "Live-Musik",
+      "Gegrilltes Fleisch",
+      "Cocktails",
+      "Forst Alpini Bier",
+      "Vigliano Biellese",
+      "Außenbereich",
+      "Spät Geöffnet",
+    ],
+    partyInfo: "", // Removed
+    partyInfo_en: "", // Removed
+    partyInfo_es: "", // Removed
+    partyInfo_fr: "", // Removed
+    partyInfo_de: "", // Removed
+    partyHours: "", // Removed
+    partyHours_en: "", // Removed
+    partyHours_es: "", // Removed
+    partyHours_fr: "", // Removed
+    partyHours_de: "", // Removed
+  },
+  {
     id: 505, // New unique ID
     name: "Bevande Miscelate",
     name_en: "Bevande Miscelate (Mixed Drinks Shop)",
