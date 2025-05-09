@@ -6051,7 +6051,7 @@ export const poiData: POI[] = [
       "La Boulangerie Bergamini, située sur la Piazza Cossato à Biella, est l'endroit idéal pour commencer la journée ou pour une pause gourmande. Elle propose une large gamme de pains frais artisanaux, de focaccias parfumées, d'appétissantes parts de pizza, de pâtisseries tentantes et de nombreuses autres spécialités cuites au four. Parfaite pour un petit-déjeuner traditionnel, une collation rapide ou pour acheter des produits de boulangerie de qualité à déguster pendant l'Adunata.", // Revised details
     details_de:
       "Die Bäckerei Bergamini an der Piazza Cossato in Biella ist der ideale Ort, um den Tag zu beginnen oder eine köstliche Pause einzulegen. Sie bietet eine große Auswahl an frischem, handwerklichem Brot, duftenden Focaccias, einladenden Pizzastücken, verlockendem Gebäck und vielen anderen Backspezialitäten. Perfekt für ein traditionelles Frühstück, einen schnellen Snack oder zum Kauf hochwertiger Backwaren zum Genießen während der Adunata.", // Revised details
-    images: ["/images/bergaminiPanetteria.png"],
+    images: ["/images/panetteria.jpeg"],
     openingHours: `Lun-Ven: 05:45-14:15, 15:45-19:30\nSab: 05:30-13:00\nDom: Chiuso`,
     openingHours_en: `Mon-Fri: 05:45-14:15, 15:45-19:30\nSat: 05:30-13:00\nSun: Closed`,
     openingHours_es: `Lun-Vie: 05:45-14:15, 15:45-19:30\nSáb: 05:30-13:00\nDom: Cerrado`,
