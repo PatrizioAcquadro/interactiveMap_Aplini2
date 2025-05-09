@@ -6017,6 +6017,120 @@ export const poiData: POI[] = [
     partyHours_de: "",
   },
   {
+    id: 509,
+    name: "Bergamini Panetteria Biella",
+    name_en: "Bergamini Bakery Biella",
+    name_es: "Panadería Bergamini Biella",
+    name_fr: "Boulangerie Bergamini Biella",
+    name_de: "Bäckerei Bergamini Biella",
+    type: "clothing", // Using 'clothing' as a general shop type
+    coordinates: [45.560532, 8.047417],
+    googleRating: 4.6,
+    googleReviewCount: 100,
+    address: "Piazza Cossato, 6, 13900 Biella BI",
+    phone: "015405737",
+    website:
+      "https://www.tripadvisor.it/Restaurant_Review-g1025226-d27832200-Reviews-Panetteria_Bergamini_Biella-Biella_Province_of_Biella_Piedmont.html",
+    shortDescription:
+      "Panetteria Bergamini a Biella: pane fresco, dolci e specialità da forno in Piazza Cossato.",
+    shortDescription_en:
+      "Bergamini Bakery in Biella: fresh bread, pastries, and baked specialties in Piazza Cossato.",
+    shortDescription_es:
+      "Panadería Bergamini en Biella: pan fresco, dulces y especialidades de horno en Piazza Cossato.",
+    shortDescription_fr:
+      "Boulangerie Bergamini à Biella : pain frais, pâtisseries et spécialités cuites au four sur la Piazza Cossato.",
+    shortDescription_de:
+      "Bäckerei Bergamini in Biella: frisches Brot, Gebäck und Backspezialitäten an der Piazza Cossato.",
+    details:
+      "La Panetteria Bergamini, situata in Piazza Cossato a Biella, è il luogo ideale per iniziare la giornata o per una pausa golosa. Offre una vasta gamma di pane fresco artigianale, fragranti focacce, invitanti pizze al taglio, dolci tentazioni e molte altre specialità da forno. Perfetta per una colazione tradizionale, uno spuntino veloce o per acquistare prodotti da forno di qualità da gustare durante l'Adunata.", // Revised details
+    details_en:
+      "Bergamini Bakery, located in Piazza Cossato in Biella, is the ideal place to start your day or for a delicious break. It offers a wide range of artisanal fresh bread, fragrant focaccias, inviting pizza slices, tempting pastries, and many other baked specialties. Perfect for a traditional breakfast, a quick snack, or to purchase quality baked goods to enjoy during the Adunata.", // Revised details
+    details_es:
+      "La Panadería Bergamini, ubicada en la Piazza Cossato en Biella, es el lugar ideal para comenzar el día o para una pausa deliciosa. Ofrece una amplia gama de pan fresco artesanal, fragantes focaccias, apetitosas porciones de pizza, tentadores dulces y muchas otras especialidades de horno. Perfecta para un desayuno tradicional, un tentempié rápido o para comprar productos de panadería de calidad para disfrutar durante la Adunata.", // Revised details
+    details_fr:
+      "La Boulangerie Bergamini, située sur la Piazza Cossato à Biella, est l'endroit idéal pour commencer la journée ou pour une pause gourmande. Elle propose une large gamme de pains frais artisanaux, de focaccias parfumées, d'appétissantes parts de pizza, de pâtisseries tentantes et de nombreuses autres spécialités cuites au four. Parfaite pour un petit-déjeuner traditionnel, une collation rapide ou pour acheter des produits de boulangerie de qualité à déguster pendant l'Adunata.", // Revised details
+    details_de:
+      "Die Bäckerei Bergamini an der Piazza Cossato in Biella ist der ideale Ort, um den Tag zu beginnen oder eine köstliche Pause einzulegen. Sie bietet eine große Auswahl an frischem, handwerklichem Brot, duftenden Focaccias, einladenden Pizzastücken, verlockendem Gebäck und vielen anderen Backspezialitäten. Perfekt für ein traditionelles Frühstück, einen schnellen Snack oder zum Kauf hochwertiger Backwaren zum Genießen während der Adunata.", // Revised details
+    images: ["/images/bergaminiPanetteria.png"],
+    openingHours: `Lun-Ven: 05:45-14:15, 15:45-19:30\nSab: 05:30-13:00\nDom: Chiuso`,
+    openingHours_en: `Mon-Fri: 05:45-14:15, 15:45-19:30\nSat: 05:30-13:00\nSun: Closed`,
+    openingHours_es: `Lun-Vie: 05:45-14:15, 15:45-19:30\nSáb: 05:30-13:00\nDom: Cerrado`,
+    openingHours_fr: `Lun-Ven: 05h45-14h15, 15h45-19h30\nSam: 05h30-13h00\nDim: Fermé`,
+    openingHours_de: `Mo-Fr: 05:45-14:15, 15:45-19:30\nSa: 05:30-13:00\nSo: Geschlossen`,
+    discountInfo: "Pane fresco, focacce, pizze e dolci artigianali.", // Simplified
+    discountInfo_en: "Fresh bread, focaccias, pizzas, and artisanal pastries.",
+    discountInfo_es: "Pan fresco, focaccias, pizzas y dulces artesanales.",
+    discountInfo_fr:
+      "Pain frais, focaccias, pizzas et pâtisseries artisanales.",
+    discountInfo_de:
+      "Frisches Brot, Focaccias, Pizzen und handwerkliches Gebäck.",
+    tags: [
+      "Panetteria",
+      "Forno",
+      "Pane",
+      "Dolci",
+      "Biella Centro",
+      "Colazione",
+      "Spuntino",
+      "Focaccia",
+      "Pizza",
+    ], // Added focaccia, pizza
+    tags_en: [
+      "Bakery",
+      "Oven",
+      "Bread",
+      "Pastries",
+      "Biella Center",
+      "Breakfast",
+      "Snack",
+      "Focaccia",
+      "Pizza",
+    ],
+    tags_es: [
+      "Panadería",
+      "Horno",
+      "Pan",
+      "Dulces",
+      "Biella Centro",
+      "Desayuno",
+      "Tentempié",
+      "Focaccia",
+      "Pizza",
+    ],
+    tags_fr: [
+      "Boulangerie",
+      "Fournil",
+      "Pain",
+      "Pâtisseries",
+      "Biella Centre",
+      "Petit Déjeuner",
+      "Collation",
+      "Focaccia",
+      "Pizza",
+    ],
+    tags_de: [
+      "Bäckerei",
+      "Backofen",
+      "Brot",
+      "Gebäck",
+      "Biella Zentrum",
+      "Frühstück",
+      "Snack",
+      "Focaccia",
+      "Pizza",
+    ],
+    partyInfo: "",
+    partyInfo_en: "",
+    partyInfo_es: "",
+    partyInfo_fr: "",
+    partyInfo_de: "",
+    partyHours: "",
+    partyHours_en: "",
+    partyHours_es: "",
+    partyHours_fr: "",
+    partyHours_de: "",
+  },
+  {
     id: 701,
     name: "Biondi Gelato Naturale",
     name_en: "Biondi Natural Gelato",
