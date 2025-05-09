@@ -2967,16 +2967,16 @@ export const poiData: POI[] = [
       "Garten",
       "Außensitzplätze",
     ],
-    partyInfo: "Gio: DJ Maiz (Aperitivo).", // UPDATED
-    partyInfo_en: "Thu: DJ Maiz (Aperitivo).", // UPDATED
-    partyInfo_es: "Jue: DJ Maiz (Aperitivo).", // UPDATED
-    partyInfo_fr: "Jeu: DJ Maiz (Apéritif).", // UPDATED
-    partyInfo_de: "Do: DJ Maiz (Aperitivo).", // UPDATED
-    partyHours: "Gio: 18:00-02:00.", // UPDATED
-    partyHours_en: "Thu: 18:00-02:00.", // UPDATED
-    partyHours_es: "Jue: 18:00-02:00.", // UPDATED
-    partyHours_fr: "Jeu: 18h00-02h00.", // UPDATED
-    partyHours_de: "Do: 18:00-02:00.", // UPDATED
+    partyInfo: "Ven: DJ Simone LIUNI", // UPDATED - Only Friday
+    partyInfo_en: "Fri: DJ Simone LIUNI", // UPDATED
+    partyInfo_es: "Vie: DJ Simone LIUNI", // UPDATED
+    partyInfo_fr: "Ven: DJ Simone LIUNI", // UPDATED
+    partyInfo_de: "Fr: DJ Simone LIUNI", // UPDATED
+    partyHours: "Ven: 21:00-03:00", // UPDATED - Only Friday
+    partyHours_en: "Fri: 21:00-03:00", // UPDATED
+    partyHours_es: "Vie: 21:00-03:00", // UPDATED
+    partyHours_fr: "Ven: 21h00-03h00", // UPDATED
+    partyHours_de: "Fr: 21:00-03:00", // UPDATED
   },
   {
     id: 606,
