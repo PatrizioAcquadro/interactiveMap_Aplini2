@@ -2483,16 +2483,11 @@ export const poiData: POI[] = [
     partyHours_fr: "Jeudi à partir de 20h00",
     partyHours_de: "Donnerstag ab 20:00 Uhr",
     // Adding Discount/Promo Info
-    discountInfo:
-      "Venerdì (18:30-21:00): Buffet con pinse illimitate + 1 consumazione - 15€", // Added "+ 1 consumazione"
-    discountInfo_en:
-      "Friday (18:30-21:00): Buffet with unlimited 'pinse' + 1 drink included - €15",
-    discountInfo_es:
-      "Viernes (18:30-21:00): Buffet con 'pinse' ilimitadas + 1 consumición incluida - 15€",
-    discountInfo_fr:
-      "Vendredi (18h30-21h00): Buffet avec 'pinse' illimitées + 1 boisson incluse - 15€",
-    discountInfo_de:
-      "Freitag (18:30-21:00): Buffet mit unbegrenzten 'Pinse' + 1 Getränk inklusive - 15€",
+    discountInfo: "Sab-Dom: Buffet Illimitato €10 (con musica).", // UPDATED
+    discountInfo_en: "Sat-Sun: Unlimited Buffet €10 (with music).", // UPDATED
+    discountInfo_es: "Sáb-Dom: Buffet Ilimitado 10€ (con música).", // UPDATED
+    discountInfo_fr: "Sam-Dim : Buffet Illimité 10€ (avec musique).", // UPDATED
+    discountInfo_de: "Sa-So: Unbegrenztes Buffet 10€ (mit Musik).", // UPDATED
     tags: [
       "Bar",
       "Caffè",
@@ -2967,16 +2962,16 @@ export const poiData: POI[] = [
       "Garten",
       "Außensitzplätze",
     ],
-    partyInfo: "Ven: DJ Simone LIUNI", // UPDATED - Only Friday
-    partyInfo_en: "Fri: DJ Simone LIUNI", // UPDATED
-    partyInfo_es: "Vie: DJ Simone LIUNI", // UPDATED
-    partyInfo_fr: "Ven: DJ Simone LIUNI", // UPDATED
-    partyInfo_de: "Fr: DJ Simone LIUNI", // UPDATED
-    partyHours: "Ven: 21:00-03:00", // UPDATED - Only Friday
-    partyHours_en: "Fri: 21:00-03:00", // UPDATED
-    partyHours_es: "Vie: 21:00-03:00", // UPDATED
-    partyHours_fr: "Ven: 21h00-03h00", // UPDATED
-    partyHours_de: "Fr: 21:00-03:00", // UPDATED
+    partyInfo: "Sab: Doppio DJ set - DJ-P & DJ Maiz 🎧", // UPDATED - Only Saturday
+    partyInfo_en: "Sat: Double DJ set - DJ-P & DJ Maiz 🎧", // UPDATED
+    partyInfo_es: "Sáb: Doble DJ set - DJ-P & DJ Maiz 🎧", // UPDATED
+    partyInfo_fr: "Sam: Double DJ set - DJ-P & DJ Maiz 🎧", // UPDATED
+    partyInfo_de: "Sa: Doppel-DJ-Set - DJ-P & DJ Maiz 🎧", // UPDATED
+    partyHours: "Sab: 21:00-03:00", // UPDATED - Only Saturday
+    partyHours_en: "Sat: 21:00-03:00", // UPDATED
+    partyHours_es: "Sáb: 21:00-03:00", // UPDATED
+    partyHours_fr: "Sam: 21h00-03h00", // UPDATED
+    partyHours_de: "Sa: 21:00-03:00", // UPDATED
   },
   {
     id: 606,
