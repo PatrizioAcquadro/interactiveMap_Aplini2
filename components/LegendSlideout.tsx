@@ -46,7 +46,8 @@ const LegendSlideout: React.FC<LegendSlideoutProps> = ({
     const counts: { [key in PoiType]?: number } = {};
     legendItems.forEach((item) => {
       // Don't initialize count for ZTL if it's not a POI type in poiData
-      if (item.type !== "ztl") counts[item.type] = 0;
+      if (item.type !== "ztl" && item.type !== "parade_route")
+        counts[item.type] = 0;
     });
     allPois.forEach((poi) => {
       if (counts[poi.type] !== undefined) counts[poi.type]!++;
@@ -208,6 +209,78 @@ const LegendSlideout: React.FC<LegendSlideoutProps> = ({
                         </div>
                       );
                     }
+                    if (item.type === "parade_route") {
+                      return (
+                        <div
+                          key={item.type}
+                          className={`group block p-2 rounded-lg transition-all duration-200 ease-in-out ${
+                            isActive
+                              ? "bg-white/50 shadow-sm ring-1 ring-inset ring-brand-dark-green/10"
+                              : "opacity-70 hover:opacity-100 hover:bg-white/20"
+                          }`}
+                          onMouseEnter={() => setHoveredLegendType(item.type)} // Keep hover effect if desired
+                          onMouseLeave={() => setHoveredLegendType(null)}
+                        >
+                          <div
+                            className="flex items-center justify-between cursor-pointer"
+                            onClick={() => onFilterChange(item.type, !isActive)}
+                          >
+                            {/* Icon, Label (No Count) */}
+                            <div className="flex items-center space-x-2.5 flex-grow mr-2">
+                              <div // Icon container similar to other items
+                                className={`relative flex-shrink-0 h-7 w-7 rounded-lg flex items-center justify-center shadow-sm transition-transform duration-150 ease-in-out ${
+                                  isActive
+                                    ? "scale-105"
+                                    : "group-hover:scale-100"
+                                }`}
+                                style={{ backgroundColor: item.color }}
+                              >
+                                <IconComponent
+                                  className="h-4 w-4 text-white"
+                                  aria-hidden="true"
+                                />
+                                {isActive && (
+                                  <span className="absolute -inset-0.5 rounded-lg ring-1 ring-white/60"></span>
+                                )}
+                              </div>
+                              <span className="text-sm font-medium text-brand-dark-green flex-grow">
+                                {labelText && labelText !== translationKey
+                                  ? labelText
+                                  : item.label}
+                                {/* NO COUNT RENDERED HERE */}
+                              </span>
+                            </div>
+                            {/* Checkbox */}
+                            <div
+                              className={`flex-shrink-0 h-6 w-6 rounded-md border border-brand-dark-green/30 flex items-center justify-center transition-all duration-150 ease-in-out ${
+                                isActive
+                                  ? "bg-brand-dark-green border-brand-dark-green"
+                                  : "bg-white/30 group-hover:border-brand-dark-green/50"
+                              }`}
+                            >
+                              <CheckIcon
+                                className={`h-4 w-4 text-brand-light-green transition-opacity duration-150 ease-in-out ${
+                                  isActive ? "opacity-100" : "opacity-0"
+                                }`}
+                              />
+                            </div>
+                          </div>
+                          {/* You can add details for parade_route if active, similar to ZTL, if needed */}
+                          {/* For example:
+                          {isActive && (
+                            <div className="mt-2 pl-[38px] text-xs space-y-1">
+                              <p className="text-brand-dark-green/90">
+                                {t('parade_route_name')}
+                              </p>
+                              <p className="text-brand-dark-green/70">
+                                {t('parade_route_times')}
+                              </p>
+                            </div>
+                          )}
+                          */}
+                        </div>
+                      );
+                    }
                     return (
                       <div
                         key={item.type}
@@ -240,9 +313,13 @@ const LegendSlideout: React.FC<LegendSlideoutProps> = ({
                             {labelText && labelText !== translationKey
                               ? labelText
                               : item.label}
-                            <span className="ml-1 text-xs font-normal text-brand-dark-green/60">
-                              ({count})
-                            </span>
+                            {/* Conditionally render count for items that are NOT ztl or parade_route */}
+                            {item.type !== "ztl" &&
+                              item.type !== "parade_route" && (
+                                <span className="ml-1 text-xs font-normal text-brand-dark-green/60">
+                                  ({count})
+                                </span>
+                              )}
                           </span>
                         </div>
                         {/* Custom Checkbox Visual */}
