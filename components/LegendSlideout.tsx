@@ -313,13 +313,10 @@ const LegendSlideout: React.FC<LegendSlideoutProps> = ({
                             {labelText && labelText !== translationKey
                               ? labelText
                               : item.label}
-                            {/* Conditionally render count for items that are NOT ztl or parade_route */}
-                            {item.type !== "ztl" &&
-                              item.type !== "parade_route" && (
-                                <span className="ml-1 text-xs font-normal text-brand-dark-green/60">
-                                  ({count})
-                                </span>
-                              )}
+                            {/* Render count for these items, as TypeScript knows they are not ztl or parade_route here */}
+                            <span className="ml-1 text-xs font-normal text-brand-dark-green/60">
+                              ({count})
+                            </span>
                           </span>
                         </div>
                         {/* Custom Checkbox Visual */}
