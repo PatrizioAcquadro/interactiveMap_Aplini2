@@ -2964,11 +2964,11 @@ export const poiData: POI[] = [
       "Garten",
       "Außensitzplätze",
     ],
-    partyInfo: "Sab: Doppio DJ set - DJ-P & DJ Maiz 🎧", // UPDATED - Only Saturday
-    partyInfo_en: "Sat: Double DJ set - DJ-P & DJ Maiz 🎧", // UPDATED
-    partyInfo_es: "Sáb: Doble DJ set - DJ-P & DJ Maiz 🎧", // UPDATED
-    partyInfo_fr: "Sam: Double DJ set - DJ-P & DJ Maiz 🎧", // UPDATED
-    partyInfo_de: "Sa: Doppel-DJ-Set - DJ-P & DJ Maiz 🎧", // UPDATED
+    partyInfo: "Sab: Doppio DJ set - Maxxuel Dj & DJ Maiz", // UPDATED - Only Saturday
+    partyInfo_en: "Sat: Double DJ set - Maxxuel Dj & DJ Maiz", // UPDATED
+    partyInfo_es: "Sáb: Doble DJ set - Maxxuel Dj & DJ Maiz", // UPDATED
+    partyInfo_fr: "Sam: Double DJ set - Maxxuel Dj & DJ Maiz", // UPDATED
+    partyInfo_de: "Sa: Doppel-DJ-Set - Maxxuel Dj & DJ Maiz", // UPDATED
     partyHours: "Sab: 21:00-03:00", // UPDATED - Only Saturday
     partyHours_en: "Sat: 21:00-03:00", // UPDATED
     partyHours_es: "Sáb: 21:00-03:00", // UPDATED
