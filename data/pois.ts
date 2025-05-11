@@ -4058,16 +4058,16 @@ export const poiData: POI[] = [
       "Mittagessen",
       "Abendessen",
     ],
-    partyInfo: "Venerdì: Shock by Daniel Mas (Dance hits party).",
-    partyInfo_en: "Friday: Shock by Daniel Mas (Dance hits party).",
-    partyInfo_es: "Viernes: Shock by Daniel Mas (Dance hits party).",
-    partyInfo_fr: "Vendredi : Shock by Daniel Mas (Dance hits party).",
-    partyInfo_de: "Freitag: Shock by Daniel Mas (Dance-Hits-Party).",
-    partyHours: "Venerdì: Orario serale.", // Generalizing as specific band times not provided
-    partyHours_en: "Friday: Evening hours.",
-    partyHours_es: "Viernes: Horario de noche.",
-    partyHours_fr: "Vendredi : Soirée.",
-    partyHours_de: "Freitag: Abendstunden.",
+    partyInfo: "Dom 11 Mag: KARAOKE con Max Gillo", // UPDATED
+    partyInfo_en: "Sun May 11: KARAOKE with Max Gillo", // UPDATED
+    partyInfo_es: "Dom 11 May: KARAOKE con Max Gillo", // UPDATED
+    partyInfo_fr: "Dim 11 Mai : KARAOKÉ avec Max Gillo", // UPDATED
+    partyInfo_de: "So 11. Mai: KARAOKE mit Max Gillo", // UPDATED
+    partyHours: "Dom: ore 20:00", // UPDATED
+    partyHours_en: "Sun: 8:00 PM", // UPDATED
+    partyHours_es: "Dom: 20:00 h", // UPDATED
+    partyHours_fr: "Dim: 20h00", // UPDATED
+    partyHours_de: "So: 20:00 Uhr", // UPDATED
   },
   {
     id: 210,
