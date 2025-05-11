@@ -112,5 +112,8 @@
     "poiCategory_medical_post": "Erweiterter Sanitätsposten",
     "poiCategory_field_hospital": "Feldlazarett",
     "poiCategory_parking": "PKW-Parkplatz",
-    "poiCategory_gelateria": "Eisdiele"
+    "poiCategory_gelateria": "Eisdiele",
+    "poiCategory_parade_route": "Paraderoute der Alpini",
+  "parade_route_name": "Alpini-Parade",
+  "parade_route_times": "Zeiten: 9:00 - 20:30/21:00 Uhr"
 }

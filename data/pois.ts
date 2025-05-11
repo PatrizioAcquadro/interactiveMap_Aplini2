@@ -13,6 +13,7 @@ import {
   FaParking,
   FaShoppingBag,
   FaIceCream,
+  FaFlag,
 } from "react-icons/fa"; // Example icons from react-icons
 import { StopIcon } from "@heroicons/react/24/outline"; // Example: Stop sign outline
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid"; // Fallback Heroicon
@@ -29,7 +30,8 @@ export type PoiType =
   | "medical_post"
   | "field_hospital"
   | "parking"
-  | "gelateria";
+  | "gelateria"
+  | "parade_route";
 
 // Define the structure for each POI
 export interface POI {
@@ -7399,6 +7401,7 @@ export const poiTypeStyles: Record<PoiType | "default", PoiTypeStyle> = {
   field_hospital: { color: "#2563EB", icon: FaHospitalSymbol },
   parking: { color: "#4682B4", icon: FaParking },
   gelateria: { color: "#F472B6", icon: FaIceCream },
+  parade_route: { color: "#EF4444", icon: FaFlag },
   default: { color: "#6B7280", icon: QuestionMarkCircleIcon },
 };
 
@@ -7469,6 +7472,12 @@ export const legendItems: {
     label: "poiCategory_parking", // Use a NEW translation key
     icon: poiTypeStyles.parking.icon,
     color: poiTypeStyles.parking.color,
+  },
+  {
+    type: "parade_route" as PoiType,
+    label: "Percorso Sfilata", // Fallback label
+    icon: poiTypeStyles.parade_route.icon, // FaFlag
+    color: poiTypeStyles.parade_route.color, // #EF4444 (Red)
   },
   {
     type: "ztl",

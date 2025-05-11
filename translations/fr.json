@@ -112,5 +112,8 @@
     "poiCategory_medical_post": "Poste Médical Avancé",
     "poiCategory_field_hospital": "Hôpital de Campagne",
     "poiCategory_parking": "Parking Voitures",
-    "poiCategory_gelateria": "Glacier"
+    "poiCategory_gelateria": "Glacier",
+    "poiCategory_parade_route": "Itinéraire du Défilé des Alpins",
+  "parade_route_name": "Défilé des Alpins",
+  "parade_route_times": "Horaires : 9h00 - 20h30/21h00"
 }

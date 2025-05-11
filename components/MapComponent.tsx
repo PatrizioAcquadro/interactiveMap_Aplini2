@@ -15,6 +15,7 @@ import {
   Popup,
   useMap,
   Polygon,
+  Polyline,
 } from "react-leaflet";
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/outline";
 
@@ -409,6 +410,26 @@ const MapComponent: React.FC = () => {
     fillOpacity: 0.2, // Semi-transparent fill (adjust 0.1 to 0.4 for desired visibility)
   };
 
+  const paradeRouteCoordinates: L.LatLngExpression[] = [
+    // GeoJSON is [longitude, latitude], Leaflet needs [latitude, longitude]
+    [45.5554999, 8.0626579],
+    [45.5557554, 8.0627866],
+    [45.562719, 8.058302],
+    [45.5624261, 8.0571433],
+    [45.5607735, 8.0502017],
+    [45.5604204, 8.049676],
+    [45.5600223, 8.0491181],
+    [45.5598495, 8.0482276],
+    [45.5597819, 8.0476804],
+  ];
+
+  const paradeRouteOptions = {
+    color: "#EF4444", // Red (Tailwind red-500), consistent with legendItems
+    weight: 5, // Line thickness
+    opacity: 0.8, // Line opacity
+    // dashArray: "10, 5", // Optional: Dashed line pattern (10px line, 5px gap)
+  };
+
   // *** UPDATE: Initialize filters with ZTL included ***
   const allPoiTypesAndZTL = useMemo(
     () => new Set(legendItems.map((p) => p.type)),
@@ -568,6 +589,11 @@ const MapComponent: React.FC = () => {
   );
   // *** ADD: Check if ZTL should be visible ***
   const showZTL = useMemo(() => activeFilters.has("ztl"), [activeFilters]);
+
+  const showParadeRoute = useMemo(
+    () => activeFilters.has("parade_route"),
+    [activeFilters]
+  ); // <-- Add this
 
   // --- Effects ---
   useEffect(() => {
@@ -749,6 +775,23 @@ const MapComponent: React.FC = () => {
             interactive={false}
           />
         )}
+
+        {showParadeRoute && (
+          <Polyline
+            positions={paradeRouteCoordinates}
+            pathOptions={paradeRouteOptions}
+          >
+            <Popup minWidth={200}>
+              <div className="font-sans text-sm">
+                <h4 className="font-semibold text-base mb-1 text-gray-800">
+                  {t("parade_route_name")}
+                </h4>
+                <p className="text-gray-600">{t("parade_route_times")}</p>
+              </div>
+            </Popup>
+          </Polyline>
+        )}
+
         {/* --- Map Controls & Event Handlers (INSIDE MapContainer) --- */}
         <LocateControl />
         <MapEvents targetPoi={searchTargetPoi} />

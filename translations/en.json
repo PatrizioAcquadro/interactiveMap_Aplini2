@@ -122,5 +122,9 @@
     "poiCategory_medical_post": "Advanced Medical Post",
     "poiCategory_field_hospital": "Field Hospital",
     "poiCategory_parking": "Car Parking",
-    "poiCategory_gelateria": "Ice Cream Parlor"
+    "poiCategory_gelateria": "Ice Cream Parlor",
+
+    "poiCategory_parade_route": "Alpini Parade Route",
+  "parade_route_name": "Alpini Parade",
+  "parade_route_times": "Hours: 9:00 AM - 8:30/9:00 PM"
 }

@@ -112,5 +112,8 @@
     "poiCategory_medical_post": "Puesto Médico Avanzado",
     "poiCategory_field_hospital": "Hospital de Campaña",
     "poiCategory_parking": "Aparcamiento Coches",
-    "poiCategory_gelateria": "Heladería"
+    "poiCategory_gelateria": "Heladería",
+    "poiCategory_parade_route": "Ruta del Desfile de los Alpini",
+  "parade_route_name": "Desfile de los Alpini",
+  "parade_route_times": "Horario: 9:00 AM - 8:30/9:00 PM"
 }

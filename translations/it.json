@@ -121,5 +121,9 @@
     "poiCategory_medical_post": "Posto Medico Avanzato",
     "poiCategory_parking": "Parcheggio Auto",
     "poiCategory_field_hospital": "Ospedale da Campo",
-    "poiCategory_gelateria": "Gelateria"
+    "poiCategory_gelateria": "Gelateria",
+
+    "poiCategory_parade_route": "Percorso Sfilata Alpini",
+  "parade_route_name": "Sfilata degli Alpini",
+  "parade_route_times": "Orario: 9:00 - 20:30/21:00"
 }
